@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Launch file",
+        "type": "go",
+        "request": "launch",
+        "mode": "auto",
+        "program": "${file}",
+        "console": "integratedTerminal",
+        "env": {
+          "PATH": "/usr/bin:${fileDirname}"
+        },
+        "args": []
+      }
+    ]
+  }
