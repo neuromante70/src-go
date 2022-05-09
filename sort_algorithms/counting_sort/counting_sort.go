@@ -44,7 +44,9 @@ func countSort(arr []int) []int {
 }
 
 func main() {
-	var n = []int{1, 39, 2, 9, 7, 54, 11}
+	// var n = []int{-144, -68, 11, 41, 143, -116, -133, 84, 23, -53, 17, 143, -20, 12}
+	// DOESN´T WORK WITH NEGATIVE INTEGER
+	var n = []int{144, 68, 11, 41, 143, 116, 133, 84, 23, 53, 17, 143, 20, 12}
 
 	fmt.Println("\n", countSort(n))
 }
