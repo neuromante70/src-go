@@ -1,0 +1,562 @@
+{
+    "sourceFile": "05.01/calculator_test.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 136,
+            "patches": [
+                {
+                    "date": 1679433137777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1679433146297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n \t// got := calculator.Add(2, 2)\n \t// if want != got {\n \t// \tt.Errorf(\"want %f, got %f\", want, got)\n \t// }\n+\ttype testCase\n }\n \n func TestSubtract(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1679433152430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,11 @@\n \t// got := calculator.Add(2, 2)\n \t// if want != got {\n \t// \tt.Errorf(\"want %f, got %f\", want, got)\n \t// }\n-\ttype testCase\n+\ttype testCase struct {\n+\t\t\n+\t}\n }\n \n func TestSubtract(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1679433161145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,10 @@\n \t// if want != got {\n \t// \tt.Errorf(\"want %f, got %f\", want, got)\n \t// }\n \ttype testCase struct {\n-\t\t\n+\t\ta, b float64\n+\t\twant float\n \t}\n }\n \n func TestSubtract(t *testing.T) {\n"
+                },
+                {
+                    "date": 1679433169092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,12 @@\n \t// \tt.Errorf(\"want %f, got %f\", want, got)\n \t// }\n \ttype testCase struct {\n \t\ta, b float64\n-\t\twant float\n+\t\twant float64\n \t}\n+\n+\ttestCases\n }\n \n func TestSubtract(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1679433176437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \t\ta, b float64\n \t\twant float64\n \t}\n \n-\ttestCases\n+\ttestCases := []testCase\n }\n \n func TestSubtract(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1679433191870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,11 @@\n \t\ta, b float64\n \t\twant float64\n \t}\n \n-\ttestCases := []testCase\n+\ttestCases := []testCase{\n+\t\t{a: 2, b: 2, want:4}\n+\t}\n }\n \n func TestSubtract(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1679433198663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,10 @@\n \t\twant float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 2, b: 2, want:4}\n+\t\t{a: 2, b: 2, want:4},\n+\t\t{a}\n \t}\n }\n \n func TestSubtract(t *testing.T) {\n"
+                },
+                {
+                    "date": 1679433205059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,10 @@\n \t}\n \n \ttestCases := []testCase{\n \t\t{a: 2, b: 2, want:4},\n-\t\t{a}\n+\t\t{a: 2, b: 2, want:4},\n+\t\t{a: 2, b: 2, want:4},\n \t}\n }\n \n func TestSubtract(t *testing.T) {\n"
+                },
+                {
+                    "date": 1679433211497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n \t}\n \n \ttestCases := []testCase{\n \t\t{a: 2, b: 2, want:4},\n+\t\t{a: 1, b: 1, want:4},\n \t\t{a: 2, b: 2, want:4},\n-\t\t{a: 2, b: 2, want:4},\n \t}\n }\n \n func TestSubtract(t *testing.T) {\n"
+                },
+                {
+                    "date": 1679433219007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n \t}\n \n \ttestCases := []testCase{\n \t\t{a: 2, b: 2, want:4},\n-\t\t{a: 1, b: 1, want:4},\n-\t\t{a: 2, b: 2, want:4},\n+\t\t{a: 1, b: 1, want:2},\n+\t\t{a: 5, b: 0, want:4},\n \t}\n }\n \n func TestSubtract(t *testing.T) {\n"
+                },
+                {
+                    "date": 1679433236270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,19 +19,19 @@\n \n \ttestCases := []testCase{\n \t\t{a: 2, b: 2, want:4},\n \t\t{a: 1, b: 1, want:2},\n-\t\t{a: 5, b: 0, want:4},\n+\t\t{a: 5, b: 0, want:5},\n \t}\n }\n \n func TestSubtract(t *testing.T) {\n \tt.Parallel()\n-\tvar want float64 = 2\n-\tgot := calculator.Subtract(4, 2)\n-\tif want != got {\n-\t\tt.Errorf(\"want %f, got %f\", want, got)\n-\t}\n+\t// var want float64 = 2\n+\t// got := calculator.Subtract(4, 2)\n+\t// if want != got {\n+\t// \tt.Errorf(\"want %f, got %f\", want, got)\n+\t// }\n }\n \n func TestMultiply(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1679433246668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,18 @@\n \t// got := calculator.Subtract(4, 2)\n \t// if want != got {\n \t// \tt.Errorf(\"want %f, got %f\", want, got)\n \t// }\n+\ttype testCase struct {\n+\t\ta, b float64\n+\t\twant float64\n+\t}\n+\n+\ttestCases := []testCase{\n+\t\t{a: 2, b: 2, want:4},\n+\t\t{a: 1, b: 1, want:2},\n+\t\t{a: 5, b: 0, want:5},\n+\t}\t\n }\n \n func TestMultiply(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1679433266104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n \t\t{a: 2, b: 2, want:4},\n \t\t{a: 1, b: 1, want:2},\n \t\t{a: 5, b: 0, want:5},\n \t}\n+\t\n }\n \n func TestSubtract(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1679433276522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \t\t{a: 2, b: 2, want:4},\n \t\t{a: 1, b: 1, want:2},\n \t\t{a: 5, b: 0, want:5},\n \t}\n-\t\n+\tfor _, tc := range testCases\n }\n \n func TestSubtract(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1679433287110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,11 @@\n \t\t{a: 2, b: 2, want:4},\n \t\t{a: 1, b: 1, want:2},\n \t\t{a: 5, b: 0, want:5},\n \t}\n-\tfor _, tc := range testCases\n+\tfor _, tc := range testCases {\n+\t\tgot := calculator.Add\n+\t}\n }\n \n func TestSubtract(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1679433296450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,10 @@\n \t\t{a: 1, b: 1, want:2},\n \t\t{a: 5, b: 0, want:5},\n \t}\n \tfor _, tc := range testCases {\n-\t\tgot := calculator.Add\n+\t\tgot := calculator.Add(tc.a, tc.b)\n+\t\tif tc.want\n \t}\n }\n \n func TestSubtract(t *testing.T) {\n"
+                },
+                {
+                    "date": 1679433301710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \t\t{a: 5, b: 0, want:5},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Add(tc.a, tc.b)\n-\t\tif tc.want\n+\t\tif tc.want != got {}\n \t}\n }\n \n func TestSubtract(t *testing.T) {\n"
+                },
+                {
+                    "date": 1679433311667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,11 @@\n \t\t{a: 5, b: 0, want:5},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Add(tc.a, tc.b)\n-\t\tif tc.want != got {}\n+\t\tif tc.want != got {\n+\t\t\tt.Errorf(\"Add()\")\n+\t\t}\n \t}\n }\n \n func TestSubtract(t *testing.T) {\n"
+                },
+                {
+                    "date": 1679433320267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Add(tc.a, tc.b)\n \t\tif tc.want != got {\n-\t\t\tt.Errorf(\"Add()\")\n+\t\t\tt.Errorf(\"Add(%f, %f): want\")\n \t\t}\n \t}\n }\n \n"
+                },
+                {
+                    "date": 1679433326591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Add(tc.a, tc.b)\n \t\tif tc.want != got {\n-\t\t\tt.Errorf(\"Add(%f, %f): want\")\n+\t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\")\n \t\t}\n \t}\n }\n \n"
+                },
+                {
+                    "date": 1679433332120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,10 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Add(tc.a, tc.b)\n \t\tif tc.want != got {\n-\t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\")\n+\t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n+\t\t)\n \t\t}\n \t}\n }\n \n"
+                },
+                {
+                    "date": 1679433338584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Add(tc.a, tc.b)\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n-\t\t)\n+\t\ttc.a)\n \t\t}\n \t}\n }\n \n"
+                },
+                {
+                    "date": 1679433350198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Add(tc.a, tc.b)\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n-\t\ttc.a)\n+\t\t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n \t}\n }\n \n"
+                },
+                {
+                    "date": 1679433380484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,16 @@\n \ttestCases := []testCase{\n \t\t{a: 2, b: 2, want:4},\n \t\t{a: 1, b: 1, want:2},\n \t\t{a: 5, b: 0, want:5},\n-\t}\t\n+\t}\n+\tfor _, tc := range testCases {\n+\t\tgot := calculator.Add(tc.a, tc.b)\n+\t\tif tc.want != got {\n+\t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n+\t\t\t\t\ttc.a, tc.b, tc.want, got)\n+\t\t}\n+\t}\n }\n \n func TestMultiply(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1679433399173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n \t\t{a: 1, b: 1, want:2},\n \t\t{a: 5, b: 0, want:5},\n \t}\n \tfor _, tc := range testCases {\n-\t\tgot := calculator.Add(tc.a, tc.b)\n+\t\tgot := calculator.Subtract(tc.a, tc.b)\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n \t\t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n"
+                },
+                {
+                    "date": 1679433410164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n \t\twant float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 2, b: 2, want:4},\n+\t\t{a: 2, b: 2, want:0},\n \t\t{a: 1, b: 1, want:2},\n \t\t{a: 5, b: 0, want:5},\n \t}\n \tfor _, tc := range testCases {\n"
+                },
+                {
+                    "date": 1679433417912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n \t}\n \n \ttestCases := []testCase{\n \t\t{a: 2, b: 2, want:0},\n-\t\t{a: 1, b: 1, want:2},\n+\t\t{a: 2, b: 1, want:1},\n \t\t{a: 5, b: 0, want:5},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Subtract(tc.a, tc.b)\n"
+                },
+                {
+                    "date": 1679433428465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n \n \ttestCases := []testCase{\n \t\t{a: 2, b: 2, want:0},\n \t\t{a: 2, b: 1, want:1},\n-\t\t{a: 5, b: 0, want:5},\n+\t\t{a: 5, b: -4, want:5},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Subtract(tc.a, tc.b)\n \t\tif tc.want != got {\n"
+                },
+                {
+                    "date": 1679433440653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,5 +63,6 @@\n \tgot := calculator.Multiply(3, 3)\n \tif want != got {\n \t\tt.Errorf(\"want %f, got %f\", want, got)\n \t}\n+\t0\n }\n"
+                },
+                {
+                    "date": 1679433446687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,6 +63,12 @@\n \tgot := calculator.Multiply(3, 3)\n \tif want != got {\n \t\tt.Errorf(\"want %f, got %f\", want, got)\n \t}\n-\t0\n+\tfor _, tc := range testCases {\n+\t\tgot := calculator.Subtract(tc.a, tc.b)\n+\t\tif tc.want != got {\n+\t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n+\t\t\t\t\ttc.a, tc.b, tc.want, got)\n+\t\t}\n+\t}\n }\n"
+                },
+                {
+                    "date": 1679433453142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n \tif want != got {\n \t\tt.Errorf(\"want %f, got %f\", want, got)\n \t}\n \tfor _, tc := range testCases {\n-\t\tgot := calculator.Subtract(tc.a, tc.b)\n+\t\tgot := calculator.Multiply(tc.a, tc.b)\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n \t\t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n"
+                },
+                {
+                    "date": 1679433461223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,13 +58,13 @@\n }\n \n func TestMultiply(t *testing.T) {\n \tt.Parallel()\n-\tvar want float64 = 9\n-\tgot := calculator.Multiply(3, 3)\n-\tif want != got {\n-\t\tt.Errorf(\"want %f, got %f\", want, got)\n-\t}\n+\t// var want float64 = 9\n+\t// got := calculator.Multiply(3, 3)\n+\t// if want != got {\n+\t// \tt.Errorf(\"want %f, got %f\", want, got)\n+\t// }\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Multiply(tc.a, tc.b)\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n"
+                },
+                {
+                    "date": 1679433471843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,19 @@\n \t// got := calculator.Multiply(3, 3)\n \t// if want != got {\n \t// \tt.Errorf(\"want %f, got %f\", want, got)\n \t// }\n-\tfor _, tc := range testCases {\n+\ttype testCase struct {\n+\t\ta, b float64\n+\t\twant float64\n+\t}\n+\n+\ttestCases := []testCase{\n+\t\t{a: 2, b: 2, want:0},\n+\t\t{a: 2, b: 1, want:1},\n+\t\t{a: 5, b: -4, want:5},\n+\t}\n+\t\tfor _, tc := range testCases {\n \t\tgot := calculator.Multiply(tc.a, tc.b)\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n \t\t\t\t\ttc.a, tc.b, tc.want, got)\n"
+                },
+                {
+                    "date": 1679433483079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n \t}\n \n \ttestCases := []testCase{\n \t\t{a: 2, b: 2, want:0},\n-\t\t{a: 2, b: 1, want:1},\n+\t\t{a: -1, b: 1, want:1},\n \t\t{a: 5, b: -4, want:5},\n \t}\n \t\tfor _, tc := range testCases {\n \t\tgot := calculator.Multiply(tc.a, tc.b)\n"
+                },
+                {
+                    "date": 1679433492218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,10 +70,10 @@\n \t}\n \n \ttestCases := []testCase{\n \t\t{a: 2, b: 2, want:0},\n-\t\t{a: -1, b: 1, want:1},\n-\t\t{a: 5, b: -4, want:5},\n+\t\t{a: -1, b: -1, want:1},\n+\t\t{a: 5, b: 0, want:5},\n \t}\n \t\tfor _, tc := range testCases {\n \t\tgot := calculator.Multiply(tc.a, tc.b)\n \t\tif tc.want != got {\n"
+                },
+                {
+                    "date": 1679433519816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,17 +17,17 @@\n \t\twant float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 2, b: 2, want:4},\n-\t\t{a: 1, b: 1, want:2},\n-\t\t{a: 5, b: 0, want:5},\n+\t\t{a: 2, b: 2, want: 4},\n+\t\t{a: 1, b: 1, want: 2},\n+\t\t{a: 5, b: 0, want: 5},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Add(tc.a, tc.b)\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n-\t\t\t\t\ttc.a, tc.b, tc.want, got)\n+\t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n \t}\n }\n \n@@ -43,17 +43,17 @@\n \t\twant float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 2, b: 2, want:0},\n-\t\t{a: 2, b: 1, want:1},\n-\t\t{a: 5, b: -4, want:5},\n+\t\t{a: 2, b: 2, want: 0},\n+\t\t{a: 2, b: 1, want: 1},\n+\t\t{a: 5, b: -4, want: 5},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Subtract(tc.a, tc.b)\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n-\t\t\t\t\ttc.a, tc.b, tc.want, got)\n+\t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n \t}\n }\n \n@@ -69,16 +69,25 @@\n \t\twant float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 2, b: 2, want:0},\n-\t\t{a: -1, b: -1, want:1},\n-\t\t{a: 5, b: 0, want:5},\n+\t\t{a: 2, b: 2, want: 0},\n+\t\t{a: -1, b: -1, want: 1},\n+\t\t{a: 5, b: 0, want: 0},\n \t}\n-\t\tfor _, tc := range testCases {\n+\tfor _, tc := range testCases {\n \t\tgot := calculator.Multiply(tc.a, tc.b)\n \t\tif tc.want != got {\n-\t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n-\t\t\t\t\ttc.a, tc.b, tc.want, got)\n+\t\t\tt.Errorf(\"\ttype testCase struct {\n+\t\t\t\ta, b float64\n+\t\t\t\twant float64\n+\t\t\t}\n+\t\t\n+\t\t\ttestCases := []testCase{\n+\t\t\t\t{a: 2, b: 2, want:0},\n+\t\t\t\t{a: 2, b: 1, want:1},\n+\t\t\t\t{a: 5, b: -4, want:5},\n+\t\t\t}(%f, %f): want %f, got %f\",\n+\t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n \t}\n }\n"
+                },
+                {
+                    "date": 1679433531837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,18 +76,9 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Multiply(tc.a, tc.b)\n \t\tif tc.want != got {\n-\t\t\tt.Errorf(\"\ttype testCase struct {\n-\t\t\t\ta, b float64\n-\t\t\t\twant float64\n-\t\t\t}\n-\t\t\n-\t\t\ttestCases := []testCase{\n-\t\t\t\t{a: 2, b: 2, want:0},\n-\t\t\t\t{a: 2, b: 1, want:1},\n-\t\t\t\t{a: 5, b: -4, want:5},\n-\t\t\t}(%f, %f): want %f, got %f\",\n+\t\t\tt.Errorf(\"Multiply(%f, %f): want %f, got %f\",\n \t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n \t}\n }\n"
+                },
+                {
+                    "date": 1679433538045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Subtract(tc.a, tc.b)\n \t\tif tc.want != got {\n-\t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n+\t\t\tt.Errorf(\"Subtract(%f, %f): want %f, got %f\",\n \t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n \t}\n }\n"
+                },
+                {
+                    "date": 1679433560924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n \t\twant float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 2, b: 2, want: 0},\n+\t\t{a: 2, b: 2, want: 4},\n \t\t{a: -1, b: -1, want: 1},\n \t\t{a: 5, b: 0, want: 0},\n \t}\n \tfor _, tc := range testCases {\n"
+                },
+                {
+                    "date": 1679433589881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n \n \ttestCases := []testCase{\n \t\t{a: 2, b: 2, want: 0},\n \t\t{a: 2, b: 1, want: 1},\n-\t\t{a: 5, b: -4, want: 5},\n+\t\t{a: 5, b: -4, want: 9},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Subtract(tc.a, tc.b)\n \t\tif tc.want != got {\n"
+                },
+                {
+                    "date": 1679433672473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n \t// if want != got {\n \t// \tt.Errorf(\"want %f, got %f\", want, got)\n \t// }\n \ttype testCase struct {\n-\t\ta, b float64\n+\t\ta, b, want float64\n \t\twant float64\n \t}\n \n \ttestCases := []testCase{\n"
+                },
+                {
+                    "date": 1679480472794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,8 @@\n \t// \tt.Errorf(\"want %f, got %f\", want, got)\n \t// }\n \ttype testCase struct {\n \t\ta, b, want float64\n-\t\twant float64\n \t}\n \n \ttestCases := []testCase{\n \t\t{a: 2, b: 2, want: 4},\n@@ -81,4 +80,30 @@\n \t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n \t}\n }\n+\n+func TestAdd(t *testing.T) {\n+\tt.Parallel()\n+\t// var want float64 = 4\n+\t// got := calculator.Add(2, 2)\n+\t// if want != got {\n+\t// \tt.Errorf(\"want %f, got %f\", want, got)\n+\t// }\n+\ttype testCase struct {\n+\t\ta, b float64\n+\t\twant float64\n+\t}\n+\n+\ttestCases := []testCase{\n+\t\t{a: 2, b: 2, want: 4},\n+\t\t{a: 1, b: 1, want: 2},\n+\t\t{a: 5, b: 0, want: 5},\n+\t}\n+\tfor _, tc := range testCases {\n+\t\tgot := calculator.Add(tc.a, tc.b)\n+\t\tif tc.want != got {\n+\t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n+\t\t\t\ttc.a, tc.b, tc.want, got)\n+\t\t}\n+\t}\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679480557038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n \t\t}\n \t}\n }\n \n-func TestAdd(t *testing.T) {\n+func TestDivide(t *testing.T) {\n \tt.Parallel()\n \t// var want float64 = 4\n \t// got := calculator.Add(2, 2)\n \t// if want != got {\n"
+                },
+                {
+                    "date": 1679480572625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,15 +83,11 @@\n }\n \n func TestDivide(t *testing.T) {\n \tt.Parallel()\n-\t// var want float64 = 4\n-\t// got := calculator.Add(2, 2)\n-\t// if want != got {\n-\t// \tt.Errorf(\"want %f, got %f\", want, got)\n-\t// }\n+\n \ttype testCase struct {\n-\t\ta, b float64\n+\t\ta, b, want float64\n \t\twant float64\n \t}\n \n \ttestCases := []testCase{\n"
+                },
+                {
+                    "date": 1679480582997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,13 +86,12 @@\n \tt.Parallel()\n \n \ttype testCase struct {\n \t\ta, b, want float64\n-\t\twant float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 2, b: 2, want: 4},\n+\t\t{a: 2, b: 2, want: 1},\n \t\t{a: 1, b: 1, want: 2},\n \t\t{a: 5, b: 0, want: 5},\n \t}\n \tfor _, tc := range testCases {\n"
+                },
+                {
+                    "date": 1679480591107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n \t}\n \n \ttestCases := []testCase{\n \t\t{a: 2, b: 2, want: 1},\n-\t\t{a: 1, b: 1, want: 2},\n+\t\t{a: -1, b: -1, want: 1},\n \t\t{a: 5, b: 0, want: 5},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Add(tc.a, tc.b)\n"
+                },
+                {
+                    "date": 1679480597133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,9 +91,9 @@\n \n \ttestCases := []testCase{\n \t\t{a: 2, b: 2, want: 1},\n \t\t{a: -1, b: -1, want: 1},\n-\t\t{a: 5, b: 0, want: 5},\n+\t\t{a: 10, b: 2, want: 5},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Add(tc.a, tc.b)\n \t\tif tc.want != got {\n"
+                },
+                {
+                    "date": 1679480610846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,9 +94,9 @@\n \t\t{a: -1, b: -1, want: 1},\n \t\t{a: 10, b: 2, want: 5},\n \t}\n \tfor _, tc := range testCases {\n-\t\tgot := calculator.Add(tc.a, tc.b)\n+\t\tgot := calculator.Divide(tc.a, tc.b)\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n \t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n"
+                },
+                {
+                    "date": 1679480677833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,9 +89,9 @@\n \t\ta, b, want float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 2, b: 2, want: 1},\n+\t\t{a: 2, b: 2, want: 0},\n \t\t{a: -1, b: -1, want: 1},\n \t\t{a: 10, b: 2, want: 5},\n \t}\n \tfor _, tc := range testCases {\n"
+                },
+                {
+                    "date": 1679480764618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,16 +89,16 @@\n \t\ta, b, want float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 2, b: 2, want: 0},\n+\t\t{a: 2, b: 0, want: 1},\n \t\t{a: -1, b: -1, want: 1},\n \t\t{a: 10, b: 2, want: 5},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Divide(tc.a, tc.b)\n \t\tif tc.want != got {\n-\t\t\tt.Errorf(\"Add(%f, %f): want %f, got %f\",\n+\t\t\tt.Errorf(\"Divide(%f, %f): want %f, got %f\",\n \t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n \t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679480796045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,9 +94,9 @@\n \t\t{a: -1, b: -1, want: 1},\n \t\t{a: 10, b: 2, want: 5},\n \t}\n \tfor _, tc := range testCases {\n-\t\tgot := calculator.Divide(tc.a, tc.b)\n+\t\tgot, err := calculator.Divide(tc.a, tc.b)\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Divide(%f, %f): want %f, got %f\",\n \t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n"
+                },
+                {
+                    "date": 1679480833975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,8 +95,9 @@\n \t\t{a: 10, b: 2, want: 5},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot, err := calculator.Divide(tc.a, tc.b)\n+\t\t\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Divide(%f, %f): want %f, got %f\",\n \t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n"
+                },
+                {
+                    "date": 1679480842585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,9 +95,11 @@\n \t\t{a: 10, b: 2, want: 5},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot, err := calculator.Divide(tc.a, tc.b)\n-\t\t\n+\t\tif err != nil {\n+\t\t\t\n+\t\t}\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Divide(%f, %f): want %f, got %f\",\n \t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n"
+                },
+                {
+                    "date": 1679480850070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,9 +96,9 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot, err := calculator.Divide(tc.a, tc.b)\n \t\tif err != nil {\n-\t\t\t\n+\t\t\tt.Fatalf()\n \t\t}\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Divide(%f, %f): want %f, got %f\",\n \t\t\t\ttc.a, tc.b, tc.want, got)\n"
+                },
+                {
+                    "date": 1679480855382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,9 +96,9 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot, err := calculator.Divide(tc.a, tc.b)\n \t\tif err != nil {\n-\t\t\tt.Fatalf()\n+\t\t\tt.Fatalf(\"\", err)\n \t\t}\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Divide(%f, %f): want %f, got %f\",\n \t\t\t\ttc.a, tc.b, tc.want, got)\n"
+                },
+                {
+                    "date": 1679480865004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,9 +96,9 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot, err := calculator.Divide(tc.a, tc.b)\n \t\tif err != nil {\n-\t\t\tt.Fatalf(\"\", err)\n+\t\t\tt.Fatalf(\"want no error for valid input, got \", err)\n \t\t}\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Divide(%f, %f): want %f, got %f\",\n \t\t\t\ttc.a, tc.b, tc.want, got)\n"
+                },
+                {
+                    "date": 1679482179022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,16 +89,16 @@\n \t\ta, b, want float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 2, b: 0, want: 1},\n+\t\t{a: 2, b: 1, want: 1},\n \t\t{a: -1, b: -1, want: 1},\n \t\t{a: 10, b: 2, want: 5},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot, err := calculator.Divide(tc.a, tc.b)\n \t\tif err != nil {\n-\t\t\tt.Fatalf(\"want no error for valid input, got \", err)\n+\t\t\tt.Fatalf(\"want no error for valid input, got %v\", err)\n \t\t}\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Divide(%f, %f): want %f, got %f\",\n \t\t\t\ttc.a, tc.b, tc.want, got)\n"
+                },
+                {
+                    "date": 1679482186967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -103,5 +103,5 @@\n \t\t\tt.Errorf(\"Divide(%f, %f): want %f, got %f\",\n \t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n \t}\n-}\n\\ No newline at end of file\n+}\n"
+                },
+                {
+                    "date": 1679482205547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,9 +89,9 @@\n \t\ta, b, want float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 2, b: 1, want: 1},\n+\t\t{a: 2, b: 1, want: 2},\n \t\t{a: -1, b: -1, want: 1},\n \t\t{a: 10, b: 2, want: 5},\n \t}\n \tfor _, tc := range testCases {\n"
+                },
+                {
+                    "date": 1679482239881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,4 +104,6 @@\n \t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n \t}\n }\n+\n+func Test\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679482245214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,5 +105,5 @@\n \t\t}\n \t}\n }\n \n-func Test\n\\ No newline at end of file\n+func TestDivideInvalid()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679482252075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,5 +105,5 @@\n \t\t}\n \t}\n }\n \n-func TestDivideInvalid()\n\\ No newline at end of file\n+func TestDivideInvalid(t *testin)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679482260002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,5 +105,5 @@\n \t\t}\n \t}\n }\n \n-func TestDivideInvalid(t *testin)\n\\ No newline at end of file\n+func TestDivideInvalid(t *testing.T) {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679482299050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,5 +105,8 @@\n \t\t}\n \t}\n }\n \n-func TestDivideInvalid(t *testing.T) {}\n\\ No newline at end of file\n+func TestDivideInvalid(t *testing.T) {\n+\tt.Parallel()\n+\t_, err := calculator.Divide\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679482304248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,6 +107,7 @@\n }\n \n func TestDivideInvalid(t *testing.T) {\n \tt.Parallel()\n-\t_, err := calculator.Divide\n+\t_, err := calculator.Divide(1, 0)\n+\t\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679482312943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,6 +108,8 @@\n \n func TestDivideInvalid(t *testing.T) {\n \tt.Parallel()\n \t_, err := calculator.Divide(1, 0)\n-\t\n+\tif err == nil {\n+\t\tt.Error\n+\t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679482323038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,7 +109,7 @@\n func TestDivideInvalid(t *testing.T) {\n \tt.Parallel()\n \t_, err := calculator.Divide(1, 0)\n \tif err == nil {\n-\t\tt.Error\n+\t\tt.Error(\"want error for invalid input, got nil\")\n \t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679482520371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,9 +89,9 @@\n \t\ta, b, want float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 2, b: 1, want: 2},\n+\t\t{a: 2, b: 01, want: 2},\n \t\t{a: -1, b: -1, want: 1},\n \t\t{a: 10, b: 2, want: 5},\n \t}\n \tfor _, tc := range testCases {\n"
+                },
+                {
+                    "date": 1679482543482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,9 +89,9 @@\n \t\ta, b, want float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 2, b: 01, want: 2},\n+\t\t{a: 2, b: 1, want: 2},\n \t\t{a: -1, b: -1, want: 1},\n \t\t{a: 10, b: 2, want: 5},\n \t}\n \tfor _, tc := range testCases {\n"
+                },
+                {
+                    "date": 1679522621290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -111,5 +111,30 @@\n \t_, err := calculator.Divide(1, 0)\n \tif err == nil {\n \t\tt.Error(\"want error for invalid input, got nil\")\n \t}\n+}\n+\n+func TestMultiply(t *testing.T) {\n+\tt.Parallel()\n+\t// var want float64 = 9\n+\t// got := calculator.Multiply(3, 3)\n+\t// if want != got {\n+\t// \tt.Errorf(\"want %f, got %f\", want, got)\n+\t// }\n+\ttype testCase struct {\n+\t\ta, b, want float64\n+\t}\n+\n+\ttestCases := []testCase{\n+\t\t{a: 2, b: 2, want: 4},\n+\t\t{a: -1, b: -1, want: 1},\n+\t\t{a: 5, b: 0, want: 0},\n+\t}\n+\tfor _, tc := range testCases {\n+\t\tgot := calculator.Multiply(tc.a, tc.b)\n+\t\tif tc.want != got {\n+\t\t\tt.Errorf(\"Multiply(%f, %f): want %f, got %f\",\n+\t\t\t\ttc.a, tc.b, tc.want, got)\n+\t\t}\n+\t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679522626623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -113,9 +113,9 @@\n \t\tt.Error(\"want error for invalid input, got nil\")\n \t}\n }\n \n-func TestMultiply(t *testing.T) {\n+func TestSqrt(t *testing.T) {\n \tt.Parallel()\n \t// var want float64 = 9\n \t// got := calculator.Multiply(3, 3)\n \t// if want != got {\n"
+                },
+                {
+                    "date": 1679604301316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -115,21 +115,17 @@\n }\n \n func TestSqrt(t *testing.T) {\n \tt.Parallel()\n-\t// var want float64 = 9\n-\t// got := calculator.Multiply(3, 3)\n-\t// if want != got {\n-\t// \tt.Errorf(\"want %f, got %f\", want, got)\n-\t// }\n+\n \ttype testCase struct {\n \t\ta, b, want float64\n \t}\n \n \ttestCases := []testCase{\n \t\t{a: 2, b: 2, want: 4},\n-\t\t{a: -1, b: -1, want: 1},\n-\t\t{a: 5, b: 0, want: 0},\n+\t\t// {a: -1, b: -1, want: 1},\n+\t\t// {a: 5, b: 0, want: 0},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Multiply(tc.a, tc.b)\n \t\tif tc.want != got {\n"
+                },
+                {
+                    "date": 1679604311989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n \t\ta, b, want float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 2, b: 2, want: 4},\n+\t\t{a: 9, b: 2, want: 4},\n \t\t// {a: -1, b: -1, want: 1},\n \t\t// {a: 5, b: 0, want: 0},\n \t}\n \tfor _, tc := range testCases {\n"
+                },
+                {
+                    "date": 1679604318455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,9 +117,9 @@\n func TestSqrt(t *testing.T) {\n \tt.Parallel()\n \n \ttype testCase struct {\n-\t\ta, b, want float64\n+\t\ta, want float64\n \t}\n \n \ttestCases := []testCase{\n \t\t{a: 9, b: 2, want: 4},\n"
+                },
+                {
+                    "date": 1679604335565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,9 +126,9 @@\n \t\t// {a: -1, b: -1, want: 1},\n \t\t// {a: 5, b: 0, want: 0},\n \t}\n \tfor _, tc := range testCases {\n-\t\tgot := calculator.Multiply(tc.a, tc.b)\n+\t\tgot := calculator.Sqrt(tc.a, tc.b)\n \t\tif tc.want != got {\n \t\t\tt.Errorf(\"Multiply(%f, %f): want %f, got %f\",\n \t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n"
+                },
+                {
+                    "date": 1679604346009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,11 +126,11 @@\n \t\t// {a: -1, b: -1, want: 1},\n \t\t// {a: 5, b: 0, want: 0},\n \t}\n \tfor _, tc := range testCases {\n-\t\tgot := calculator.Sqrt(tc.a, tc.b)\n+\t\tgot := calculator.Sqrt(tc.a)\n \t\tif tc.want != got {\n-\t\t\tt.Errorf(\"Multiply(%f, %f): want %f, got %f\",\n+\t\t\tt.Errorf(\"Multiply(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.b, tc.want, got)\n \t\t}\n \t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679604358534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,9 +128,9 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n \t\tif tc.want != got {\n-\t\t\tt.Errorf(\"Multiply(%f): want %f, got %f\",\n-\t\t\t\ttc.a, tc.b, tc.want, got)\n+\t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n+\t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679604366407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n \t\ta, want float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 9, b: 2, want: 4},\n+\t\t{a: 9, want: 4},\n \t\t// {a: -1, b: -1, want: 1},\n \t\t// {a: 5, b: 0, want: 0},\n \t}\n \tfor _, tc := range testCases {\n"
+                },
+                {
+                    "date": 1679604385428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,5 +132,5 @@\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n-}\n\\ No newline at end of file\n+}\n"
+                },
+                {
+                    "date": 1679604458336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,11 +121,11 @@\n \t\ta, want float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 9, want: 4},\n-\t\t// {a: -1, b: -1, want: 1},\n-\t\t// {a: 5, b: 0, want: 0},\n+\t\t{a: 9, want: 3},\n+\t\t{a: -1, b: -1, want: 1},\n+\t\t{a: 5, b: 0, want: 0},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n \t\tif tc.want != got {\n"
+                },
+                {
+                    "date": 1679604466547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n \t}\n \n \ttestCases := []testCase{\n \t\t{a: 9, want: 3},\n-\t\t{a: -1, b: -1, want: 1},\n+\t\t{a: 9, want: 3},\n \t\t{a: 5, b: 0, want: 0},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n"
+                },
+                {
+                    "date": 1679604472931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,10 +122,10 @@\n \t}\n \n \ttestCases := []testCase{\n \t\t{a: 9, want: 3},\n+\t\t{a: 16, want: 3},\n \t\t{a: 9, want: 3},\n-\t\t{a: 5, b: 0, want: 0},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n \t\tif tc.want != got {\n"
+                },
+                {
+                    "date": 1679604487192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,10 +122,10 @@\n \t}\n \n \ttestCases := []testCase{\n \t\t{a: 9, want: 3},\n-\t\t{a: 16, want: 3},\n-\t\t{a: 9, want: 3},\n+\t\t{a: 16, want: 4},\n+\t\t{a: 25, want: 3},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n \t\tif tc.want != got {\n"
+                },
+                {
+                    "date": 1679604570978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,9 +123,9 @@\n \n \ttestCases := []testCase{\n \t\t{a: 9, want: 3},\n \t\t{a: 16, want: 4},\n-\t\t{a: 25, want: 3},\n+\t\t{a: 98, want: 5},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n \t\tif tc.want != got {\n"
+                },
+                {
+                    "date": 1679604579022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,9 +123,9 @@\n \n \ttestCases := []testCase{\n \t\t{a: 9, want: 3},\n \t\t{a: 16, want: 4},\n-\t\t{a: 98, want: 5},\n+\t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n \t\tif tc.want != got {\n"
+                },
+                {
+                    "date": 1679604699172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n import (\n \t\"calculator\"\n \t\"testing\"\n+\t\n )\n \n func TestAdd(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1679604711727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n import (\n \t\"calculator\"\n \t\"testing\"\n-\t\n+\t\"math\"\n )\n \n func TestAdd(t *testing.T) {\n \tt.Parallel()\n@@ -114,8 +114,10 @@\n \t\tt.Error(\"want error for invalid input, got nil\")\n \t}\n }\n \n+\n+\n func TestSqrt(t *testing.T) {\n \tt.Parallel()\n \n \ttype testCase struct {\n"
+                },
+                {
+                    "date": 1679604718009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -114,10 +114,10 @@\n \t\tt.Error(\"want error for invalid input, got nil\")\n \t}\n }\n \n+func closeEnough\n \n-\n func TestSqrt(t *testing.T) {\n \tt.Parallel()\n \n \ttype testCase struct {\n"
+                },
+                {
+                    "date": 1679604726226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -114,9 +114,9 @@\n \t\tt.Error(\"want error for invalid input, got nil\")\n \t}\n }\n \n-func closeEnough\n+func closeEnough(a, b, tolerance float)\n \n func TestSqrt(t *testing.T) {\n \tt.Parallel()\n \n"
+                },
+                {
+                    "date": 1679604738639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -114,9 +114,11 @@\n \t\tt.Error(\"want error for invalid input, got nil\")\n \t}\n }\n \n-func closeEnough(a, b, tolerance float)\n+func closeEnough(a, b, tolerance float64) bool {\n+\treturn math.Abs()\n+}\n \n func TestSqrt(t *testing.T) {\n \tt.Parallel()\n \n"
+                },
+                {
+                    "date": 1679604748318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -115,9 +115,9 @@\n \t}\n }\n \n func closeEnough(a, b, tolerance float64) bool {\n-\treturn math.Abs()\n+\treturn math.Abs(a-b) <= tolerance\n }\n \n func TestSqrt(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1679604965789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,9 +132,10 @@\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n-\t\tif tc.want != got {\n+\t\tif tc.want != got \n+\t\t{\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1679604974785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,10 +132,10 @@\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n-\t\tif tc.want != got \n-\t\t{\n+\t\tif tc.want != got {}\n+\t\t} else {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1679605076306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,10 +132,10 @@\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n-\t\tif tc.want != got {}\n-\t\t} else {\n+\t\tif tc.want != got \n+\t\t} else{\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1679605082340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,10 +132,9 @@\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n-\t\tif tc.want != got \n-\t\t} else{\n+\t\tif closeEnoughtc.want != got {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1679605087467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,9 +132,9 @@\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n-\t\tif closeEnoughtc.want != got {\n+\t\tif closeEnough(tc.want, != got {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1679605095706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,9 +132,9 @@\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n-\t\tif closeEnough(tc.want, != got {\n+\t\tif closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1679605101808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,9 +132,9 @@\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n-\t\tif closeEnough(tc.want, got) {\n+\t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1679605122600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,8 +132,9 @@\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n+\t\t\n \t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n"
+                },
+                {
+                    "date": 1679605127973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,9 +132,9 @@\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n-\t\t\n+\t\tresult :=\n \t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n"
+                },
+                {
+                    "date": 1679605135772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -133,9 +133,9 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n \t\tresult :=\n-\t\tif !closeEnough(tc.want, got) {\n+\t\tif ! {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1679605142499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,10 +132,10 @@\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n-\t\tresult :=\n-\t\tif ! {\n+\t\tresult := closeEnough(tc.want, got)\n+\t\tif !result {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1679605186210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -114,9 +114,9 @@\n \t\tt.Error(\"want error for invalid input, got nil\")\n \t}\n }\n \n-func closeEnough(a, b, tolerance float64) bool {\n+func closeEnough(a, b float64) bool {\n \treturn math.Abs(a-b) <= tolerance\n }\n \n func TestSqrt(t *testing.T) {\n"
+                },
+                {
+                    "date": 1679605194381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -115,9 +115,9 @@\n \t}\n }\n \n func closeEnough(a, b float64) bool {\n-\treturn math.Abs(a-b) <= tolerance\n+\treturn math.Abs(a-b) <=  0.001\n }\n \n func TestSqrt(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1679605250683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,10 +132,10 @@\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n-\t\tresult := closeEnough(tc.want, got)\n-\t\tif !result {\n+\t\t// result := closeEnough(tc.want, got)\n+\t\t// if !result {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1679605257504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -134,8 +134,9 @@\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n \t\t// result := closeEnough(tc.want, got)\n \t\t// if !result {\n+\t\tif\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1679605266171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -134,9 +134,9 @@\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n \t\t// result := closeEnough(tc.want, got)\n \t\t// if !result {\n-\t\tif\n+\t\tif closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1679605282192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -134,9 +134,9 @@\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n \t\t// result := closeEnough(tc.want, got)\n \t\t// if !result {\n-\t\tif closeEnough(tc.want, got) {\n+\t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1679605295399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,10 +132,8 @@\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n-\t\t// result := closeEnough(tc.want, got)\n-\t\t// if !result {\n \t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.a, tc.want, got)\n \t\t}\n"
+                },
+                {
+                    "date": 1679605356946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n func TestSqrt(t *testing.T) {\n \tt.Parallel()\n \n \ttype testCase struct {\n-\t\ta, want float64\n+\t\tinput, want float64\n \t}\n \n \ttestCases := []testCase{\n \t\t{a: 9, want: 3},\n"
+                },
+                {
+                    "date": 1679605363462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,9 +126,9 @@\n \t\tinput, want float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{a: 9, want: 3},\n+\t\t{input: 9, want: 3},\n \t\t{a: 16, want: 4},\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n"
+                },
+                {
+                    "date": 1679605370700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,9 +127,10 @@\n \t}\n \n \ttestCases := []testCase{\n \t\t{input: 9, want: 3},\n-\t\t{a: 16, want: 4},\n+\t\t{\t\t{input: 9, want: 3},\n+\t\t: 16, want: 4},\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n"
+                },
+                {
+                    "date": 1679605379089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,10 +127,9 @@\n \t}\n \n \ttestCases := []testCase{\n \t\t{input: 9, want: 3},\n-\t\t{\t\t{input: 9, want: 3},\n-\t\t: 16, want: 4},\n+\t\t{input: 16, want: 4},\n \t\t{a: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot := calculator.Sqrt(tc.a)\n"
+                },
+                {
+                    "date": 1679605385432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,14 +128,14 @@\n \n \ttestCases := []testCase{\n \t\t{input: 9, want: 3},\n \t\t{input: 16, want: 4},\n-\t\t{a: 98, want: 9.899494937},\n+\t\t{input: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n-\t\tgot := calculator.Sqrt(tc.a)\n+\t\tgot := calculator.Sqrt(tc.input)\n \t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n-\t\t\t\ttc.a, tc.want, got)\n+\t\t\t\ttc.input, tc.want, got)\n \t\t}\n \t}\n }\n"
+                },
+                {
+                    "date": 1679605586986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n package calculator_test\n \n import (\n \t\"calculator\"\n+\t\"math\"\n \t\"testing\"\n-\t\"math\"\n )\n \n func TestAdd(t *testing.T) {\n \tt.Parallel()\n@@ -115,9 +115,9 @@\n \t}\n }\n \n func closeEnough(a, b float64) bool {\n-\treturn math.Abs(a-b) <=  0.001\n+\treturn math.Abs(a-b) <= 0.001\n }\n \n func TestSqrt(t *testing.T) {\n \tt.Parallel()\n@@ -126,9 +126,9 @@\n \t\tinput, want float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{input: 9, want: 3},\n+\t\t{input: 2, want: 3},\n \t\t{input: 16, want: 4},\n \t\t{input: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n"
+                },
+                {
+                    "date": 1679605592329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,9 +126,9 @@\n \t\tinput, want float64\n \t}\n \n \ttestCases := []testCase{\n-\t\t{input: 2, want: 3},\n+\t\t{input: 2, want: 1.41421356237},\n \t\t{input: 16, want: 4},\n \t\t{input: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n"
+                },
+                {
+                    "date": 1679605603927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,9 +131,9 @@\n \t\t{input: 16, want: 4},\n \t\t{input: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n-\t\tgot := calculator.Sqrt(tc.input)\n+\t\tgot, err := calculator.Sqrt(tc.input)\n \t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.input, tc.want, got)\n \t\t}\n"
+                },
+                {
+                    "date": 1679605612727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,8 +132,9 @@\n \t\t{input: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot, err := calculator.Sqrt(tc.input)\n+\t\t\n \t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.input, tc.want, got)\n \t\t}\n"
+                },
+                {
+                    "date": 1679605617760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,9 +132,9 @@\n \t\t{input: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot, err := calculator.Sqrt(tc.input)\n-\t\t\n+\t\tif err \n \t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.input, tc.want, got)\n \t\t}\n"
+                },
+                {
+                    "date": 1679605622811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,9 +132,11 @@\n \t\t{input: 98, want: 9.899494937},\n \t}\n \tfor _, tc := range testCases {\n \t\tgot, err := calculator.Sqrt(tc.input)\n-\t\tif err \n+\t\tif err != nil {\n+\t\t\t\n+\t\t}\n \t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.input, tc.want, got)\n \t\t}\n"
+                },
+                {
+                    "date": 1679605628011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -133,9 +133,9 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot, err := calculator.Sqrt(tc.input)\n \t\tif err != nil {\n-\t\t\t\n+\t\t\tt.Fatalf()\n \t\t}\n \t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.input, tc.want, got)\n"
+                },
+                {
+                    "date": 1679605635311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -133,9 +133,9 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot, err := calculator.Sqrt(tc.input)\n \t\tif err != nil {\n-\t\t\tt.Fatalf()\n+\t\t\tt.Fatalf(\"\", tc.input)\n \t\t}\n \t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.input, tc.want, got)\n"
+                },
+                {
+                    "date": 1679605642620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -133,9 +133,9 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot, err := calculator.Sqrt(tc.input)\n \t\tif err != nil {\n-\t\t\tt.Fatalf(\"\", tc.input)\n+\t\t\tt.Fatalf(\"Sqrt\", tc.input, err)\n \t\t}\n \t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.input, tc.want, got)\n"
+                },
+                {
+                    "date": 1679605648127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -133,9 +133,9 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot, err := calculator.Sqrt(tc.input)\n \t\tif err != nil {\n-\t\t\tt.Fatalf(\"Sqrt\", tc.input, err)\n+\t\t\tt.Fatalf(\"Sqrt(%f)\", tc.input, err)\n \t\t}\n \t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.input, tc.want, got)\n"
+                },
+                {
+                    "date": 1679605661411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -133,9 +133,9 @@\n \t}\n \tfor _, tc := range testCases {\n \t\tgot, err := calculator.Sqrt(tc.input)\n \t\tif err != nil {\n-\t\t\tt.Fatalf(\"Sqrt(%f)\", tc.input, err)\n+\t\t\tt.Fatalf(\"Sqrt(%f): want no error for valid input, got %v\", tc.input, err)\n \t\t}\n \t\tif !closeEnough(tc.want, got) {\n \t\t\tt.Errorf(\"Sqrt(%f): want %f, got %f\",\n \t\t\t\ttc.input, tc.want, got)\n"
+                },
+                {
+                    "date": 1679605790961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -141,4 +141,5 @@\n \t\t\t\ttc.input, tc.want, got)\n \t\t}\n \t}\n }\n+\n"
+                },
+                {
+                    "date": 1679605795989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -142,4 +142,7 @@\n \t\t}\n \t}\n }\n \n+\n+func TestSqrtInvalid(t *testing.T) {\n+\t\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679605805512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -144,5 +144,7 @@\n }\n \n \n func TestSqrtInvalid(t *testing.T) {\n-\t\n\\ No newline at end of file\n+\tt.Parallel()\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679605810794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,6 +145,7 @@\n \n \n func TestSqrtInvalid(t *testing.T) {\n \tt.Parallel()\n+\t_\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679605816914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,7 +145,7 @@\n \n \n func TestSqrtInvalid(t *testing.T) {\n \tt.Parallel()\n-\t_\n+\t_, err := ca\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679605825426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,7 +145,7 @@\n \n \n func TestSqrtInvalid(t *testing.T) {\n \tt.Parallel()\n-\t_, err := ca\n+\t_, err := calculator.S\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679605831941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,7 +145,8 @@\n \n \n func TestSqrtInvalid(t *testing.T) {\n \tt.Parallel()\n-\t_, err := calculator.S\n+\t_, err := calculator.Sqrt(-1)\n+\t\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679605838609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,7 +146,9 @@\n \n func TestSqrtInvalid(t *testing.T) {\n \tt.Parallel()\n \t_, err := calculator.Sqrt(-1)\n-\t\n+\tif err == nil {\n+\t\t\n+\t}\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679605844027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -147,8 +147,8 @@\n func TestSqrtInvalid(t *testing.T) {\n \tt.Parallel()\n \t_, err := calculator.Sqrt(-1)\n \tif err == nil {\n-\t\t\n+\t\tt.Error(\"\")\n \t}\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679605849542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -147,8 +147,8 @@\n func TestSqrtInvalid(t *testing.T) {\n \tt.Parallel()\n \t_, err := calculator.Sqrt(-1)\n \tif err == nil {\n-\t\tt.Error(\"\")\n+\t\tt.Error(\"Sqrt()\")\n \t}\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679605863561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -147,8 +147,8 @@\n func TestSqrtInvalid(t *testing.T) {\n \tt.Parallel()\n \t_, err := calculator.Sqrt(-1)\n \tif err == nil {\n-\t\tt.Error(\"Sqrt()\")\n+\t\tt.Error(\"Sqrt(-1): want error for invalid input, got nil\")\n \t}\n \n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1679433137777,
+            "name": "Commit-0",
+            "content": "package calculator_test\n\nimport (\n\t\"calculator\"\n\t\"testing\"\n)\n\nfunc TestAdd(t *testing.T) {\n\tt.Parallel()\n\t// var want float64 = 4\n\t// got := calculator.Add(2, 2)\n\t// if want != got {\n\t// \tt.Errorf(\"want %f, got %f\", want, got)\n\t// }\n}\n\nfunc TestSubtract(t *testing.T) {\n\tt.Parallel()\n\tvar want float64 = 2\n\tgot := calculator.Subtract(4, 2)\n\tif want != got {\n\t\tt.Errorf(\"want %f, got %f\", want, got)\n\t}\n}\n\nfunc TestMultiply(t *testing.T) {\n\tt.Parallel()\n\tvar want float64 = 9\n\tgot := calculator.Multiply(3, 3)\n\tif want != got {\n\t\tt.Errorf(\"want %f, got %f\", want, got)\n\t}\n}\n"
+        }
+    ]
+}

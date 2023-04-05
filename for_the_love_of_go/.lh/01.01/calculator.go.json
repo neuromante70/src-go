@@ -1,0 +1,66 @@
+{
+    "sourceFile": "01.01/calculator.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1679432428861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1679432433982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n func Subtract(a, b float64) float64 {\n \treturn a - b\n }\n \n-Multiply\n\\ No newline at end of file\n+func Multiply()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679432439372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n func Subtract(a, b float64) float64 {\n \treturn a - b\n }\n \n-func Multiply()\n\\ No newline at end of file\n+func Multiply(a, b float64)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679432448603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,7 @@\n func Subtract(a, b float64) float64 {\n \treturn a - b\n }\n \n-func Multiply(a, b float64)\n\\ No newline at end of file\n+func Multiply(a, b float64) float64 {\n+\treturn a \n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679432459857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n // returns the result of subtracting b from a.\n func Subtract(a, b float64) float64 {\n \treturn a - b\n }\n-\n+// Add takes two numbers and returns the result of adding\n+// them together.\n func Multiply(a, b float64) float64 {\n-\treturn a \n+\treturn a * b\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679432465924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,10 @@\n // returns the result of subtracting b from a.\n func Subtract(a, b float64) float64 {\n \treturn a - b\n }\n-// Add takes two numbers and returns the result of adding\n+\n+// Multiply takes two numbers and returns the result of adding\n // them together.\n func Multiply(a, b float64) float64 {\n \treturn a * b\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679432473943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n func Subtract(a, b float64) float64 {\n \treturn a - b\n }\n \n-// Multiply takes two numbers and returns the result of adding\n+// Multiply takes two numbers and returns the result of multiplying\n // them together.\n func Multiply(a, b float64) float64 {\n \treturn a * b\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679432583165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n }\n \n // Multiply takes two numbers and returns the result of multiplying\n // them together.\n-func Multiply(a, b float64) float64 {\n-\treturn a * b\n-}\n\\ No newline at end of file\n+// func Multiply(a, b float64) float64 {\n+// \treturn a * b\n+// }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679432593613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n }\n \n // Multiply takes two numbers and returns the result of multiplying\n // them together.\n-// func Multiply(a, b float64) float64 {\n-// \treturn a * b\n-// }\n\\ No newline at end of file\n+func Multiply(a, b float64) float64 {\n+\treturn a * b\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679432668107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,6 +16,6 @@\n \n // Multiply takes two numbers and returns the result of multiplying\n // them together.\n func Multiply(a, b float64) float64 {\n-\treturn a * b\n+\treturn ??a * b\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679432735892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,6 +16,6 @@\n \n // Multiply takes two numbers and returns the result of multiplying\n // them together.\n func Multiply(a, b float64) float64 {\n-\treturn ??a * b\n+\treturn 9 //a * b\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679432742239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,6 +16,6 @@\n \n // Multiply takes two numbers and returns the result of multiplying\n // them together.\n func Multiply(a, b float64) float64 {\n-\treturn 9 //a * b\n+\treturn 11 //a * b\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679432894883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n // Multiply takes two numbers and returns the result of multiplying\n // them together.\n func Multiply(a, b float64) float64 {\n \treturn 11 //a * b\n-}\n\\ No newline at end of file\n+}\n"
+                }
+            ],
+            "date": 1679432428861,
+            "name": "Commit-0",
+            "content": "// Package calculator does simple calculations.\npackage calculator\n\n// Add takes two numbers and returns the result of adding\n// them together.\n\nfunc Add(a, b float64) float64 {\n\treturn a + b\n}\n\n// Subtract takes two numbers a and b, and\n// returns the result of subtracting b from a.\nfunc Subtract(a, b float64) float64 {\n\treturn a - b\n}\n\nMultiply"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "sourceFile": "06.01/bookstore/bookstore_test.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1679610345809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1679610354658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-packag\n\\ No newline at end of file\n+package bookstore\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679610361225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,5 @@\n-package bookstore\n\\ No newline at end of file\n+package bookstore\n+\n+import (\n+\t\n+)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679610367756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n package bookstore\n \n import (\n-\t\n+\t\"bookstore\"\n+\t\"testing\"\n )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679610407906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n \t\"bookstore\"\n \t\"testing\"\n )\n \n-\n+b\n"
+                },
+                {
+                    "date": 1679610533928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,5 @@\n \tAuthor:\t\"Charles Dickens\",\n \tCopies:\t8\n }\n \n-func TestBook\n\\ No newline at end of file\n+func TestBook()\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1679610345809,
+            "name": "Commit-0",
+            "content": "packag"
+        }
+    ]
+}

@@ -1,0 +1,226 @@
+{
+    "sourceFile": "05.01/calculator.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 52,
+            "patches": [
+                {
+                    "date": 1679433620086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1679480629296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,4 +18,6 @@\n // them together.\n func Multiply(a, b float64) float64 {\n \treturn a * b\n }\n+\n+func Divide()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679480641066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,7 @@\n func Multiply(a, b float64) float64 {\n \treturn a * b\n }\n \n-func Divide()\n\\ No newline at end of file\n+func Divide(a, b float64) float64 {\n+\treturn a \n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679480913812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,6 @@\n \treturn a * b\n }\n \n func Divide(a, b float64) float64 {\n-\treturn a \n-}\n\\ No newline at end of file\n+\treturn a / b, err\n+}\n"
+                },
+                {
+                    "date": 1679480920426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n func Multiply(a, b float64) float64 {\n \treturn a * b\n }\n \n-func Divide(a, b float64) float64 {\n+func Divide(a, b float64) float64 errors {\n \treturn a / b, err\n }\n"
+                },
+                {
+                    "date": 1679480928281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n func Multiply(a, b float64) float64 {\n \treturn a * b\n }\n \n-func Divide(a, b float64) float64 errors {\n+func Divide(a, b float64) float64, error {\n \treturn a / b, err\n }\n"
+                },
+                {
+                    "date": 1679480947548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n func Multiply(a, b float64) float64 {\n \treturn a * b\n }\n \n-func Divide(a, b float64) float64, error {\n+func Divide(a, b float64) float64; error {\n \treturn a / b, err\n }\n"
+                },
+                {
+                    "date": 1679481002363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n func Multiply(a, b float64) float64 {\n \treturn a * b\n }\n \n-func Divide(a, b float64) float64; error {\n+func Divide(a, b float64) (float64 error {\n \treturn a / b, err\n }\n"
+                },
+                {
+                    "date": 1679481459326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n func Multiply(a, b float64) float64 {\n \treturn a * b\n }\n \n-func Divide(a, b float64) (float64 error {\n-\treturn a / b, err\n+func Divide(a, b float64) (float64, error) {\n+\treturn a / b, error\n }\n"
+                },
+                {
+                    "date": 1679481507102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n // Package calculator does simple calculations.\n package calculator\n \n+import errors\n+\n // Add takes two numbers and returns the result of adding\n // them together.\n \n func Add(a, b float64) float64 {\n@@ -20,6 +22,6 @@\n \treturn a * b\n }\n \n func Divide(a, b float64) (float64, error) {\n-\treturn a / b, error\n+\treturn a / b, errors\n }\n"
+                },
+                {
+                    "date": 1679481512151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n // Package calculator does simple calculations.\n package calculator\n \n-import errors\n+import error\n \n // Add takes two numbers and returns the result of adding\n // them together.\n \n"
+                },
+                {
+                    "date": 1679481518449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n // Package calculator does simple calculations.\n package calculator\n \n-import error\n+import \"errors\n \n // Add takes two numbers and returns the result of adding\n // them together.\n \n"
+                },
+                {
+                    "date": 1679481529200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n // Package calculator does simple calculations.\n package calculator\n \n-import \"errors\n+import \"errors\"\n \n // Add takes two numbers and returns the result of adding\n // them together.\n \n@@ -21,7 +21,7 @@\n func Multiply(a, b float64) float64 {\n \treturn a * b\n }\n \n-func Divide(a, b float64) (float64, error) {\n+func Divide(a, b float64) (float64, errors) {\n \treturn a / b, errors\n }\n"
+                },
+                {
+                    "date": 1679481548378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n func Multiply(a, b float64) float64 {\n \treturn a * b\n }\n \n-func Divide(a, b float64) (float64, errors) {\n-\treturn a / b, errors\n+func Divide(a, b float64) (float64, error) {\n+\treturn a / b, err\n }\n"
+                },
+                {
+                    "date": 1679481558305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,6 @@\n \treturn a * b\n }\n \n func Divide(a, b float64) (float64, error) {\n-\treturn a / b, err\n+\treturn a / b, errors.\n }\n"
+                },
+                {
+                    "date": 1679481563448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,6 @@\n \treturn a * b\n }\n \n func Divide(a, b float64) (float64, error) {\n-\treturn a / b, errors.\n+\treturn a / b, errors.New(\"\")\n }\n"
+                },
+                {
+                    "date": 1679481575085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,6 @@\n \treturn a * b\n }\n \n func Divide(a, b float64) (float64, error) {\n-\treturn a / b, errors.New(\"\")\n+\treturn a / b, errors.New(\"0 is not allowed\")\n }\n"
+                },
+                {
+                    "date": 1679481580328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,6 @@\n \treturn a * b\n }\n \n func Divide(a, b float64) (float64, error) {\n-\treturn a / b, errors.New(\"0 is not allowed\")\n+\treturn a / b, errors.New(\"0 and string is not allowed\")\n }\n"
+                },
+                {
+                    "date": 1679482130973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,6 @@\n \treturn a * b\n }\n \n func Divide(a, b float64) (float64, error) {\n-\treturn a / b, errors.New(\"0 and string is not allowed\")\n+\treturn a / b, nil\n }\n"
+                },
+                {
+                    "date": 1679482145829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n // Package calculator does simple calculations.\n package calculator\n \n-import \"errors\"\n+// import \"errors\"\n \n // Add takes two numbers and returns the result of adding\n // them together.\n \n"
+                },
+                {
+                    "date": 1679482451795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,7 @@\n \treturn a * b\n }\n \n func Divide(a, b float64) (float64, error) {\n+\t\n \treturn a / b, nil\n }\n"
+                },
+                {
+                    "date": 1679482464444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n // Package calculator does simple calculations.\n package calculator\n \n+import \"errors\"\n+\n // import \"errors\"\n \n // Add takes two numbers and returns the result of adding\n // them together.\n@@ -22,7 +24,9 @@\n \treturn a * b\n }\n \n func Divide(a, b float64) (float64, error) {\n-\t\n+\tif b == 0 {\n+\t\treturn 0, errors.New()\n+\t}\n \treturn a / b, nil\n }\n"
+                },
+                {
+                    "date": 1679482472341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,8 @@\n }\n \n func Divide(a, b float64) (float64, error) {\n \tif b == 0 {\n-\t\treturn 0, errors.New()\n+\t\treturn 0, errors.New(\"division by zero nto a\")\n \t}\n \treturn a / b, nil\n }\n"
+                },
+                {
+                    "date": 1679482477722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,8 @@\n }\n \n func Divide(a, b float64) (float64, error) {\n \tif b == 0 {\n-\t\treturn 0, errors.New(\"division by zero nto a\")\n+\t\treturn 0, errors.New(\"division by zero not allowed\")\n \t}\n \treturn a / b, nil\n }\n"
+                },
+                {
+                    "date": 1679522539034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,4 +29,6 @@\n \t\treturn 0, errors.New(\"division by zero not allowed\")\n \t}\n \treturn a / b, nil\n }\n+\n+\n"
+                },
+                {
+                    "date": 1679522550294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,5 +30,5 @@\n \t}\n \treturn a / b, nil\n }\n \n-\n+func Sqrt\n"
+                },
+                {
+                    "date": 1679522556686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,5 +30,5 @@\n \t}\n \treturn a / b, nil\n }\n \n-func Sqrt\n+func Sqrt(a, b float)\n"
+                },
+                {
+                    "date": 1679522567718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,5 +30,5 @@\n \t}\n \treturn a / b, nil\n }\n \n-func Sqrt(a, b float)\n+func Sqrt(a, b float64) (float)\n"
+                },
+                {
+                    "date": 1679522573033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,5 +30,7 @@\n \t}\n \treturn a / b, nil\n }\n \n-func Sqrt(a, b float64) (float)\n+func Sqrt(a, b float64) (float64) {\n+\t\n+}\n"
+                },
+                {
+                    "date": 1679522581856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,6 +31,6 @@\n \treturn a / b, nil\n }\n \n func Sqrt(a, b float64) (float64) {\n-\t\n+\treturn \n }\n"
+                },
+                {
+                    "date": 1679522587148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,6 +31,6 @@\n \treturn a / b, nil\n }\n \n func Sqrt(a, b float64) (float64) {\n-\treturn \n+\treturn 2\n }\n"
+                },
+                {
+                    "date": 1679604378626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,7 +30,7 @@\n \t}\n \treturn a / b, nil\n }\n \n-func Sqrt(a, b float64) (float64) {\n-\treturn 2\n+func Sqrt(a, float64) (float64) {\n+\treturn 3\n }\n"
+                },
+                {
+                    "date": 1679604409763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n // Package calculator does simple calculations.\n package calculator\n \n-import \"errors\"\n+import ()\"errors\"\n \n // import \"errors\"\n \n // Add takes two numbers and returns the result of adding\n@@ -30,7 +30,7 @@\n \t}\n \treturn a / b, nil\n }\n \n-func Sqrt(a, float64) (float64) {\n+func Sqrt(a float64) float64 {\n \treturn 3\n }\n"
+                },
+                {
+                    "date": 1679604417302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,11 @@\n // Package calculator does simple calculations.\n package calculator\n \n-import ()\"errors\"\n+import (\n+\t\"errors\"\n+\t\n+)\n \n // import \"errors\"\n \n // Add takes two numbers and returns the result of adding\n"
+                },
+                {
+                    "date": 1679604425298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n package calculator\n \n import (\n \t\"errors\"\n-\t\n+\t\"math\"\n )\n \n // import \"errors\"\n \n@@ -34,6 +34,6 @@\n \treturn a / b, nil\n }\n \n func Sqrt(a float64) float64 {\n-\treturn 3\n+\t 3\n }\n"
+                },
+                {
+                    "date": 1679604433644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,6 +34,6 @@\n \treturn a / b, nil\n }\n \n func Sqrt(a float64) float64 {\n-\t 3\n+\treturn math.Sq\n }\n"
+                },
+                {
+                    "date": 1679605433552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,15 +25,18 @@\n // them together.\n func Multiply(a, b float64) float64 {\n \treturn a * b\n }\n-\n+// Divide takes two numbers and returns the\n+// result of dividing the first by the\n+// second, or an error if the second value\n+// is zero.\n func Divide(a, b float64) (float64, error) {\n \tif b == 0 {\n \t\treturn 0, errors.New(\"division by zero not allowed\")\n \t}\n \treturn a / b, nil\n }\n \n func Sqrt(a float64) float64 {\n-\treturn math.Sq\n+\treturn math.Sqrt(a)\n }\n"
+                },
+                {
+                    "date": 1679605442430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n // them together.\n func Multiply(a, b float64) float64 {\n \treturn a * b\n }\n+\n // Divide takes two numbers and returns the\n // result of dividing the first by the\n // second, or an error if the second value\n // is zero.\n@@ -36,7 +37,9 @@\n \t}\n \treturn a / b, nil\n }\n \n+// Sqrt returns the square root of its input,\n+// or an error for negative inputs.\n func Sqrt(a float64) float64 {\n \treturn math.Sqrt(a)\n }\n"
+                },
+                {
+                    "date": 1679605452898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,7 +39,7 @@\n }\n \n // Sqrt returns the square root of its input,\n // or an error for negative inputs.\n-func Sqrt(a float64) float64 {\n+func Sqrt(a float64) (float64 {\n \treturn math.Sqrt(a)\n }\n"
+                },
+                {
+                    "date": 1679605465836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,7 +39,7 @@\n }\n \n // Sqrt returns the square root of its input,\n // or an error for negative inputs.\n-func Sqrt(a float64) (float64 {\n-\treturn math.Sqrt(a)\n-}\n+func Sqrt(a float64) (float64, err) {\n+\tif input\n+\treturn math.Sqrt(a)}\n"
+                },
+                {
+                    "date": 1679605472259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,6 +40,8 @@\n \n // Sqrt returns the square root of its input,\n // or an error for negative inputs.\n func Sqrt(a float64) (float64, err) {\n-\tif input\n+\tif input < 0 {\n+\t\t\n+\t}\n \treturn math.Sqrt(a)}\n"
+                },
+                {
+                    "date": 1679605479240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,7 +41,7 @@\n // Sqrt returns the square root of its input,\n // or an error for negative inputs.\n func Sqrt(a float64) (float64, err) {\n \tif input < 0 {\n-\t\t\n+\t\treturn 0, erro\n \t}\n \treturn math.Sqrt(a)}\n"
+                },
+                {
+                    "date": 1679605485491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,7 +41,7 @@\n // Sqrt returns the square root of its input,\n // or an error for negative inputs.\n func Sqrt(a float64) (float64, err) {\n \tif input < 0 {\n-\t\treturn 0, erro\n+\t\treturn 0, errors.New(\"\")\n \t}\n \treturn math.Sqrt(a)}\n"
+                },
+                {
+                    "date": 1679605495798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n package calculator\n \n import (\n \t\"errors\"\n+\t\"fmt\"\n \t\"math\"\n )\n \n // import \"errors\"\n@@ -41,7 +42,7 @@\n // Sqrt returns the square root of its input,\n // or an error for negative inputs.\n func Sqrt(a float64) (float64, err) {\n \tif input < 0 {\n-\t\treturn 0, errors.New(\"\")\n+\t\treturn 0, fmt.Errorf()\n \t}\n \treturn math.Sqrt(a)}\n"
+                },
+                {
+                    "date": 1679605502057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,7 +42,7 @@\n // Sqrt returns the square root of its input,\n // or an error for negative inputs.\n func Sqrt(a float64) (float64, err) {\n \tif input < 0 {\n-\t\treturn 0, fmt.Errorf()\n+\t\treturn 0, fmt.Errorf(\"\", input)\n \t}\n \treturn math.Sqrt(a)}\n"
+                },
+                {
+                    "date": 1679605514569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,7 +42,7 @@\n // Sqrt returns the square root of its input,\n // or an error for negative inputs.\n func Sqrt(a float64) (float64, err) {\n \tif input < 0 {\n-\t\treturn 0, fmt.Errorf(\"\", input)\n+\t\treturn 0, fmt.Errorf(\"square root of negative number not allowed\", input)\n \t}\n \treturn math.Sqrt(a)}\n"
+                },
+                {
+                    "date": 1679605521598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,7 +42,7 @@\n // Sqrt returns the square root of its input,\n // or an error for negative inputs.\n func Sqrt(a float64) (float64, err) {\n \tif input < 0 {\n-\t\treturn 0, fmt.Errorf(\"square root of negative number not allowed\", input)\n+\t\treturn 0, fmt.Errorf(\"square root of negative number not allowed: %f\", input)\n \t}\n \treturn math.Sqrt(a)}\n"
+                },
+                {
+                    "date": 1679605528079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,5 +44,6 @@\n func Sqrt(a float64) (float64, err) {\n \tif input < 0 {\n \t\treturn 0, fmt.Errorf(\"square root of negative number not allowed: %f\", input)\n \t}\n-\treturn math.Sqrt(a)}\n+\treturn math.Sqrt(a)\n+}\n"
+                },
+                {
+                    "date": 1679605701154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,10 +40,10 @@\n }\n \n // Sqrt returns the square root of its input,\n // or an error for negative inputs.\n-func Sqrt(a float64) (float64, err) {\n+func Sqrt(input float64) (float64, err) {\n \tif input < 0 {\n \t\treturn 0, fmt.Errorf(\"square root of negative number not allowed: %f\", input)\n \t}\n-\treturn math.Sqrt(a)\n+\treturn math.Sqrt(a), nil\n }\n"
+                },
+                {
+                    "date": 1679605707322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n }\n \n // Sqrt returns the square root of its input,\n // or an error for negative inputs.\n-func Sqrt(input float64) (float64, err) {\n+func Sqrt(input float64) (float64 err) {\n \tif input < 0 {\n \t\treturn 0, fmt.Errorf(\"square root of negative number not allowed: %f\", input)\n \t}\n \treturn math.Sqrt(a), nil\n"
+                },
+                {
+                    "date": 1679605712952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n }\n \n // Sqrt returns the square root of its input,\n // or an error for negative inputs.\n-func Sqrt(input float64) (float64 err) {\n+func Sqrt(input float64) (float64, err) {\n \tif input < 0 {\n \t\treturn 0, fmt.Errorf(\"square root of negative number not allowed: %f\", input)\n \t}\n \treturn math.Sqrt(a), nil\n"
+                },
+                {
+                    "date": 1679605751734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,10 +40,10 @@\n }\n \n // Sqrt returns the square root of its input,\n // or an error for negative inputs.\n-func Sqrt(input float64) (float64, err) {\n+func Sqrt(input float64) (float64, error) {\n \tif input < 0 {\n \t\treturn 0, fmt.Errorf(\"square root of negative number not allowed: %f\", input)\n \t}\n-\treturn math.Sqrt(a), nil\n+\treturn math.Sqrt(1.41421356237), nil\n }\n"
+                },
+                {
+                    "date": 1679605757312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,6 +44,6 @@\n func Sqrt(input float64) (float64, error) {\n \tif input < 0 {\n \t\treturn 0, fmt.Errorf(\"square root of negative number not allowed: %f\", input)\n \t}\n-\treturn math.Sqrt(1.41421356237), nil\n+\treturn math.Sqrt(input), nil\n }\n"
+                }
+            ],
+            "date": 1679433620086,
+            "name": "Commit-0",
+            "content": "// Package calculator does simple calculations.\npackage calculator\n\n// Add takes two numbers and returns the result of adding\n// them together.\n\nfunc Add(a, b float64) float64 {\n\treturn a + b\n}\n\n// Subtract takes two numbers a and b, and\n// returns the result of subtracting b from a.\nfunc Subtract(a, b float64) float64 {\n\treturn a - b\n}\n\n// Multiply takes two numbers and returns the result of multiplying\n// them together.\nfunc Multiply(a, b float64) float64 {\n\treturn a * b\n}\n"
+        }
+    ]
+}

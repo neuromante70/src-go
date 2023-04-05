@@ -1,0 +1,322 @@
+{
+    "sourceFile": "08.01/main.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 76,
+            "patches": [
+                {
+                    "date": 1679780904836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1679780927696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,12 @@\n \tfmt.Println(\"test with \")\n }\n \n func main() {\n-\tfoo()\n-\tfmt.Println(\"vim-go\")\n+\n+b := bookstore.Book{\n+\tTitle: \"Nicholas Chuckleby\",\n+\tAuthor: \"Charles Dickens\",\n+\tCopies: 8,\n }\n-import (\n-\t\"fmt\"\n-)\n+\n+fmt.Println(b)\n"
+                },
+                {
+                    "date": 1679780936860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,4 +14,5 @@\n \tCopies: 8,\n }\n \n fmt.Println(b)\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679780943969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,8 @@\n package main\n \n import \"fmt\"\n \n-func foo() {\n-\tfmt.Println(\"test with \")\n-}\n-\n func main() {\n \n b := bookstore.Book{\n \tTitle: \"Nicholas Chuckleby\",\n"
+                },
+                {
+                    "date": 1679780954803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n package main\n \n-import \"fmt\"\n+import (\"fmt\"\n \n func main() {\n \n b := bookstore.Book{\n"
+                },
+                {
+                    "date": 1679780961201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n package main\n \n-import (\"fmt\"\n-\n+import (\n+\t\"fmt\"\n+\t''\n+)\n func main() {\n \n b := bookstore.Book{\n \tTitle: \"Nicholas Chuckleby\",\n"
+                },
+                {
+                    "date": 1679780966600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n package main\n \n import (\n \t\"fmt\"\n-\t''\n+\t\"bookstore\"\n )\n func main() {\n \n b := bookstore.Book{\n"
+                },
+                {
+                    "date": 1679781041165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,17 @@\n package main\n \n import (\n+\t\"for_the_love_of_go/08.01/bookstore\"\n \t\"fmt\"\n-\t\"bookstore\"\n )\n+\n func main() {\n \n-b := bookstore.Book{\n-\tTitle: \"Nicholas Chuckleby\",\n-\tAuthor: \"Charles Dickens\",\n-\tCopies: 8,\n+\tb := bookstore.Book{\n+\t\tTitle:  \"Nicholas Chuckleby\",\n\\ No newline at end of file\n+\t\tAuthor: \"Charles Dickens\",\n+\t\tCopies: 8,\n+\t}\n+\n+\tfmt.Println(b)\n }\n-\n-fmt.Println(b)\n-}\n"
+                },
+                {
+                    "date": 1680294966596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,8 @@\n package main\n \n-import (\n-\t\"for_the_love_of_go/08.01/bookstore\"\n-\t\"fmt\"\n-)\n+import \"fmt\"\n \n func main() {\n-\n-\tb := bookstore.Book{\n-\t\tTitle:  \"Nicholas Chuckleby\",\n-\t\tAuthor: \"Charles Dickens\",\n-\t\tCopies: 8,\n-\t}\n-\n-\tfmt.Println(b)\n\\ No newline at end of file\n-}\n+\tfmt.Println(\"vim-go\")\n+\t\n+}\n"
+                },
+                {
+                    "date": 1680294975832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,7 @@\n import \"fmt\"\n \n func main() {\n \tfmt.Println(\"vim-go\")\n+\tvar books []books\n \t\n }\n"
+                },
+                {
+                    "date": 1680294981462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,7 @@\n \n func main() {\n \tfmt.Println(\"vim-go\")\n \tvar books []books\n+\t_ = books\n \t\n }\n"
+                },
+                {
+                    "date": 1680294993715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n \n func main() {\n \tfmt.Println(\"vim-go\")\n \tvar books []books\n-\t_ = books\n-\t\n+\tbooks\n+\n }\n"
+                },
+                {
+                    "date": 1680295001464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n \n func main() {\n \tfmt.Println(\"vim-go\")\n \tvar books []books\n-\tbooks\n+\tbooks = []Books{}\n \n }\n"
+                },
+                {
+                    "date": 1680295009745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,8 @@\n import \"fmt\"\n \n func main() {\n \tfmt.Println(\"vim-go\")\n-\tvar books []books\n+\tvar books []Books\n \tbooks = []Books{}\n \n }\n"
+                },
+                {
+                    "date": 1680295015335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import \"fmt\"\n \n func main() {\n \tfmt.Println(\"vim-go\")\n-\tvar books []Books\n+\t// var books []Book\n \tbooks = []Books{}\n+\t\n \n }\n"
+                },
+                {
+                    "date": 1680295021609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,10 @@\n \n func main() {\n \tfmt.Println(\"vim-go\")\n \t// var books []Book\n-\tbooks = []Books{}\n-\t\n+\tbooks = []Books{\n+\t\t\n+\t}\n \n+\n }\n"
+                },
+                {
+                    "date": 1680295032092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n func main() {\n \tfmt.Println(\"vim-go\")\n \t// var books []Book\n \tbooks = []Books{\n-\t\t\n+\t\t{}\n \t}\n \n \n }\n"
+                },
+                {
+                    "date": 1680295043396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n func main() {\n \tfmt.Println(\"vim-go\")\n \t// var books []Book\n \tbooks = []Books{\n-\t\t{}\n+\t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"}\n \t}\n \n \n }\n"
+                },
+                {
+                    "date": 1680295051827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,10 @@\n func main() {\n \tfmt.Println(\"vim-go\")\n \t// var books []Book\n \tbooks = []Books{\n-\t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"}\n+\t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n+\t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \n \n }\n"
+                },
+                {
+                    "date": 1680295090975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n \tbooks = []Books{\n \t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n+\tfirst := books\n \n-\n }\n"
+                },
+                {
+                    "date": 1680295110423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,8 @@\n \tbooks = []Books{\n \t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n-\tfirst := books\n+\tfirst := books[0]\n+\tfmt.Println\n \n }\n"
+                },
+                {
+                    "date": 1680295116333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,8 @@\n \t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n-\tfmt.Println\n+\tfmt.Println(len(books))\n+\t\n \n }\n"
+                },
+                {
+                    "date": 1680295123500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,13 @@\n \n func main() {\n \tfmt.Println(\"vim-go\")\n \t// var books []Book\n-\tbooks = []Books{\n+\tbooks : = []Books{\n \t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n \tfmt.Println(len(books))\n-\t\n \n+\n }\n"
+                },
+                {
+                    "date": 1680295144107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import \"fmt\"\n \n func main() {\n \tfmt.Println(\"vim-go\")\n-\t// var books []Book\n+\tvar books []Book\n \tbooks : = []Books{\n \t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n"
+                },
+                {
+                    "date": 1680295153604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n func main() {\n \tfmt.Println(\"vim-go\")\n \tvar books []Book\n-\tbooks : = []Books{\n+\tbooks = []Book{\n \t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n"
+                },
+                {
+                    "date": 1680295165167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import \"fmt\"\n \n func main() {\n \tfmt.Println(\"vim-go\")\n-\tvar books []Book\n+\t// var books []Book\n \tbooks = []Book{\n \t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n"
+                },
+                {
+                    "date": 1680295170458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n func main() {\n \tfmt.Println(\"vim-go\")\n \t// var books []Book\n+\tbooks = :\n \tbooks = []Book{\n \t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n"
+                },
+                {
+                    "date": 1680295175564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n func main() {\n \tfmt.Println(\"vim-go\")\n \t// var books []Book\n-\tbooks = :\n+\tbooks = []\n \tbooks = []Book{\n \t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n"
+                },
+                {
+                    "date": 1680295198791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n func main() {\n \tfmt.Println(\"vim-go\")\n \t// var books []Book\n-\tbooks = []\n+\t// books = []Book{}\n \tbooks = []Book{\n \t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n"
+                },
+                {
+                    "date": 1680295216334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,15 +3,16 @@\n import \"fmt\"\n \n func main() {\n \tfmt.Println(\"vim-go\")\n-\t// var books []Book\n+\tvar books []Book\n \t// books = []Book{}\n \tbooks = []Book{\n \t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n \tfmt.Println(len(books))\n+\tfmt.Prinln\n \n \n }\n"
+                },
+                {
+                    "date": 1680295221858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,8 @@\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n \tfmt.Println(len(books))\n-\tfmt.Prinln\n+\tfmt.Println(first)\n \n \n }\n"
+                },
+                {
+                    "date": 1680295253374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import \"fmt\"\n \n func main() {\n \tfmt.Println(\"vim-go\")\n-\tvar books []Book\n+\t// var books []Book\n \t// books = []Book{}\n \tbooks = []Book{\n \t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n"
+                },
+                {
+                    "date": 1680295298202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,11 @@\n import \"fmt\"\n \n func main() {\n \tfmt.Println(\"vim-go\")\n-\t// var books []Book\n+\tvar books []Book\n \t// books = []Book{}\n-\tbooks = []Book{\n+\tbooks := []Book{\n \t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n"
+                },
+                {
+                    "date": 1680295362896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,13 @@\n func main() {\n \tfmt.Println(\"vim-go\")\n \tvar books []Book\n \t// books = []Book{}\n-\tbooks := []Book{\n-\t\t{Title:  \"Delightfully Uneventful Trip on the Orient Express\"},\n+\tbooks = []Book{\n+\t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n-\n }\n"
+                },
+                {
+                    "date": 1680295496222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import \"fmt\"\n \n func main() {\n \tfmt.Println(\"vim-go\")\n-\tvar books []Book\n+\tvar books = []Book\n \t// books = []Book{}\n \tbooks = []Book{\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n"
+                },
+                {
+                    "date": 1680295502163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import \"fmt\"\n \n func main() {\n \tfmt.Println(\"vim-go\")\n-\tvar books = []Book\n+\tvar books = []Book{}\n \t// books = []Book{}\n \tbooks = []Book{\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n"
+                },
+                {
+                    "date": 1680295517408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n func main() {\n \tfmt.Println(\"vim-go\")\n \tvar books = []Book{}\n \t// books = []Book{}\n-\tbooks = []Book{\n+\tvbooks = []Book{\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n"
+                },
+                {
+                    "date": 1680295556735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n func main() {\n \tfmt.Println(\"vim-go\")\n \tvar books = []Book{}\n \t// books = []Book{}\n-\tvbooks = []Book{\n+\tvarbooks = []Book{\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n"
+                },
+                {
+                    "date": 1680295565875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,11 @@\n import \"fmt\"\n \n func main() {\n \tfmt.Println(\"vim-go\")\n-\tvar books = []Book{}\n+\ttype books = []Book\n \t// books = []Book{}\n-\tvarbooks = []Book{\n+\tbooks = []Book{\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n"
+                },
+                {
+                    "date": 1680295573670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n func main() {\n \tfmt.Println(\"vim-go\")\n \ttype books = []Book\n \t// books = []Book{}\n-\tbooks = []Book{\n+\tvar books = []Book{\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n"
+                },
+                {
+                    "date": 1680295616745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,14 @@\n package main\n \n import \"fmt\"\n \n+type Book struct {\n+\tTitle  string\n+\tAuthor string\n+\tCopies int\n+}\n+\n func main() {\n \tfmt.Println(\"vim-go\")\n \ttype books = []Book\n \t// books = []Book{}\n"
+                },
+                {
+                    "date": 1680295676127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n }\n \n func main() {\n \tfmt.Println(\"vim-go\")\n-\ttype books = []Book\n+\tvar books []Book\n \t// books = []Book{}\n \tvar books = []Book{\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n"
+                },
+                {
+                    "date": 1680295682261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n func main() {\n \tfmt.Println(\"vim-go\")\n \tvar books []Book\n \t// books = []Book{}\n-\tvar books = []Book{\n+\tbooks = []Book{\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n"
+                },
+                {
+                    "date": 1680295702553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n \tCopies int\n }\n \n func main() {\n-\tfmt.Println(\"vim-go\")\n \tvar books []Book\n \t// books = []Book{}\n \tbooks = []Book{\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n"
+                },
+                {
+                    "date": 1680295720240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \tCopies int\n }\n \n func main() {\n-\tvar books []Book\n+\t// var books []Book\n \t// books = []Book{}\n \tbooks = []Book{\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n"
+                },
+                {
+                    "date": 1680295725315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \n func main() {\n \t// var books []Book\n \t// books = []Book{}\n-\tbooks = []Book{\n+\tbooks := []Book{\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n"
+                },
+                {
+                    "date": 1680295787087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n+\t\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n }\n"
+                },
+                {
+                    "date": 1680295795608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n-\t\n+\tfirst = \n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n }\n"
+                },
+                {
+                    "date": 1680295801285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n-\tfirst = \n+\tfirst = Book{}\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n }\n"
+                },
+                {
+                    "date": 1680295808627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n-\tfirst = Book{}\n+\tfirst = Book{Title: \"Hart\"}\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n }\n"
+                },
+                {
+                    "date": 1680295814580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n-\tfirst = Book{Title: \"Hart\"}\n+\tfirst = Book{Title: \"Heart of Kindness\"}\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n }\n"
+                },
+                {
+                    "date": 1680295835218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,10 @@\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n-\tfirst = Book{Title: \"Heart of Kindness\"}\n+\t// first = Book{Title: \"Heart of Kindness\"}\n+\t\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n }\n"
+                },
+                {
+                    "date": 1680295847151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n \t// first = Book{Title: \"Heart of Kindness\"}\n-\t\n+\tbooks\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n }\n"
+                },
+                {
+                    "date": 1680295854969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n \t// first = Book{Title: \"Heart of Kindness\"}\n-\tbooks\n+\tbooks[0].Title = \n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n }\n"
+                },
+                {
+                    "date": 1680295860264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n \tfirst := books[0]\n \t// first = Book{Title: \"Heart of Kindness\"}\n-\tbooks[0].Title = \n+\tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n }\n"
+                },
+                {
+                    "date": 1680296723654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n package main\n \n-import \"fmt\"\n+import (\"fmt\"\n \n type Book struct {\n \tTitle  string\n \tAuthor string\n"
+                },
+                {
+                    "date": 1680296730790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n package main\n \n-import (\"fmt\"\n+import (\n+\tfmt\"\n+\t\"github.com/google/go-cmp/cmp\"\n+)\n \n type Book struct {\n \tTitle  string\n \tAuthor string\n"
+                },
+                {
+                    "date": 1680296744841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n package main\n \n import (\n-\tfmt\"\n+\t\"fmt\"\n \t\"github.com/google/go-cmp/cmp\"\n )\n \n type Book struct {\n@@ -23,5 +23,6 @@\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n+\t\n }\n"
+                },
+                {
+                    "date": 1680296750323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,6 @@\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n-\t\n+\twant := []\n }\n"
+                },
+                {
+                    "date": 1680296756438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,6 @@\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n-\twant := []\n+\twant := []string{\"\"}\n }\n"
+                },
+                {
+                    "date": 1680296763122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,6 @@\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n-\twant := []string{\"\"}\n+\twant := []string{\"\", \"\",}\n }\n"
+                },
+                {
+                    "date": 1680296771823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,6 @@\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n-\twant := []string{\"\", \"\",}\n+\twant := []string{\"same\", \"\", \"\"}\n }\n"
+                },
+                {
+                    "date": 1680296777984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,6 @@\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n-\twant := []string{\"same\", \"\", \"\"}\n+\twant := []string{\"same\", \"same\", \"same\"}\n }\n"
+                },
+                {
+                    "date": 1680296784556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,5 +24,6 @@\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n \twant := []string{\"same\", \"same\", \"same\"}\n+\tgot := []\n }\n"
+                },
+                {
+                    "date": 1680296791804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n \twant := []string{\"same\", \"same\", \"same\"}\n-\tgot := []\n+\tgot := []string{\"same\", \"same\", \"same\"}\n }\n"
+                },
+                {
+                    "date": 1680296800131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,7 @@\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n \twant := []string{\"same\", \"same\", \"same\"}\n-\tgot := []string{\"same\", \"same\", \"same\"}\n+\tgot := []string{\"same\", \"different\", \"same\"}\n+\t\n }\n"
+                },
+                {
+                    "date": 1680296807323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,6 +25,6 @@\n \tfmt.Println(first)\n \n \twant := []string{\"same\", \"same\", \"same\"}\n \tgot := []string{\"same\", \"different\", \"same\"}\n-\t\n+\tif !cmp.equal\n }\n"
+                },
+                {
+                    "date": 1680296812526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,6 +25,8 @@\n \tfmt.Println(first)\n \n \twant := []string{\"same\", \"same\", \"same\"}\n \tgot := []string{\"same\", \"different\", \"same\"}\n-\tif !cmp.equal\n+\tif !cmp.equal(want, got) {\n+\t\t\n+\t}\n }\n"
+                },
+                {
+                    "date": 1680296820131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,7 +26,7 @@\n \n \twant := []string{\"same\", \"same\", \"same\"}\n \tgot := []string{\"same\", \"different\", \"same\"}\n \tif !cmp.equal(want, got) {\n-\t\t\n+\t\tt.Error(cmp.Diff)\n \t}\n }\n"
+                },
+                {
+                    "date": 1680296860574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n package main\n \n import (\n \t\"fmt\"\n+\t\"errors\"\n \t\"github.com/google/go-cmp/cmp\"\n )\n \n type Book struct {\n@@ -26,7 +27,7 @@\n \n \twant := []string{\"same\", \"same\", \"same\"}\n \tgot := []string{\"same\", \"different\", \"same\"}\n \tif !cmp.equal(want, got) {\n-\t\tt.Error(cmp.Diff)\n+\t\tt.Error(cmp.Diff(want, got))\n \t}\n }\n"
+                },
+                {
+                    "date": 1680296867961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n package main\n \n import (\n \t\"fmt\"\n-\t\"errors\"\n+\t\"testing\"\n \t\"github.com/google/go-cmp/cmp\"\n )\n \n type Book struct {\n"
+                },
+                {
+                    "date": 1680296889491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,8 @@\n \tfmt.Println(first)\n \n \twant := []string{\"same\", \"same\", \"same\"}\n \tgot := []string{\"same\", \"different\", \"same\"}\n-\tif !cmp.equal(want, got) {\n+\tif !cmp.Equal(want, got) {\n \t\tt.Error(cmp.Diff(want, got))\n \t}\n }\n"
+                },
+                {
+                    "date": 1680296899232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n package main\n \n import (\n \t\"fmt\"\n-\t\"testing\"\n \t\"github.com/google/go-cmp/cmp\"\n )\n \n type Book struct {\n"
+                },
+                {
+                    "date": 1680296912464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,7 +26,7 @@\n \n \twant := []string{\"same\", \"same\", \"same\"}\n \tgot := []string{\"same\", \"different\", \"same\"}\n \tif !cmp.Equal(want, got) {\n-\t\tt.Error(cmp.Diff(want, got))\n+\t\tt.{\"same\", \"same\", \"same\"}ror(cmp.Diff(want, got))\n \t}\n }\n"
+                },
+                {
+                    "date": 1680296922465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,7 +26,7 @@\n \n \twant := []string{\"same\", \"same\", \"same\"}\n \tgot := []string{\"same\", \"different\", \"same\"}\n \tif !cmp.Equal(want, got) {\n-\t\tt.{\"same\", \"same\", \"same\"}ror(cmp.Diff(want, got))\n+\t\tt.{\"same\", \"same\", \"same\"}(cmp.Diff(want, got))\n \t}\n }\n"
+                },
+                {
+                    "date": 1680296960946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,6 @@\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n-\twant := []string{\"same\", \"same\", \"same\"}\n-\tgot := []string{\"same\", \"different\", \"same\"}\n-\tif !cmp.Equal(want, got) {\n-\t\tt.{\"same\", \"same\", \"same\"}(cmp.Diff(want, got))\n \t}\n }\n"
+                },
+                {
+                    "date": 1680296966196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n package main\n \n import (\n \t\"fmt\"\n-\t\"github.com/google/go-cmp/cmp\"\n )\n \n type Book struct {\n \tTitle  string\n"
+                }
+            ],
+            "date": 1679780904836,
+            "name": "Commit-0",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc foo() {\n\tfmt.Println(\"test with \")\n}\n\nfunc main() {\n\tfoo()\n\tfmt.Println(\"vim-go\")\n}\nimport (\n\t\"fmt\"\n)\n"
+        }
+    ]
+}

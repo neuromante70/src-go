@@ -1,0 +1,350 @@
+{
+    "sourceFile": "08.01/bookstore/bookstore.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 83,
+            "patches": [
+                {
+                    "date": 1679780664705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1679780669908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,4 +6,5 @@\n \tAuthor string\n \tCopies int\n }\n \n+b :=\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679780676676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n \tAuthor string\n \tCopies int\n }\n \n-b :=\n\\ No newline at end of file\n+b := bookstore.Book\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679780683628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,7 @@\n \tAuthor string\n \tCopies int\n }\n \n-b := bookstore.Book\n\\ No newline at end of file\n+b := bookstore.Book{\n+\tTitle\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679780692274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n \tCopies int\n }\n \n b := bookstore.Book{\n-\tTitle\n+\tTitle: \"Nicholas Chuckleby\"\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679780699167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,7 @@\n \tCopies int\n }\n \n b := bookstore.Book{\n-\tTitle: \"Nicholas Chuckleby\"\n+\tTitle: \"Nicholas Chuckleby\",\n+\tAuthor: \"\"\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679780706361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,7 @@\n }\n \n b := bookstore.Book{\n \tTitle: \"Nicholas Chuckleby\",\n-\tAuthor: \"\"\n+\tAuthor: \"Charles Dickens\",\n+\t\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679780714551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n \n b := bookstore.Book{\n \tTitle: \"Nicholas Chuckleby\",\n \tAuthor: \"Charles Dickens\",\n-\t\n+\tCopies: 8,\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679780794204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n package bookstore\n \n+\n // Book represents information about a book.\n type Book struct {\n \tTitle  string\n \tAuthor string\n"
+                },
+                {
+                    "date": 1679780800699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n package bookstore\n \n+import (\n+\t\"fmt\"\n+)\n \n // Book represents information about a book.\n type Book struct {\n \tTitle  string\n"
+                },
+                {
+                    "date": 1679780807219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,7 @@\n b := bookstore.Book{\n \tTitle: \"Nicholas Chuckleby\",\n \tAuthor: \"Charles Dickens\",\n \tCopies: 8,\n-}\n\\ No newline at end of file\n+}\n+\n+fmt.Println()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679780895195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,4 @@\n \tAuthor string\n \tCopies int\n }\n \n-b := bookstore.Book{\n-\tTitle: \"Nicholas Chuckleby\",\n-\tAuthor: \"Charles Dickens\",\n-\tCopies: 8,\n-}\n-\n-fmt.Println()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679780991739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,6 @@\n package bookstore\n \n-import (\n-\t\"fmt\"\n-)\n-\n // Book represents information about a book.\n type Book struct {\n \tTitle  string\n \tAuthor string\n"
+                },
+                {
+                    "date": 1679784326102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,4 +6,5 @@\n \tAuthor string\n \tCopies int\n }\n \n+\n"
+                },
+                {
+                    "date": 1679784426753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n \tAuthor string\n \tCopies int\n }\n \n-\n+func \n"
+                },
+                {
+                    "date": 1679785056318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n \tAuthor string\n \tCopies int\n }\n \n-func \n+func (b Book)\n"
+                },
+                {
+                    "date": 1679785063463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n \tAuthor string\n \tCopies int\n }\n \n-func (b Book)\n+func (b Book) BuyBook\n"
+                },
+                {
+                    "date": 1679785068673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n \tAuthor string\n \tCopies int\n }\n \n-func (b Book) BuyBook\n+func (b Book) BuyBook(Book{})\n"
+                },
+                {
+                    "date": 1679785108090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,7 @@\n \tAuthor string\n \tCopies int\n }\n \n-func (b Book) BuyBook(Book{})\n+func (b Book) Buy(Book{}) {\n+\n+}\n"
+                },
+                {
+                    "date": 1679785120119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \tAuthor string\n \tCopies int\n }\n \n-func (b Book) Buy(Book{}) {\n+func (b Book) Buy(b Book{}) {\n \n }\n"
+                },
+                {
+                    "date": 1679785133577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \tAuthor string\n \tCopies int\n }\n \n-func (b Book) Buy(b Book{}) {\n+func Buy(b Book) {\n \n }\n"
+                },
+                {
+                    "date": 1679785139637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n \tCopies int\n }\n \n func Buy(b Book) {\n-\n+\treturn Book\n }\n"
+                },
+                {
+                    "date": 1679785148868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n \tCopies int\n }\n \n func Buy(b Book) {\n-\treturn Book\n+\treturn Book{}\n }\n"
+                },
+                {
+                    "date": 1679785232168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \tAuthor string\n \tCopies int\n }\n \n-func Buy(b Book) {\n+func Buy(b Book) Book {\n \treturn Book{}\n }\n"
+                },
+                {
+                    "date": 1679785276805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,7 @@\n \tCopies int\n }\n \n func Buy(b Book) Book {\n+\t\n \treturn Book{}\n }\n"
+                },
+                {
+                    "date": 1679785296126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n \tCopies int\n }\n \n func Buy(b Book) Book {\n-\t\n-\treturn Book{}\n+\tb.Copies --\n+\treturn b.Copies\n }\n"
+                },
+                {
+                    "date": 1679785315462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n }\n \n func Buy(b Book) Book {\n \tb.Copies --\n-\treturn b.Copies\n+\treturn Book{}\n }\n"
+                },
+                {
+                    "date": 1679785333098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n }\n \n func Buy(b Book) Book {\n \tb.Copies --\n-\treturn Book{}\n+\treturn b\n }\n"
+                },
+                {
+                    "date": 1680117433309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,1 @@\n-package bookstore\n-\n-// Book represents information about a book.\n-type Book struct {\n-\tTitle  string\n-\tAuthor string\n-\tCopies int\n-}\n-\n-func Buy(b Book) Book {\n-\tb.Copies --\n-\treturn b\n-}\n+packa\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117448408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-packa\n\\ No newline at end of file\n+package bookstore\n+\n"
+                },
+                {
+                    "date": 1680117773783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,7 @@\n package bookstore\n \n+// bookstore.Book{\n+// \tTitle: \"Nicholas Chuckleby\",\n+// \tAuthor: \"Charles Dickens\",\n+// \tCopies: 8,\n+// }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117787165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,7 @@\n // bookstore.Book{\n // \tTitle: \"Nicholas Chuckleby\",\n // \tAuthor: \"Charles Dickens\",\n // \tCopies: 8,\n-// }\n\\ No newline at end of file\n+// }\n+\n+var Book\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117793754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n // \tAuthor: \"Charles Dickens\",\n // \tCopies: 8,\n // }\n \n-var Book\n\\ No newline at end of file\n+var Book{}= \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117802349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n // \tAuthor: \"Charles Dickens\",\n // \tCopies: 8,\n // }\n \n-var Book{}= \n\\ No newline at end of file\n+var Book struct{}= \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117810882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,7 @@\n // \tAuthor: \"Charles Dickens\",\n // \tCopies: 8,\n // }\n \n-var Book struct{}= \n\\ No newline at end of file\n+var Book struct{\n+\tTitle string\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117819452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,7 @@\n // }\n \n var Book struct{\n \tTitle string\n+\tAuthor string\n+\tcopies int\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117831686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n // \tTitle: \"Nicholas Chuckleby\",\n // \tAuthor: \"Charles Dickens\",\n // \tCopies: 8,\n // }\n-\n+// Book represents information about a book.\n var Book struct{\n \tTitle string\n \tAuthor string\n-\tcopies int\n+\tCopies int\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117909213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,8 @@\n package bookstore\n \n-// bookstore.Book{\n-// \tTitle: \"Nicholas Chuckleby\",\n-// \tAuthor: \"Charles Dickens\",\n-// \tCopies: 8,\n-// }\n // Book represents information about a book.\n-var Book struct{\n+var Book struct {\n \tTitle string\n \tAuthor string\n \tCopies int\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118471864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n package bookstore\n \n // Book represents information about a book.\n var Book struct {\n-\tTitle string\n+\tTitle  string\n \tAuthor string\n \tCopies int\n\\ No newline at end of file\n-}\n+}\n+\n+func Buy\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118476897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,7 @@\n \tAuthor string\n \tCopies int\n }\n \n-func Buy\n\\ No newline at end of file\n+func Buy() {\n+\t\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118569154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,4 @@\n \tAuthor string\n \tCopies int\n }\n \n-func Buy() {\n-\t\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118595880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,4 +6,5 @@\n \tAuthor string\n \tCopies int\n }\n \n+func Buy\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118601372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n \tAuthor string\n \tCopies int\n }\n \n-func Buy\n\\ No newline at end of file\n+func Buy(b Book)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118609831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,7 @@\n \tAuthor string\n \tCopies int\n }\n \n-func Buy(b Book)\n\\ No newline at end of file\n+func Buy(b Book) Book {\n+\treturn Book{}\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118641363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n package bookstore\n \n // Book represents information about a book.\n-var Book struct {\n+Type Book struct {\n \tTitle  string\n \tAuthor string\n \tCopies int\n }\n"
+                },
+                {
+                    "date": 1680118704172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n package bookstore\n \n // Book represents information about a book.\n-Type Book struct {\n+type Book struct {\n \tTitle  string\n \tAuthor string\n \tCopies int\n }\n \n func Buy(b Book) Book {\n-\treturn Book{}\n+\treturn b\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118731060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,7 @@\n \tCopies int\n }\n \n func Buy(b Book) Book {\n+\tb.Copies\n \treturn b\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118823233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,8 @@\n \tCopies int\n }\n \n func Buy(b Book) Book {\n-\tb.Copies\n+\t\n+\tb.Copies--\n\\ No newline at end of file\n \treturn b\n-}\n+}\n"
+                },
+                {
+                    "date": 1680118831610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,10 @@\n \tCopies int\n }\n \n func Buy(b Book) Book {\n-\t\n+\tif b.Copies == 0 {\n+\t\t\n+\t}\n\\ No newline at end of file\n \tb.Copies--\n \treturn b\n-}\n+}\n"
+                },
+                {
+                    "date": 1680118837079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n }\n \n func Buy(b Book) Book {\n \tif b.Copies == 0 {\n-\t\t\n+\t\treturn Book{}\n \t}\n \tb.Copies--\n \treturn b\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1680118842826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n }\n \n func Buy(b Book) Book {\n \tif b.Copies == 0 {\n-\t\treturn Book{}\n+\t\treturn Book{}, errors.New\n \t}\n \tb.Copies--\n \treturn b\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1680118849470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n package bookstore\n \n+\n+\n // Book represents information about a book.\n type Book struct {\n \tTitle  string\n \tAuthor string\n@@ -8,9 +10,9 @@\n }\n \n func Buy(b Book) Book {\n \tif b.Copies == 0 {\n-\t\treturn Book{}, errors.New\n+\t\treturn Book{}, errors.New(\"\")\n \t}\n \tb.Copies--\n \treturn b\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1680118855373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n package bookstore\n \n+import (\n+\t\"errrors\"\n+)\n \n-\n // Book represents information about a book.\n type Book struct {\n \tTitle  string\n \tAuthor string\n@@ -14,5 +16,5 @@\n \t\treturn Book{}, errors.New(\"\")\n \t}\n \tb.Copies--\n \treturn b\n-}\n\\ No newline at end of file\n+}\n"
+                },
+                {
+                    "date": 1680118860656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n package bookstore\n \n import (\n-\t\"errrors\"\n+\t\"errors\"\n )\n \n // Book represents information about a book.\n type Book struct {\n"
+                },
+                {
+                    "date": 1680118870637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n }\n \n func Buy(b Book) Book {\n \tif b.Copies == 0 {\n-\t\treturn Book{}, errors.New(\"\")\n+\t\treturn Book{}, errors.New(\"no copies\")\n \t}\n \tb.Copies--\n \treturn b\n }\n"
+                },
+                {
+                    "date": 1680118877936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,11 @@\n \tAuthor string\n \tCopies int\n }\n \n-func Buy(b Book) Book {\n+func Buy(b Book) (Book {\n \tif b.Copies == 0 {\n-\t\treturn Book{}, errors.New(\"no copies\")\n+\t\treturn Book{}, errors.New(\"no copies left\")\n \t}\n \tb.Copies--\n \treturn b\n }\n"
+                },
+                {
+                    "date": 1680118886068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \tAuthor string\n \tCopies int\n }\n \n-func Buy(b Book) (Book {\n+func Buy(b Book) (Book, error) {\n \tif b.Copies == 0 {\n \t\treturn Book{}, errors.New(\"no copies left\")\n \t}\n \tb.Copies--\n"
+                },
+                {
+                    "date": 1680118897250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n \tif b.Copies == 0 {\n \t\treturn Book{}, errors.New(\"no copies left\")\n \t}\n \tb.Copies--\n-\treturn b\n+\treturn b, nil\n }\n"
+                },
+                {
+                    "date": 1680296626970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,4 +17,6 @@\n \t}\n \tb.Copies--\n \treturn b, nil\n }\n+\n+func \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680296632476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,5 +18,5 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func \n\\ No newline at end of file\n+func GetAllBooks()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680296645760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,5 +18,7 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks()\n\\ No newline at end of file\n+func GetAllBooks(boo) {\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680296652436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(boo) {\n+func GetAllBooks(b Book) {\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680296658137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,6 @@\n \treturn b, nil\n }\n \n func GetAllBooks(b Book) {\n-\n+\treturn nil\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680296685949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,6 @@\n \treturn b, nil\n }\n \n func GetAllBooks(b Book) {\n-\treturn nil\n+\treturn\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680297115918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,7 @@\n \treturn b, nil\n }\n \n func GetAllBooks(b Book) {\n+\n \treturn\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1680297122079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,7 @@\n }\n \n func GetAllBooks(b Book) {\n \n+\t\n \treturn\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1680297131962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,11 @@\n \treturn b, nil\n }\n \n func GetAllBooks(b Book) {\n+\tcatalog := []bookstore.Book{\n+\t\t{Title: \"For the Love of Go\"},\n+\t\t{Title: \"The Power of Go: Tools\"},\n+\t}\t\n\\ No newline at end of file\n \n-\t\n \treturn\n-}\n+}\n"
+                },
+                {
+                    "date": 1680297219845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,11 @@\n \treturn b, nil\n }\n \n func GetAllBooks(b Book) {\n-\tcatalog := []bookstore.Book{\n+\tcatalog := []Book{\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\t\n \n-\treturn\n\\ No newline at end of file\n-}\n+\treturn catalog\n+}\n"
+                },
+                {
+                    "date": 1680297227371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(b Book) {\n+func GetAllBooks(b Book) [] {\n \tcatalog := []Book{\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\t\n"
+                },
+                {
+                    "date": 1680297246355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(b Book) [] {\n+func GetAllBooks(b Book) []Book {\n \tcatalog := []Book{\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\t\n"
+                },
+                {
+                    "date": 1680297351878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(b Book) []Book {\n+func GetAllBooks(b Book) catalog []Book {\n \tcatalog := []Book{\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\t\n"
+                },
+                {
+                    "date": 1680297358606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(b Book) catalog []Book {\n+func GetAllBooks(b Book) (catalog []Book {\n \tcatalog := []Book{\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\t\n"
+                },
+                {
+                    "date": 1680297364104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(b Book) (catalog []Book {\n+func GetAllBooks(b Book) (catalog []Book) {\n \tcatalog := []Book{\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\t\n"
+                },
+                {
+                    "date": 1680297375766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(b Book) (catalog []Book) {\n+func GetAllBooks(b Book) catalog []Book) {\n \tcatalog := []Book{\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\t\n"
+                },
+                {
+                    "date": 1680297385902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(b Book) catalog []Book) {\n+func GetAllBooks(b Book) []Book {\n \tcatalog := []Book{\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\t\n"
+                },
+                {
+                    "date": 1680297427214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(b Book) []Book {\n+func GetAllBooks(b Book) Book {\n \tcatalog := []Book{\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\t\n"
+                },
+                {
+                    "date": 1680297443680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\t\n \n-\treturn catalog\n+\treturn b\n }\n"
+                },
+                {
+                    "date": 1680297493951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\t\n \n-\treturn b\n+\treturn \n }\n"
+                },
+                {
+                    "date": 1680297512368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\t\n \n-\treturn \n+\treturn [}catalog\n }\n"
+                },
+                {
+                    "date": 1680297519016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\t\n \n-\treturn [}catalog\n+\treturn catalog\n }\n"
+                },
+                {
+                    "date": 1680297549166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,11 @@\n \treturn b, nil\n }\n \n func GetAllBooks(b Book) Book {\n-\tcatalog := []Book{\n-\t\t{Title: \"For the Love of Go\"},\n-\t\t{Title: \"The Power of Go: Tools\"},\n-\t}\t\n+\t// catalog := []Book{\n+\t// \t{Title: \"For the Love of Go\"},\n+\t// \t{Title: \"The Power of Go: Tools\"},\n+\t// }\t\n \n \treturn catalog\n }\n"
+                },
+                {
+                    "date": 1680297583054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,12 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(b Book) Book {\n+func GetAllBooks(b [Book) Book {\n \t// catalog := []Book{\n \t// \t{Title: \"For the Love of Go\"},\n \t// \t{Title: \"The Power of Go: Tools\"},\n \t// }\t\n \n-\treturn catalog\n+\treturn b\n }\n"
+                },
+                {
+                    "date": 1680297656139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,12 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(b [Book) Book {\n+func GetAllBooks(b []Book) Book {\n \t// catalog := []Book{\n \t// \t{Title: \"For the Love of Go\"},\n \t// \t{Title: \"The Power of Go: Tools\"},\n \t// }\t\n \n-\treturn b\n+\treturn catalog\n }\n"
+                },
+                {
+                    "date": 1680297741596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(b []Book) Book {\n+func GetAllBooks(catalog []Book) [Book {\n \t// catalog := []Book{\n \t// \t{Title: \"For the Love of Go\"},\n \t// \t{Title: \"The Power of Go: Tools\"},\n \t// }\t\n"
+                }
+            ],
+            "date": 1679780664705,
+            "name": "Commit-0",
+            "content": "package bookstore\n\n// Book represents information about a book.\ntype Book struct {\n\tTitle  string\n\tAuthor string\n\tCopies int\n}\n\n"
+        }
+    ]
+}

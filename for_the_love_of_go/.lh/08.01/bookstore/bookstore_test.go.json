@@ -1,0 +1,246 @@
+{
+    "sourceFile": "08.01/bookstore/bookstore_test.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 57,
+            "patches": [
+                {
+                    "date": 1679780741126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1679780747068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n \t\tCopies: 2,\n \t}\n }\n \n-func \n\\ No newline at end of file\n+func TestBuy()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679780752647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,7 @@\n \t\tCopies: 2,\n \t}\n }\n \n-func TestBuy()\n\\ No newline at end of file\n+func TestBuy(t *testing.T) {\n+\t\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679780786085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,10 @@\n \t}\n }\n \n func TestBuy(t *testing.T) {\n-\t\n+\tb := bookstore.Book{\n+\t\tTitle: \"Nicholas Chuckleby\",\n+\t\tAuthor: \"Charles Dickens\",\n+\t\tCopies: 8,\n+\t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679781139634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,6 @@\n \t\tTitle: \"Nicholas Chuckleby\",\n \t\tAuthor: \"Charles Dickens\",\n \t\tCopies: 8,\n \t}\n+\twant := \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679781148072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,7 @@\n \t\tTitle: \"Nicholas Chuckleby\",\n \t\tAuthor: \"Charles Dickens\",\n \t\tCopies: 8,\n \t}\n-\twant := \n+\twant := b.Copies --\n+\t\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679781155538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n \t\tTitle: \"Nicholas Chuckleby\",\n \t\tAuthor: \"Charles Dickens\",\n \t\tCopies: 8,\n \t}\n-\twant := b.Copies --\n-\t\n+\twant := b.Copies - 1\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679781162039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,6 @@\n \t\tAuthor: \"Charles Dickens\",\n \t\tCopies: 8,\n \t}\n \twant := b.Copies - 1\n-\n+\t\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679781180125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,6 @@\n \t\tAuthor: \"Charles Dickens\",\n \t\tCopies: 8,\n \t}\n \twant := b.Copies - 1\n-\t\n+\tgot BuyBook\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679781453415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,6 @@\n \t\tAuthor: \"Charles Dickens\",\n \t\tCopies: 8,\n \t}\n \twant := b.Copies - 1\n-\tgot BuyBook\n+\tgot := BuyBook()\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679784237853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,8 @@\n \t\tAuthor: \"Charles Dickens\",\n \t\tCopies: 8,\n \t}\n \twant := b.Copies - 1\n+\t\n \tgot := BuyBook()\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679784242881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,8 @@\n \t\tAuthor: \"Charles Dickens\",\n \t\tCopies: 8,\n \t}\n \twant := b.Copies - 1\n-\t\n+\tresult := \n \tgot := BuyBook()\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679784248146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,8 @@\n \t\tAuthor: \"Charles Dickens\",\n \t\tCopies: 8,\n \t}\n \twant := b.Copies - 1\n-\tresult := \n+\tresult := bookstore.B\n \tgot := BuyBook()\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679784264807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,8 @@\n \t\tAuthor: \"Charles Dickens\",\n \t\tCopies: 8,\n \t}\n \twant := b.Copies - 1\n-\tresult := bookstore.B\n-\tgot := BuyBook()\n+\tresult := bookstore.Buy(b)\n+\tgot := result.\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679784272522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,8 @@\n \t\tCopies: 8,\n \t}\n \twant := b.Copies - 1\n \tresult := bookstore.Buy(b)\n-\tgot := result.\n+\tgot := result.Copies\n+\t\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679784280011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,7 @@\n \t}\n \twant := b.Copies - 1\n \tresult := bookstore.Buy(b)\n \tgot := result.Copies\n-\t\n+\tif want !=\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679784288101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,9 @@\n \t}\n \twant := b.Copies - 1\n \tresult := bookstore.Buy(b)\n \tgot := result.Copies\n-\tif want !=\n+\tif want != got {\n+\t\tt.Errorf\n+\t}\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679784295685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,8 @@\n \twant := b.Copies - 1\n \tresult := bookstore.Buy(b)\n \tgot := result.Copies\n \tif want != got {\n-\t\tt.Errorf\n+\t\tt.Errorf(\"\", want, got)\n \t}\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679784304720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,8 @@\n \twant := b.Copies - 1\n \tresult := bookstore.Buy(b)\n \tgot := result.Copies\n \tif want != got {\n-\t\tt.Errorf(\"\", want, got)\n+\t\tt.Errorf(\"want %d, got %d\", want, got)\n \t}\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117288669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,18 +13,7 @@\n \t\tCopies: 2,\n \t}\n }\n \n-func TestBuy(t *testing.T) {\n-\tb := bookstore.Book{\n-\t\tTitle: \"Nicholas Chuckleby\",\n-\t\tAuthor: \"Charles Dickens\",\n-\t\tCopies: 8,\n-\t}\n-\twant := b.Copies - 1\n-\tresult := bookstore.Buy(b)\n-\tgot := result.Copies\n-\tif want != got {\n-\t\tt.Errorf(\"want %d, got %d\", want, got)\n-\t}\n \n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117437036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,8 @@\n-package bookstore_test\n-\n-import (\n-\t\"bookstore\"\n-\t\"testing\"\n-)\n-\n func TestBook(t *testing.T) {\n \tt.Parallel()\n \t_ = bookstore.Book{\n \t\tTitle:  \"Spark Joy\",\n \t\tAuthor: \"Marie Kondō\",\n \t\tCopies: 2,\n \t}\n-}\n-\n-\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117444289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,1 @@\n-func TestBook(t *testing.T) {\n-\tt.Parallel()\n-\t_ = bookstore.Book{\n-\t\tTitle:  \"Spark Joy\",\n-\t\tAuthor: \"Marie Kondō\",\n-\t\tCopies: 2,\n-\t}\n-}\n\\ No newline at end of file\n+package bookstore_test\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117561440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,5 @@\n-package bookstore_test\n\\ No newline at end of file\n+package bookstore_test\n+\n+import (\n+\t\n+)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117567754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n package bookstore_test\n \n import (\n-\t\n+\t\"bookstore\"\n+\t\"\"\n )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117579253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n package bookstore_test\n \n import (\n \t\"bookstore\"\n-\t\"\"\n-)\n\\ No newline at end of file\n+\t\"testing\"\n+)\n+\n+bookstore.Book\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117584514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,7 @@\n \t\"bookstore\"\n \t\"testing\"\n )\n \n-bookstore.Book\n\\ No newline at end of file\n+bookstore.Book{\n+\tTitle:\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117591831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,6 @@\n \t\"testing\"\n )\n \n bookstore.Book{\n-\tTitle:\n+\tTitle: \"Nicholas Chuckleby\"\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117597799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,7 @@\n \t\"testing\"\n )\n \n bookstore.Book{\n-\tTitle: \"Nicholas Chuckleby\"\n+\tTitle: \"Nicholas Chuckleby\",\n+\tAuthor:\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117609309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,7 @@\n )\n \n bookstore.Book{\n \tTitle: \"Nicholas Chuckleby\",\n-\tAuthor:\n+\tAuthor: \"\",\n+\tCopies: 8,\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117626092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,8 @@\n )\n \n bookstore.Book{\n \tTitle: \"Nicholas Chuckleby\",\n-\tAuthor: \"\",\n+\tAuthor: \"Charles Dickens\",\n \tCopies: 8,\n\\ No newline at end of file\n-}\n+}\n+\n"
+                },
+                {
+                    "date": 1680117638328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,4 +9,6 @@\n \tTitle: \"Nicholas Chuckleby\",\n \tAuthor: \"Charles Dickens\",\n \tCopies: 8,\n }\n+\n+func TestBook\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117643881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,5 @@\n \tAuthor: \"Charles Dickens\",\n \tCopies: 8,\n }\n \n-func TestBook\n\\ No newline at end of file\n+func TestBook(t *testing.T)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117650831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,9 @@\n \tAuthor: \"Charles Dickens\",\n \tCopies: 8,\n }\n \n-func TestBook(t *testing.T)\n\\ No newline at end of file\n+func TestBook(t *testing.T) {\n+\tt.Parallel()\n+\n+\t\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117658992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n \n func TestBook(t *testing.T) {\n \tt.Parallel()\n \n-\t\n+\t_ = bookstore.Book\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117664527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,8 @@\n \n func TestBook(t *testing.T) {\n \tt.Parallel()\n \n-\t_ = bookstore.Book\n+\t_ = bookstore.Book{\n+\t\t\n+\t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117672117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,8 @@\n func TestBook(t *testing.T) {\n \tt.Parallel()\n \n \t_ = bookstore.Book{\n+\t\tTitle: \"\",\n \t\t\n \t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117681878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,8 @@\n \tt.Parallel()\n \n \t_ = bookstore.Book{\n \t\tTitle: \"\",\n-\t\t\n+\t\tAuthor: \"\",\n+\t\tCopies: \n \t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117689075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n func TestBook(t *testing.T) {\n \tt.Parallel()\n \n \t_ = bookstore.Book{\n-\t\tTitle: \"\",\n+\t\tTitle: \"Spark Joy\",\n \t\tAuthor: \"\",\n-\t\tCopies: \n+\t\tCopies: ,\n \t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117694669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,8 @@\n \tt.Parallel()\n \n \t_ = bookstore.Book{\n \t\tTitle: \"Spark Joy\",\n-\t\tAuthor: \"\",\n+\t\tAuthor: \"Marie Kondo\",\n \t\tCopies: ,\n \t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117754095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,19 +4,19 @@\n \t\"bookstore\"\n \t\"testing\"\n )\n \n-bookstore.Book{\n-\tTitle: \"Nicholas Chuckleby\",\n-\tAuthor: \"Charles Dickens\",\n-\tCopies: 8,\n-}\n+// bookstore.Book{\n+// \tTitle: \"Nicholas Chuckleby\",\n+// \tAuthor: \"Charles Dickens\",\n+// \tCopies: 8,\n+// }\n \n func TestBook(t *testing.T) {\n \tt.Parallel()\n \n \t_ = bookstore.Book{\n \t\tTitle: \"Spark Joy\",\n \t\tAuthor: \"Marie Kondo\",\n-\t\tCopies: ,\n+\t\tCopies: 2,\n \t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680117770755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,14 +4,8 @@\n \t\"bookstore\"\n \t\"testing\"\n )\n \n-// bookstore.Book{\n-// \tTitle: \"Nicholas Chuckleby\",\n-// \tAuthor: \"Charles Dickens\",\n-// \tCopies: 8,\n-// }\n-\n func TestBook(t *testing.T) {\n \tt.Parallel()\n \n \t_ = bookstore.Book{\n"
+                },
+                {
+                    "date": 1680118401523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,6 @@\n \t\tTitle: \"Spark Joy\",\n \t\tAuthor: \"Marie Kondo\",\n \t\tCopies: 2,\n \t}\n-}\n\\ No newline at end of file\n+}\n+\n"
+                },
+                {
+                    "date": 1680118408733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,4 +14,5 @@\n \t\tCopies: 2,\n \t}\n }\n \n+func TestBuy\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118413986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,5 @@\n \t\tCopies: 2,\n \t}\n }\n \n-func TestBuy\n\\ No newline at end of file\n+func TestBuy(t *testing.T)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118419828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,7 @@\n \t\tCopies: 2,\n \t}\n }\n \n-func TestBuy(t *testing.T)\n\\ No newline at end of file\n+func TestBuy(t *testing.T) {\n+\tt.Parallel()\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118426190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,7 @@\n }\n \n func TestBuy(t *testing.T) {\n \tt.Parallel()\n+\n+\tb:= Boo\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118432057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,6 +17,6 @@\n \n func TestBuy(t *testing.T) {\n \tt.Parallel()\n \n-\tb:= Boo\n+\t\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118440251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,6 +17,11 @@\n \n func TestBuy(t *testing.T) {\n \tt.Parallel()\n \n-\t\n+\t_ = bookstore.Book{\n+\t\tTitle: \"Spark Joy\",\n+\t\tAuthor: \"Marie Kondo\",\n+\t\tCopies: 2,\n+\t}\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118447302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,12 @@\n \n func TestBuy(t *testing.T) {\n \tt.Parallel()\n \n-\t_ = bookstore.Book{\n+\tb_ := bookstore.Book{\n \t\tTitle: \"Spark Joy\",\n \t\tAuthor: \"Marie Kondo\",\n \t\tCopies: 2,\n \t}\n \n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118453024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,8 @@\n \t\tTitle: \"Spark Joy\",\n \t\tAuthor: \"Marie Kondo\",\n \t\tCopies: 2,\n \t}\n+\t\n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118463554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n \t\tTitle: \"Spark Joy\",\n \t\tAuthor: \"Marie Kondo\",\n \t\tCopies: 2,\n \t}\n-\t\n+\twant :=1\n+\tresult := books\n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118493276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,8 @@\n \t\tAuthor: \"Marie Kondo\",\n \t\tCopies: 2,\n \t}\n \twant :=1\n-\tresult := books\n+\tresult := bookstore.Buy(b)\n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118515653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,9 @@\n \t\tCopies: 2,\n \t}\n \twant :=1\n \tresult := bookstore.Buy(b)\n+\tgot := result.Copies\n+\t\n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118527983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,10 @@\n \t}\n \twant :=1\n \tresult := bookstore.Buy(b)\n \tgot := result.Copies\n-\t\n+\tif want != got {\n+\t\tt.Errorf\n+\t}\n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118537117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \twant :=1\n \tresult := bookstore.Buy(b)\n \tgot := result.Copies\n \tif want != got {\n-\t\tt.Errorf\n+\t\tt.Errorf(\"want %d, got %d\")\n \t}\n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118557037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,18 +17,18 @@\n \n func TestBuy(t *testing.T) {\n \tt.Parallel()\n \n-\tb_ := bookstore.Book{\n+\tb := bookstore.Book{\n \t\tTitle: \"Spark Joy\",\n \t\tAuthor: \"Marie Kondo\",\n \t\tCopies: 2,\n \t}\n \twant :=1\n \tresult := bookstore.Buy(b)\n \tgot := result.Copies\n \tif want != got {\n-\t\tt.Errorf(\"want %d, got %d\")\n+\t\tt.Errorf(\"want %d, got %d\", want, got)\n \t}\n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680118670478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,8 @@\n )\n \n func TestBook(t *testing.T) {\n \tt.Parallel()\n-\n \t_ = bookstore.Book{\n \t\tTitle: \"Spark Joy\",\n \t\tAuthor: \"Marie Kondo\",\n \t\tCopies: 2,\n@@ -16,9 +15,8 @@\n }\n \n func TestBuy(t *testing.T) {\n \tt.Parallel()\n-\n \tb := bookstore.Book{\n \t\tTitle: \"Spark Joy\",\n \t\tAuthor: \"Marie Kondo\",\n \t\tCopies: 2,\n"
+                },
+                {
+                    "date": 1680118751716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,25 +7,25 @@\n \n func TestBook(t *testing.T) {\n \tt.Parallel()\n \t_ = bookstore.Book{\n-\t\tTitle: \"Spark Joy\",\n+\t\tTitle:  \"Spark Joy\",\n \t\tAuthor: \"Marie Kondo\",\n \t\tCopies: 2,\n \t}\n }\n \n func TestBuy(t *testing.T) {\n \tt.Parallel()\n \tb := bookstore.Book{\n-\t\tTitle: \"Spark Joy\",\n+\t\tTitle:  \"Spark Joy\",\n \t\tAuthor: \"Marie Kondo\",\n \t\tCopies: 2,\n \t}\n-\twant :=1\n+\twant := 1\n \tresult := bookstore.Buy(b)\n \tgot := result.Copies\n \tif want != got {\n \t\tt.Errorf(\"want %d, got %d\", want, got)\n\\ No newline at end of file\n \t}\n \n-}\n+}\n"
+                }
+            ],
+            "date": 1679780741126,
+            "name": "Commit-0",
+            "content": "package bookstore_test\n\nimport (\n\t\"bookstore\"\n\t\"testing\"\n)\n\nfunc TestBook(t *testing.T) {\n\tt.Parallel()\n\t_ = bookstore.Book{\n\t\tTitle:  \"Spark Joy\",\n\t\tAuthor: \"Marie Kondō\",\n\t\tCopies: 2,\n\t}\n}\n\nfunc "
+        }
+    ]
+}

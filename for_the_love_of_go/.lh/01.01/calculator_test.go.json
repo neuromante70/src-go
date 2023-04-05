@@ -1,0 +1,38 @@
+{
+    "sourceFile": "01.01/calculator_test.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1679432405013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1679432412134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \t\tt.Errorf(\"want %f, got %f\", want, got)\n \t}\n }\n \n-func TestAdd(t *testing.T) {\n+func TestMultiply(t *testing.T) {\n \tt.Parallel()\n \tvar want float64 = 4\n \tgot := calculator.Add(2, 2)\n \tif want != got {\n"
+                },
+                {
+                    "date": 1679432417647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n func TestMultiply(t *testing.T) {\n \tt.Parallel()\n \tvar want float64 = 4\n-\tgot := calculator.Add(2, 2)\n+\tgot := calculator.Mu(2, 2)\n \tif want != got {\n \t\tt.Errorf(\"want %f, got %f\", want, got)\n \t}\n }\n"
+                },
+                {
+                    "date": 1679432499575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n func TestMultiply(t *testing.T) {\n \tt.Parallel()\n \tvar want float64 = 4\n-\tgot := calculator.Mu(2, 2)\n+\tgot := calculator.Multi(2, 2)\n \tif want != got {\n \t\tt.Errorf(\"want %f, got %f\", want, got)\n \t}\n }\n"
+                },
+                {
+                    "date": 1679432512646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n func TestMultiply(t *testing.T) {\n \tt.Parallel()\n \tvar want float64 = 4\n-\tgot := calculator.Multi(2, 2)\n+\tgot := calculator.Multiply(2, 2)\n \tif want != got {\n \t\tt.Errorf(\"want %f, got %f\", want, got)\n \t}\n }\n"
+                },
+                {
+                    "date": 1679432544843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n func TestMultiply(t *testing.T) {\n \tt.Parallel()\n \tvar want float64 = 4\n-\tgot := calculator.Multiply(2, 2)\n+\tgot := calculator.Multiply(3, 2)\n \tif want != got {\n \t\tt.Errorf(\"want %f, got %f\", want, got)\n \t}\n }\n"
+                }
+            ],
+            "date": 1679432405013,
+            "name": "Commit-0",
+            "content": "package calculator_test\n\nimport (\n\t\"calculator\"\n\t\"testing\"\n)\n\nfunc TestAdd(t *testing.T) {\n\tt.Parallel()\n\tvar want float64 = 4\n\tgot := calculator.Add(2, 2)\n\tif want != got {\n\t\tt.Errorf(\"want %f, got %f\", want, got)\n\t}\n}\n\nfunc TestSubtract(t *testing.T) {\n\tt.Parallel()\n\tvar want float64 = 2\n\tgot := calculator.Subtract(4, 2)\n\tif want != got {\n\t\tt.Errorf(\"want %f, got %f\", want, got)\n\t}\n}\n\nfunc TestAdd(t *testing.T) {\n\tt.Parallel()\n\tvar want float64 = 4\n\tgot := calculator.Add(2, 2)\n\tif want != got {\n\t\tt.Errorf(\"want %f, got %f\", want, got)\n\t}\n}\n"
+        }
+    ]
+}

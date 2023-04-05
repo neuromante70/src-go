@@ -1,0 +1,378 @@
+{
+    "sourceFile": "06.01/main.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 90,
+            "patches": [
+                {
+                    "date": 1679607158937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1679607165623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n \tfmt.Println(\"test with \")\n }\n \n func main() {\n+\tvar title string\n \t\n \tfoo()\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1679607174329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n }\n \n func main() {\n \tvar title string\n-\t\n+\tvar copies int\n+\ttitle = \"\"\n \tfoo()\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1679607184249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n \n func main() {\n \tvar title string\n \tvar copies int\n-\ttitle = \"\"\n+\ttitle = \"For the Love of go\"\n+\tcopies = 99\n \tfoo()\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1679607190124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,6 @@\n \ttitle = \"For the Love of go\"\n \tcopies = 99\n \tfoo()\n \tfmt.Println(\"vim-go\")\n+\t\n }\n"
+                },
+                {
+                    "date": 1679607199970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n \tvar copies int\n \ttitle = \"For the Love of go\"\n \tcopies = 99\n \tfoo()\n+\tfmt.Println(title)\n \tfmt.Println(\"vim-go\")\n-\t\n }\n"
+                },
+                {
+                    "date": 1679607205653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,6 @@\n \ttitle = \"For the Love of go\"\n \tcopies = 99\n \tfoo()\n \tfmt.Println(title)\n-\tfmt.Println(\"vim-go\")\n+\tfmt.Println(copies)\n }\n"
+                },
+                {
+                    "date": 1679607289702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \tfmt.Println(\"test with \")\n }\n \n func main() {\n-\tvar title string\n+\tvar title, author string\n \tvar copies int\n \ttitle = \"For the Love of go\"\n \tcopies = 99\n \tfoo()\n"
+                },
+                {
+                    "date": 1679607295834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n func main() {\n \tvar title, author string\n \tvar copies int\n \ttitle = \"For the Love of go\"\n+\tauthor = \"\"\n \tcopies = 99\n \tfoo()\n \tfmt.Println(title)\n \tfmt.Println(copies)\n"
+                },
+                {
+                    "date": 1679607312878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n func main() {\n \tvar title, author string\n \tvar copies int\n \ttitle = \"For the Love of go\"\n-\tauthor = \"\"\n+\tauthor = \"\"\"\n \tcopies = 99\n \tfoo()\n \tfmt.Println(title)\n \tfmt.Println(copies)\n"
+                },
+                {
+                    "date": 1679607319268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n func main() {\n \tvar title, author string\n \tvar copies int\n \ttitle = \"For the Love of go\"\n-\tauthor = \"\"\"\n+\tauthor = \"John Arundel\"\n \tcopies = 99\n \tfoo()\n \tfmt.Println(title)\n \tfmt.Println(copies)\n"
+                },
+                {
+                    "date": 1679607328371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tfoo()\n-\tfmt.Println(title)\n+\tfmt.Println(title, author)\n \tfmt.Println(copies)\n }\n"
+                },
+                {
+                    "date": 1679607334794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tfoo()\n-\tfmt.Println(title, author)\n+\tfmt.Println(authortitle, )\n \tfmt.Println(copies)\n }\n"
+                },
+                {
+                    "date": 1679607340360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tfoo()\n-\tfmt.Println(authortitle, )\n+\tfmt.Println(author, \"\"title, )\n \tfmt.Println(copies)\n }\n"
+                },
+                {
+                    "date": 1679607346141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tfoo()\n-\tfmt.Println(author, \"\"title, )\n+\tfmt.Println(author, \" - \", title)\n \tfmt.Println(copies)\n }\n"
+                },
+                {
+                    "date": 1679607358517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tfoo()\n-\tfmt.Println(author, \" - \", title)\n+\tfmt.Println(author, \"-\", title)\n \tfmt.Println(copies)\n }\n"
+                },
+                {
+                    "date": 1679607377521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \tvar title, author string\n \tvar copies int\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n-\tcopies = 99\n+\tcopies = \n \tfoo()\n \tfmt.Println(author, \"-\", title)\n \tfmt.Println(copies)\n }\n"
+                },
+                {
+                    "date": 1679607401071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \tvar title, author string\n \tvar copies int\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n-\tcopies = \n+\tcopies = 99\n \tfoo()\n \tfmt.Println(author, \"-\", title)\n \tfmt.Println(copies)\n }\n"
+                },
+                {
+                    "date": 1679607505668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n }\n \n func main() {\n \tvar title, author string\n-\tvar copies int\n+\tvar copies, edition int\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tfoo()\n"
+                },
+                {
+                    "date": 1679607511972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n \tvar copies, edition int\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n \tcopies = 99\n+\tedition = 1\n \tfoo()\n \tfmt.Println(author, \"-\", title)\n \tfmt.Println(copies)\n }\n"
+                },
+                {
+                    "date": 1679607518723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tedition = 1\n \tfoo()\n-\tfmt.Println(author, \"-\", title)\n+\tfmt.Println(author, \"-\", title , )\n \tfmt.Println(copies)\n }\n"
+                },
+                {
+                    "date": 1679607525638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tedition = 1\n \tfoo()\n-\tfmt.Println(author, \"-\", title , )\n+\tfmt.Println(author, \"-\", title , \"\", edition)\n \tfmt.Println(copies)\n }\n"
+                },
+                {
+                    "date": 1679607544896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tedition = 1\n \tfoo()\n-\tfmt.Println(author, \"-\", title , \"\", edition)\n+\tfmt.Println(author, \"-\", title , \"edition Nr:\", edition)\n \tfmt.Println(copies)\n }\n"
+                },
+                {
+                    "date": 1679607568468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n \n func main() {\n \tvar title, author string\n \tvar copies, edition int\n+\t\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tedition = 1\n"
+                },
+                {
+                    "date": 1679607580099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,10 @@\n \n func main() {\n \tvar title, author string\n \tvar copies, edition int\n-\t\n+\tvar inStock bool\n+\tinStock = true\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tedition = 1\n"
+                },
+                {
+                    "date": 1679607589441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n \tvar title, author string\n \tvar copies, edition int\n \tvar inStock bool\n \tinStock = true\n+\tvar royaltyPercentage flo\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tedition = 1\n"
+                },
+                {
+                    "date": 1679607595064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,10 @@\n \tvar title, author string\n \tvar copies, edition int\n \tvar inStock bool\n \tinStock = true\n-\tvar royaltyPercentage flo\n+\tvar royaltyPercentage float64\n+\troyaltyPercentage\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tedition = 1\n"
+                },
+                {
+                    "date": 1679607626916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,12 +8,12 @@\n \n func main() {\n \tvar title, author string\n \tvar copies, edition int\n-\tvar inStock bool\n+\tvar inStock, specialOffer bool\n \tinStock = true\n \tvar royaltyPercentage float64\n-\troyaltyPercentage\n+\troyaltyPercentage = 12.5\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tedition = 1\n"
+                },
+                {
+                    "date": 1679607637945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n \tvar title, author string\n \tvar copies, edition int\n \tvar inStock, specialOffer bool\n \tinStock = true\n+\tspecialOffer = false\n \tvar royaltyPercentage float64\n \troyaltyPercentage = 12.5\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n"
+                },
+                {
+                    "date": 1679607665616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n }\n \n func main() {\n \tvar title, author string\n-\tvar copies, edition int\n+\tvar copies, edition, discount int\n \tvar inStock, specialOffer bool\n \tinStock = true\n \tspecialOffer = false\n \tvar royaltyPercentage float64\n"
+                },
+                {
+                    "date": 1679607671982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n }\n \n func main() {\n \tvar title, author string\n-\tvar copies, edition, discount int\n+\tvar copies, edition, discountPercentage int\n \tvar inStock, specialOffer bool\n \tinStock = true\n \tspecialOffer = false\n \tvar royaltyPercentage float64\n"
+                },
+                {
+                    "date": 1679607678147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n \tvar copies, edition, discountPercentage int\n \tvar inStock, specialOffer bool\n \tinStock = true\n \tspecialOffer = false\n+\tdiscountPercentage = \n \tvar royaltyPercentage float64\n \troyaltyPercentage = 12.5\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n"
+                },
+                {
+                    "date": 1679607683333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \tvar copies, edition, discountPercentage int\n \tvar inStock, specialOffer bool\n \tinStock = true\n \tspecialOffer = false\n-\tdiscountPercentage = \n+\tdiscountPercentage = 0.\n \tvar royaltyPercentage float64\n \troyaltyPercentage = 12.5\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n"
+                },
+                {
+                    "date": 1679610244944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n \tauthor = \"John Arundel\"\n \tcopies = 99\n \tedition = 1\n \tfoo()\n-\tfmt.Println(author, \"-\", title , \"edition Nr:\", edition)\n+\tfmt.Println(author, \"-\", title, \"edition Nr:\", edition)\n \tfmt.Println(copies)\n }\n"
+                },
+                {
+                    "date": 1679610803697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,15 +5,17 @@\n func foo() {\n \tfmt.Println(\"test with \")\n }\n \n+\n+\n func main() {\n \tvar title, author string\n \tvar copies, edition, discountPercentage int\n \tvar inStock, specialOffer bool\n \tinStock = true\n \tspecialOffer = false\n-\tdiscountPercentage = 0.\n+\tdiscountPercentage = 0.01\n \tvar royaltyPercentage float64\n \troyaltyPercentage = 12.5\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n"
+                },
+                {
+                    "date": 1679610821864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n func foo() {\n \tfmt.Println(\"test with \")\n }\n \n+type Book struct\n \n-\n func main() {\n \tvar title, author string\n \tvar copies, edition, discountPercentage int\n \tvar inStock, specialOffer bool\n"
+                },
+                {
+                    "date": 1679610830269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,11 @@\n func foo() {\n \tfmt.Println(\"test with \")\n }\n \n-type Book struct\n+type Book struct {\n+\tTitle string\n+}\n \n func main() {\n \tvar title, author string\n \tvar copies, edition, discountPercentage int\n"
+                },
+                {
+                    "date": 1679610837912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,10 @@\n }\n \n type Book struct {\n \tTitle string\n+\tAuthor string\n+\tYear \n }\n \n func main() {\n \tvar title, author string\n"
+                },
+                {
+                    "date": 1679610843699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n type Book struct {\n \tTitle string\n \tAuthor string\n-\tYear \n+\tCopies \n }\n \n func main() {\n \tvar title, author string\n"
+                },
+                {
+                    "date": 1679610853226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n type Book struct {\n \tTitle string\n \tAuthor string\n-\tCopies \n+\tCopies\tint\n }\n \n func main() {\n \tvar title, author string\n"
+                },
+                {
+                    "date": 1679611054029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,12 @@\n func foo() {\n \tfmt.Println(\"test with \")\n }\n \n+// Book represents information about a book.\n type Book struct {\n-\tTitle string\n-\tAuthor string\n+\tTitle\tstring\n+\tAuthor\tstring\n \tCopies\tint\n }\n \n func main() {\n"
+                },
+                {
+                    "date": 1679611145291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,9 @@\n func foo() {\n \tfmt.Println(\"test with \")\n }\n \n-// Book represents information about a book.\n-type Book struct {\n-\tTitle\tstring\n-\tAuthor\tstring\n-\tCopies\tint\n-}\n+x\n \n func main() {\n \tvar title, author string\n \tvar copies, edition, discountPercentage int\n"
+                },
+                {
+                    "date": 1679611150567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n func foo() {\n \tfmt.Println(\"test with \")\n }\n \n-x\n \n+\n func main() {\n \tvar title, author string\n \tvar copies, edition, discountPercentage int\n \tvar inStock, specialOffer bool\n"
+                },
+                {
+                    "date": 1679611937824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,8 @@\n func foo() {\n \tfmt.Println(\"test with \")\n }\n \n-\n-\n func main() {\n \tvar title, author string\n \tvar copies, edition, discountPercentage int\n \tvar inStock, specialOffer bool\n@@ -23,5 +21,6 @@\n \tedition = 1\n \tfoo()\n \tfmt.Println(author, \"-\", title, \"edition Nr:\", edition)\n \tfmt.Println(copies)\n+\tfmt.Println\n }\n"
+                },
+                {
+                    "date": 1679611948927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,6 @@\n \tedition = 1\n \tfoo()\n \tfmt.Println(author, \"-\", title, \"edition Nr:\", edition)\n \tfmt.Println(copies)\n-\tfmt.Println\n+\tfmt.Println(discountPercentage)\n }\n"
+                },
+                {
+                    "date": 1679611954767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,6 @@\n \tedition = 1\n \tfoo()\n \tfmt.Println(author, \"-\", title, \"edition Nr:\", edition)\n \tfmt.Println(copies)\n-\tfmt.Println(discountPercentage)\n+\tfmt.Println(discountPercentage, royaltyPercentage)\n }\n"
+                },
+                {
+                    "date": 1679611965707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,6 @@\n \tedition = 1\n \tfoo()\n \tfmt.Println(author, \"-\", title, \"edition Nr:\", edition)\n \tfmt.Println(copies)\n-\tfmt.Println(discountPercentage, royaltyPercentage)\n+\tfmt.Println(discountPercentage, royaltyPercentage, inStock)\n }\n"
+                },
+                {
+                    "date": 1679611972276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,6 @@\n \tedition = 1\n \tfoo()\n \tfmt.Println(author, \"-\", title, \"edition Nr:\", edition)\n \tfmt.Println(copies)\n-\tfmt.Println(discountPercentage, royaltyPercentage, inStock)\n+\tfmt.Println(discountPercentage, royaltyPercentage, inStock, specialOffer)\n }\n"
+                },
+                {
+                    "date": 1679611996143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \tvar copies, edition, discountPercentage int\n \tvar inStock, specialOffer bool\n \tinStock = true\n \tspecialOffer = false\n-\tdiscountPercentage = 0.01\n+\tdiscountPercentage = \n \tvar royaltyPercentage float64\n \troyaltyPercentage = 12.5\n \ttitle = \"For the Love of go\"\n \tauthor = \"John Arundel\"\n"
+                },
+                {
+                    "date": 1679775808547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,21 +6,6 @@\n \tfmt.Println(\"test with \")\n }\n \n func main() {\n-\tvar title, author string\n-\tvar copies, edition, discountPercentage int\n-\tvar inStock, specialOffer bool\n-\tinStock = true\n-\tspecialOffer = false\n-\tdiscountPercentage = \n-\tvar royaltyPercentage float64\n-\troyaltyPercentage = 12.5\n-\ttitle = \"For the Love of go\"\n-\tauthor = \"John Arundel\"\n-\tcopies = 99\n-\tedition = 1\n-\tfoo()\n-\tfmt.Println(author, \"-\", title, \"edition Nr:\", edition)\n-\tfmt.Println(copies)\n-\tfmt.Println(discountPercentage, royaltyPercentage, inStock, specialOffer)\n+\t\n }\n"
+                },
+                {
+                    "date": 1679775817104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,15 @@\n package main\n \n-import \"fmt\"\n+import (\n+\t\"fmt\"\n+\t\"for_the_love_of_go/06.01/bookstore\"\n+)\n \n func foo() {\n \tfmt.Println(\"test with \")\n }\n \n func main() {\n+\tvar b bookstore.Book\n \t\n }\n"
+                },
+                {
+                    "date": 1679775823876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n \tfmt.Println(\"test with \")\n }\n \n func main() {\n-\tvar b bookstore.Book\n-\t\n+\tvar b bookstore.Book{}\n+\n }\n"
+                },
+                {
+                    "date": 1679775829439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,9 @@\n \tfmt.Println(\"test with \")\n }\n \n func main() {\n-\tvar b bookstore.Book{}\n+\tvar b bookstore.Book{\n+\t\tTitle:\t\t\n+\t}\n \n }\n"
+                },
+                {
+                    "date": 1679775838632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n }\n \n func main() {\n \tvar b bookstore.Book{\n-\t\tTitle:\t\t\n+\t\tTitle:\t\t\"Nicholas Chuckleby\"\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1679775845063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n }\n \n func main() {\n \tvar b bookstore.Book{\n-\t\tTitle:\t\t\"Nicholas Chuckleby\"\n+\t\tTitle:\t\t\"Nicholas Chuckleby\",\n+\t\tAuthor:\t\t\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1679775852569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,8 @@\n \n func main() {\n \tvar b bookstore.Book{\n \t\tTitle:\t\t\"Nicholas Chuckleby\",\n-\t\tAuthor:\t\t\n+\t\tAuthor:\t\t\"Charl\",\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1679775858219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,8 @@\n \n func main() {\n \tvar b bookstore.Book{\n \t\tTitle:\t\t\"Nicholas Chuckleby\",\n-\t\tAuthor:\t\t\"Charl\",\n+\t\tAuthor:\t\t\"Charles Dickens\",\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1679775865007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,8 @@\n func main() {\n \tvar b bookstore.Book{\n \t\tTitle:\t\t\"Nicholas Chuckleby\",\n \t\tAuthor:\t\t\"Charles Dickens\",\n+\t\tCopies:\t\t\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1679775892427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,11 @@\n \tfmt.Println(\"test with \")\n }\n \n func main() {\n-\tvar b bookstore.Book{\n+\t b bookstore.Book{\n \t\tTitle:\t\t\"Nicholas Chuckleby\",\n \t\tAuthor:\t\t\"Charles Dickens\",\n-\t\tCopies:\t\t\n+\t\tCopies:\t\t8\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1679775903374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \tfmt.Println(\"test with \")\n }\n \n func main() {\n-\t b bookstore.Book{\n+\tb := bookstore.Book{\n \t\tTitle:\t\t\"Nicholas Chuckleby\",\n \t\tAuthor:\t\t\"Charles Dickens\",\n \t\tCopies:\t\t8\n \t}\n"
+                },
+                {
+                    "date": 1679775909145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \tfmt.Println(\"test with \")\n }\n \n func main() {\n-\tb := bookstore.Book{\n+\tvar b bookstore.Book{\n \t\tTitle:\t\t\"Nicholas Chuckleby\",\n \t\tAuthor:\t\t\"Charles Dickens\",\n \t\tCopies:\t\t8\n \t}\n"
+                },
+                {
+                    "date": 1679775918054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \tfmt.Println(\"test with \")\n }\n \n func main() {\n-\tvar b bookstore.Book{\n+\tvar b = bookstore.Book{\n \t\tTitle:\t\t\"Nicholas Chuckleby\",\n \t\tAuthor:\t\t\"Charles Dickens\",\n \t\tCopies:\t\t8\n \t}\n"
+                },
+                {
+                    "date": 1679775925418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \tfmt.Println(\"test with \")\n }\n \n func main() {\n-\tvar b = bookstore.Book{\n+\tb := bookstore.Book{\n \t\tTitle:\t\t\"Nicholas Chuckleby\",\n \t\tAuthor:\t\t\"Charles Dickens\",\n \t\tCopies:\t\t8\n \t}\n"
+                },
+                {
+                    "date": 1679776754522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \t\"fmt\"\n \t\"for_the_love_of_go/06.01/bookstore\"\n )\n \n-func foo() {\n+func Buy() {\n \tfmt.Println(\"test with \")\n }\n \n func main() {\n"
+                },
+                {
+                    "date": 1679776765301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n \t\tTitle:\t\t\"Nicholas Chuckleby\",\n \t\tAuthor:\t\t\"Charles Dickens\",\n \t\tCopies:\t\t8\n \t}\n-\n+B\n }\n"
+                },
+                {
+                    "date": 1679776770723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,7 @@\n \t\tTitle:\t\t\"Nicholas Chuckleby\",\n \t\tAuthor:\t\t\"Charles Dickens\",\n \t\tCopies:\t\t8\n \t}\n-B\n+Buy()\n+\n }\n"
+                },
+                {
+                    "date": 1679776791133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,10 @@\n func main() {\n \tb := bookstore.Book{\n \t\tTitle:\t\t\"Nicholas Chuckleby\",\n \t\tAuthor:\t\t\"Charles Dickens\",\n-\t\tCopies:\t\t8\n+\t\tCopies:\t\t8.\n \t}\n+\n Buy()\n \n }\n"
+                },
+                {
+                    "date": 1679776813181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n func main() {\n \tb := bookstore.Book{\n \t\tTitle:\t\t\"Nicholas Chuckleby\",\n \t\tAuthor:\t\t\"Charles Dickens\",\n-\t\tCopies:\t\t8.\n+\t\tCopies:\t\t8,\n \t}\n \n Buy()\n \n"
+                },
+                {
+                    "date": 1679776867429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,12 +10,12 @@\n }\n \n func main() {\n \tb := bookstore.Book{\n-\t\tTitle:\t\t\"Nicholas Chuckleby\",\n-\t\tAuthor:\t\t\"Charles Dickens\",\n-\t\tCopies:\t\t8,\n+\t\tTitle:  \"Nicholas Chuckleby\",\n+\t\tAuthor: \"Charles Dickens\",\n+\t\tCopies: 8,\n \t}\n+\tfmt.Prinln\n+\tBuy()\n \n-Buy()\n-\n }\n"
+                },
+                {
+                    "date": 1679776921024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,18 +4,15 @@\n \t\"fmt\"\n \t\"for_the_love_of_go/06.01/bookstore\"\n )\n \n-func Buy() {\n-\tfmt.Println(\"test with \")\n-}\n \n func main() {\n \tb := bookstore.Book{\n \t\tTitle:  \"Nicholas Chuckleby\",\n \t\tAuthor: \"Charles Dickens\",\n \t\tCopies: 8,\n \t}\n-\tfmt.Prinln\n+\tfmt.Println(b)\n \tBuy()\n \n }\n"
+                },
+                {
+                    "date": 1679776926925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,6 @@\n \t\tAuthor: \"Charles Dickens\",\n \t\tCopies: 8,\n \t}\n \tfmt.Println(b)\n-\tBuy()\n \n }\n"
+                },
+                {
+                    "date": 1679777507319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,9 @@\n \t\tCopies: 8,\n \t}\n \tfmt.Println(b)\n \n+\tfunc Buy(Book myBook) {\n+\t\tfmt.Println(myBook.Copies)\n+\t}\n+\n }\n"
+                },
+                {
+                    "date": 1679777546174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \t\tCopies: 8,\n \t}\n \tfmt.Println(b)\n \n-\tfunc Buy(Book myBook) {\n+\tfunc buy(Book myBook) {\n \t\tfmt.Println(myBook.Copies)\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1679777573206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \t\tCopies: 8,\n \t}\n \tfmt.Println(b)\n \n-\tfunc buy(Book myBook) {\n+\tfunc buy(Book ) {\n \t\tfmt.Println(myBook.Copies)\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1679777581267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \t\tCopies: 8,\n \t}\n \tfmt.Println(b)\n \n-\tfunc buy(Book ) {\n+\tfunc Buy(myBook Book ) {\n \t\tfmt.Println(myBook.Copies)\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1679777601593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \t\tCopies: 8,\n \t}\n \tfmt.Println(b)\n \n-\tfunc Buy(myBook Book ) {\n+\tfunc Buy(myBook Book) {\n \t\tfmt.Println(myBook.Copies)\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1679777624142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \t\tCopies: 8,\n \t}\n \tfmt.Println(b)\n \n-\tfunc Buy(myBook Book) {\n+\tfunc Buy(myBook Book) Book{\n \t\tfmt.Println(myBook.Copies)\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1679777633358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \t\tCopies: 8,\n \t}\n \tfmt.Println(b)\n \n-\tfunc Buy(myBook Book) Book{\n+\tfunc Buy(myBook Book)  {\n \t\tfmt.Println(myBook.Copies)\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1679777639523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n \t}\n \tfmt.Println(b)\n \n \tfunc Buy(myBook Book)  {\n-\t\tfmt.Println(myBook.Copies)\n+\t\treturn Book{}\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1679777654142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,7 @@\n \t\tCopies: 8,\n \t}\n \tfmt.Println(b)\n \n-\tfunc Buy(myBook Book)  {\n-\t\treturn Book{}\n-\t}\n \n+\n }\n"
+                },
+                {
+                    "date": 1679777674671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n \t\tAuthor: \"Charles Dickens\",\n \t\tCopies: 8,\n \t}\n \tfmt.Println(b)\n+}\n \n-\n-\n-}\n+func Buy(Book myBook) Book {\n+\treturn Book{}\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679777680571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n \tfmt.Println(b)\n }\n \n func Buy(Book myBook) Book {\n-\treturn Book{}\n+\treturn myBook{}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679777695509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,7 @@\n \t}\n \tfmt.Println(b)\n }\n \n-func Buy(Book myBook) Book {\n+func Buy(Book) Book {\n \treturn myBook{}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679777708522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,7 @@\n \t}\n \tfmt.Println(b)\n }\n \n-func Buy(Book) Book {\n+func Buy(myBook bookstore.Book) Book {\n \treturn myBook{}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679777728112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,7 @@\n \t}\n \tfmt.Println(b)\n }\n \n-func Buy(myBook bookstore.Book) Book {\n-\treturn myBook{}\n+func Buy(myBook bookstore.Book) bookstore.Book {\n+\treturn bookstore.myBook{}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679777737801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n \tfmt.Println(b)\n }\n \n func Buy(myBook bookstore.Book) bookstore.Book {\n-\treturn bookstore.myBook{}\n+\treturn myBook{}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679777744729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n \t\"fmt\"\n \t\"for_the_love_of_go/06.01/bookstore\"\n )\n \n-\n func main() {\n \tb := bookstore.Book{\n \t\tTitle:  \"Nicholas Chuckleby\",\n \t\tAuthor: \"Charles Dickens\",\n@@ -16,5 +15,5 @@\n }\n \n func Buy(myBook bookstore.Book) bookstore.Book {\n \treturn myBook{}\n-}\n\\ No newline at end of file\n+}\n"
+                },
+                {
+                    "date": 1679777758497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n \t}\n \tfmt.Println(b)\n }\n \n-func Buy(myBook bookstore.Book) bookstore.Book {\n+func Buy(myBook bookstore.Book) Book {\n \treturn myBook{}\n }\n"
+                },
+                {
+                    "date": 1679777934824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n package main\n \n import (\n \t\"fmt\"\n-\t\"for_the_love_of_go/06.01/bookstore\"\n+\t//\"for_the_love_of_go/06.01/bookstore\"\n )\n \n func main() {\n \tb := bookstore.Book{\n@@ -13,7 +13,7 @@\n \t}\n \tfmt.Println(b)\n }\n \n-func Buy(myBook bookstore.Book) Book {\n+func Buy(myBook Book) Book {\n \treturn myBook{}\n }\n"
+                },
+                {
+                    "date": 1679778205204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,5 @@\n \t}\n \tfmt.Println(b)\n }\n \n-func Buy(myBook Book) Book {\n-\treturn myBook{}\n-}\n+\n"
+                },
+                {
+                    "date": 1679778788907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n package main\n \n import (\n \t\"fmt\"\n-\t//\"for_the_love_of_go/06.01/bookstore\"\n+\t\"for_the_love_of_go/06.01/bookstore\"\n )\n \n func main() {\n \tb := bookstore.Book{\n"
+                }
+            ],
+            "date": 1679607158937,
+            "name": "Commit-0",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc foo() {\n\tfmt.Println(\"test with \")\n}\n\nfunc main() {\n\t\n\tfoo()\n\tfmt.Println(\"vim-go\")\n}\n"
+        }
+    ]
+}
