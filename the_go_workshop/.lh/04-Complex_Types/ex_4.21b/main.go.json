@@ -1,0 +1,18 @@
+{
+    "sourceFile": "04-Complex_Types/ex_4.21b/main.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1678134228047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1678134228047,
+            "name": "Commit-0",
+            "content": "package main\n\nimport \"fmt\"\n\n// Type definition\ntype Book struct {\n\tTitle string\n\tPrice float32\n}\n\ntype Drink struct {\n\tName  string\n\tPrice float32\n}\n\ntype printer interface {\n\tprintInfo()\n}\n\ntype Toy struct {\n\tName  string\n\tPrice float32\n}\n\n// Methods definition\nfunc (d Drink) printInfo() {\n\tfmt.Printf(\"Drink: %s -- Price: %.2f\\n\", d.Name, d.Price)\n}\n\nfunc (b Book) printInfo() {\n\tfmt.Printf(\"Book: %s -- Price: %.2f\\n\", b.Title, b.Price)\n}\n\nfunc (t Toy) printInfo() {\n\tfmt.Printf(\"Toy: %s -- Price: %.2f\\n\", t.Name, t.Price)\n}\n\nfunc main() {\n\n\tgunslinger := Book{\n\t\tTitle: \"The Gunslinger\",\n\t\tPrice: 4.75,\n\t}\n\n\tcoffee := Drink{\n\t\tName:  \"Coffee\",\n\t\tPrice: 2.50,\n\t}\n\n\tduck := Toy{\n\t\tName:  \"Paperino\",\n\t\tPrice: 1.35,\n\t}\n\n\t// gunslinger.printInfo()\n\t// coffee.printInfo()\n\t// duck.printInfo()\n\t// info := []printer{gunslinger, coffee, duck}\n\t// info[0].printInfo()\n\t// info[1].printInfo()\n\t// info[2].printInfo()\n\n}\n"
+        }
+    ]
+}

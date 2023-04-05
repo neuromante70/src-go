@@ -1,0 +1,14 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main() {
+	rand.Seed(time.Now().UnixNano())
+	// Generate a random number in the range of out list
+	index := rand.Intn(11)
+	fmt.Println(index)
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "04-Complex_Types/act_4.06/main.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1678135446761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1678135446761,
+            "name": "Commit-0",
+            "content": "package main\n\n/* Activity 4.06: Type Checker\nCreate a function that accepts a value of any type. The function returns a string with the name of the type:\n• For int, int32, and int64, it returns int.\n• For all floats, it returns float.\n• For a string, it returns string.\n• For a bool, it returns bool.\n• For anything else, it returns unknown.\n• Loop all the data by passing each one to your function.\n*/\n\nimport (\n\t\"errors\"\n\t\"fmt\"\n)\n\nfunc doubler(v interface{}) (string, error) {\n\tswitch t := v.(type) {\n\tcase string:\n\t\treturn fmt.Sprintf(\"Your variable is a string: %T\\n\", t), nil\n\tcase bool:\n\t\tif t {\n\t\t\treturn fmt.Sprintf(\"Your variable is bool: %T\\n\", t), nil\n\t\t}\n\t\treturn fmt.Sprintf(\"Your variable is bool: %T\\n\", t), nil\n\tcase float32, float64:\n\t\t// if f, ok := t.(float64); ok {\n\t\t\treturn fmt.Sprintf(\"Your variable is a float: %T\\n\", t), nil\n\t\t// }\n\t\t// return fmt.Sprint(t.(float32) * 2), nil\n\tcase int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64:\n\t\treturn fmt.Sprintf(\"Your variable is an int: %T\\n\", t), nil\n\t\t// return fmt.Sprint(t * 2), nil\n\t// case int8:\n\t// \treturn fmt.Sprint(t * 2), nil\n\t// case int16:\n\t// \treturn fmt.Sprint(t * 2), nil\n\t// case int32:\n\t// \treturn fmt.Sprint(t * 2), nil\n\t// case int64:\n\t// \treturn fmt.Sprint(t * 2), nil\n\t// case uint:\n\t// \treturn fmt.Sprint(t * 2), nil\n\t// case uint8:\n\t// \treturn fmt.Sprint(t * 2), nil\n\t// case uint16:\n\t// \treturn fmt.Sprint(t * 2), nil\n\t// case uint32:\n\t// \treturn fmt.Sprint(t * 2), nil\n\t// case uint64:\n\t// \treturn fmt.Sprint(t * 2), nil\n\tdefault:\n\t\treturn \"\", errors.New(\"unsupported type passed\")\n\t}\n}\n\nfunc main() {\n\tres, _ := doubler(-5)\n\tfmt.Println(\"-5 :\", res)\n\tres, _ = doubler(5)\n\tfmt.Println(\"5 :\", res)\n\tres, _ = doubler(\"yum\")\n\tfmt.Println(\"yum:\", res)\n\tres, _ = doubler(true)\n\tfmt.Println(\"true:\", res)\n\tres, _ = doubler(float32(3.14))\n\tfmt.Println(\"3.14 :\", res)\n}\n"
+        }
+    ]
+}

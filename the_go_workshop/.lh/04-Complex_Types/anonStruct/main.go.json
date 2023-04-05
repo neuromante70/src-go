@@ -1,0 +1,22 @@
+{
+    "sourceFile": "04-Complex_Types/anonStruct/main.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1678661366314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1678661376631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,24 @@\n package main\n \n import (\n \t\"fmt\"\n+\n \t\"github.com/headfirstgo/magazine\"\n )\n \n type Subscriber struct {\n \tName\t\tstring\n-\tRate   float64\n-\tActi   \t\tbool\n-} \n+\tRate\t\tfloat64\n+\tActive\t\tbool\n+}\n \n type Employee struct {\n \tName\t\tstring\n-\tSala   \t\tfloat64\n-} \n+\tSalary\t\tfloat64\n+}\n \n+\n func main() {\n \tvar employee magazine.Employee\n \temployee.Name = \"Joy Carr\"\n \temployee.Salary = 60000\n"
+                }
+            ],
+            "date": 1678661366314,
+            "name": "Commit-0",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\n\t\"github.com/headfirstgo/magazine\"\n)\n\ntype Subscriber struct {\n\tName\t\tstring\n\tRate\t\tfloat64\n\tActive\t\tbool\n}\n\ntype Employee struct {\n\tName\t\tstring\n\tSalary\t\tfloat64\n}\n\n\nfunc main() {\n\tvar employee magazine.Employee\n\temployee.Name = \"Joy Carr\"\n\temployee.Salary = 60000\n\tfmt.Println(employee.Name)\n\tfmt.Println(employee.Salary)\n}\n"
+        }
+    ]
+}

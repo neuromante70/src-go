@@ -1,0 +1,26 @@
+{
+    "sourceFile": "04-Complex_Types/interfaces/hfgo/main.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1678450544589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1678452232765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n package main\n \n-import \"the_go_workshop/04-Complex_Types/interfaces/hfgo/gadget\"\n+// import \"the_go_workshop/04-Complex_Types/interfaces/hfgo/gadget\"\n \n-\"gadget\"\n+import \"gadget\"\n+\n // \"github.com/headfirstgo/gadget\"\n \n func playList(device gadget.TapePlayer, songs []string) {\n \tfor _, song := range songs {\n@@ -12,8 +13,8 @@\n \tdevice.Stop()\n }\n \n func main() {\n-\tplayer := gadget.TapePlayer{}\n+\tplayer := gadget.TapeRecorder{}\n \tmixtape := []string{\"Jessie's Girl\", \"Whip It\", \"9 to 5\"}\n \tplayList(player, mixtape)\n }\n"
+                },
+                {
+                    "date": 1678477911881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,10 @@\n \tdevice.Stop()\n }\n \n func main() {\n-\tplayer := gadget.TapeRecorder{}\n+\tplayer := gadget.TapePlayer{\n+\t\tBatteries: \"\",\n+\t}\n \tmixtape := []string{\"Jessie's Girl\", \"Whip It\", \"9 to 5\"}\n \tplayList(player, mixtape)\n }\n"
+                }
+            ],
+            "date": 1678450544589,
+            "name": "Commit-0",
+            "content": "package main\n\nimport \"the_go_workshop/04-Complex_Types/interfaces/hfgo/gadget\"\n\n\"gadget\"\n// \"github.com/headfirstgo/gadget\"\n\nfunc playList(device gadget.TapePlayer, songs []string) {\n\tfor _, song := range songs {\n\t\tdevice.Play(song)\n\t}\n\tdevice.Stop()\n}\n\nfunc main() {\n\tplayer := gadget.TapePlayer{}\n\tmixtape := []string{\"Jessie's Girl\", \"Whip It\", \"9 to 5\"}\n\tplayList(player, mixtape)\n}\n"
+        }
+    ]
+}

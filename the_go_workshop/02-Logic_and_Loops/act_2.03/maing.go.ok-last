@@ -1,0 +1,52 @@
+package main
+
+/*
+Bubble Sort Algorithm:
+Start with an array of unsorted numbers
+Define a function called “bubbleSort” that takes in the array and the length of the array as parameters
+In the function, create a variable called “sorted” that is set to false
+Create a for loop that iterates through the array starting at index 0 and ending at the length of the array -1
+Within the for loop, compare the current element with the next element in the array
+If the current element is greater than the next element, swap their positions and set “sorted” to true
+After the for loop, check if “sorted” is true
+If “sorted” is true, call the “bubbleSort” function again with the same array and length as parameters
+If “sorted” is false, the array is now sorted and the function will return the sorted array
+Call the “bubbleSort” function with the initial unsorted array and its length as parameters to begin the sorting process.
+*/
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main() {
+
+	// Provide seed
+	rand.Seed(time.Now().Unix())
+
+	// declare and initalize a slice of int with random numbers
+	nums := rand.Perm(25)
+
+	// Print before sort
+	fmt.Println("Before:", nums)
+
+	// other version less efficient
+	//for i := 1; i <= len(nums)-1; i++ {
+
+	// do-while loop in go
+	for i := 0; i < len(nums)-1; i++ {
+		swapped := false
+		for j := 0; j < len(nums)-1; j++ {
+			if nums[j] > nums[j+1] {
+				nums[j], nums[j+1] = nums[j+1], nums[j]
+				swapped = true
+			}
+		}
+		if !swapped {
+			break
+		}
+	}
+
+	fmt.Println("After:", nums)
+}

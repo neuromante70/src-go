@@ -1,0 +1,6 @@
+Invalid settings: experimentalWorkspaceModule has been replaced by go workspaces, and will be removed in a future version of gopls (https://go.dev/issue/55331) -- see https://github.com/golang/tools/blob/master/gopls/doc/workspace.md for information on setting up multi-module workspaces using go.work files; experimentalWorkspaceModule has been replaced by go workspaces, and will be removed in a future version of gopls (https://go.dev/issue/55331) -- see https://github.com/golang/tools/blob/master/gopls/doc/workspace.md for information on setting up multi-module workspaces using go.work files
+
+    "gopls": {
+        "experimentalWorkspaceModule": false,
+        "build.experimentalWorkspaceModule": true
+    },
