@@ -1,0 +1,258 @@
+{
+    "sourceFile": "BASICS/built-in_types/main.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 60,
+            "patches": [
+                {
+                    "date": 1686216022601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686216029543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n import \"fmt\"\n \n func main(){\n-  \n+  /**/\n   fmt.Println(\"culo\")\n \n \n }\n"
+                },
+                {
+                    "date": 1686216035348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \n import \"fmt\"\n \n func main(){\n-  /**/\n+  /*\n+  LITERALS\n+  */\n   fmt.Println(\"culo\")\n \n \n }\n"
+                },
+                {
+                    "date": 1686216041010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,10 @@\n \n func main(){\n   /*\n   LITERALS\n+  Integer\n+  \n   */\n   fmt.Println(\"culo\")\n \n \n"
+                },
+                {
+                    "date": 1686216160902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n func main(){\n   /*\n   LITERALS\n   Integer\n-  \n+  v\n   */\n   fmt.Println(\"culo\")\n \n \n"
+                },
+                {
+                    "date": 1686216166680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n func main(){\n   /*\n   LITERALS\n   Integer\n-  v\n   */\n+  \n   fmt.Println(\"culo\")\n \n \n }\n"
+                },
+                {
+                    "date": 1686216243863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   /*\n   LITERALS\n   Integer\n   */\n-  \n+  vBin :=\n   fmt.Println(\"culo\")\n \n \n }\n"
+                },
+                {
+                    "date": 1686216255477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n   LITERALS\n   Integer\n   */\n   vBin :=\n-  fmt.Println(\"culo\")\n+  fmt.Println(vBin)\n \n \n }\n"
+                },
+                {
+                    "date": 1686216262112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   /*\n   LITERALS\n   Integer\n   */\n-  vBin :=\n+  vBin := 0b0000\n   fmt.Println(vBin)\n \n \n }\n"
+                },
+                {
+                    "date": 1686216269757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   /*\n   LITERALS\n   Integer\n   */\n-  vBin := 0b0000\n+  vBin := 0b1000\n   fmt.Println(vBin)\n \n \n }\n"
+                },
+                {
+                    "date": 1686216278483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n   LITERALS\n   Integer\n   */\n   vBin := 0b1000\n-  fmt.Println(vBin)\n+  fmt.Println(vBin)   // print 8 base 10\n \n \n }\n"
+                },
+                {
+                    "date": 1686216300458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,11 @@\n func main(){\n   /*\n   LITERALS\n   Integer\n+  \n   */\n+\n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n \n \n"
+                },
+                {
+                    "date": 1686216305732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n func main(){\n   /*\n   LITERALS\n   Integer\n+  0b fro binary\n   \n   */\n \n   vBin := 0b1000\n"
+                },
+                {
+                    "date": 1686216316946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   /*\n   LITERALS\n   Integer\n   0b fro binary\n-  \n+  0 or 0o for octal \n   */\n \n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n"
+                },
+                {
+                    "date": 1686216335675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,10 @@\n   /*\n   LITERALS\n   Integer\n   0b fro binary\n-  0 or 0o for octal \n+  0 or 0o for octal (don't use the first notation, it's confusing)\n+  \n   */\n \n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n"
+                },
+                {
+                    "date": 1686216342862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   LITERALS\n   Integer\n   0b fro binary\n   0 or 0o for octal (don't use the first notation, it's confusing)\n-  \n+  0x fro\n   */\n \n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n"
+                },
+                {
+                    "date": 1686216351460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,11 @@\n func main(){\n   /*\n   LITERALS\n   Integer\n-  0b fro binary\n+  0b for binary\n   0 or 0o for octal (don't use the first notation, it's confusing)\n-  0x fro\n+  0x for he\n   */\n \n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n"
+                },
+                {
+                    "date": 1686216676610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,19 @@\n package main\n \n import \"fmt\"\n \n+\n+\n+\n func main(){\n   /*\n   LITERALS\n   Integer\n   0b for binary\n   0 or 0o for octal (don't use the first notation, it's confusing)\n-  0x for he\n+  0x for hexadecimal\n+\n   */\n \n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n"
+                },
+                {
+                    "date": 1686216682124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n package main\n \n import \"fmt\"\n \n+/**\n \n \n-\n func main(){\n   /*\n   LITERALS\n   Integer\n"
+                },
+                {
+                    "date": 1686216687587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,14 @@\n package main\n \n import \"fmt\"\n \n-/**\n+/*\n \n \n+*/\n+\n+\n func main(){\n   /*\n   LITERALS\n   Integer\n"
+                },
+                {
+                    "date": 1686216693980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,41 @@\n \n import \"fmt\"\n \n /*\n+Reserved keywords\n+any\n+default\n+func\n+interface\n+select\n+break\n+defer\n+go\n+map\n+struct\n+case\n+else\n+goto\n+package\n+switch\n+chan\n+fallthrouogh\n+if\n+range\n+type\n+const\n+for\n+import\n+return\n+var\n+continue\n \n \n+\n+\n+\n+\n */\n \n \n func main(){\n"
+                },
+                {
+                    "date": 1686216794571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,40 +3,16 @@\n import \"fmt\"\n \n /*\n Reserved keywords\n-any\n-default\n-func\n-interface\n-select\n-break\n-defer\n-go\n-map\n-struct\n-case\n-else\n-goto\n-package\n-switch\n-chan\n-fallthrouogh\n-if\n-range\n-type\n-const\n-for\n-import\n-return\n-var\n-continue\n+any\tdefault\tfunc\tinterface\tselect\n+break\tdefer\tgo\tmap\tstruct\n+case\telse\tgoto\tpackage\tswitch\n+chan\tfallthrouogh\tif\trange\ttype\n+const\tfor\timport\treturn\tvar\n+continue\t\t\t\t\n \n \n-\n-\n-\n-\n */\n \n \n func main(){\n"
+                },
+                {
+                    "date": 1686217110091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,26 @@\n chan\tfallthrouogh\tif\trange\ttype\n const\tfor\timport\treturn\tvar\n continue\t\t\t\t\n \n+The Universe Block\n+Thereâs actually one more block that is a little weird: the universe block. Remember, Go is a small language with only 25 keywords. Whatâs interesting is that the built-in types (like int and string), constants (like true and false), and functions (like make or close) arenât included in that list. Neither is nil. So, where are they?\n \n+Rather than make them keywords, Go considers these predeclared identifiers and defines them in the universe block, which is the block that contains all other blocks.\n+\n+Because these names are declared in the universe block, it means that they can be shadowed in other scopes. You can see this happen by running the code in ExampleÂ 4-4 on The Go Playground.\n+\n+Example 4-4. Shadowing true\n+fmt.Println(true)\n+true := 10\n+fmt.Println(true)\n+When you run it, youâll see:\n+\n+true\n+10\n+You must be very careful to never redefine any of the identifiers in the universe block. If you accidentally do so, you will get some very strange behavior. If you are lucky, youâll get compilation failures. If you are not, youâll have a harder time tracking down the source of your problems.\n+\n+You might think that something this potentially destructive would be caught by linting tools. Amazingly, it isnât. Not even shadow detects shadowing of universe block identifiers.\n */\n \n \n func main(){\n"
+                },
+                {
+                    "date": 1686217115660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n const\tfor\timport\treturn\tvar\n continue\t\t\t\t\n \n The Universe Block\n-Thereâs actually one more block that is a little weird: the universe block. Remember, Go is a small language with only 25 keywords. Whatâs interesting is that the built-in types (like int and string), constants (like true and false), and functions (like make or close) arenât included in that list. Neither is nil. So, where are they?\n+Theres actually one more block that is a little weird: the universe block. Remember, Go is a small language with only 25 keywords. Whatâs interesting is that the built-in types (like int and string), constants (like true and false), and functions (like make or close) arenât included in that list. Neither is nil. So, where are they?\n \n Rather than make them keywords, Go considers these predeclared identifiers and defines them in the universe block, which is the block that contains all other blocks.\n \n Because these names are declared in the universe block, it means that they can be shadowed in other scopes. You can see this happen by running the code in ExampleÂ 4-4 on The Go Playground.\n"
+                },
+                {
+                    "date": 1686217135490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n const\tfor\timport\treturn\tvar\n continue\t\t\t\t\n \n The Universe Block\n-Theres actually one more block that is a little weird: the universe block. Remember, Go is a small language with only 25 keywords. Whatâs interesting is that the built-in types (like int and string), constants (like true and false), and functions (like make or close) arenât included in that list. Neither is nil. So, where are they?\n+Theres actually one more block that is a little weird: the universe block. Remember, Go is a small language with only 25 keywords. Whats interesting is that the built-in types (like int and string), constants (like true and false), and functions (like make or close) arenât included in that list. Neither is nil. So, where are they?\n \n Rather than make them keywords, Go considers these predeclared identifiers and defines them in the universe block, which is the block that contains all other blocks.\n \n Because these names are declared in the universe block, it means that they can be shadowed in other scopes. You can see this happen by running the code in ExampleÂ 4-4 on The Go Playground.\n"
+                },
+                {
+                    "date": 1686217143677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,8 @@\n continue\t\t\t\t\n \n The Universe Block\n Theres actually one more block that is a little weird: the universe block. Remember, Go is a small language with only 25 keywords. Whats interesting is that the built-in types (like int and string), constants (like true and false), and functions (like make or close) arenât included in that list. Neither is nil. So, where are they?\n-\n Rather than make them keywords, Go considers these predeclared identifiers and defines them in the universe block, which is the block that contains all other blocks.\n \n Because these names are declared in the universe block, it means that they can be shadowed in other scopes. You can see this happen by running the code in ExampleÂ 4-4 on The Go Playground.\n \n"
+                },
+                {
+                    "date": 1686217152866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,10 @@\n \n The Universe Block\n Theres actually one more block that is a little weird: the universe block. Remember, Go is a small language with only 25 keywords. Whats interesting is that the built-in types (like int and string), constants (like true and false), and functions (like make or close) arenât included in that list. Neither is nil. So, where are they?\n Rather than make them keywords, Go considers these predeclared identifiers and defines them in the universe block, which is the block that contains all other blocks.\n+Because these names are declared in the universe block, it means that they can be shadowed in other scopes. You can see this happen by running the code in this ExampleÂ 4-4 on The Go Playground.\n \n-Because these names are declared in the universe block, it means that they can be shadowed in other scopes. You can see this happen by running the code in ExampleÂ 4-4 on The Go Playground.\n-\n Example 4-4. Shadowing true\n fmt.Println(true)\n true := 10\n fmt.Println(true)\n"
+                },
+                {
+                    "date": 1686217159258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,10 @@\n \n The Universe Block\n Theres actually one more block that is a little weird: the universe block. Remember, Go is a small language with only 25 keywords. Whats interesting is that the built-in types (like int and string), constants (like true and false), and functions (like make or close) arenât included in that list. Neither is nil. So, where are they?\n Rather than make them keywords, Go considers these predeclared identifiers and defines them in the universe block, which is the block that contains all other blocks.\n-Because these names are declared in the universe block, it means that they can be shadowed in other scopes. You can see this happen by running the code in this ExampleÂ 4-4 on The Go Playground.\n+Because these names are declared in the universe block, it means that they can be shadowed in other scopes. You can see this happen by running the code in this on The Go Playground.\n \n-Example 4-4. Shadowing true\n fmt.Println(true)\n true := 10\n fmt.Println(true)\n When you run it, youâll see:\n"
+                },
+                {
+                    "date": 1686217166163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n \n fmt.Println(true)\n true := 10\n fmt.Println(true)\n+\n When you run it, youâll see:\n \n true\n 10\n"
+                },
+                {
+                    "date": 1686217192624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n chan\tfallthrouogh\tif\trange\ttype\n const\tfor\timport\treturn\tvar\n continue\t\t\t\t\n \n-The Universe Block\n+The Universe Block \n Theres actually one more block that is a little weird: the universe block. Remember, Go is a small language with only 25 keywords. Whats interesting is that the built-in types (like int and string), constants (like true and false), and functions (like make or close) arenât included in that list. Neither is nil. So, where are they?\n Rather than make them keywords, Go considers these predeclared identifiers and defines them in the universe block, which is the block that contains all other blocks.\n Because these names are declared in the universe block, it means that they can be shadowed in other scopes. You can see this happen by running the code in this on The Go Playground.\n \n@@ -20,9 +20,8 @@\n true := 10\n fmt.Println(true)\n \n When you run it, youâll see:\n-\n true\n 10\n You must be very careful to never redefine any of the identifiers in the universe block. If you accidentally do so, you will get some very strange behavior. If you are lucky, youâll get compilation failures. If you are not, youâll have a harder time tracking down the source of your problems.\n \n"
+                },
+                {
+                    "date": 1686217199163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n chan\tfallthrouogh\tif\trange\ttype\n const\tfor\timport\treturn\tvar\n continue\t\t\t\t\n \n-The Universe Block \n+The Universe Block (from Learning Go)\n Theres actually one more block that is a little weird: the universe block. Remember, Go is a small language with only 25 keywords. Whats interesting is that the built-in types (like int and string), constants (like true and false), and functions (like make or close) arenât included in that list. Neither is nil. So, where are they?\n Rather than make them keywords, Go considers these predeclared identifiers and defines them in the universe block, which is the block that contains all other blocks.\n Because these names are declared in the universe block, it means that they can be shadowed in other scopes. You can see this happen by running the code in this on The Go Playground.\n \n"
+                },
+                {
+                    "date": 1686217262869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,7 +40,7 @@\n   */\n \n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n+  \n \n-\n }\n"
+                },
+                {
+                    "date": 1686217271292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,7 +40,7 @@\n   */\n \n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n-  \n+  vOct\n \n }\n"
+                },
+                {
+                    "date": 1686217276628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,7 +40,7 @@\n   */\n \n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n-  vOct\n+  vOct := 0o\n \n }\n"
+                },
+                {
+                    "date": 1686217300077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,7 +40,7 @@\n   */\n \n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n-  vOct := 0o\n+  vOct := 0o10\n \n }\n"
+                },
+                {
+                    "date": 1686217311314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,6 +41,7 @@\n \n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n   vOct := 0o10\n+  fmt.Println(vBin)   // print 8 base 10\n \n }\n"
+                },
+                {
+                    "date": 1686217320403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,7 +41,7 @@\n \n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n   vOct := 0o10\n-  fmt.Println(vBin)   // print 8 base 10\n+  fmt.Println(vOct)   // print 8 base 8\n \n }\n"
+                },
+                {
+                    "date": 1686217326763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,6 +42,7 @@\n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n   vOct := 0o10\n   fmt.Println(vOct)   // print 8 base 8\n+  \n \n }\n"
+                },
+                {
+                    "date": 1686217336684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,7 +42,8 @@\n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n   vOct := 0o10\n   fmt.Println(vOct)   // print 8 base 8\n-  \n+  vOct := 0o10\n+  fmt.Println(vOct)   // print 8 base 8\n \n }\n"
+                },
+                {
+                    "date": 1686217344368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,8 +42,8 @@\n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n   vOct := 0o10\n   fmt.Println(vOct)   // print 8 base 8\n-  vOct := 0o10\n+  vHex := 0o10\n   fmt.Println(vOct)   // print 8 base 8\n \n }\n"
+                },
+                {
+                    "date": 1686217358730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,7 +43,7 @@\n   fmt.Println(vBin)   // print 8 base 10\n   vOct := 0o10\n   fmt.Println(vOct)   // print 8 base 8\n   vHex := 0o10\n-  fmt.Println(vOct)   // print 8 base 8\n+  fmt.Println(vHex)   // print 8 base 8\n \n }\n"
+                },
+                {
+                    "date": 1686217364243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,7 +43,7 @@\n   fmt.Println(vBin)   // print 8 base 10\n   vOct := 0o10\n   fmt.Println(vOct)   // print 8 base 8\n   vHex := 0o10\n-  fmt.Println(vHex)   // print 8 base 8\n+  fmt.Println(vHex)   // print 8 base 16\n \n }\n"
+                },
+                {
+                    "date": 1686217369681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n \n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n   vOct := 0o10\n-  fmt.Println(vOct)   // print 8 base 8\n+  fmt.Println(vOct)   // print 8 base 8 or Oct\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16\n \n }\n"
+                },
+                {
+                    "date": 1686217379673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,15 +35,14 @@\n   Integer\n   0b for binary\n   0 or 0o for octal (don't use the first notation, it's confusing)\n   0x for hexadecimal\n-\n   */\n \n   vBin := 0b1000\n   fmt.Println(vBin)   // print 8 base 10\n   vOct := 0o10\n   fmt.Println(vOct)   // print 8 base 8 or Oct\n   vHex := 0o10\n-  fmt.Println(vHex)   // print 8 base 16\n+  fmt.Println(vHex)   // print 8 base 16 or Hex\n \n }\n"
+                },
+                {
+                    "date": 1686217393900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,5 +44,6 @@\n   fmt.Println(vOct)   // print 8 base 8 or Oct\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n \n+  \n }\n"
+                },
+                {
+                    "date": 1686217399534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,7 +43,7 @@\n   vOct := 0o10\n   fmt.Println(vOct)   // print 8 base 8 or Oct\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n+  vLongnum :=\n \n-  \n }\n"
+                },
+                {
+                    "date": 1686217407142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,7 +43,7 @@\n   vOct := 0o10\n   fmt.Println(vOct)   // print 8 base 8 or Oct\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n-  vLongnum :=\n+  vLongnum := 1_200_000\n \n }\n"
+                },
+                {
+                    "date": 1686217413239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,6 +44,7 @@\n   fmt.Println(vOct)   // print 8 base 8 or Oct\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n   vLongnum := 1_200_000\n+  fmt.vLongnum\n \n }\n"
+                },
+                {
+                    "date": 1686217420496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,7 +44,7 @@\n   fmt.Println(vOct)   // print 8 base 8 or Oct\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n   vLongnum := 1_200_000\n-  fmt.vLongnum\n+  fmt.Println()\n \n }\n"
+                },
+                {
+                    "date": 1686217437376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,8 @@\n   vOct := 0o10\n   fmt.Println(vOct)   // print 8 base 8 or Oct\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n-  vLongnum := 1_200_000\n-  fmt.Println()\n+  vLongnum := 1_200_000 // use underscore as \n+  fmt.Println(vLongnum)\n \n }\n"
+                },
+                {
+                    "date": 1686217442650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,8 @@\n   vOct := 0o10\n   fmt.Println(vOct)   // print 8 base 8 or Oct\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n-  vLongnum := 1_200_000 // use underscore as \n+  vLongnum := 1_200_000 // use underscore \n   fmt.Println(vLongnum)\n \n }\n"
+                },
+                {
+                    "date": 1686217452655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,8 @@\n   vOct := 0o10\n   fmt.Println(vOct)   // print 8 base 8 or Oct\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n-  vLongnum := 1_200_000 // use underscore \n+  vLongnum := 1_200_000 // use underscore to group0\n   fmt.Println(vLongnum)\n \n }\n"
+                },
+                {
+                    "date": 1686217458202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,8 @@\n   vOct := 0o10\n   fmt.Println(vOct)   // print 8 base 8 or Oct\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n-  vLongnum := 1_200_000 // use underscore to group0\n+  vLongnum := 1_200_000 // use underscore to group by thousands\n   fmt.Println(vLongnum)\n \n }\n"
+                },
+                {
+                    "date": 1686217464690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,6 +45,7 @@\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n   vLongnum := 1_200_000 // use underscore to group by thousands\n   fmt.Println(vLongnum)\n+  vLongerrnum\n \n }\n"
+                },
+                {
+                    "date": 1686217473061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,7 +45,7 @@\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n   vLongnum := 1_200_000 // use underscore to group by thousands\n   fmt.Println(vLongnum)\n-  vLongerrnum\n+  vLongerrnum := 1_@_#_$\n \n }\n"
+                },
+                {
+                    "date": 1686217482053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,7 +45,7 @@\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n   vLongnum := 1_200_000 // use underscore to group by thousands\n   fmt.Println(vLongnum)\n-  vLongerrnum := 1_@_#_$\n+  vLongerrnum := 1_2_3_4\n \n }\n"
+                },
+                {
+                    "date": 1686217488583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,6 +46,7 @@\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n   vLongnum := 1_200_000 // use underscore to group by thousands\n   fmt.Println(vLongnum)\n   vLongerrnum := 1_2_3_4\n+  fmt.Println(vLongnum)\n \n }\n"
+                },
+                {
+                    "date": 1686217494880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,8 +45,8 @@\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n   vLongnum := 1_200_000 // use underscore to group by thousands\n   fmt.Println(vLongnum)\n-  vLongerrnum := 1_2_3_4\n-  fmt.Println(vLongnum)\n+  vLongerrnum := 1_2_3_4  \n+  fmt.Println(vLongerrnum)\n \n }\n"
+                },
+                {
+                    "date": 1686217501476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,8 +45,8 @@\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n   vLongnum := 1_200_000 // use underscore to group by thousands\n   fmt.Println(vLongnum)\n-  vLongerrnum := 1_2_3_4  \n+  vLongerrnum := 1_2_3_4  // it\n   fmt.Println(vLongerrnum)\n \n }\n"
+                },
+                {
+                    "date": 1686217507697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,8 +45,8 @@\n   vHex := 0o10\n   fmt.Println(vHex)   // print 8 base 16 or Hex\n   vLongnum := 1_200_000 // use underscore to group by thousands\n   fmt.Println(vLongnum)\n-  vLongerrnum := 1_2_3_4  // it's allowed but don\n+  vLongerrnum := 1_2_3_4  // it's allowed but don'\n   fmt.Println(vLongerrnum)\n \n }\n"
+                },
+                {
+                    "date": 1686259122288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,67 @@\n+package main\n+\n+import \"fmt\"\n+\n+/*\n+Reserved keywords\n+any\tdefault\tfunc\tinterface\tselect\n+break\tdefer\tgo\tmap\tstruct\n+case\telse\tgoto\tpackage\tswitch\n+chan\tfallthrouogh\tif\trange\ttype\n+const\tfor\timport\treturn\tvar\n+continue\t\t\t\t\n+\n+The Universe Block (from Learning Go)\n+Theres actually one more block that is a little weird: the universe block. Remember, Go is a small language with only 25 keywords. Whats interesting is that the built-in types (like int and string), constants (like true and false), and functions (like make or close) arenât included in that list. Neither is nil. So, where are they?\n+Rather than make them keywords, Go considers these predeclared identifiers and defines them in the universe block, which is the block that contains all other blocks.\n+Because these names are declared in the universe block, it means that they can be shadowed in other scopes. You can see this happen by running the code in this on The Go Playground.\n+\n+fmt.Println(true)\n+true := 10\n+fmt.Println(true)\n+\n+When you run it, youâll see:\n+true\n+10\n+You must be very careful to never redefine any of the identifiers in the universe block. If you accidentally do so, you will get some very strange behavior. If you are lucky, youâll get compilation failures. If you are not, youâll have a harder time tracking down the source of your problems.\n+\n+You might think that something this potentially destructive would be caught by linting tools. Amazingly, it isnât. Not even shadow detects shadowing of universe block identifiers.\n+*/\n+\n+\n+func main(){\n+  /*\n+  LITERALS\n+  Integer\n+  0b for binary\n+  0 or 0o for octal (don't use the first notation, it's confusing)\n+  0x for hexadecimal\n+  \n+  */\n+\n+  vBin := 0b1000\n+  fmt.Printf(\"%#v\\n\", vBin)   // print 8 base 2\n+  vOct := 0o10\n+  fmt.Printf(\"%#v\\n\", vOct)   // print 8 base 8 or Oct\n+  vHex := 0o10\n+  fmt.Println(vHex)   // print 8 base 16 or Hex\n+  vLongNum := 1_200_000 // use underscore to group by thousands\n+  fmt.Println(vLongNum)\n+  vLongErrNum := 1_2_3_4  // yes, it's allowed but don't do this!\n+  fmt.Println(vLongerrnum)\n+\n+  /*\n+  Floating point literlas\n+  */\n+\n+  vFloat := 6.03e4    // print 60300\n+  fmt.Println(vFloat)\n+  vFloathex := 0x1p-3 // print 0.125\n+  fmt.Println(vFloathex) //in hex with 0x as prefix and p indicating exponent\n+\n+  /*\n+  Rune literlas\n+  */\n+\n+\n+}\n"
+                }
+            ],
+            "date": 1686216022601,
+            "name": "Commit-0",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main(){\n  \n  fmt.Println(\"culo\")\n\n\n}\n"
+        }
+    ]
+}

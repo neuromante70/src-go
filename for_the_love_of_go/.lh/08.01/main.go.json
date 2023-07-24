@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 76,
+            "activePatchIndex": 94,
             "patches": [
                 {
                     "date": 1679780904836,
@@ -312,6 +312,78 @@
                 {
                     "date": 1680296966196,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n package main\n \n import (\n \t\"fmt\"\n-\t\"github.com/google/go-cmp/cmp\"\n )\n \n type Book struct {\n \tTitle  string\n"
+                },
+                {
+                    "date": 1680730474874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,4 @@\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n \t}\n-}\n"
+                },
+                {
+                    "date": 1680730511743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,6 @@\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n-\t}\n+}\n+``\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680730542457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,4 @@\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \n }\n-``\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680730611557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,7 @@\n \t// first = Book{Title: \"Heart of Kindness\"}\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n+\tfmt.Println()\n \n }\n"
+                },
+                {
+                    "date": 1680730617006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n \t// first = Book{Title: \"Heart of Kindness\"}\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n-\tfmt.Println()\n+\tfmt.Println(books)\n \n }\n"
+                },
+                {
+                    "date": 1680730641234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n \t// first = Book{Title: \"Heart of Kindness\"}\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n-\tfmt.Println(books)\n-\n+\tfmt.Println(books[0])\n+\t\n }\n"
+                },
+                {
+                    "date": 1680730650365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,6 @@\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \tfmt.Println(books[0])\n-\t\n+\tb := Book\n }\n"
+                },
+                {
+                    "date": 1680730656428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,6 @@\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \tfmt.Println(books[0])\n-\tb := Book\n+\tb := Book{Title: \"\"}\n }\n"
+                },
+                {
+                    "date": 1680730664031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,6 @@\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \tfmt.Println(books[0])\n-\tb := Book{Title: \"\"}\n+\tb := Book{Title: \"The Grapes of Mild Irritation\"}\n }\n"
+                },
+                {
+                    "date": 1680730670401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,6 @@\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \tfmt.Println(books[0])\n \tb := Book{Title: \"The Grapes of Mild Irritation\"}\n+\tbooks = \n }\n"
+                },
+                {
+                    "date": 1680730677064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,6 @@\n \tfmt.Println(len(books))\n \tfmt.Println(first)\n \tfmt.Println(books[0])\n \tb := Book{Title: \"The Grapes of Mild Irritation\"}\n-\tbooks = \n+\tbooks = append(books, b)\n }\n"
+                },
+                {
+                    "date": 1680730685507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,5 +24,6 @@\n \tfmt.Println(first)\n \tfmt.Println(books[0])\n \tb := Book{Title: \"The Grapes of Mild Irritation\"}\n \tbooks = append(books, b)\n+\tfmt.Println(books)\n }\n"
+                },
+                {
+                    "date": 1680730691749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,8 @@\n \tfirst := books[0]\n \t// first = Book{Title: \"Heart of Kindness\"}\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n-\tfmt.Println(first)\n-\tfmt.Println(books[0])\n \tb := Book{Title: \"The Grapes of Mild Irritation\"}\n \tbooks = append(books, b)\n \tfmt.Println(books)\n }\n"
+                },
+                {
+                    "date": 1680730713539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \tbooks := []Book{\n \t\t{Title: \"Delightfully Uneventful Trip on the Orient Express\"},\n \t\t{Title: \"One Hundred Years of Good Company\"},\n \t}\n-\tfirst := books[0]\n+\t// first := books[0]\n \t// first = Book{Title: \"Heart of Kindness\"}\n \tbooks[0].Title = \"Heart of Kindness\"\n \tfmt.Println(len(books))\n \tb := Book{Title: \"The Grapes of Mild Irritation\"}\n"
+                },
+                {
+                    "date": 1680904751723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \t\"fmt\"\n )\n \n type Book struct {\n+\tID     int\n \tTitle  string\n \tAuthor string\n \tCopies int\n }\n"
+                },
+                {
+                    "date": 1681330849329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n \tID     int\n \tTitle  string\n \tAuthor string\n \tCopies int\n+\t\n }\n \n func main() {\n \t// var books []Book\n"
+                },
+                {
+                    "date": 1681330858602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,10 @@\n \tID     int\n \tTitle  string\n \tAuthor string\n \tCopies int\n-\t\n+\tPriceCents int\n+\tDiscount\n }\n \n func main() {\n \t// var books []Book\n"
+                },
+                {
+                    "date": 1681330864394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,14 +4,14 @@\n \t\"fmt\"\n )\n \n type Book struct {\n-\tID     int\n-\tTitle  string\n-\tAuthor string\n-\tCopies int\n-\tPriceCents int\n-\tDiscount\n+\tID              int\n+\tTitle           string\n+\tAuthor          string\n+\tCopies          int\n+\tPriceCents      int\n+\tDiscountPercent int\n }\n \n func main() {\n \t// var books []Book\n"
                 }
             ],
             "date": 1679780904836,

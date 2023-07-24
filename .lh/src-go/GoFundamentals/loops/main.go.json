@@ -1,0 +1,618 @@
+{
+    "sourceFile": "src-go/GoFundamentals/loops/main.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 150,
+            "patches": [
+                {
+                    "date": 1684402101752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1684402385094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,8 @@\n \n import \"fmt\"\n \n func main() {\n-\tfmt.Println(\"vim-go\")\n+\n+\t\n+\t\n }\n"
+                },
+                {
+                    "date": 1684402402509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n \n import \"fmt\"\n \n func main() {\n+\t// C\n+\t\n \n-\t\n-\t\n }\n"
+                },
+                {
+                    "date": 1684402413108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n \n import \"fmt\"\n \n func main() {\n-\t// C\n+\t// Complete for Statement, C\n \t\n \n }\n"
+                },
+                {
+                    "date": 1684402457265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n import \"fmt\"\n \n func main() {\n-\t// Complete for Statement, C\n+\t// Complete for Statement, C-Style\n+\t// for \n \t\n \n }\n"
+                },
+                {
+                    "date": 1684402464225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,8 @@\n import \"fmt\"\n \n func main() {\n \t// Complete for Statement, C-Style\n-\t// for \n+\t// for [initialization ]\n \t\n \n }\n"
+                },
+                {
+                    "date": 1684402469431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,8 @@\n import \"fmt\"\n \n func main() {\n \t// Complete for Statement, C-Style\n-\t// for [initialization ]\n+\t// for [initialization :=]; \n \t\n \n }\n"
+                },
+                {
+                    "date": 1684402528084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,8 @@\n import \"fmt\"\n \n func main() {\n \t// Complete for Statement, C-Style\n-\t// for [initialization :=]; \n+\t// for [initialization :=]; [comparison = ]\n \t\n \n }\n"
+                },
+                {
+                    "date": 1684402534869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,8 @@\n import \"fmt\"\n \n func main() {\n \t// Complete for Statement, C-Style\n-\t// for [initialization :=]; [comparison = ]\n+\t// for [initialization :=]; [comparison = execution if true]; \n \t\n \n }\n"
+                },
+                {
+                    "date": 1684402544220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,8 @@\n import \"fmt\"\n \n func main() {\n \t// Complete for Statement, C-Style\n-\t// for [initialization :=]; [comparison = execution if true]; \n+\t// for [initialization :=]; [comparison = execution if true]; [increment]\n \t\n \n }\n"
+                },
+                {
+                    "date": 1684402551922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,8 @@\n \n func main() {\n \t// Complete for Statement, C-Style\n \t// for [initialization :=]; [comparison = execution if true]; [increment]\n+\t\tfor body\n \t\n \n }\n"
+                },
+                {
+                    "date": 1684402557308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import \"fmt\"\n \n func main() {\n \t// Complete for Statement, C-Style\n-\t// for [initialization :=]; [comparison = execution if true]; [increment]\n+\t/ for [initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n \t\n \n }\n"
+                },
+                {
+                    "date": 1684402563041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n import \"fmt\"\n \n func main() {\n-\t// Complete for Statement, C-Style\n+\t/ Complete for Statement, C-Style\n \t/ for [initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n \t\n \n"
+                },
+                {
+                    "date": 1684402569204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n \n import \"fmt\"\n \n func main() {\n-\t/ Complete for Statement, C-Style\n-\t/ for [initialization :=]; [comparison = execution if true]; [increment]\n+\t/* Complete for Statement, C-Style\n+\tfor [initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n \t\n \n }\n"
+                },
+                {
+                    "date": 1684402574508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n func main() {\n \t/* Complete for Statement, C-Style\n \tfor [initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n-\t\n+\t*/\n \n }\n"
+                },
+                {
+                    "date": 1684402582199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n import \"fmt\"\n \n func main() {\n \t/* Complete for Statement, C-Style\n-\tfor [initialization :=]; [comparison = execution if true]; [increment]\n+\tfor {[initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n+\t\n \t*/\n \n }\n"
+                },
+                {
+                    "date": 1684402600547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n func main() {\n \t/* Complete for Statement, C-Style\n \tfor {[initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n-\t\n+\t}\n \t*/\n+\tfor i\n \n }\n"
+                },
+                {
+                    "date": 1684402605959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n \tfor {[initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n \t}\n \t*/\n-\tfor i\n+\tfor i := \n \n }\n"
+                },
+                {
+                    "date": 1684402611697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n \tfor {[initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n \t}\n \t*/\n-\tfor i := \n+\tfor i := 0;\n \n }\n"
+                },
+                {
+                    "date": 1684402620500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n \tfor {[initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n \t}\n \t*/\n-\tfor i := 0;\n+\tfor i := 0; i < 10; i\n \n }\n"
+                },
+                {
+                    "date": 1684402629368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,9 @@\n \tfor {[initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n \t}\n \t*/\n-\tfor i := 0; i < 10; i\n+\tfor i := 0; i < 10; i++ {\n+\t\tfmt.Pri\n+\t}\n \n }\n"
+                },
+                {
+                    "date": 1684402636977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n \t\tfor body\n \t}\n \t*/\n \tfor i := 0; i < 10; i++ {\n-\t\tfmt.Pri\n+\t\tfmt.Println(i)\n \t}\n \n+\t\n }\n"
+                },
+                {
+                    "date": 1684402650911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n package main\n \n import \"fmt\"\n \n+\n+\n func main() {\n \t/* Complete for Statement, C-Style\n \tfor {[initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n@@ -11,6 +13,6 @@\n \tfor i := 0; i < 10; i++ {\n \t\tfmt.Println(i)\n \t}\n \n-\t\n+\n }\n"
+                },
+                {
+                    "date": 1684402658752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n package main\n \n import \"fmt\"\n+/*\n+*\n \n \n-\n func main() {\n \t/* Complete for Statement, C-Style\n \tfor {[initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n"
+                },
+                {
+                    "date": 1684402666895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n package main\n \n import \"fmt\"\n /*\n-*\n+for \n+*/\n \n \n func main() {\n \t/* Complete for Statement, C-Style\n"
+                },
+                {
+                    "date": 1684402676860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n package main\n \n import \"fmt\"\n /*\n-for \n+for statemente for loop\n */\n \n \n func main() {\n"
+                },
+                {
+                    "date": 1684402682322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n package main\n \n import \"fmt\"\n /*\n-for statemente for loop\n+for statemente for loop:\n+1) \n */\n \n \n func main() {\n"
+                },
+                {
+                    "date": 1684402694005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n \n import \"fmt\"\n /*\n for statemente for loop:\n-1) \n+1) a complete, C-style for\n+\n */\n \n \n func main() {\n"
+                },
+                {
+                    "date": 1684402699375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import \"fmt\"\n /*\n for statemente for loop:\n 1) a complete, C-style for\n-\n+2) a condition\n */\n \n \n func main() {\n"
+                },
+                {
+                    "date": 1684402706121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n import \"fmt\"\n /*\n for statemente for loop:\n 1) a complete, C-style for\n-2) a condition\n+2) a condition-only for\n+3)\n+\n */\n \n \n func main() {\n"
+                },
+                {
+                    "date": 1684402714219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n /*\n for statemente for loop:\n 1) a complete, C-style for\n 2) a condition-only for\n-3)\n-\n+3) an infite for\n+4) \n */\n \n \n func main() {\n"
+                },
+                {
+                    "date": 1684403483169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,14 @@\n for statemente for loop:\n 1) a complete, C-style for\n 2) a condition-only for\n 3) an infite for\n-4) \n+4) for-range\n */\n \n \n func main() {\n-\t/* Complete for Statement, C-Style\n+\t/* 1) Complete for Statement, C-Style\n \tfor {[initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n \t}\n \t*/\n"
+                },
+                {
+                    "date": 1684403491339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,12 @@\n \tfor i := 0; i < 10; i++ {\n \t\tfmt.Println(i)\n \t}\n \n+\t/* 1) Complete for Statement, C-Style\n+\tfor {[initialization :=]; [comparison = execution if true]; [increment]\n+\t\tfor body\n+\t}\n+\t*/\n \n+\n }\n"
+                },
+                {
+                    "date": 1684403501437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \tfor i := 0; i < 10; i++ {\n \t\tfmt.Println(i)\n \t}\n \n-\t/* 1) Complete for Statement, C-Style\n+\t/* 2) a condition-only for\n \tfor {[initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n \t}\n \t*/\n"
+                },
+                {
+                    "date": 1684403518924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \t\tfmt.Println(i)\n \t}\n \n \t/* 2) a condition-only for\n-\tfor {[initialization :=]; [comparison = execution if true]; [increment]\n+\tfor {; [comparison = execution if true]; [increment]\n \t\tfor body\n \t}\n \t*/\n \n"
+                },
+                {
+                    "date": 1684403525494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \t\tfmt.Println(i)\n \t}\n \n \t/* 2) a condition-only for\n-\tfor {; [comparison = execution if true]; [increment]\n+\tfor {[comparison = execution if true]\n \t\tfor body\n \t}\n \t*/\n \n"
+                },
+                {
+                    "date": 1684403532415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n \t\tfmt.Println(i)\n \t}\n \n \t/* 2) a condition-only for\n+\ti :=\n \tfor {[comparison = execution if true]\n \t\tfor body\n \t}\n \t*/\n"
+                },
+                {
+                    "date": 1684403574469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import \"fmt\"\n /*\n for statemente for loop:\n 1) a complete, C-style for\n-2) a condition-only for\n+2) a condition-only for (while style)\n 3) an infite for\n 4) for-range\n */\n \n@@ -20,9 +20,9 @@\n \t\tfmt.Println(i)\n \t}\n \n \t/* 2) a condition-only for\n-\ti :=\n+\ti := 0\n \tfor {[comparison = execution if true]\n \t\tfor body\n \t}\n \t*/\n"
+                },
+                {
+                    "date": 1684403593144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,12 +19,13 @@\n \tfor i := 0; i < 10; i++ {\n \t\tfmt.Println(i)\n \t}\n \n-\t/* 2) a condition-only for\n+\t/* 2) a condition-only for (while style)\n \ti := 0\n \tfor {[comparison = execution if true]\n \t\tfor body\n+\t\t[increment]\n \t}\n \t*/\n \n \n"
+                },
+                {
+                    "date": 1684403601787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,9 @@\n \n \t/* 2) a condition-only for (while style)\n \ti := 0\n \tfor {[comparison = execution if true]\n-\t\tfor body\n-\t\t[increment]\n+\t\tfor body: [increment]\n \t}\n \t*/\n \n \n"
+                },
+                {
+                    "date": 1684403619929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,7 +25,8 @@\n \tfor {[comparison = execution if true]\n \t\tfor body: [increment]\n \t}\n \t*/\n+\t\n \n \n }\n"
+                },
+                {
+                    "date": 1684403626147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,8 @@\n \tfor {[comparison = execution if true]\n \t\tfor body: [increment]\n \t}\n \t*/\n-\t\n+\tn\n \n \n }\n"
+                },
+                {
+                    "date": 1684403631596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n \tfor {[comparison = execution if true]\n \t\tfor body: [increment]\n \t}\n \t*/\n-\tn\n+\tn := 1\n+\t\n \n \n }\n"
+                },
+                {
+                    "date": 1684403638353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,10 @@\n \t\tfor body: [increment]\n \t}\n \t*/\n \tn := 1\n-\t\n+\tfor n < 100 {\n+\t\t\n+\t}\n \n \n }\n"
+                },
+                {
+                    "date": 1684403643555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n \t}\n \t*/\n \tn := 1\n \tfor n < 100 {\n-\t\t\n+\t\tfmt.Println()\n \t}\n \n \n }\n"
+                },
+                {
+                    "date": 1684403649325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,10 @@\n \t}\n \t*/\n \tn := 1\n \tfor n < 100 {\n-\t\tfmt.Println()\n+\t\tfmt.Println(n)\n+\t\t\n \t}\n \n \n }\n"
+                },
+                {
+                    "date": 1684403656148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \t*/\n \tn := 1\n \tfor n < 100 {\n \t\tfmt.Println(n)\n-\t\t\n+\t\tn *= 2\n \t}\n \n \n }\n"
+                },
+                {
+                    "date": 1684403716971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,6 +31,6 @@\n \t\tfmt.Println(n)\n \t\tn *= 2\n \t}\n \n-\n+\t\n }\n"
+                },
+                {
+                    "date": 1684403722022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,6 +31,7 @@\n \t\tfmt.Println(n)\n \t\tn *= 2\n \t}\n \n-\t\n+\t/*\n+\t*/\n }\n"
+                },
+                {
+                    "date": 1684403729693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,7 +31,8 @@\n \t\tfmt.Println(n)\n \t\tn *= 2\n \t}\n \n-\t/*\n+\t/* 3) an infite for\n+\n \t*/\n }\n"
+                },
+                {
+                    "date": 1684403736955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,7 +32,7 @@\n \t\tn *= 2\n \t}\n \n \t/* 3) an infite for\n-\n+\tfor \n \t*/\n }\n"
+                },
+                {
+                    "date": 1684403746079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,7 +32,9 @@\n \t\tn *= 2\n \t}\n \n \t/* 3) an infite for\n-\tfor \n+\tfor {\n+\t\tfor body\n+\t}\n \t*/\n }\n"
+                },
+                {
+                    "date": 1684403757298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,5 +36,7 @@\n \tfor {\n \t\tfor body\n \t}\n \t*/\n+\n+\t\n }\n"
+                },
+                {
+                    "date": 1684403764796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,6 +37,8 @@\n \t\tfor body\n \t}\n \t*/\n \n-\t\n+\tfor {\n+\t\tfmt.Println\n+\t}\n }\n"
+                },
+                {
+                    "date": 1684403769935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,7 +38,7 @@\n \t}\n \t*/\n \n \tfor {\n-\t\tfmt.Println\n+\t\tfmt.Println(\"Hello\")\n \t}\n }\n"
+                },
+                {
+                    "date": 1684403775713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,5 +40,7 @@\n \n \tfor {\n \t\tfmt.Println(\"Hello\")\n \t}\n+\n+\t\n }\n"
+                },
+                {
+                    "date": 1684403785706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,6 +41,6 @@\n \tfor {\n \t\tfmt.Println(\"Hello\")\n \t}\n \n-\t\n+\t/**/\n }\n"
+                },
+                {
+                    "date": 1684403794267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,6 +41,7 @@\n \tfor {\n \t\tfmt.Println(\"Hello\")\n \t}\n \n-\t/**/\n+\t/*4) for-range\n+\t*/\n }\n"
+                },
+                {
+                    "date": 1684403843806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n for statemente for loop:\n 1) a complete, C-style for\n 2) a condition-only for (while style)\n 3) an infite for\n+\n 4) for-range\n */\n \n \n@@ -41,7 +42,8 @@\n \tfor {\n \t\tfmt.Println(\"Hello\")\n \t}\n \n-\t/*4) for-range\n+\t/* 4) for-range\n+\n \t*/\n }\n"
+                },
+                {
+                    "date": 1684403851726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n for statemente for loop:\n 1) a complete, C-style for\n 2) a condition-only for (while style)\n 3) an infite for\n-\n+   continue & break\n 4) for-range\n */\n \n \n"
+                },
+                {
+                    "date": 1684403979096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,8 +42,10 @@\n \tfor {\n \t\tfmt.Println(\"Hello\")\n \t}\n \n+\t\n+\n \t/* 4) for-range\n \n \t*/\n }\n"
+                },
+                {
+                    "date": 1684403984602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,10 @@\n \tfor {\n \t\tfmt.Println(\"Hello\")\n \t}\n \n-\t\n+\t/* \n+\t*/\n \n \t/* 4) for-range\n \n \t*/\n"
+                },
+                {
+                    "date": 1684403990477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n \tfor {\n \t\tfmt.Println(\"Hello\")\n \t}\n \n-\t/* \n+\t/* do \n \t*/\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684403999588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,10 @@\n \tfor {\n \t\tfmt.Println(\"Hello\")\n \t}\n \n-\t/* do \n+\t/* do-while replacement\n+\t\n \t*/\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684404006098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n \t\tfmt.Println(\"Hello\")\n \t}\n \n \t/* do-while replacement\n-\t\n+\tin Java\n \t*/\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684404015773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,10 @@\n \t\tfmt.Println(\"Hello\")\n \t}\n \n \t/* do-while replacement\n-\tin Java\n+\tin Java/C:\n+\t\n \t*/\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684404024127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,11 @@\n \t}\n \n \t/* do-while replacement\n \tin Java/C:\n-\t\n+\tdo {\n+\t\tdo body\n+\t}\n \t*/\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684404031996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n \t/* do-while replacement\n \tin Java/C:\n \tdo {\n \t\tdo body\n-\t}\n+\t} while\n \t*/\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684404078769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n \t/* do-while replacement\n \tin Java/C:\n \tdo {\n \t\tdo body\n-\t} while\n+\t} while ()\n \t*/\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684404084992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,11 @@\n \t/* do-while replacement\n \tin Java/C:\n \tdo {\n \t\tdo body\n-\t} while ()\n+\t} while ([comparison = execution if true])\n+\n+\t\n \t*/\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684404094015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,15 +42,15 @@\n \tfor {\n \t\tfmt.Println(\"Hello\")\n \t}\n \n-\t/* do-while replacement\n+\t/* do-while replacement (assure )\n \tin Java/C:\n \tdo {\n \t\tdo body\n \t} while ([comparison = execution if true])\n \n-\t\n+\tin Go\n \t*/\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684404104382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n \tfor {\n \t\tfmt.Println(\"Hello\")\n \t}\n \n-\t/* do-while replacement (assure )\n+\t/* do-while replacement (assure code is executed almost for 1 time)\n \tin Java/C:\n \tdo {\n \t\tdo body\n \t} while ([comparison = execution if true])\n"
+                },
+                {
+                    "date": 1684404118517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,11 +46,11 @@\n \t/* do-while replacement (assure code is executed almost for 1 time)\n \tin Java/C:\n \tdo {\n \t\tdo body\n-\t} while ([comparison = execution if true])\n+\t} while ([comparison = execution if true]) \n \n-\tin Go\n+\tin Go:\n \t*/\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684404127860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n \t/* do-while replacement (assure code is executed almost for 1 time)\n \tin Java/C:\n \tdo {\n \t\tdo body\n-\t} while ([comparison = execution if true]) \n+\t} while ([comparison = execution if true]) // \n \n \tin Go:\n \t*/\n \n"
+                },
+                {
+                    "date": 1684404139522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n \t/* do-while replacement (assure code is executed almost for 1 time)\n \tin Java/C:\n \tdo {\n \t\tdo body\n-\t} while ([comparison = execution if true]) // \n+\t} while ([comparison = execution if true]) // specifies how to stay in for loop\n \n \tin Go:\n \t*/\n \n"
+                },
+                {
+                    "date": 1684404154779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,11 @@\n \t\tdo body\n \t} while ([comparison = execution if true]) // specifies how to stay in for loop\n \n \tin Go:\n+\tfor {\n+\t\t\n+\t}\n \t*/\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684404162565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,9 @@\n \t} while ([comparison = execution if true]) // specifies how to stay in for loop\n \n \tin Go:\n \tfor {\n+\t\tfor body\n \t\t\n \t}\n \t*/\n \n"
+                },
+                {
+                    "date": 1684404169274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n \n \tin Go:\n \tfor {\n \t\tfor body\n-\t\t\n+\t\tif !{}\n \t}\n \t*/\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684404178961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,11 @@\n \n \tin Go:\n \tfor {\n \t\tfor body\n-\t\tif !{}\n+\t\tif ![comparison] {\n+\t\t\tbreak\n+\t\t}\n \t}\n \t*/\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684404186126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n \n \tin Go:\n \tfor {\n \t\tfor body\n-\t\tif ![comparison] {\n+\t\tif ![comparison] { // specifies how to stay in for loop\n \t\t\tbreak\n \t\t}\n \t}\n \t*/\n"
+                },
+                {
+                    "date": 1684404196932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n \n \tin Go:\n \tfor {\n \t\tfor body\n-\t\tif ![comparison] { // specifies how to stay in for loop\n+\t\tif ![comparison] { // specifies how to exit in for loop\n \t\t\tbreak\n \t\t}\n \t}\n \t*/\n"
+                },
+                {
+                    "date": 1684404208720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n \n \tin Go:\n \tfor {\n \t\tfor body\n-\t\tif ![comparison] { // specifies how to exit in for loop\n+\t\tif ![comparison] { // !specifies how to exit the loop\n \t\t\tbreak\n \t\t}\n \t}\n \t*/\n"
+                },
+                {
+                    "date": 1684404220947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n \n \tin Go:\n \tfor {\n \t\tfor body\n-\t\tif ![comparison] { // !specifies how to exit the loop\n+\t\tif ![comparison] { // ! to negate the condistionspecifies how to exit the loop\n \t\t\tbreak\n \t\t}\n \t}\n \t*/\n"
+                },
+                {
+                    "date": 1684404232820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n \n \tin Go:\n \tfor {\n \t\tfor body\n-\t\tif ![comparison] { // ! to negate the condistionspecifies how to exit the loop\n+\t\tif ![comparison] { // ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\n \t\t}\n \t}\n \t*/\n"
+                },
+                {
+                    "date": 1684404251616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,8 +57,9 @@\n \t\t}\n \t}\n \t*/\n \n+\t\n \t/* 4) for-range\n \n \t*/\n }\n"
+                },
+                {
+                    "date": 1684404264754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,8 +57,9 @@\n \t\t}\n \t}\n \t*/\n \n+\t// using continue to make code cleaner\n \t\n \t/* 4) for-range\n \n \t*/\n"
+                },
+                {
+                    "date": 1684445025298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n package main\n \n import \"fmt\"\n+\n /*\n for statemente for loop:\n 1) a complete, C-style for\n 2) a condition-only for (while style)\n@@ -9,9 +10,8 @@\n    continue & break\n 4) for-range\n */\n \n-\n func main() {\n \t/* 1) Complete for Statement, C-Style\n \tfor {[initialization :=]; [comparison = execution if true]; [increment]\n \t\tfor body\n@@ -52,15 +52,15 @@\n \tin Go:\n \tfor {\n \t\tfor body\n \t\tif ![comparison] { // ! to negate the condition: specifies how to exit the loop\n-\t\t\tbreak\n+\t\t\tbreak\t\t\t\n \t\t}\n \t}\n \t*/\n \n \t// using continue to make code cleaner\n-\t\n+\n \t/* 4) for-range\n \n-\t*/\n+\t */\n }\n"
+                },
+                {
+                    "date": 1684445036051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,10 +51,10 @@\n \n \tin Go:\n \tfor {\n \t\tfor body\n-\t\tif ![comparison] { // ! to negate the condition: specifies how to exit the loop\n-\t\t\tbreak\t\t\t\n+\t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n+\t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n \t}\n \t*/\n \n"
+                },
+                {
+                    "date": 1684445078165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n \t\t}\n \t}\n \t*/\n \n-\t// using continue to make code cleaner\n+\t// using continue to make code cleaner:\n \n \t/* 4) for-range\n \n \t */\n"
+                },
+                {
+                    "date": 1684445087709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n \t\t}\n \t}\n \t*/\n \n-\t// using continue to make code cleaner:\n+\t// using continue to make code cleaner; \n \n \t/* 4) for-range\n \n \t */\n"
+                },
+                {
+                    "date": 1684445092900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n \t\t}\n \t}\n \t*/\n \n-\t// using continue to make code cleaner; \n+\t// using continue to make code cleaner; else in \n \n \t/* 4) for-range\n \n \t */\n"
+                },
+                {
+                    "date": 1684445103198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n \t\t}\n \t}\n \t*/\n \n-\t// using continue to make code cleaner; else in \n+\t// using continue to make code cleaner; else in if statemente is not necessary\n \n \t/* 4) for-range\n \n \t */\n"
+                },
+                {
+                    "date": 1684445118264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,8 +58,9 @@\n \t}\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n+\tfor\n \n \t/* 4) for-range\n \n \t */\n"
+                },
+                {
+                    "date": 1684445123972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n \t}\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n-\tfor\n+\tfor i := \n \n \t/* 4) for-range\n \n \t */\n"
+                },
+                {
+                    "date": 1684445129106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n \t}\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n-\tfor i := \n+\tfor i := 1; \n \n \t/* 4) for-range\n \n \t */\n"
+                },
+                {
+                    "date": 1684445137064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,10 +58,12 @@\n \t}\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n-\tfor i := 1; \n+\tfor i := 1; i {\n \n+\t}\n+\n \t/* 4) for-range\n \n \t */\n }\n"
+                },
+                {
+                    "date": 1684445142211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n \t}\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n-\tfor i := 1; i {\n+\tfor i := 1; i <= 100; {\n \n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445148107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n \t}\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n-\tfor i := 1; i <= 100; {\n+\tfor i := 1; i <= 100; i++ {\n \n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445175621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \tfor {[comparison = execution if true]\n \t\tfor body: [increment]\n \t}\n \t*/\n-\tn := 1\n+\tm := 1\n \tfor n < 100 {\n \t\tfmt.Println(n)\n \t\tn *= 2\n \t}\n"
+                },
+                {
+                    "date": 1684445181814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,11 +27,11 @@\n \t\tfor body: [increment]\n \t}\n \t*/\n \tm := 1\n-\tfor n < 100 {\n-\t\tfmt.Println(n)\n-\t\tn *= 2\n+\tfor m < 100 {\n+\t\tfmt.Println(m)\n+\t\tm *= 2\n \t}\n \n \t/* 3) an infite for\n \tfor {\n"
+                },
+                {
+                    "date": 1684445188130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n \t}\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n-\tfor i := 1; i <= 100; i++ {\n+\tfor n := 1; i <= 100; i++ {\n \n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445216303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,9 @@\n \t*/\n \n \tfor {\n \t\tfmt.Println(\"Hello\")\n+\t\t\n \t}\n \n \t/* do-while replacement (assure code is executed almost for 1 time)\n \tin Java/C:\n@@ -58,9 +59,9 @@\n \t}\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n-\tfor n := 1; i <= 100; i++ {\n+\tfor n := 1; n <= 100; n++ {\n \n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445231263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n \t*/\n \n \tfor {\n \t\tfmt.Println(\"Hello\")\n-\t\t\n+\t\tbreak\n \t}\n \n \t/* do-while replacement (assure code is executed almost for 1 time)\n \tin Java/C:\n"
+                },
+                {
+                    "date": 1684445243104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n \tfor n := 1; n <= 100; n++ {\n-\n+\t\t\n \t}\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684445248899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n \tfor n := 1; n <= 100; n++ {\n-\t\t\n+\t\tif i\n \t}\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684445255994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n \tfor n := 1; n <= 100; n++ {\n-\t\tif i\n+\t\tif i%3 == 0 &&\n \t}\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684445261632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n \tfor n := 1; n <= 100; n++ {\n-\t\tif i%3 == 0 &&\n+\t\tif i%3 == 0 && i%5 \n \t}\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684445267879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,11 @@\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n \tfor n := 1; n <= 100; n++ {\n-\t\tif i%3 == 0 && i%5 \n+\t\tif i%3 == 0 && i%5 == 0 {\n+\t\t\t\n+\t\t}\n \t}\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684445273106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,11 +59,12 @@\n \t}\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n+\t// \n \tfor n := 1; n <= 100; n++ {\n \t\tif i%3 == 0 && i%5 == 0 {\n-\t\t\t\n+\n \t\t}\n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445280908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,12 +59,12 @@\n \t}\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n-\t// \n+\t// FizzBuzz code\n \tfor n := 1; n <= 100; n++ {\n \t\tif i%3 == 0 && i%5 == 0 {\n-\n+\t\t\t\n \t\t}\n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445286002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n \t// using continue to make code cleaner; else in if statemente is not necessary\n \t// FizzBuzz code\n \tfor n := 1; n <= 100; n++ {\n \t\tif i%3 == 0 && i%5 == 0 {\n-\t\t\t\n+\t\t\tfmt.Prinln\n \t\t}\n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445291331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n \t// using continue to make code cleaner; else in if statemente is not necessary\n \t// FizzBuzz code\n \tfor n := 1; n <= 100; n++ {\n \t\tif i%3 == 0 && i%5 == 0 {\n-\t\t\tfmt.Prinln\n+\t\t\tfmt.Println()\n \t\t}\n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445303415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n \t// using continue to make code cleaner; else in if statemente is not necessary\n \t// FizzBuzz code\n \tfor n := 1; n <= 100; n++ {\n \t\tif i%3 == 0 && i%5 == 0 {\n-\t\t\tfmt.Println()\n+\t\t\tfmt.Println(\"FizzBuzz\")\n \t\t}\n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445311150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,11 @@\n \t// FizzBuzz code\n \tfor n := 1; n <= 100; n++ {\n \t\tif i%3 == 0 && i%5 == 0 {\n \t\t\tfmt.Println(\"FizzBuzz\")\n+\t\t\tcontinue\n \t\t}\n+\t\t\n \t}\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684445317342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,10 @@\n \t\tif i%3 == 0 && i%5 == 0 {\n \t\t\tfmt.Println(\"FizzBuzz\")\n \t\t\tcontinue\n \t\t}\n-\t\t\n+\t\tif i%3\n+\n \t}\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684445323117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n \t\tif i%3 == 0 && i%5 == 0 {\n \t\t\tfmt.Println(\"FizzBuzz\")\n \t\t\tcontinue\n \t\t}\n-\t\tif i%3\n+\t\tif i%3 == 0 \n \n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445331279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,11 @@\n \t\tif i%3 == 0 && i%5 == 0 {\n \t\t\tfmt.Println(\"FizzBuzz\")\n \t\t\tcontinue\n \t\t}\n-\t\tif i%3 == 0 \n+\t\tif i%3 == 0 {\n+\t\t\tfmt.Println\n+\t\t}\n \n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445338161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n \t\t\tfmt.Println(\"FizzBuzz\")\n \t\t\tcontinue\n \t\t}\n \t\tif i%3 == 0 {\n-\t\t\tfmt.Println\n+\t\t\tfmt.Println(\"Fizz\")\n \t\t}\n \n \t}\n \n"
+                },
+                {
+                    "date": 1684445344118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,11 @@\n \t\t\tcontinue\n \t\t}\n \t\tif i%3 == 0 {\n \t\t\tfmt.Println(\"Fizz\")\n+\t\t\tcontinue\n \t\t}\n+\t\t\n \n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445349894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n \t\tif i%3 == 0 {\n \t\t\tfmt.Println(\"Fizz\")\n \t\t\tcontinue\n \t\t}\n-\t\t\n+\t\tif i%5 == 0\n \n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445355977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,11 @@\n \t\tif i%3 == 0 {\n \t\t\tfmt.Println(\"Fizz\")\n \t\t\tcontinue\n \t\t}\n-\t\tif i%5 == 0\n+\t\tif i%5 == 0 {\n+\t\t\tfmt.Printl\n+\t\t}\n \n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445363255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,10 @@\n \t\t\tfmt.Println(\"Fizz\")\n \t\t\tcontinue\n \t\t}\n \t\tif i%5 == 0 {\n-\t\t\tfmt.Printl\n+\t\t\tfmt.Println(\"Buzz\")\n+\t\t\tcontinue\n \t\t}\n \n \t}\n \n"
+                },
+                {
+                    "date": 1684445371049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,8 +73,9 @@\n \t\tif i%5 == 0 {\n \t\t\tfmt.Println(\"Buzz\")\n \t\t\tcontinue\n \t\t}\n+\t\tfmt.Println()\n \n \t}\n \n \t/* 4) for-range\n"
+                },
+                {
+                    "date": 1684445384085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n \t// FizzBuzz code\n \tfor n := 1; n <= 100; n++ {\n-\t\tif i%3 == 0 && i%5 == 0 {\n+\t\tif n%3 == 0 && i%5 == 0 {\n \t\t\tfmt.Println(\"FizzBuzz\")\n \t\t\tcontinue\n \t\t}\n \t\tif i%3 == 0 {\n@@ -73,10 +73,9 @@\n \t\tif i%5 == 0 {\n \t\t\tfmt.Println(\"Buzz\")\n \t\t\tcontinue\n \t\t}\n-\t\tfmt.Println()\n-\n+\t\tfmt.Println(i)\n \t}\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684445390126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,21 +61,21 @@\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n \t// FizzBuzz code\n \tfor n := 1; n <= 100; n++ {\n-\t\tif n%3 == 0 && i%5 == 0 {\n+\t\tif n%3 == 0 && n%5 == 0 {\n \t\t\tfmt.Println(\"FizzBuzz\")\n \t\t\tcontinue\n \t\t}\n-\t\tif i%3 == 0 {\n+\t\tif n%3 == 0 {\n \t\t\tfmt.Println(\"Fizz\")\n \t\t\tcontinue\n \t\t}\n-\t\tif i%5 == 0 {\n+\t\tif n%5 == 0 {\n \t\t\tfmt.Println(\"Buzz\")\n \t\t\tcontinue\n \t\t}\n-\t\tfmt.Println(i)\n+\t\tfmt.Println(n)\n \t}\n \n \t/* 4) for-range\n \n"
+                },
+                {
+                    "date": 1684445406165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n \t}\n \t*/\n \n \tfor {\n-\t\tfmt.Println(\"Hello\")\n+\t\tfmt.Println(\"Infinite Hello\")\n \t\tbreak\n \t}\n \n \t/* do-while replacement (assure code is executed almost for 1 time)\n"
+                },
+                {
+                    "date": 1684445514110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n \t}\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n-\t// FizzBuzz code\n+\t// FizzBuzz code: \n \tfor n := 1; n <= 100; n++ {\n \t\tif n%3 == 0 && n%5 == 0 {\n \t\t\tfmt.Println(\"FizzBuzz\")\n \t\t\tcontinue\n"
+                },
+                {
+                    "date": 1684445521344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,10 @@\n \t}\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n-\t// FizzBuzz code: \n+\t// FizzBuzz code: Print integers one-to-N, but print “Fizz” if an integer is divisible by three, “Buzz” if an integer is divisible by five, and “FizzBuzz” if an integer is divisible by both three and five.\n+\t\n \tfor n := 1; n <= 100; n++ {\n \t\tif n%3 == 0 && n%5 == 0 {\n \t\t\tfmt.Println(\"FizzBuzz\")\n \t\t\tcontinue\n"
+                },
+                {
+                    "date": 1684445544422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,10 +59,10 @@\n \t}\n \t*/\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n-\t// FizzBuzz code: Print integers one-to-N, but print “Fizz” if an integer is divisible by three, “Buzz” if an integer is divisible by five, and “FizzBuzz” if an integer is divisible by both three and five.\n-\t\n+\t// FizzBuzz problem: Print integers one-to-N, but print “Fizz” if an integer is divisible by three, “Buzz” if an integer is divisible by five, and “FizzBuzz” if an integer is divisible by both three and five.\n+\n \tfor n := 1; n <= 100; n++ {\n \t\tif n%3 == 0 && n%5 == 0 {\n \t\t\tfmt.Println(\"FizzBuzz\")\n \t\t\tcontinue\n"
+                },
+                {
+                    "date": 1684577300659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,8 +57,9 @@\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n \t}\n \t*/\n+\t\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n \t// FizzBuzz problem: Print integers one-to-N, but print “Fizz” if an integer is divisible by three, “Buzz” if an integer is divisible by five, and “FizzBuzz” if an integer is divisible by both three and five.\n \n"
+                },
+                {
+                    "date": 1684577311923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,11 @@\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n \t}\n \t*/\n-\t\n+\tfor {\n+\t\tfi\n+\t}\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n \t// FizzBuzz problem: Print integers one-to-N, but print “Fizz” if an integer is divisible by three, “Buzz” if an integer is divisible by five, and “FizzBuzz” if an integer is divisible by both three and five.\n \n"
+                },
+                {
+                    "date": 1684577331047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n \t\t}\n \t}\n \t*/\n \tfor {\n-\t\tfi\n+\t\tif \n \t}\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n \t// FizzBuzz problem: Print integers one-to-N, but print “Fizz” if an integer is divisible by three, “Buzz” if an integer is divisible by five, and “FizzBuzz” if an integer is divisible by both three and five.\n"
+                },
+                {
+                    "date": 1684577338274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n \t\t}\n \t}\n \t*/\n \tfor {\n-\t\tif \n+\t\tif !m\n \t}\n \n \t// using continue to make code cleaner; else in if statemente is not necessary\n \t// FizzBuzz problem: Print integers one-to-N, but print “Fizz” if an integer is divisible by three, “Buzz” if an integer is divisible by five, and “FizzBuzz” if an integer is divisible by both three and five.\n"
+                },
+                {
+                    "date": 1684577421826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,8 +52,9 @@\n \n \tin Go:\n \tfor {\n \t\tfor body\n+\t\t\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1684577428091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n \n \tin Go:\n \tfor {\n \t\tfor body\n-\t\t\n+\t\tindex inc\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1684577436277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n \n \tin Go:\n \tfor {\n \t\tfor body\n-\t\tindex inc\n+\t\tindex incrementation\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1684577448821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,10 +51,10 @@\n \t} while ([comparison = execution if true]) // specifies how to stay in for loop\n \n \tin Go:\n \tfor {\n-\t\tfor body\n-\t\tindex incrementation\n+\t\t\tindex incrementation\n+\t\t\t\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1684577456070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n \n \tin Go:\n \tfor {\n \t\t\tindex incrementation\n-\t\t\t\n+\t\t\tfor body\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n \t}\n"
+                },
+                {
+                    "date": 1684577485601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,8 +56,9 @@\n \t\t\tfor body\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n+\t\t\n \t}\n \t*/\n \tfor {\n \t\tif !m\n"
+                },
+                {
+                    "date": 1684577491503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n \t\t\tfor body\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n-\t\t\n+\t\tif \n \t}\n \t*/\n \tfor {\n \t\tif !m\n"
+                },
+                {
+                    "date": 1684577498169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n \t\t\tfor body\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n-\t\tif \n+\t\tif i <\n \t}\n \t*/\n \tfor {\n \t\tif !m\n"
+                },
+                {
+                    "date": 1684577504799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n \t\t\tfor body\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n-\t\tif i <\n+\t\tif i < N \n \t}\n \t*/\n \tfor {\n \t\tif !m\n"
+                },
+                {
+                    "date": 1684577512635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n \t\t\tfor body\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n-\t\tif i < N \n+\t\tif i < N {}\n \t}\n \t*/\n \tfor {\n \t\tif !m\n"
+                },
+                {
+                    "date": 1684577517768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,11 @@\n \t\t\tfor body\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n-\t\tif i < N {}\n+\t\tif i < N {\t// \n+\n+\t\t}\n \t}\n \t*/\n \tfor {\n \t\tif !m\n"
+                },
+                {
+                    "date": 1684577523195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n \t\t\tfor body\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n-\t\tif i < N {\t// \n+\t\tif i < N {\t// while the \n \n \t\t}\n \t}\n \t*/\n"
+                },
+                {
+                    "date": 1684577555886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n \t\t\tfor body\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n-\t\tif i < N {\t// while the \n+\t\tif i < N {\t// while the index is less than N, continue\n \n \t\t}\n \t}\n \t*/\n"
+                },
+                {
+                    "date": 1684577570065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n \t\tif i < N {\t// while the index is less than N, continue\n-\n+\t\t\t// index is N or greater,\n \t\t}\n \t}\n \t*/\n \tfor {\n"
+                },
+                {
+                    "date": 1684577579678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,11 @@\n \t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n \t\tif i < N {\t// while the index is less than N, continue\n-\t\t\t// index is N or greater,\n+\t\t\t// index is N or greater\n+\t\t\t// so break the loop\n+\t\t\tbreak\n \t\t}\n \t}\n \t*/\n \tfor {\n"
+                },
+                {
+                    "date": 1684577730576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n \tin Go:\n \tfor {\n \t\t\tindex incrementation\n \t\t\tfor body\n-\t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop\n+\t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop \n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n \t\tif i < N {\t// while the index is less than N, continue\n \t\t\t// index is N or greater\n"
+                },
+                {
+                    "date": 1684577736089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n \tin Go:\n \tfor {\n \t\t\tindex incrementation\n \t\t\tfor body\n-\t\tif ![comparison] {\t// ! to negate the condition: specifies how to exit the loop \n+\t\tif ![comparison] {\t// ! to negate the condition: Go specifies how to exit the loop \n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n \t\tif i < N {\t// while the index is less than N, continue\n \t\t\t// index is N or greater\n"
+                },
+                {
+                    "date": 1684577741997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n \tin Go:\n \tfor {\n \t\t\tindex incrementation\n \t\t\tfor body\n-\t\tif ![comparison] {\t// ! to negate the condition: Go specifies how to exit the loop \n+\t\tif ![comparison] {\t// ! to negate the condition: Go specifies how to exit the loop, otherwise than Java\n \t\t\tbreak\t\t\t// exit the loop! :-)\n \t\t}\n \t\tif i < N {\t// while the index is less than N, continue\n \t\t\t// index is N or greater\n"
+                }
+            ],
+            "date": 1684402101751,
+            "name": "Commit-0",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"vim-go\")\n}\n"
+        }
+    ]
+}

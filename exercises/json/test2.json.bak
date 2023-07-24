@@ -1,0 +1,8 @@
+{
+	"history": [
+		{"Num1": 6, "Num2": 8, "Operator": "add"},
+		{"Num1": 11, "Num2": 7, "Operator": "sub"},
+		{"Num1": 8, "Num2": 8, "Operator": "molt"},
+		{"Num1": 33, "Num2": 11, "Operator": "div"}
+]
+}

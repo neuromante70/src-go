@@ -1,0 +1,642 @@
+{
+    "sourceFile": "BASICS/exercises/main.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 156,
+            "patches": [
+                {
+                    "date": 1687544303077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1687544310556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,3 @@\n+package main\n+\n+func\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687544316604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n package main\n \n-func\n\\ No newline at end of file\n+func()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687544322197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n package main\n \n-func()\n\\ No newline at end of file\n+func main() {\n+\t\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687544409247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,11 @@\n package main\n \n+import (\n+\t\"errors\"\n+\t\"fmt\"\n\\ No newline at end of file\n+\t\"strconv\"\n+)\n+\n func main() {\n-\t\n-}\n+\n+}\n"
+                },
+                {
+                    "date": 1687544416248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,10 @@\n \t\"fmt\"\n \t\"strconv\"\n )\n \n+\n+\n+\n\\ No newline at end of file\n func main() {\n \n-}\n+}\n"
+                },
+                {
+                    "date": 1687544426824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,16 @@\n \t\"fmt\"\n \t\"strconv\"\n )\n \n+type user struct {\n+\tid    int\n+\tname  string\n+\temail string\n+}\n \n\\ No newline at end of file\n+var userHM = map[int]user{}\n \n \n func main() {\n \n-}\n+}\n"
+                },
+                {
+                    "date": 1687544437535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,11 @@\n \n var userHM = map[int]user{}\n \n \n+\n+\n+\n\\ No newline at end of file\n+\n func main() {\n \n-}\n+}\n"
+                },
+                {
+                    "date": 1687544455861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,37 @@\n+package main\n+\n+import (\n+\t\"errors\"\n+\t\"fmt\"\n+\t\"strconv\"\n+)\n+\n+type user struct {\n+\tid    int\n+\tname  string\n+\temail string\n+}\n+\n+var userHM = map[int]user{}\n+\n+func userExist(userID int) (user, bool) {\n+\tuser, ok := userHM[userID]\n+\treturn user, ok\n+}\n+\n+func findUser(userID int) (user, error) {\n+\tus, exists := userExist(userID)\n+\tif exists {\n+\t\treturn us, nil\n+\t}\n+\treturn user{}, errors.New(\"the user with ID \" + strconv.Itoa(userID) + \" is not in the database\")\n+}\n+\n+\n+\n+\n+\n+\n+func main() {\n+\n+}\n"
+                },
+                {
+                    "date": 1687544465789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,36 +26,21 @@\n \t}\n \treturn user{}, errors.New(\"the user with ID \" + strconv.Itoa(userID) + \" is not in the database\")\n }\n \n+func addUser(us user) bool {\n+\t_, exist := userExist(us.id)\n+\tif exist {\n+\t\tfmt.Println(\"The user\", us.name, \"is already present in userHM\")\n+\t\treturn false\n+\t}\n+\tuserHM[us.id] = us //add the user to the userHM after a check\n+\tfmt.Println(\"The user\", us.name, \"wasn't present in userHM and now is correctly inserted\")\n+\treturn true\n+}\n \n \n \n \n-\n func main() {\n \n }\n-package main\n-\n-import (\n-\t\"errors\"\n-\t\"fmt\"\n-\t\"strconv\"\n-)\n-\n-type user struct {\n-\tid    int\n-\tname  string\n-\temail string\n-}\n-\n\\ No newline at end of file\n-var userHM = map[int]user{}\n-\n-\n-\n-\n-\n-\n-func main() {\n-\n-}\n"
+                },
+                {
+                    "date": 1687544476235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,10 +37,18 @@\n \tfmt.Println(\"The user\", us.name, \"wasn't present in userHM and now is correctly inserted\")\n \treturn true\n }\n \n+func deleteUser(userID int) {\n+\t_, ok := userExist(userID)\n+\tif ok {\n+\t\tdelete(userHM, userID)\n+\t\tfmt.Println(\"user\", userID, \"correctly deleted\")\n+\t\treturn\n+\t}\n+\tfmt.Println(\"user non present, cannot delete it\")\n+}\n \n \n-\n func main() {\n \n }\n"
+                },
+                {
+                    "date": 1687544492594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,7 +48,56 @@\n \tfmt.Println(\"user non present, cannot delete it\")\n }\n \n \n+// ancillary function\n+func printUserHM() {\n+\tfor id, user := range userHM {\n+\t\tfmt.Println(id, \"user is\", user)\n+\t}\n+}\n+\n func main() {\n+\tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n+\tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \n+\taddUser(us1) // instead of userHM[us1.id] = us1\n+\taddUser(us2)\n+\n+\t// user us3 is not added in userHM\n+\tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n+\t_, err := findUser(us3.id)\n+\tif err != nil {\n+\t\tfmt.Println(err.Error())\n+\t} else {\n+\t\tfmt.Println(us3.name, \"present in database\")\n+\t}\n+\n+\t// this time us3 is present in userHM\n+\taddUser(us3)\n+\t_, err = findUser(us3.id)\n+\tif err != nil {\n+\t\tfmt.Println(err.Error())\n+\t} else {\n+\t\tfmt.Println(us3.name, \"present in database\")\n+\t}\n+\n+\t// we try to add a user already present in userHM\n+\tusDupl := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n+\t_, err = findUser(usDupl.id)\n+\tif err != nil {\n+\t\tfmt.Println(err.Error())\n+\t\tfmt.Println(\"duplicate user\")\n+\t} else {\n+\t\tfmt.Println(usDupl.name, \"present in database\")\n+\t}\n+\n+\t// now we delete a user\n+\tus4 := user{id: 4, name: \"John Smith\", email: \"smith@yahoo.com\"}\n+\taddUser(us4)\n+\tdeleteUser(5)      //it returns an error\n+\tdeleteUser(us4.id) //this should be work\n+\tprintUserHM()\n+\texportAsSlice()\n+\n }\n+\n"
+                },
+                {
+                    "date": 1687545166445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \tif exist {\n \t\tfmt.Println(\"The user\", us.name, \"is already present in userHM\")\n \t\treturn false\n \t}\n-\tuserHM[us.id] = us //add the user to the userHM after a check\n+\tuserHM[us.id] = us \n \tfmt.Println(\"The user\", us.name, \"wasn't present in userHM and now is correctly inserted\")\n \treturn true\n }\n \n@@ -48,9 +48,8 @@\n \tfmt.Println(\"user non present, cannot delete it\")\n }\n \n \n-// ancillary function\n func printUserHM() {\n \tfor id, user := range userHM {\n \t\tfmt.Println(id, \"user is\", user)\n \t}\n@@ -59,30 +58,30 @@\n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \n-\taddUser(us1) // instead of userHM[us1.id] = us1\n+\taddUser(us1) \n \taddUser(us2)\n \n-\t// user us3 is not added in userHM\n+\t\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n \t_, err := findUser(us3.id)\n \tif err != nil {\n \t\tfmt.Println(err.Error())\n \t} else {\n \t\tfmt.Println(us3.name, \"present in database\")\n \t}\n \n-\t// this time us3 is present in userHM\n+\t\n \taddUser(us3)\n \t_, err = findUser(us3.id)\n \tif err != nil {\n \t\tfmt.Println(err.Error())\n \t} else {\n \t\tfmt.Println(us3.name, \"present in database\")\n \t}\n \n-\t// we try to add a user already present in userHM\n+\t\n \tusDupl := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n \t_, err = findUser(usDupl.id)\n \tif err != nil {\n \t\tfmt.Println(err.Error())\n@@ -90,14 +89,13 @@\n \t} else {\n \t\tfmt.Println(usDupl.name, \"present in database\")\n \t}\n \n-\t// now we delete a user\n+\t\n \tus4 := user{id: 4, name: \"John Smith\", email: \"smith@yahoo.com\"}\n \taddUser(us4)\n-\tdeleteUser(5)      //it returns an error\n-\tdeleteUser(us4.id) //this should be work\n+\tdeleteUser(5)      \n+\tdeleteUser(us4.id) \n \tprintUserHM()\n \texportAsSlice()\n \n }\n-\n"
+                },
+                {
+                    "date": 1687545694228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \n-\taddUser(us1) \n+\taddUser(us1)\n \taddUser(us2)\n \n \t\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n"
+                },
+                {
+                    "date": 1687546091283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,33 +1,27 @@\n package main\n-\n import (\n \t\"errors\"\n \t\"fmt\"\n \t\"strconv\"\n )\n-\n type user struct {\n \tid    int\n \tname  string\n \temail string\n }\n-\n var userHM = map[int]user{}\n-\n func userExist(userID int) (user, bool) {\n \tuser, ok := userHM[userID]\n \treturn user, ok\n }\n-\n func findUser(userID int) (user, error) {\n \tus, exists := userExist(userID)\n \tif exists {\n \t\treturn us, nil\n \t}\n \treturn user{}, errors.New(\"the user with ID \" + strconv.Itoa(userID) + \" is not in the database\")\n }\n-\n func addUser(us user) bool {\n \t_, exist := userExist(us.id)\n \tif exist {\n \t\tfmt.Println(\"The user\", us.name, \"is already present in userHM\")\n@@ -36,9 +30,8 @@\n \tuserHM[us.id] = us \n \tfmt.Println(\"The user\", us.name, \"wasn't present in userHM and now is correctly inserted\")\n \treturn true\n }\n-\n func deleteUser(userID int) {\n \t_, ok := userExist(userID)\n \tif ok {\n \t\tdelete(userHM, userID)\n@@ -46,41 +39,34 @@\n \t\treturn\n \t}\n \tfmt.Println(\"user non present, cannot delete it\")\n }\n-\n-\n func printUserHM() {\n \tfor id, user := range userHM {\n \t\tfmt.Println(id, \"user is\", user)\n \t}\n }\n-\n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n-\n \taddUser(us1)\n \taddUser(us2)\n-\n \t\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n \t_, err := findUser(us3.id)\n \tif err != nil {\n \t\tfmt.Println(err.Error())\n \t} else {\n \t\tfmt.Println(us3.name, \"present in database\")\n \t}\n-\n \t\n \taddUser(us3)\n \t_, err = findUser(us3.id)\n \tif err != nil {\n \t\tfmt.Println(err.Error())\n \t} else {\n \t\tfmt.Println(us3.name, \"present in database\")\n \t}\n-\n \t\n \tusDupl := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n \t_, err = findUser(usDupl.id)\n \tif err != nil {\n@@ -88,14 +74,12 @@\n \t\tfmt.Println(\"duplicate user\")\n \t} else {\n \t\tfmt.Println(usDupl.name, \"present in database\")\n \t}\n-\n \t\n \tus4 := user{id: 4, name: \"John Smith\", email: \"smith@yahoo.com\"}\n \taddUser(us4)\n \tdeleteUser(5)      \n \tdeleteUser(us4.id) \n \tprintUserHM()\n \texportAsSlice()\n-\n }\n"
+                },
+                {
+                    "date": 1687546113766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,5 +81,5 @@\n \tdeleteUser(5)      \n \tdeleteUser(us4.id) \n \tprintUserHM()\n \texportAsSlice()\n-}\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687546143829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,33 @@\n package main\n+\n import (\n \t\"errors\"\n \t\"fmt\"\n \t\"strconv\"\n )\n+\n type user struct {\n \tid    int\n \tname  string\n \temail string\n }\n+\n var userHM = map[int]user{}\n+\n func userExist(userID int) (user, bool) {\n \tuser, ok := userHM[userID]\n-\treturn user, ok\n+\treturn \n }\n+\n func findUser(userID int) (user, error) {\n \tus, exists := userExist(userID)\n \tif exists {\n \t\treturn us, nil\n \t}\n \treturn user{}, errors.New(\"the user with ID \" + strconv.Itoa(userID) + \" is not in the database\")\n }\n+\n func addUser(us user) bool {\n \t_, exist := userExist(us.id)\n \tif exist {\n \t\tfmt.Println(\"The user\", us.name, \"is already present in userHM\")\n@@ -30,8 +36,9 @@\n \tuserHM[us.id] = us \n \tfmt.Println(\"The user\", us.name, \"wasn't present in userHM and now is correctly inserted\")\n \treturn true\n }\n+\n func deleteUser(userID int) {\n \t_, ok := userExist(userID)\n \tif ok {\n \t\tdelete(userHM, userID)\n@@ -39,34 +46,41 @@\n \t\treturn\n \t}\n \tfmt.Println(\"user non present, cannot delete it\")\n }\n+\n+\n func printUserHM() {\n \tfor id, user := range userHM {\n \t\tfmt.Println(id, \"user is\", user)\n \t}\n }\n+\n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n+\n \taddUser(us1)\n \taddUser(us2)\n+\n \t\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n \t_, err := findUser(us3.id)\n \tif err != nil {\n \t\tfmt.Println(err.Error())\n \t} else {\n \t\tfmt.Println(us3.name, \"present in database\")\n \t}\n+\n \t\n \taddUser(us3)\n \t_, err = findUser(us3.id)\n \tif err != nil {\n \t\tfmt.Println(err.Error())\n \t} else {\n \t\tfmt.Println(us3.name, \"present in database\")\n \t}\n+\n \t\n \tusDupl := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n \t_, err = findUser(usDupl.id)\n \tif err != nil {\n@@ -74,12 +88,14 @@\n \t\tfmt.Println(\"duplicate user\")\n \t} else {\n \t\tfmt.Println(usDupl.name, \"present in database\")\n \t}\n+\n \t\n \tus4 := user{id: 4, name: \"John Smith\", email: \"smith@yahoo.com\"}\n \taddUser(us4)\n \tdeleteUser(5)      \n \tdeleteUser(us4.id) \n \tprintUserHM()\n \texportAsSlice()\n\\ No newline at end of file\n-}\n+\n+}\n"
+                },
+                {
+                    "date": 1687546149544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n var userHM = map[int]user{}\n \n func userExist(userID int) (user, bool) {\n-\tuser, ok := userHM[userID]\n+\tuserHM[userID]\n \treturn \n }\n \n func findUser(userID int) (user, error) {\n@@ -97,5 +97,5 @@\n \tdeleteUser(us4.id) \n \tprintUserHM()\n \texportAsSlice()\n \n-}\n\\ No newline at end of file\n+}\n"
+                },
+                {
+                    "date": 1687546154980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,9 @@\n \n var userHM = map[int]user{}\n \n func userExist(userID int) (user, bool) {\n-\tuserHM[userID]\n-\treturn \n+\treturn userHM[userID]\n }\n \n func findUser(userID int) (user, error) {\n \tus, exists := userExist(userID)\n"
+                },
+                {
+                    "date": 1687546162350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n }\n \n var userHM = map[int]user{}\n \n-func userExist(userID int) (user, bool) {\n+func userExist(userID int) user, bool) {\n \treturn userHM[userID]\n }\n \n func findUser(userID int) (user, error) {\n"
+                },
+                {
+                    "date": 1687546174016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n }\n \n var userHM = map[int]user{}\n \n-func userExist(userID int) user, bool) {\n+func userExist(userID int) user {\n \treturn userHM[userID]\n }\n \n func findUser(userID int) (user, error) {\n"
+                },
+                {
+                    "date": 1687546276395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,100 +0,0 @@\n-package main\n-\n-import (\n-\t\"errors\"\n-\t\"fmt\"\n-\t\"strconv\"\n-)\n-\n-type user struct {\n-\tid    int\n-\tname  string\n-\temail string\n-}\n-\n-var userHM = map[int]user{}\n-\n-func userExist(userID int) user {\n-\treturn userHM[userID]\n-}\n-\n-func findUser(userID int) (user, error) {\n-\tus, exists := userExist(userID)\n-\tif exists {\n-\t\treturn us, nil\n-\t}\n-\treturn user{}, errors.New(\"the user with ID \" + strconv.Itoa(userID) + \" is not in the database\")\n-}\n-\n-func addUser(us user) bool {\n-\t_, exist := userExist(us.id)\n-\tif exist {\n-\t\tfmt.Println(\"The user\", us.name, \"is already present in userHM\")\n-\t\treturn false\n-\t}\n-\tuserHM[us.id] = us \n-\tfmt.Println(\"The user\", us.name, \"wasn't present in userHM and now is correctly inserted\")\n-\treturn true\n-}\n-\n-func deleteUser(userID int) {\n-\t_, ok := userExist(userID)\n-\tif ok {\n-\t\tdelete(userHM, userID)\n-\t\tfmt.Println(\"user\", userID, \"correctly deleted\")\n-\t\treturn\n-\t}\n-\tfmt.Println(\"user non present, cannot delete it\")\n-}\n-\n-\n-func printUserHM() {\n-\tfor id, user := range userHM {\n-\t\tfmt.Println(id, \"user is\", user)\n-\t}\n-}\n-\n-func main() {\n-\tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n-\tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n-\n-\taddUser(us1)\n-\taddUser(us2)\n-\n-\t\n-\tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n-\t_, err := findUser(us3.id)\n-\tif err != nil {\n-\t\tfmt.Println(err.Error())\n-\t} else {\n-\t\tfmt.Println(us3.name, \"present in database\")\n-\t}\n-\n-\t\n-\taddUser(us3)\n-\t_, err = findUser(us3.id)\n-\tif err != nil {\n-\t\tfmt.Println(err.Error())\n-\t} else {\n-\t\tfmt.Println(us3.name, \"present in database\")\n-\t}\n-\n-\t\n-\tusDupl := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n-\t_, err = findUser(usDupl.id)\n-\tif err != nil {\n-\t\tfmt.Println(err.Error())\n-\t\tfmt.Println(\"duplicate user\")\n-\t} else {\n-\t\tfmt.Println(usDupl.name, \"present in database\")\n-\t}\n-\n-\t\n-\tus4 := user{id: 4, name: \"John Smith\", email: \"smith@yahoo.com\"}\n-\taddUser(us4)\n-\tdeleteUser(5)      \n-\tdeleteUser(us4.id) \n-\tprintUserHM()\n-\texportAsSlice()\n-\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687546288670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,13 @@\n+package main\n \n+import (\n+\t\"errors\"\n+\t\"fmt\"\n+\t\"strconv\"\n+)\n+\n+type user struct {\n+\tid    int\n+\tname  string\n+\temail string\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687546294080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \t\"fmt\"\n \t\"strconv\"\n )\n \n-type user struct {\n+type myUser struct {\n \tid    int\n \tname  string\n \temail string\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687546302823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,6 @@\n type myUser struct {\n \tid    int\n \tname  string\n \temail string\n-}\n\\ No newline at end of file\n+}\n+\n"
+                },
+                {
+                    "date": 1687546309958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,4 +11,5 @@\n \tname  string\n \temail string\n }\n \n+var myUserHM = map[int]user{}\n"
+                },
+                {
+                    "date": 1687546323558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,4 +12,8 @@\n \temail string\n }\n \n var myUserHM = map[int]user{}\n+\n+func userExist(userID int) user {\n+\treturn userHM[userID]\n+}\n"
+                },
+                {
+                    "date": 1687546329798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n \n var myUserHM = map[int]user{}\n \n func userExist(userID int) user {\n-\treturn userHM[userID]\n+\treturn myUserHM[userID]\n }\n"
+                },
+                {
+                    "date": 1687546342954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n }\n \n var myUserHM = map[int]user{}\n \n-func userExist(userID int) user {\n+func myUserExist(myUser int) user {\n \treturn myUserHM[userID]\n }\n"
+                },
+                {
+                    "date": 1687546369858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n }\n \n var myUserHM = map[int]user{}\n \n-func myUserExist(myUser int) user {\n+func myUserExist(myUserID int) user {\n \treturn myUserHM[userID]\n }\n"
+                },
+                {
+                    "date": 1687546375891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,8 @@\n \n var myUserHM = map[int]user{}\n \n func myUserExist(myUserID int) user {\n-\treturn myUserHM[userID]\n+\treturn myUserHM[myUserID]\n }\n+\n+\n"
+                },
+                {
+                    "date": 1687546397746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,7 @@\n func myUserExist(myUserID int) user {\n \treturn myUserHM[myUserID]\n }\n \n-\n+func main() {\n+\tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n+\tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n"
+                },
+                {
+                    "date": 1687546403317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,7 @@\n }\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n+\n+\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n"
+                },
+                {
+                    "date": 1687546408985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,6 @@\n }\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n-\n-\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687546428187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,5 +20,10 @@\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n+\n+culo := \n+\n+\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687546433420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \n-culo := \n+culo := my\n \n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687546439069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \n-culo := my\n+culo := myU\n \n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687546452547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \n-culo := myU\n+culo := myUserExist(us1.id)\n \n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687546460292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \n culo := myUserExist(us1.id)\n+fmt.Println(culo)\n \n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687546476116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,11 @@\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n+userHM[us.id] = us\n \n+\n culo := myUserExist(us1.id)\n fmt.Println(culo)\n \n \n"
+                },
+                {
+                    "date": 1687546482721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n-userHM[us.id] = us\n+\tmyUserHM[us.id] = us\n \n \n culo := myUserExist(us1.id)\n fmt.Println(culo)\n"
+                },
+                {
+                    "date": 1687546584638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n-\tmyUserHM[us.id] = us\n+\tmyUserHM[us.id] = us1\n \n \n culo := myUserExist(us1.id)\n fmt.Println(culo)\n"
+                },
+                {
+                    "date": 1687546591609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n-\tmyUserHM[us.id] = us1\n+\tmyUserHM[us1.id] = us1\n \n \n culo := myUserExist(us1.id)\n fmt.Println(culo)\n"
+                },
+                {
+                    "date": 1687546597238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,10 @@\n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tmyUserHM[us1.id] = us1\n+\tmyUserHM[us1.id] = us1\n \n-\n culo := myUserExist(us1.id)\n fmt.Println(culo)\n \n \n"
+                },
+                {
+                    "date": 1687546602579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tmyUserHM[us1.id] = us1\n-\tmyUserHM[us1.id] = us1\n+\tmyUserHM[us2.id] = us2\n \n culo := myUserExist(us1.id)\n fmt.Println(culo)\n \n"
+                },
+                {
+                    "date": 1687546666590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n package main\n \n import (\n+\t\"fmt\"\n \t\"errors\"\n-\t\"fmt\"\n \t\"strconv\"\n )\n \n type myUser struct {\n"
+                },
+                {
+                    "date": 1687546682562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n package main\n \n import (\n \t\"fmt\"\n-\t\"errors\"\n-\t\"strconv\"\n+\t// \"errors\"\n+\t// \"strconv\"\n )\n \n type myUser struct {\n \tid    int\n@@ -13,9 +13,9 @@\n }\n \n var myUserHM = map[int]user{}\n \n-func myUserExist(myUserID int) user {\n+func myUserExist(myUserID int) myUser {\n \treturn myUserHM[myUserID]\n }\n \n func main() {\n@@ -23,10 +23,8 @@\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tmyUserHM[us1.id] = us1\n \tmyUserHM[us2.id] = us2\n \n-culo := myUserExist(us1.id)\n-fmt.Println(culo)\n+\tculo := myUserExist(us1.id)\n+\tfmt.Println(culo)\n \n-\n\\ No newline at end of file\n-\n-}\n+}\n"
+                },
+                {
+                    "date": 1687546893782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n \n var myUserHM = map[int]user{}\n \n func myUserExist(myUserID int) myUser {\n+\t\n \treturn myUserHM[myUserID]\n }\n \n func main() {\n"
+                },
+                {
+                    "date": 1687546901627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n \n var myUserHM = map[int]user{}\n \n func myUserExist(myUserID int) myUser {\n-\t\n-\treturn myUserHM[myUserID]\n+\tuser := myUserHM[myUserID]\n+\treturn \n }\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n"
+                },
+                {
+                    "date": 1687546922065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n \n var myUserHM = map[int]user{}\n \n func myUserExist(myUserID int) myUser {\n-\tuser := myUserHM[myUserID]\n-\treturn \n+\tmyUs := myUserHM[myUserID]\n+\treturn user\n }\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n"
+                },
+                {
+                    "date": 1687546961955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,12 +13,12 @@\n }\n \n var myUserHM = map[int]user{}\n \n-func myUserExist(myUserID int) myUser {\n-\tmyUs := myUserHM[myUserID]\n-\treturn user\n-}\n+// func myUserExist(myUserID int) myUser {\n+// \tmyUs := myUserHM[myUserID]\n+// \treturn myUs\n+// }\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n"
+                },
+                {
+                    "date": 1687546975344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \tname  string\n \temail string\n }\n \n-var myUserHM = map[int]user{}\n+var myUserHM = map[int]myUser{}\n \n // func myUserExist(myUserID int) myUser {\n // \tmyUs := myUserHM[myUserID]\n // \treturn myUs\n"
+                },
+                {
+                    "date": 1687546986259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,12 +13,12 @@\n }\n \n var myUserHM = map[int]myUser{}\n \n-// func myUserExist(myUserID int) myUser {\n-// \tmyUs := myUserHM[myUserID]\n-// \treturn myUs\n-// }\n+func myUserExist(myUserID int) myUser {\n+\tmyUs := \n+\treturn myUs\n+}\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n"
+                },
+                {
+                    "date": 1687547005819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,14 +14,13 @@\n \n var myUserHM = map[int]myUser{}\n \n func myUserExist(myUserID int) myUser {\n-\tmyUs := \n-\treturn myUs\n+\treturn myUserHM[myUserID]\n }\n \n func main() {\n-\tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n+\tus1 := myUser{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tmyUserHM[us1.id] = us1\n \tmyUserHM[us2.id] = us2\n \n"
+                },
+                {
+                    "date": 1687547018856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,12 +19,13 @@\n }\n \n func main() {\n \tus1 := myUser{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n-\tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n+\tus2 := myUser{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tmyUserHM[us1.id] = us1\n \tmyUserHM[us2.id] = us2\n \n \tculo := myUserExist(us1.id)\n \tfmt.Println(culo)\n+\t\n \n }\n"
+                },
+                {
+                    "date": 1687547030041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,7 +25,7 @@\n \tmyUserHM[us2.id] = us2\n \n \tculo := myUserExist(us1.id)\n \tfmt.Println(culo)\n-\t\n+\tculo2 := myUserEx\n \n }\n"
+                },
+                {
+                    "date": 1687547035458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,7 +25,8 @@\n \tmyUserHM[us2.id] = us2\n \n \tculo := myUserExist(us1.id)\n \tfmt.Println(culo)\n-\tculo2 := myUserEx\n+\tculo2 := myUserExist(2)\n+\t\n \n }\n"
+                },
+                {
+                    "date": 1687547048904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,7 +26,8 @@\n \n \tculo := myUserExist(us1.id)\n \tfmt.Println(culo)\n \tculo2 := myUserExist(2)\n+\tfmt.Println(culo2)\n \t\n \n }\n"
+                },
+                {
+                    "date": 1687547053969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,7 +27,6 @@\n \tculo := myUserExist(us1.id)\n \tfmt.Println(culo)\n \tculo2 := myUserExist(2)\n \tfmt.Println(culo2)\n-\t\n-\n-}\n+\t\tculo2 := myUserExist(2)\n+\tfmt.Println(culo2)}\n"
+                },
+                {
+                    "date": 1687547060428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,6 +27,6 @@\n \tculo := myUserExist(us1.id)\n \tfmt.Println(culo)\n \tculo2 := myUserExist(2)\n \tfmt.Println(culo2)\n-\t\tculo2 := myUserExist(2)\n+\tculo3 := myUserExist(3)\n \tfmt.Println(culo2)}\n"
+                },
+                {
+                    "date": 1687547229778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,5 +28,7 @@\n \tfmt.Println(culo)\n \tculo2 := myUserExist(2)\n \tfmt.Println(culo2)\n \tculo3 := myUserExist(3)\n-\tfmt.Println(culo2)}\n+\tfmt.Println(culo3)\n+\t\n+}\n"
+                },
+                {
+                    "date": 1687547242043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,6 +29,6 @@\n \tculo2 := myUserExist(2)\n \tfmt.Println(culo2)\n \tculo3 := myUserExist(3)\n \tfmt.Println(culo3)\n-\t\n+\tif culo3 == 0 {}\n }\n"
+                },
+                {
+                    "date": 1687547247416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,6 +29,8 @@\n \tculo2 := myUserExist(2)\n \tfmt.Println(culo2)\n \tculo3 := myUserExist(3)\n \tfmt.Println(culo3)\n-\tif culo3 == 0 {}\n+\tif culo3 == 0 {\n+\t\t\"\"\n+\t}\n }\n"
+                },
+                {
+                    "date": 1687547253037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,7 +30,7 @@\n \tfmt.Println(culo2)\n \tculo3 := myUserExist(3)\n \tfmt.Println(culo3)\n \tif culo3 == 0 {\n-\t\t\"\"\n+\t\t\"Not exists\"\n \t}\n }\n"
+                },
+                {
+                    "date": 1687547285706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,7 +30,7 @@\n \tfmt.Println(culo2)\n \tculo3 := myUserExist(3)\n \tfmt.Println(culo3)\n \tif culo3 == 0 {\n-\t\t\"Not exists\"\n+\t\tfmt.Println(\"Not exist\"\n \t}\n }\n"
+                },
+                {
+                    "date": 1687547302168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,8 @@\n \tculo2 := myUserExist(2)\n \tfmt.Println(culo2)\n \tculo3 := myUserExist(3)\n \tfmt.Println(culo3)\n-\tif culo3 == 0 {\n-\t\tfmt.Println(\"Not exist\"\n+\tif culo3 == struct {\n+\t\tfmt.Println(\"Not exist\")\n \t}\n }\n"
+                },
+                {
+                    "date": 1687547364080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,8 @@\n \tculo2 := myUserExist(2)\n \tfmt.Println(culo2)\n \tculo3 := myUserExist(3)\n \tfmt.Println(culo3)\n-\tif culo3 == struct {\n+\tif culo3 == myUser{} {\n \t\tfmt.Println(\"Not exist\")\n \t}\n }\n"
+                },
+                {
+                    "date": 1687547396028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,8 @@\n \tculo2 := myUserExist(2)\n \tfmt.Println(culo2)\n \tculo3 := myUserExist(3)\n \tfmt.Println(culo3)\n-\tif culo3 == myUser{} {\n+\tif (culo3 == myUser{} {\n \t\tfmt.Println(\"Not exist\")\n \t}\n }\n"
+                },
+                {
+                    "date": 1687547460181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,9 @@\n \tculo2 := myUserExist(2)\n \tfmt.Println(culo2)\n \tculo3 := myUserExist(3)\n \tfmt.Println(culo3)\n-\tif (culo3 == myUser{} {\n+\tif (culo3 == myUser{}) {\n \t\tfmt.Println(\"Not exist\")\n \t}\n+\t\n }\n"
+                },
+                {
+                    "date": 1687547466227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,6 +32,6 @@\n \tfmt.Println(culo3)\n \tif (culo3 == myUser{}) {\n \t\tfmt.Println(\"Not exist\")\n \t}\n-\t\n+\tfmt.Println(\n }\n"
+                },
+                {
+                    "date": 1687547473449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,6 +32,6 @@\n \tfmt.Println(culo3)\n \tif (culo3 == myUser{}) {\n \t\tfmt.Println(\"Not exist\")\n \t}\n-\tfmt.Println(\n+\tfmt.Println(culo3 == myUser{})\n }\n"
+                },
+                {
+                    "date": 1687547479549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n \tculo2 := myUserExist(2)\n \tfmt.Println(culo2)\n \tculo3 := myUserExist(3)\n \tfmt.Println(culo3)\n-\tif (culo3 == myUser{}) {\n-\t\tfmt.Println(\"Not exist\")\n-\t}\n+\t// if (culo3 == myUser{}) {\n+\t// \tfmt.Println(\"Not exist\")\n+\t// }\n \tfmt.Println(culo3 == myUser{})\n }\n"
+                },
+                {
+                    "date": 1687547948759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,11 @@\n func myUserExist(myUserID int) myUser {\n \treturn myUserHM[myUserID]\n }\n \n+\n+\n+\n func main() {\n \tus1 := myUser{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := myUser{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tmyUserHM[us1.id] = us1\n"
+                },
+                {
+                    "date": 1687547955615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,17 @@\n func myUserExist(myUserID int) myUser {\n \treturn myUserHM[myUserID]\n }\n \n+func findUser(userID int) (user, error) {\n+\tus, exists := userExist(userID)\n+\tif exists {\n+\t\treturn us, nil\n+\t}\n+\treturn user{}, errors.New(\"the user with ID \" + strconv.Itoa(userID) + \" is not in the database\")\n+}\n \n \n-\n func main() {\n \tus1 := myUser{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := myUser{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tmyUserHM[us1.id] = us1\n"
+                },
+                {
+                    "date": 1687547961542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n func myUserExist(myUserID int) myUser {\n \treturn myUserHM[myUserID]\n }\n \n-func findUser(userID int) (user, error) {\n+func myFindUser(userID int) (user, error) {\n \tus, exists := userExist(userID)\n \tif exists {\n \t\treturn us, nil\n \t}\n"
+                },
+                {
+                    "date": 1687547967658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n func myUserExist(myUserID int) myUser {\n \treturn myUserHM[myUserID]\n }\n \n-func myFindUser(userID int) (user, error) {\n+func myFindUser(myUserID int) (user, error) {\n \tus, exists := userExist(userID)\n \tif exists {\n \t\treturn us, nil\n \t}\n"
+                },
+                {
+                    "date": 1687547976538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,14 +17,14 @@\n func myUserExist(myUserID int) myUser {\n \treturn myUserHM[myUserID]\n }\n \n-func myFindUser(myUserID int) (user, error) {\n-\tus, exists := userExist(userID)\n+func myFindUser(myUserID int) (myUser, error) {\n+\tus, exists := userExist(myUserID)\n \tif exists {\n \t\treturn us, nil\n \t}\n-\treturn user{}, errors.New(\"the user with ID \" + strconv.Itoa(userID) + \" is not in the database\")\n+\treturn user{}, errors.New(\"the user with ID \" + strconv.Itoa(myUserID) + \" is not in the database\")\n }\n \n \n func main() {\n"
+                },
+                {
+                    "date": 1687547986100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \tus, exists := userExist(myUserID)\n \tif exists {\n \t\treturn us, nil\n \t}\n-\treturn user{}, errors.New(\"the user with ID \" + strconv.Itoa(myUserID) + \" is not in the database\")\n+\treturn myUser{}, errors.New(\"the user with ID \" + strconv.Itoa(myUserID) + \" is not in the database\")\n }\n \n \n func main() {\n"
+                },
+                {
+                    "date": 1687547996344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n func myFindUser(myUserID int) (myUser, error) {\n \tus, exists := userExist(myUserID)\n \tif exists {\n-\t\treturn us, nil\n+\t\treturn myUser, nil\n \t}\n \treturn myUser{}, errors.New(\"the user with ID \" + strconv.Itoa(myUserID) + \" is not in the database\")\n }\n \n"
+                },
+                {
+                    "date": 1687548006909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \treturn myUserHM[myUserID]\n }\n \n func myFindUser(myUserID int) (myUser, error) {\n-\tus, exists := userExist(myUserID)\n+\tmyUs, exists := userExist(myUserID)\n \tif exists {\n \t\treturn myUser, nil\n \t}\n \treturn myUser{}, errors.New(\"the user with ID \" + strconv.Itoa(myUserID) + \" is not in the database\")\n"
+                },
+                {
+                    "date": 1687548017868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n package main\n \n import (\n \t\"fmt\"\n-\t// \"errors\"\n+\t\"errors\"\n \t// \"strconv\"\n )\n \n type myUser struct {\n@@ -20,9 +20,9 @@\n \n func myFindUser(myUserID int) (myUser, error) {\n \tmyUs, exists := userExist(myUserID)\n \tif exists {\n-\t\treturn myUser, nil\n+\t\treturn myUs, nil\n \t}\n \treturn myUser{}, errors.New(\"the user with ID \" + strconv.Itoa(myUserID) + \" is not in the database\")\n }\n \n"
+                },
+                {
+                    "date": 1687548332325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n import (\n \t\"fmt\"\n \t\"errors\"\n-\t// \"strconv\"\n+\t\"strconv\"\n )\n \n type myUser struct {\n \tid    int\n@@ -18,9 +18,9 @@\n \treturn myUserHM[myUserID]\n }\n \n func myFindUser(myUserID int) (myUser, error) {\n-\tmyUs, exists := userExist(myUserID)\n+\tmyUs := userExist(myUserID)\n \tif exists {\n \t\treturn myUs, nil\n \t}\n \treturn myUser{}, errors.New(\"the user with ID \" + strconv.Itoa(myUserID) + \" is not in the database\")\n"
+                },
+                {
+                    "date": 1687548358204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\n \n func myFindUser(myUserID int) (myUser, error) {\n \tmyUs := userExist(myUserID)\n-\tif exists {\n+\tif  {\n \t\treturn myUs, nil\n \t}\n \treturn myUser{}, errors.New(\"the user with ID \" + strconv.Itoa(myUserID) + \" is not in the database\")\n }\n"
+                },
+                {
+                    "date": 1687548366020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\n \n func myFindUser(myUserID int) (myUser, error) {\n \tmyUs := userExist(myUserID)\n-\tif  {\n+\tif () {\n \t\treturn myUs, nil\n \t}\n \treturn myUser{}, errors.New(\"the user with ID \" + strconv.Itoa(myUserID) + \" is not in the database\")\n }\n"
+                },
+                {
+                    "date": 1687548374895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\n \n func myFindUser(myUserID int) (myUser, error) {\n \tmyUs := userExist(myUserID)\n-\tif () {\n+\tif (myUs) {\n \t\treturn myUs, nil\n \t}\n \treturn myUser{}, errors.New(\"the user with ID \" + strconv.Itoa(myUserID) + \" is not in the database\")\n }\n"
+                },
+                {
+                    "date": 1687548387245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\n \n func myFindUser(myUserID int) (myUser, error) {\n \tmyUs := userExist(myUserID)\n-\tif (myUs) {\n+\tif (myUs == myUser{}) {\n \t\treturn myUs, nil\n \t}\n \treturn myUser{}, errors.New(\"the user with ID \" + strconv.Itoa(myUserID) + \" is not in the database\")\n }\n"
+                },
+                {
+                    "date": 1687548425004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \treturn myUserHM[myUserID]\n }\n \n func myFindUser(myUserID int) (myUser, error) {\n-\tmyUs := userExist(myUserID)\n+\tmyUs := myuserExist(myUserID)\n \tif (myUs == myUser{}) {\n \t\treturn myUs, nil\n \t}\n \treturn myUser{}, errors.New(\"the user with ID \" + strconv.Itoa(myUserID) + \" is not in the database\")\n"
+                },
+                {
+                    "date": 1687548439717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \treturn myUserHM[myUserID]\n }\n \n func myFindUser(myUserID int) (myUser, error) {\n-\tmyUs := myuserExist(myUserID)\n+\tmyUs := myUserExist(myUserID)\n \tif (myUs == myUser{}) {\n \t\treturn myUs, nil\n \t}\n \treturn myUser{}, errors.New(\"the user with ID \" + strconv.Itoa(myUserID) + \" is not in the database\")\n@@ -42,5 +42,6 @@\n \t// if (culo3 == myUser{}) {\n \t// \tfmt.Println(\"Not exist\")\n \t// }\n \tfmt.Println(culo3 == myUser{})\n+\t\n }\n"
+                },
+                {
+                    "date": 1687548444997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,6 +42,6 @@\n \t// if (culo3 == myUser{}) {\n \t// \tfmt.Println(\"Not exist\")\n \t// }\n \tfmt.Println(culo3 == myUser{})\n-\t\n+\tfmt.Println()\n }\n"
+                },
+                {
+                    "date": 1687548452756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,6 +42,6 @@\n \t// if (culo3 == myUser{}) {\n \t// \tfmt.Println(\"Not exist\")\n \t// }\n \tfmt.Println(culo3 == myUser{})\n-\tfmt.Println()\n+\tfmt.Println(myFindUser(us1))\n }\n"
+                },
+                {
+                    "date": 1687548472248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,6 +42,6 @@\n \t// if (culo3 == myUser{}) {\n \t// \tfmt.Println(\"Not exist\")\n \t// }\n \tfmt.Println(culo3 == myUser{})\n-\tfmt.Println(myFindUser(us1))\n+\tfmt.Println(myFindUser(us1.id))\n }\n"
+                },
+                {
+                    "date": 1687893212268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,47 +1,8 @@\n package main\n \n import (\n+\t\"errors\"\n \t\"fmt\"\n-\t\"errors\"\n+\t\"sort\"\n \t\"strconv\"\n-)\n-\n-type myUser struct {\n-\tid    int\n-\tname  string\n-\temail string\n-}\n-\n-var myUserHM = map[int]myUser{}\n-\n-func myUserExist(myUserID int) myUser {\n-\treturn myUserHM[myUserID]\n-}\n-\n-func myFindUser(myUserID int) (myUser, error) {\n-\tmyUs := myUserExist(myUserID)\n-\tif (myUs == myUser{}) {\n-\t\treturn myUs, nil\n-\t}\n-\treturn myUser{}, errors.New(\"the user with ID \" + strconv.Itoa(myUserID) + \" is not in the database\")\n-}\n-\n-\n-func main() {\n-\tus1 := myUser{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n-\tus2 := myUser{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n-\tmyUserHM[us1.id] = us1\n-\tmyUserHM[us2.id] = us2\n-\n-\tculo := myUserExist(us1.id)\n-\tfmt.Println(culo)\n-\tculo2 := myUserExist(2)\n-\tfmt.Println(culo2)\n-\tculo3 := myUserExist(3)\n-\tfmt.Println(culo3)\n-\t// if (culo3 == myUser{}) {\n-\t// \tfmt.Println(\"Not exist\")\n-\t// }\n-\tfmt.Println(culo3 == myUser{})\n-\tfmt.Println(myFindUser(us1.id))\n-}\n+)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687893218009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,7 @@\n \t\"errors\"\n \t\"fmt\"\n \t\"sort\"\n \t\"strconv\"\n-)\n\\ No newline at end of file\n+)\n+\n+func main\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687893682159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \n import (\n \t\"errors\"\n \t\"fmt\"\n-\t\"sort\"\n-\t\"strconv\"\n+\t// \"sort\"\n+\t// \"strconv\"\n )\n\\ No newline at end of file\n \n-func main\n+func main() {\n+\t\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687893694102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,11 @@\n package main\n \n-import (\n-\t\"errors\"\n-\t\"fmt\"\n-\t// \"sort\"\n-\t// \"strconv\"\n-)\n+// \"errors\"\n \n+// \"sort\"\n+// \"strconv\"\n\\ No newline at end of file\n+\n+\n func main() {\n-\t\n-}\n+\n+}\n"
+                },
+                {
+                    "date": 1687893699967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n // \"sort\"\n // \"strconv\"\n \n+type \n \n func main() {\n \n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1687893711442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n // \"sort\"\n // \"strconv\"\n \n-type \n+type prt = fmt.Printlnusers \n \n func main() {\n \n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1687893720667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n // \"sort\"\n // \"strconv\"\n \n-type prt = fmt.Printlnusers \n+type prt = fmt.Println\n \n func main() {\n-\n\\ No newline at end of file\n-}\n+\tprt\n+}\n"
+                },
+                {
+                    "date": 1687893727117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n \n type prt = fmt.Println\n \n func main() {\n-\tprt\n+\tprt(\"W il mio culo!\")\n }\n"
+                },
+                {
+                    "date": 1687893737498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n package main\n \n+import {\n+\t\"fmt\"\n+\n // \"errors\"\n \n // \"sort\"\n // \"strconv\"\n@@ -8,5 +11,6 @@\n type prt = fmt.Println\n \n func main() {\n \tprt(\"W il mio culo!\")\n+\n }\n"
+                },
+                {
+                    "date": 1687893752860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,14 @@\n package main\n \n import {\n \t\"fmt\"\n-\n // \"errors\"\n-\n // \"sort\"\n // \"strconv\"\n+}\n \n-type prt = fmt.Println\n+type fprt = fmt.Println\n \n func main() {\n \tprt(\"W il mio culo!\")\n \n"
+                },
+                {
+                    "date": 1687894761453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n \n type fprt = fmt.Println\n \n func main() {\n-\tprt(\"W il mio culo!\")\n+\tfprt(\"W il mio culo!\")\n \n }\n"
+                },
+                {
+                    "date": 1687894770395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n package main\n \n-import {\n+import ()\n \t\"fmt\"\n // \"errors\"\n // \"sort\"\n // \"strconv\"\n"
+                },
+                {
+                    "date": 1687894776376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n package main\n \n-import ()\n+import (\n \t\"fmt\"\n // \"errors\"\n // \"sort\"\n // \"strconv\"\n-}\n+)\n \n type fprt = fmt.Println\n \n func main() {\n"
+                },
+                {
+                    "date": 1687894791966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,10 @@\n )\n \n type fprt = fmt.Println\n \n+\n+\n func main() {\n \tfprt(\"W il mio culo!\")\n \n }\n"
+                },
+                {
+                    "date": 1687894799439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,10 @@\n )\n \n type fprt = fmt.Println\n \n+var listOfUsers []\n \n-\n func main() {\n \tfprt(\"W il mio culo!\")\n \n }\n"
+                },
+                {
+                    "date": 1687894805041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n )\n \n type fprt = fmt.Println\n \n-var listOfUsers []\n+var listOfUsers []user\n \n func main() {\n \tfprt(\"W il mio culo!\")\n \n"
+                },
+                {
+                    "date": 1687894815333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,13 @@\n // \"strconv\"\n )\n \n type fprt = fmt.Println\n+type user struct {\n+\tid    int\n+\tname  string\n+\temail string\n+}\n \n var listOfUsers []user\n \n func main() {\n"
+                },
+                {
+                    "date": 1687894832346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,10 @@\n // \"strconv\"\n )\n \n type fprt = fmt.Println\n-type user struct {\n+\n+type users struct {\n \tid    int\n \tname  string\n \temail string\n }\n"
+                },
+                {
+                    "date": 1687894857409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n \tname  string\n \temail string\n }\n \n-var listOfUsers []user\n+var listOfUsers []users\n \n func main() {\n-\tfprt(\"W il mio culo!\")\n+\tfprt(listOfUsers)\n \n }\n"
+                },
+                {
+                    "date": 1687894864590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n \n var listOfUsers []users\n \n func main() {\n+\tfor\n \tfprt(listOfUsers)\n-\n }\n"
+                },
+                {
+                    "date": 1687894871051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n \n var listOfUsers []users\n \n func main() {\n-\tfor\n+\tfor i := 0;\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687894876978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n \n var listOfUsers []users\n \n func main() {\n-\tfor i := 0;\n+\tfor i := 0; i < 10;\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687894882033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n \n var listOfUsers []users\n \n func main() {\n-\tfor i := 0; i < 10;\n+\tfor i := 0; i < 10; i++ {}\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687894891105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,9 @@\n \n var listOfUsers []users\n \n func main() {\n-\tfor i := 0; i < 10; i++ {}\n+\tfor i := 0; i < 10; i++ {\n+\t\tlistOfUsers\n+\t}\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687894903396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n var listOfUsers []users\n \n func main() {\n \tfor i := 0; i < 10; i++ {\n-\t\tlistOfUsers\n+\t\tlistOfUsers = append(listOfUsers, user)\n \t}\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687894914249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n var listOfUsers []users\n \n func main() {\n \tfor i := 0; i < 10; i++ {\n-\t\tlistOfUsers = append(listOfUsers, user)\n+\t\tlistOfUsers = append(listOfUsers, user{id: i})\n \t}\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687894941162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n // \"sort\"\n // \"strconv\"\n )\n \n-type fprt = fmt.Println\n+type fprt = fmt.Println()\n \n type users struct {\n \tid    int\n \tname  string\n@@ -18,8 +18,8 @@\n var listOfUsers []users\n \n func main() {\n \tfor i := 0; i < 10; i++ {\n-\t\tlistOfUsers = append(listOfUsers, user{id: i})\n+\t\tlistOfUsers = append(listOfUsers, users{id: i})\n \t}\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687894955270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n // \"sort\"\n // \"strconv\"\n )\n \n-type fprt = fmt.Println()\n+var fprt = fmt.Println()\n \n type users struct {\n \tid    int\n \tname  string\n"
+                },
+                {
+                    "date": 1687894971309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n // \"sort\"\n // \"strconv\"\n )\n \n-var fprt = fmt.Println()\n+var fprt = fmt.Println\n \n type users struct {\n \tid    int\n \tname  string\n@@ -18,8 +18,8 @@\n var listOfUsers []users\n \n func main() {\n \tfor i := 0; i < 10; i++ {\n-\t\tlistOfUsers = append(listOfUsers, users{id: i})\n+\t\tlistOfUsers = append(listOfUsers, users{id: i,})\n \t}\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687895032751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n var listOfUsers []users\n \n func main() {\n \tfor i := 0; i < 10; i++ {\n-\t\tlistOfUsers = append(listOfUsers, users{id: i,})\n+\t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\"})\n \t}\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687895040104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n var listOfUsers []users\n \n func main() {\n \tfor i := 0; i < 10; i++ {\n-\t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\"})\n+\t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo\"})\n \t}\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687895167996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,10 @@\n \n var listOfUsers []users\n \n func main() {\n+\t\n \tfor i := 0; i < 10; i++ {\n-\t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo\"})\n+\t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo@figa.it\"})\n \t}\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687895176301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,10 @@\n \n var listOfUsers []users\n \n func main() {\n-\t\n+\tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n+\tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tfor i := 0; i < 10; i++ {\n \t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo@figa.it\"})\n \t}\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687895202149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n+\tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n \tfor i := 0; i < 10; i++ {\n \t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo@figa.it\"})\n \t}\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687895253308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n+\t\n \tfor i := 0; i < 10; i++ {\n \t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo@figa.it\"})\n \t}\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687895553262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,15 +14,16 @@\n \tname  string\n \temail string\n }\n \n+\n var listOfUsers []users\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n-\t\n+\n \tfor i := 0; i < 10; i++ {\n \t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo@figa.it\"})\n \t}\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687895587327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,16 +14,16 @@\n \tname  string\n \temail string\n }\n \n-\n+var userHM = map[int]user{}\n var listOfUsers []users\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n-\n+userHM[us1.id] = us1\n \tfor i := 0; i < 10; i++ {\n \t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo@figa.it\"})\n \t}\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687895594647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n userHM[us1.id] = us1\n+userHM[us1.id] = us1\n \tfor i := 0; i < 10; i++ {\n \t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo@figa.it\"})\n \t}\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687895600932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,10 @@\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n userHM[us1.id] = us1\n-userHM[us1.id] = us1\n+userHM[us2.id] = us2\n+\n \tfor i := 0; i < 10; i++ {\n \t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo@figa.it\"})\n \t}\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687895607978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n userHM[us1.id] = us1\n userHM[us2.id] = us2\n+userHM[us2.id] = us2\n \n \tfor i := 0; i < 10; i++ {\n \t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo@figa.it\"})\n \t}\n"
+                },
+                {
+                    "date": 1687895613176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n userHM[us1.id] = us1\n userHM[us2.id] = us2\n-userHM[us2.id] = us2\n+userHM[us3.id] = us3\n \n \tfor i := 0; i < 10; i++ {\n \t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo@figa.it\"})\n \t}\n"
+                },
+                {
+                    "date": 1687895620101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n package main\n \n import (\n \t\"fmt\"\n-// \"errors\"\n-// \"sort\"\n-// \"strconv\"\n+\t// \"errors\"\n+\t// \"sort\"\n+\t// \"strconv\"\n )\n \n var fprt = fmt.Println\n \n@@ -21,13 +21,14 @@\n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n-userHM[us1.id] = us1\n-userHM[us2.id] = us2\n-userHM[us3.id] = us3\n+\tuserHM[us1.id] = us1\n+\tuserHM[us2.id] = us2\n+\tuserHM[us3.id] = us3\n \n \tfor i := 0; i < 10; i++ {\n \t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo@figa.it\"})\n \t}\n+\t\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687895626192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,7 +28,7 @@\n \n \tfor i := 0; i < 10; i++ {\n \t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo@figa.it\"})\n \t}\n-\t\n+\tfprt(user)\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687895634480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n )\n \n var fprt = fmt.Println\n \n-type users struct {\n+type user struct {\n \tid    int\n \tname  string\n \temail string\n }\n@@ -28,7 +28,7 @@\n \n \tfor i := 0; i < 10; i++ {\n \t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo@figa.it\"})\n \t}\n-\tfprt(user)\n+\tfprt(userHM)\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687895639919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \temail string\n }\n \n var userHM = map[int]user{}\n-var listOfUsers []users\n+var listOfUsers []user\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n@@ -26,9 +26,9 @@\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n \tfor i := 0; i < 10; i++ {\n-\t\tlistOfUsers = append(listOfUsers, users{id: i, name: \"culo\", email: \"culo@figa.it\"})\n+\t\tlistOfUsers = append(listOfUsers, user{id: i, name: \"culo\", email: \"culo@figa.it\"})\n \t}\n \tfprt(userHM)\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687895678556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n \tfor i := 0; i < 10; i++ {\n-\t\tlistOfUsers = append(listOfUsers, user{id: i, name: \"culo\", email: \"culo@figa.it\"})\n+\t\tlistOfUsers = append(listOfUsers, user)\n \t}\n \tfprt(userHM)\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687895685305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n \tfor i := 0; i < 10; i++ {\n-\t\tlistOfUsers = append(listOfUsers, user)\n+\t\tlistOfUsers = append(listOfUsers, userHM[i])\n \t}\n \tfprt(userHM)\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687895699029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tuserHM[us1.id] = us1\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n-\tfor i := 0; i < 10; i++ {\n+\tfor i := 0; i < len; i++ {\n \t\tlistOfUsers = append(listOfUsers, userHM[i])\n \t}\n \tfprt(userHM)\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687895708665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tuserHM[us1.id] = us1\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n-\tfor i := 0; i < len; i++ {\n+\tfor i := 1; i < len(userHM); i++ {\n \t\tlistOfUsers = append(listOfUsers, userHM[i])\n \t}\n \tfprt(userHM)\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687895731787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tuserHM[us1.id] = us1\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n-\tfor i := 1; i < len(userHM); i++ {\n+\tfor i := 0; i < len(userHM); i++ {\n \t\tlistOfUsers = append(listOfUsers, userHM[i])\n \t}\n \tfprt(userHM)\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687895761297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n var userHM = map[int]user{}\n var listOfUsers []user\n \n func main() {\n-\tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n+\t// us1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n \tuserHM[us1.id] = us1\n \tuserHM[us2.id] = us2\n"
+                },
+                {
+                    "date": 1687895769103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,9 @@\n func main() {\n \t// us1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n-\tuserHM[us1.id] = us1\n-\tuserHM[us2.id] = us2\n+\tuserHM[us1.id] = \n \tuserHM[us3.id] = us3\n \n \tfor i := 0; i < len(userHM); i++ {\n \t\tlistOfUsers = append(listOfUsers, userHM[i])\n"
+                },
+                {
+                    "date": 1687895775267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,10 @@\n func main() {\n \t// us1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n-\tuserHM[us1.id] = \n+\tuserHM[us1.id] = user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n+\t\n \tuserHM[us3.id] = us3\n \n \tfor i := 0; i < len(userHM); i++ {\n \t\tlistOfUsers = append(listOfUsers, userHM[i])\n"
+                },
+                {
+                    "date": 1687895783464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \t// us1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n \tuserHM[us1.id] = user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n-\t\n+\tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n \tfor i := 0; i < len(userHM); i++ {\n \t\tlistOfUsers = append(listOfUsers, userHM[i])\n"
+                },
+                {
+                    "date": 1687895799442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,12 @@\n var userHM = map[int]user{}\n var listOfUsers []user\n \n func main() {\n-\t// us1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n+\tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n \tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n-\tuserHM[us1.id] = user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n+\tuserHM[us1.id] = us1\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n \tfor i := 0; i < len(userHM); i++ {\n"
+                },
+                {
+                    "date": 1687895817836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n \tfor i := 0; i < len(userHM); i++ {\n-\t\tlistOfUsers = append(listOfUsers, userHM[i])\n+\t\tlistOfUsers = append(listOfUsers, userHM[i-1])\n \t}\n \tfprt(userHM)\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687895853820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tuserHM[us1.id] = us1\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n-\tfor i := 0; i < len(userHM); i++ {\n+\tfor key, user {\n \t\tlistOfUsers = append(listOfUsers, userHM[i-1])\n \t}\n \tfprt(userHM)\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687895863045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tuserHM[us1.id] = us1\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n-\tfor key, user {\n+\tfor key, user := userh {\n \t\tlistOfUsers = append(listOfUsers, userHM[i-1])\n \t}\n \tfprt(userHM)\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687895888027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,10 @@\n \tuserHM[us1.id] = us1\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n-\tfor key, user := userh {\n-\t\tlistOfUsers = append(listOfUsers, userHM[i-1])\n+\tfor key, user := userHM {\n+\t\tlistOfUsers = append(listOfUsers, user)\n \t}\n \tfprt(userHM)\n \tfprt(listOfUsers)\n }\n"
+                },
+                {
+                    "date": 1687895911789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tuserHM[us1.id] = us1\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n-\tfor key, user := userHM {\n+\tfor _, user := userHM {\n \t\tlistOfUsers = append(listOfUsers, user)\n \t}\n \tfprt(userHM)\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687895921420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tuserHM[us1.id] = us1\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n-\tfor _, user := userHM {\n+\tfor key, user := userHM {\n \t\tlistOfUsers = append(listOfUsers, user)\n \t}\n \tfprt(userHM)\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687895927369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tuserHM[us1.id] = us1\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n-\tfor key, user := userHM {\n+\tfor _, user := range userHM {\n \t\tlistOfUsers = append(listOfUsers, user)\n \t}\n \tfprt(userHM)\n \tfprt(listOfUsers)\n"
+                },
+                {
+                    "date": 1687896142736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \temail string\n }\n \n var userHM = map[int]user{}\n-var listOfUsers []user\n+var listOfUsers []user{}\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n"
+                },
+                {
+                    "date": 1687896155081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \temail string\n }\n \n var userHM = map[int]user{}\n-var listOfUsers []user{}\n+var listOfUsers []user\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n"
+                },
+                {
+                    "date": 1687896890515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \temail string\n }\n \n var userHM = map[int]user{}\n-var listOfUsers []user\n+var userSL []user\n \n func main() {\n \tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n \tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n"
+                },
+                {
+                    "date": 1687896895872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \tuserHM[us2.id] = us2\n \tuserHM[us3.id] = us3\n \n \tfor _, user := range userHM {\n-\t\tlistOfUsers = append(listOfUsers, user)\n+\t\tuserSL = append(userSL, user)\n \t}\n \tfprt(userHM)\n-\tfprt(listOfUsers)\n+\tfprt(userSL)\n }\n"
+                }
+            ],
+            "date": 1687544303077,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

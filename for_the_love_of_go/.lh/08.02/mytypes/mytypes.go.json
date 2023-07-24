@@ -1,0 +1,90 @@
+{
+    "sourceFile": "08.02/mytypes/mytypes.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1681594825349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1681594830833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-package main\n+package mytypes\n \n import \"fmt\"\n \n func main() {\n"
+                },
+                {
+                    "date": 1681594836380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n package mytypes\n+/*\n \n+\n import \"fmt\"\n \n func main() {\n \tfmt.Println(\"vim-go\")\n"
+                },
+                {
+                    "date": 1681594854531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n package mytypes\n-/*\n+/* Twice multiplies its receiver by 2 and returns the result\n+*/\n \n-\n import \"fmt\"\n \n func main() {\n \tfmt.Println(\"vim-go\")\n"
+                },
+                {
+                    "date": 1681594864941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n */\n \n import \"fmt\"\n \n-func main() {\n+func (main() {\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1681594874932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n */\n \n import \"fmt\"\n \n-func (main() {\n+func (i int) Twice() {\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1681594883732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n */\n \n import \"fmt\"\n \n-func (i int) Twice() {\n-\tfmt.Println(\"vim-go\")\n+func (i int) Twice() int {\n+\tre\n }\n"
+                },
+                {
+                    "date": 1681594889115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n \n import \"fmt\"\n \n func (i int) Twice() int {\n-\tre\n+\treturn i * 2\n }\n"
+                },
+                {
+                    "date": 1681594923250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n package mytypes\n /* Twice multiplies its receiver by 2 and returns the result\n */\n \n-import \"fmt\"\n+// import \"fmt\"\n \n func (i int) Twice() int {\n \treturn i * 2\n }\n"
+                },
+                {
+                    "date": 1681594960237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,8 @@\n */\n \n // import \"fmt\"\n \n+\n func (i int) Twice() int {\n \treturn i * 2\n }\n"
+                },
+                {
+                    "date": 1681594965843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n /* Twice multiplies its receiver by 2 and returns the result\n */\n \n // import \"fmt\"\n+type MyInt int\n \n-\n func (i int) Twice() int {\n \treturn i * 2\n }\n"
+                },
+                {
+                    "date": 1681594976921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n package mytypes\n+\n /* Twice multiplies its receiver by 2 and returns the result\n-*/\n+ */\n \n // import \"fmt\"\n type MyInt int\n \n-func (i int) Twice() int {\n+func (i MyInt) Twice() int {\n \treturn i * 2\n }\n"
+                },
+                {
+                    "date": 1681595560425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n  */\n \n // import \"fmt\"\n type MyInt int\n+type \n \n-func (i MyInt) Twice() int {\n+func (i MyInt) Twice() MyInt {\n \treturn i * 2\n }\n"
+                },
+                {
+                    "date": 1681595568521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n  */\n \n // import \"fmt\"\n type MyInt int\n-type \n+type MyString string\n \n func (i MyInt) Twice() MyInt {\n \treturn i * 2\n }\n+\n+func\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1681595575361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,5 @@\n func (i MyInt) Twice() MyInt {\n \treturn i * 2\n }\n \n-func\n\\ No newline at end of file\n+func (s)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1681595582008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,5 @@\n func (i MyInt) Twice() MyInt {\n \treturn i * 2\n }\n \n-func (s)\n\\ No newline at end of file\n+func (s MyString) \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1681595587300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,5 @@\n func (i MyInt) Twice() MyInt {\n \treturn i * 2\n }\n \n-func (s MyString) \n\\ No newline at end of file\n+func (s MyString) Len() \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1681595596310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,7 @@\n func (i MyInt) Twice() MyInt {\n \treturn i * 2\n }\n \n-func (s MyString) Len() \n\\ No newline at end of file\n+func (s MyString) Len() int {\n+\treturn \n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1681595606676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n \treturn i * 2\n }\n \n func (s MyString) Len() int {\n-\treturn \n+\treturn len(s())\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1681594825348,
+            "name": "Commit-0",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"vim-go\")\n}\n"
+        }
+    ]
+}

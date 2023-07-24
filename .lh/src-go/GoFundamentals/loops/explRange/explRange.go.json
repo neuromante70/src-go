@@ -1,0 +1,458 @@
+{
+    "sourceFile": "src-go/GoFundamentals/loops/explRange/explRange.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 110,
+            "patches": [
+                {
+                    "date": 1684446212059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1684446217362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n import \"fmt\"\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n-\t\n+\tfor\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1684446222424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n import \"fmt\"\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n-\tfor\n+\tfor i, v :\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1684446230197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,9 @@\n import \"fmt\"\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n-\tfor i, v :\n+\tfor i, v := range evenVals {\n+\t\t\n+\t}\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1684446235307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n-\t\t\n+\t\tfmt.Println()\n \t}\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1684446276433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n-package explRange\n+package main\n \n import \"fmt\"\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n-\t\tfmt.Println()\n+\t\tfmt.Println(i, v)\n \t}\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1684446294746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n-\t\tfmt.Println(i, v)\n+\t\tfmt.Println(\"indexi, v)\n \t}\n \n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1684446302671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n-\t\tfmt.Println(\"indexi, v)\n+\t\tfmt.Println(\"index:\", i, v)\n \t}\n \n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1684446309049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n-\t\tfmt.Println(\"index:\", i, v)\n+\t\tfmt.Println(\"index:\", i, \"value\" v)\n \t}\n \n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1684446343347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,13 @@\n package main\n \n import \"fmt\"\n \n+\n+\n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n-\t\tfmt.Println(\"index:\", i, \"value\" v)\n+\t\tfmt.Println(\"index:\", i, \"value:\", v)\n\\ No newline at end of file\n \t}\n \n-}\n+}\n"
+                },
+                {
+                    "date": 1684446348405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n package main\n \n import \"fmt\"\n \n+/**/\n \n-\n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1684446355427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,16 @@\n package main\n \n import \"fmt\"\n \n-/**/\n+/*\n+FOR-RANGE LOOPS\n \n+*/\n+\n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n\\ No newline at end of file\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n-}\n+}\n"
+                },
+                {
+                    "date": 1684446367650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,14 @@\n import \"fmt\"\n \n /*\n FOR-RANGE LOOPS\n-\n+Only iterate on: \n */\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1684446373710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,15 @@\n import \"fmt\"\n \n /*\n FOR-RANGE LOOPS\n-Only iterate on: \n+Only iterate on:\n+1) \n */\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n\\ No newline at end of file\n \n-}\n+}\n"
+                },
+                {
+                    "date": 1684446382000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,14 +4,15 @@\n \n /*\n FOR-RANGE LOOPS\n Only iterate on:\n-1) \n+1) strings\n+2\n */\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n\\ No newline at end of file\n \n-}\n+}\n"
+                },
+                {
+                    "date": 1684446387304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,14 @@\n /*\n FOR-RANGE LOOPS\n Only iterate on:\n 1) strings\n-2\n+2) array and slice\n */\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1684446392421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,13 +6,14 @@\n FOR-RANGE LOOPS\n Only iterate on:\n 1) strings\n 2) array and slice\n+3) \n */\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1684446402804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,15 @@\n FOR-RANGE LOOPS\n Only iterate on:\n 1) strings\n 2) array and slice\n-3) \n+3) maps\n+\n */\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n\\ No newline at end of file\n \n-}\n+}\n"
+                },
+                {
+                    "date": 1684446411522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,16 +5,16 @@\n /*\n FOR-RANGE LOOPS\n Only iterate on:\n 1) strings\n-2) array and slice\n+2) arrays and slice\n 3) maps\n-\n+4) \n */\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n\\ No newline at end of file\n \n-}\n+}\n"
+                },
+                {
+                    "date": 1684446416703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,16 +5,16 @@\n /*\n FOR-RANGE LOOPS\n Only iterate on:\n 1) strings\n-2) arrays and slice\n+2) arrays and slices\n 3) maps\n-4) \n+4) channel\n */\n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n\\ No newline at end of file\n \n-}\n+}\n"
+                },
+                {
+                    "date": 1684446423971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,17 @@\n Only iterate on:\n 1) strings\n 2) arrays and slices\n 3) maps\n-4) channel\n+4) channels\n+\n+\n */\n \n+\n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \tfor i, v := range evenVals {\n\\ No newline at end of file\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n-}\n+}\n"
+                },
+                {
+                    "date": 1684446637398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,16 +8,15 @@\n 1) strings\n 2) arrays and slices\n 3) maps\n 4) channels\n-\n-\n */\n \n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n+\t// \n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1684446645508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n \n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n-\t// \n+\t// for index, value := \n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1684446657352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n \n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n-\t// for index, value := \n+\t// for index, value := intervallo slice\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1684446682079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,12 @@\n \n \n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n-\t// for index, value := intervallo slice\n+\t// for index, value := intervallo slice {\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n\\ No newline at end of file\n-}\n+\n+\t\n+}\n"
+                },
+                {
+                    "date": 1684446690302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,8 @@\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n+\t// Index or value \n \n-\t\n\\ No newline at end of file\n-}\n+\n+}\n"
+                },
+                {
+                    "date": 1684446698480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n-\t// Index or value \n+\t// Index or value can be omitted.\n \n \n }\n"
+                },
+                {
+                    "date": 1684446727784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n-\t// Index or value can be omitted.\n+\t// Thendex or value can be omitted.\n \n \n }\n"
+                },
+                {
+                    "date": 1684446735145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n-\t// Thendex or value can be omitted.\n+\t// The index or value can be omitted\n \n \n }\n"
+                },
+                {
+                    "date": 1684446759318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n \tfor i, v := range evenVals {\n \t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n-\t// The index or value can be omitted\n+\t// The index or value can be omitted; replaced by the underscore.\n \n \n }\n"
+                },
+                {
+                    "date": 1684446774595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,8 @@\n \t}\n \n \t// The index or value can be omitted; replaced by the underscore.\n \n+\tfor\n \n+\n }\n"
+                },
+                {
+                    "date": 1684446779721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,8 @@\n \t}\n \n \t// The index or value can be omitted; replaced by the underscore.\n \n-\tfor\n+\tfor _\n \n \n }\n"
+                },
+                {
+                    "date": 1684446801045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,8 @@\n \t}\n \n \t// The index or value can be omitted; replaced by the underscore.\n \n-\tfor _\n+\tfor _, v = range evenVals\n \n \n }\n"
+                },
+                {
+                    "date": 1684446816580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,10 @@\n \t}\n \n \t// The index or value can be omitted; replaced by the underscore.\n \n-\tfor _, v = range evenVals\n+\tfor _, v = range evenVals {\n+\t\tfmt.Println(v)\n+\t}\n \n \n }\n"
+                },
+                {
+                    "date": 1684446829564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n package main\n \n-import \"fmt\"\n+import (\n+\t\"fmt\"\n \n+\t\"github.com/google/go-cmp/cmp/internal/value\"\n+)\n+\n /*\n FOR-RANGE LOOPS\n Only iterate on:\n 1) strings\n@@ -20,9 +24,9 @@\n \t}\n \n \t// The index or value can be omitted; replaced by the underscore.\n \n-\tfor _, v = range evenVals {\n+\tfor _, v : = range evenVals {\n \t\tfmt.Println(v)\n \t}\n \n \n"
+                },
+                {
+                    "date": 1684446862880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,8 @@\n package main\n \n import (\n \t\"fmt\"\n-\n-\t\"github.com/google/go-cmp/cmp/internal/value\"\n )\n \n /*\n FOR-RANGE LOOPS\n"
+                },
+                {
+                    "date": 1684446882473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \t}\n \n \t// The index or value can be omitted; replaced by the underscore.\n \n-\tfor _, v : = range evenVals {\n+\tfor _, i : = range evenVals {\n \t\tfmt.Println(v)\n \t}\n \n \n"
+                },
+                {
+                    "date": 1684446887814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \n \t// The index or value can be omitted; replaced by the underscore.\n \n \tfor _, i : = range evenVals {\n-\t\tfmt.Println(v)\n+\t\tfmt.Println(i)\n \t}\n \n \n }\n"
+                },
+                {
+                    "date": 1684446913955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \t}\n \n \t// The index or value can be omitted; replaced by the underscore.\n \n-\tfor _, i : = range evenVals {\n+\tfor _, i := range evenVals {\n \t\tfmt.Println(i)\n \t}\n \n \n"
+                },
+                {
+                    "date": 1684446919938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \t}\n \n \t// The index or value can be omitted; replaced by the underscore.\n \n-\tfor _, i := range evenVals {\n+\tfor _, v := range evenVals {\n \t\tfmt.Println(i)\n \t}\n \n \n"
+                },
+                {
+                    "date": 1684446934646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \n \t// The index or value can be omitted; replaced by the underscore.\n \n \tfor _, v := range evenVals {\n-\t\tfmt.Println(i)\n+\t\tfmt.Println(\"value:\",v)\n \t}\n \n \n }\n"
+                },
+                {
+                    "date": 1684446941011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \n \t// The index or value can be omitted; replaced by the underscore.\n \n \tfor _, v := range evenVals {\n-\t\tfmt.Println(\"value:\",v)\n+\t\tfmt.Println(\"only range value:\",v)\n \t}\n \n \n }\n"
+                },
+                {
+                    "date": 1684446946488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,15 +17,15 @@\n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \t// for index, value := intervallo slice {\n \tfor i, v := range evenVals {\n-\t\tfmt.Println(\"index:\", i, \"value:\", v)\n+\t\tfmt.Println(\"indexes:\", i, \"values:\", v)\n \t}\n \n \t// The index or value can be omitted; replaced by the underscore.\n \n \tfor _, v := range evenVals {\n-\t\tfmt.Println(\"only range value:\",v)\n+\t\tfmt.Println(\"only range values:\",v)\n \t}\n \n \n }\n"
+                },
+                {
+                    "date": 1684446952936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \t// for index, value := intervallo slice {\n \tfor i, v := range evenVals {\n-\t\tfmt.Println(\"indexes:\", i, \"values:\", v)\n+\t\tfmt.Println(\"index:\", i, \"value:\", v)\n \t}\n \n \t// The index or value can be omitted; replaced by the underscore.\n \n"
+                },
+                {
+                    "date": 1684446976231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,6 +26,9 @@\n \tfor _, v := range evenVals {\n \t\tfmt.Println(\"only range values:\",v)\n \t}\n \n+\tfor _, v := range evenVals {\n+\t\tfmt.Println(\"only range values:\",v)\n+\t}\n \n }\n"
+                },
+                {
+                    "date": 1684446982972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \tfor _, v := range evenVals {\n \t\tfmt.Println(\"only range values:\",v)\n \t}\n \n-\tfor _, v := range evenVals {\n+\tfor i, _ := range evenVals {\n \t\tfmt.Println(\"only range values:\",v)\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1684446993483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,8 @@\n \t\tfmt.Println(\"only range values:\",v)\n \t}\n \n \tfor i, _ := range evenVals {\n-\t\tfmt.Println(\"only range values:\",v)\n+\t\tfmt.Println(\"only range indexes:\",v)\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1684447012356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,8 @@\n \t\tfmt.Println(\"only range values:\",v)\n \t}\n \n \tfor i, _ := range evenVals {\n-\t\tfmt.Println(\"only range indexes:\",v)\n+\t\tfmt.Println(\"only range indexes:\",i)\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1684447028574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \tfor _, v := range evenVals {\n \t\tfmt.Println(\"only range values:\",v)\n \t}\n \n-\tfor i, _ := range evenVals {\n+\tfor i := range evenVals {\n \t\tfmt.Println(\"only range indexes:\",i)\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1684447056837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,5 +30,7 @@\n \tfor i := range evenVals {\n \t\tfmt.Println(\"only range indexes:\",i)\n \t}\n \n+\n+\t\n }\n"
+                },
+                {
+                    "date": 1684447062946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,7 +30,8 @@\n \tfor i := range evenVals {\n \t\tfmt.Println(\"only range indexes:\",i)\n \t}\n \n+\t// \n \n-\t\n+\n }\n"
+                },
+                {
+                    "date": 1684447080936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,8 @@\n \tfor i := range evenVals {\n \t\tfmt.Println(\"only range indexes:\",i)\n \t}\n \n-\t// \n+\t// The most common reason for iterating over the key is when a map\n \n \n }\n"
+                },
+                {
+                    "date": 1684447087888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,8 @@\n \tfor i := range evenVals {\n \t\tfmt.Println(\"only range indexes:\",i)\n \t}\n \n-\t// The most common reason for iterating over the key is when a map\n+\t// The most common reason for iterating over the key is when a map is being used as a set.\n \n \n }\n"
+                },
+                {
+                    "date": 1684447113430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,7 +31,8 @@\n \t\tfmt.Println(\"only range indexes:\",i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n+\t\n \n \n }\n"
+                },
+                {
+                    "date": 1684447121539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,8 @@\n \t\tfmt.Println(\"only range indexes:\",i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n-\t\n+\tuniqueNames :=\n \n \n }\n"
+                },
+                {
+                    "date": 1684447128534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,8 @@\n \t\tfmt.Println(\"only range indexes:\",i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n-\tuniqueNames :=\n+\tuniqueNames := map[string]bool\n \n \n }\n"
+                },
+                {
+                    "date": 1684447135038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,8 @@\n \t\tfmt.Println(\"only range indexes:\",i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n-\tuniqueNames := map[string]bool\n+\tuniqueNames := map[string]bool{\"Fred\"}\n \n \n }\n"
+                },
+                {
+                    "date": 1684447141172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,8 @@\n \t\tfmt.Println(\"only range indexes:\",i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n-\tuniqueNames := map[string]bool{\"Fred\"}\n+\tuniqueNames := map[string]bool{\"Fred\": true, \"\"}\n \n \n }\n"
+                },
+                {
+                    "date": 1684447148324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,8 @@\n \t\tfmt.Println(\"only range indexes:\",i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n-\tuniqueNames := map[string]bool{\"Fred\": true, \"\"}\n+\tuniqueNames := map[string]bool{\"Fred\": true, \"Raul\": true}\n \n \n }\n"
+                },
+                {
+                    "date": 1684447154355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,8 @@\n \t\tfmt.Println(\"only range indexes:\",i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n-\tuniqueNames := map[string]bool{\"Fred\": true, \"Raul\": true}\n+\tuniqueNames := map[string]bool{\"Fred\": true, \"Raul\": true, \"Wilma\"}\n \n \n }\n"
+                },
+                {
+                    "date": 1684447160046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n \t\tfmt.Println(\"only range indexes:\",i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n-\tuniqueNames := map[string]bool{\"Fred\": true, \"Raul\": true, \"Wilma\"}\n+\tuniqueNames := map[string]bool{\"Fred\": true, \"Raul\": true, \"Wilma\": false}\n+\t\n \n \n }\n"
+                },
+                {
+                    "date": 1684447167786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,8 @@\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n \tuniqueNames := map[string]bool{\"Fred\": true, \"Raul\": true, \"Wilma\": false}\n-\t\n+\tfor k := range uniqueNames\n \n \n }\n"
+                },
+                {
+                    "date": 1684447176819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,10 @@\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n \tuniqueNames := map[string]bool{\"Fred\": true, \"Raul\": true, \"Wilma\": false}\n-\tfor k := range uniqueNames\n+\tfor k := range uniqueNames {\n+\t\tfmt.Println()\n+\t}\n \n \n }\n"
+                },
+                {
+                    "date": 1684447527457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,8 @@\n 3) maps\n 4) channels\n */\n \n-\n func main() {\n \tevenVals := []int{2, 4, 6, 8, 10, 12}\n \t// for index, value := intervallo slice {\n \tfor i, v := range evenVals {\n@@ -23,19 +22,20 @@\n \n \t// The index or value can be omitted; replaced by the underscore.\n \n \tfor _, v := range evenVals {\n-\t\tfmt.Println(\"only range values:\",v)\n+\t\tfmt.Println(\"only range values:\", v)\n \t}\n \n \tfor i := range evenVals {\n-\t\tfmt.Println(\"only range indexes:\",i)\n+\t\tfmt.Println(\"only range indexes:\", i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n \tuniqueNames := map[string]bool{\"Fred\": true, \"Raul\": true, \"Wilma\": false}\n \tfor k := range uniqueNames {\n-\t\tfmt.Println()\n+\t\tfmt.Println(k)\n \t}\n \n \n+\t\n }\n"
+                },
+                {
+                    "date": 1684447534125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,7 +35,7 @@\n \tfor k := range uniqueNames {\n \t\tfmt.Println(k)\n \t}\n \n+\t// the for range\n \n-\t\n }\n"
+                },
+                {
+                    "date": 1684447543425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,7 +35,7 @@\n \tfor k := range uniqueNames {\n \t\tfmt.Println(k)\n \t}\n \n-\t// the for range\n+\t// The for-0range\n \n }\n"
+                },
+                {
+                    "date": 1684447551528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,7 +35,8 @@\n \tfor k := range uniqueNames {\n \t\tfmt.Println(k)\n \t}\n \n-\t// The for-0range\n+\t// The for-range value is a copy\n+\t\n \n }\n"
+                },
+                {
+                    "date": 1684447571968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,7 +36,7 @@\n \t\tfmt.Println(k)\n \t}\n \n \t// The for-range value is a copy\n-\t\n+\tfor \n \n }\n"
+                },
+                {
+                    "date": 1684447582681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,7 +36,9 @@\n \t\tfmt.Println(k)\n \t}\n \n \t// The for-range value is a copy\n-\tfor \n+\tfor _, v := range evenVals {\n+\t\t\n+\t}\n \n }\n"
+                },
+                {
+                    "date": 1684447591079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,8 @@\n \t}\n \n \t// The for-range value is a copy\n \tfor _, v := range evenVals {\n-\t\t\n+\t\tv *= 2\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1684447596220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,7 +38,8 @@\n \n \t// The for-range value is a copy\n \tfor _, v := range evenVals {\n \t\tv *= 2\n+\t\tfmt.Println()\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1684447608433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n package main\n \n import (\n \t\"fmt\"\n+\n+\t\"github.com/google/go-cmp/cmp/internal/value\"\n )\n \n /*\n FOR-RANGE LOOPS\n@@ -38,8 +40,9 @@\n \n \t// The for-range value is a copy\n \tfor _, v := range evenVals {\n \t\tv *= 2\n-\t\tfmt.Println()\n+\t\tfmt.Println(v)\n \t}\n+\tfmt.Println()\n \n }\n"
+                },
+                {
+                    "date": 1684447620771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,8 @@\n package main\n \n import (\n \t\"fmt\"\n-\n-\t\"github.com/google/go-cmp/cmp/internal/value\"\n )\n \n /*\n FOR-RANGE LOOPS\n@@ -42,7 +40,7 @@\n \tfor _, v := range evenVals {\n \t\tv *= 2\n \t\tfmt.Println(v)\n \t}\n-\tfmt.Println()\n+\tfmt.Println(evenVals)\n \n }\n"
+                },
+                {
+                    "date": 1684447661764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n \t}\n \n \t// The for-range value is a copy\n \tfor _, v := range evenVals {\n-\t\tv *= 2\n+\t\t*v *= 2\n \t\tfmt.Println(v)\n \t}\n \tfmt.Println(evenVals)\n \n"
+                },
+                {
+                    "date": 1684447678079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \t\tfmt.Println(k)\n \t}\n \n \t// The for-range value is a copy\n-\tfor _, v := range evenVals {\n+\tfor _, *v := range evenVals {\n \t\t*v *= 2\n \t\tfmt.Println(v)\n \t}\n \tfmt.Println(evenVals)\n"
+                },
+                {
+                    "date": 1684447684376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \t\tfmt.Println(k)\n \t}\n \n \t// The for-range value is a copy\n-\tfor _, *v := range evenVals {\n+\tfor _, v := range evenVals {\n \t\t*v *= 2\n \t\tfmt.Println(v)\n \t}\n \tfmt.Println(evenVals)\n"
+                },
+                {
+                    "date": 1684447694792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n \t}\n \n \t// The for-range value is a copy\n \tfor _, v := range evenVals {\n-\t\t*v *= 2\n+\t\t&v *= 2\n \t\tfmt.Println(v)\n \t}\n \tfmt.Println(evenVals)\n \n"
+                },
+                {
+                    "date": 1684447699920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,10 +36,10 @@\n \t\tfmt.Println(k)\n \t}\n \n \t// The for-range value is a copy\n-\tfor _, v := range evenVals {\n-\t\t&v *= 2\n+\tfor _, *v := range evenVals {\n+\t\t*v *= 2\n \t\tfmt.Println(v)\n \t}\n \tfmt.Println(evenVals)\n \n"
+                },
+                {
+                    "date": 1684447705603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \t\tfmt.Println(k)\n \t}\n \n \t// The for-range value is a copy\n-\tfor _, *v := range evenVals {\n+\tfor _, v := range evenVals {\n \t\t*v *= 2\n \t\tfmt.Println(v)\n \t}\n \tfmt.Println(evenVals)\n"
+                },
+                {
+                    "date": 1684447966861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n \t}\n \n \t// The for-range value is a copy\n \tfor _, v := range evenVals {\n-\t\t*v *= 2\n+\t\tv *= 2\n \t\tfmt.Println(v)\n \t}\n \tfmt.Println(evenVals)\n \n"
+                },
+                {
+                    "date": 1684448010190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,7 +40,7 @@\n \tfor _, v := range evenVals {\n \t\tv *= 2\n \t\tfmt.Println(v)\n \t}\n-\tfmt.Println(evenVals)\n+\tfmt.Println(evenVals) //\n \n }\n"
+                },
+                {
+                    "date": 1684448042822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,7 +40,7 @@\n \tfor _, v := range evenVals {\n \t\tv *= 2\n \t\tfmt.Println(v)\n \t}\n-\tfmt.Println(evenVals) //\n+\tfmt.Println(evenVals) // print \n \n }\n"
+                },
+                {
+                    "date": 1684448052941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,7 +40,7 @@\n \tfor _, v := range evenVals {\n \t\tv *= 2\n \t\tfmt.Println(v)\n \t}\n-\tfmt.Println(evenVals) // print \n+\tfmt.Println(evenVals) // print an unmodified version of the range\n \n }\n"
+                },
+                {
+                    "date": 1684448072212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,5 +42,7 @@\n \t\tfmt.Println(v)\n \t}\n \tfmt.Println(evenVals) // print an unmodified version of the range\n \n+\n+\t\n }\n"
+                },
+                {
+                    "date": 1684448078589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,7 +42,7 @@\n \t\tfmt.Println(v)\n \t}\n \tfmt.Println(evenVals) // print an unmodified version of the range\n \n+\t// solution: \n \n-\t\n }\n"
+                },
+                {
+                    "date": 1684448085269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,7 +42,7 @@\n \t\tfmt.Println(v)\n \t}\n \tfmt.Println(evenVals) // print an unmodified version of the range\n \n-\t// solution: \n+\t// solution: use the index to modify the elements of the slice\n \n }\n"
+                },
+                {
+                    "date": 1684448092032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,5 +44,7 @@\n \tfmt.Println(evenVals) // print an unmodified version of the range\n \n \t// solution: use the index to modify the elements of the slice\n \n+\tfor k, v\n+\n }\n"
+                },
+                {
+                    "date": 1684448098221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,7 +44,7 @@\n \tfmt.Println(evenVals) // print an unmodified version of the range\n \n \t// solution: use the index to modify the elements of the slice\n \n-\tfor k, v\n+\tfor k, v := range evenVals\n \n }\n"
+                },
+                {
+                    "date": 1684448116445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,7 +44,9 @@\n \tfmt.Println(evenVals) // print an unmodified version of the range\n \n \t// solution: use the index to modify the elements of the slice\n \n-\tfor k, v := range evenVals\n+\tfor ik, v := range evenVals {\n \n+\t}\n+\n }\n"
+                },
+                {
+                    "date": 1684448131893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n \tfmt.Println(evenVals) // print an unmodified version of the range\n \n \t// solution: use the index to modify the elements of the slice\n \n-\tfor ik, v := range evenVals {\n-\n+\tfor i, v := range evenVals {\n+\t\tevenVals\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1684448137605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,8 +45,8 @@\n \n \t// solution: use the index to modify the elements of the slice\n \n \tfor i, v := range evenVals {\n-\t\tevenVals\n+\t\tevenVals[i]\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1684448160490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,8 +45,8 @@\n \n \t// solution: use the index to modify the elements of the slice\n \n \tfor i, v := range evenVals {\n-\t\tevenVals[i]\n+\t\tevenVals[i] = v * 2\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1684448169205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,6 +47,7 @@\n \n \tfor i, v := range evenVals {\n \t\tevenVals[i] = v * 2\n \t}\n-\n+\tfmt.Println(evenVals) // print an unmodified version of the range\n+\t\n }\n"
+                },
+                {
+                    "date": 1684448235029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,7 +47,7 @@\n \n \tfor i, v := range evenVals {\n \t\tevenVals[i] = v * 2\n \t}\n-\tfmt.Println(evenVals) // print an unmodified version of the range\n-\t\n+\tfmt.Println(evenVals) // print an unmodified version of the range \n+\n }\n"
+                },
+                {
+                    "date": 1684488144268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tfor _, v := range evenVals {\n \t\tfmt.Println(\"only range values:\", v)\n \t}\n \n-\tfor i := range evenVals {\n+\tfor i := range evenVals {\t\n \t\tfmt.Println(\"only range indexes:\", i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n"
+                },
+                {
+                    "date": 1684488149631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tfor _, v := range evenVals {\n \t\tfmt.Println(\"only range values:\", v)\n \t}\n \n-\tfor i := range evenVals {\t\n+\tfor i := range evenVals {\t// Go \n \t\tfmt.Println(\"only range indexes:\", i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n"
+                },
+                {
+                    "date": 1684488186262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tfor _, v := range evenVals {\n \t\tfmt.Println(\"only range values:\", v)\n \t}\n \n-\tfor i := range evenVals {\t// Go \n+\tfor i := range evenVals {\t// Go go allows a short version without commas and underscores\n \t\tfmt.Println(\"only range indexes:\", i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n"
+                },
+                {
+                    "date": 1684488214042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tfor _, v := range evenVals {\n \t\tfmt.Println(\"only range values:\", v)\n \t}\n \n-\tfor i := range evenVals {\t// Go go allows a short version without commas and underscores\n+\tfor i := range evenVals {\t// Go allows a short version without commas and underscores if\n \t\tfmt.Println(\"only range indexes:\", i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n"
+                },
+                {
+                    "date": 1684488220899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tfor _, v := range evenVals {\n \t\tfmt.Println(\"only range values:\", v)\n \t}\n \n-\tfor i := range evenVals {\t// Go allows a short version without commas and underscores if\n+\tfor i := range evenVals {\t// Go allows a short version without commas and underscores if the value is omitted\n \t\tfmt.Println(\"only range indexes:\", i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n"
+                },
+                {
+                    "date": 1684488271528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n \n \t// The for-range value is a copy\n \tfor _, v := range evenVals {\n \t\tv *= 2\n-\t\tfmt.Println(v)\n+\t\tfmt.Println(v)\t\n \t}\n \tfmt.Println(evenVals) // print an unmodified version of the range\n \n \t// solution: use the index to modify the elements of the slice\n"
+                },
+                {
+                    "date": 1684488277167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n \n \t// The for-range value is a copy\n \tfor _, v := range evenVals {\n \t\tv *= 2\n-\t\tfmt.Println(v)\t\n+\t\tfmt.Println(v)\t\t//\n \t}\n \tfmt.Println(evenVals) // print an unmodified version of the range\n \n \t// solution: use the index to modify the elements of the slice\n"
+                },
+                {
+                    "date": 1684488284643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,11 +38,11 @@\n \n \t// The for-range value is a copy\n \tfor _, v := range evenVals {\n \t\tv *= 2\n-\t\tfmt.Println(v)\t\t//\n+\t\tfmt.Println(v)\t\t// print \n \t}\n-\tfmt.Println(evenVals) // print an unmodified version of the range\n+\tfmt.Println(evenVals)\t// print an unmodified version of the range\n \n \t// solution: use the index to modify the elements of the slice\n \n \tfor i, v := range evenVals {\n"
+                },
+                {
+                    "date": 1684488295462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,53 @@\n+package main\n+\n+import (\n+\t\"fmt\"\n+)\n+\n+/*\n+FOR-RANGE LOOPS\n+Only iterate on:\n+1) strings\n+2) arrays and slices\n+3) maps\n+4) channels\n+*/\n+\n+func main() {\n+\tevenVals := []int{2, 4, 6, 8, 10, 12}\n+\t// for index, value := intervallo slice {\n+\tfor i, v := range evenVals {\n+\t\tfmt.Println(\"index:\", i, \"value:\", v)\n+\t}\n+\n+\t// The index or value can be omitted; replaced by the underscore.\n+\n+\tfor _, v := range evenVals {\n+\t\tfmt.Println(\"only range values:\", v)\n+\t}\n+\n+\tfor i := range evenVals {\t// Go allows a short version without commas and underscores if the value is omitted\n+\t\tfmt.Println(\"only range indexes:\", i)\n+\t}\n+\n+\t// The most common reason for iterating over the key is when a map is being used as a set.\n+\tuniqueNames := map[string]bool{\"Fred\": true, \"Raul\": true, \"Wilma\": false}\n+\tfor k := range uniqueNames {\n+\t\tfmt.Println(k)\n+\t}\n+\n+\t// The for-range value is a copy\n+\tfor _, v := range evenVals {\n+\t\tv *= 2\n+\t\tfmt.Println(v)\t\t// print the result of the\n+\t}\n+\tfmt.Println(evenVals)\t// print an unmodified version of the range\n+\n+\t// solution: use the index to modify the elements of the slice\n+\n+\tfor i, v := range evenVals {\n+\t\tevenVals[i] = v * 2\n+\t}\n+\tfmt.Println(evenVals) // print an unmodified version of the range \n+\n+}\n"
+                },
+                {
+                    "date": 1684488302808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n \n \t// The for-range value is a copy\n \tfor _, v := range evenVals {\n \t\tv *= 2\n-\t\tfmt.Println(v)\t\t// print the result of the\n+\t\tfmt.Println(v)\t\t// print the modified value but \n \t}\n \tfmt.Println(evenVals)\t// print an unmodified version of the range\n \n \t// solution: use the index to modify the elements of the slice\n@@ -50,57 +50,4 @@\n \t}\n \tfmt.Println(evenVals) // print an unmodified version of the range \n \n }\n-package main\n-\n-import (\n-\t\"fmt\"\n-)\n-\n-/*\n-FOR-RANGE LOOPS\n-Only iterate on:\n-1) strings\n-2) arrays and slices\n-3) maps\n-4) channels\n-*/\n-\n-func main() {\n-\tevenVals := []int{2, 4, 6, 8, 10, 12}\n-\t// for index, value := intervallo slice {\n-\tfor i, v := range evenVals {\n-\t\tfmt.Println(\"index:\", i, \"value:\", v)\n-\t}\n-\n-\t// The index or value can be omitted; replaced by the underscore.\n-\n-\tfor _, v := range evenVals {\n-\t\tfmt.Println(\"only range values:\", v)\n-\t}\n-\n-\tfor i := range evenVals {\t// Go allows a short version without commas and underscores if the value is omitted\n-\t\tfmt.Println(\"only range indexes:\", i)\n-\t}\n-\n-\t// The most common reason for iterating over the key is when a map is being used as a set.\n-\tuniqueNames := map[string]bool{\"Fred\": true, \"Raul\": true, \"Wilma\": false}\n-\tfor k := range uniqueNames {\n-\t\tfmt.Println(k)\n-\t}\n-\n-\t// The for-range value is a copy\n-\tfor _, v := range evenVals {\n-\t\tv *= 2\n-\t\tfmt.Println(v)\t\t// print \n-\t}\n-\tfmt.Println(evenVals)\t// print an unmodified version of the range\n-\n-\t// solution: use the index to modify the elements of the slice\n-\n-\tfor i, v := range evenVals {\n-\t\tevenVals[i] = v * 2\n-\t}\n-\tfmt.Println(evenVals) // print an unmodified version of the range \n-\n-}\n"
+                },
+                {
+                    "date": 1684488309319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n \n \t// The for-range value is a copy\n \tfor _, v := range evenVals {\n \t\tv *= 2\n-\t\tfmt.Println(v)\t\t// print the modified value but \n+\t\tfmt.Println(v)\t\t// print the modified value but it is not assigned to the \n \t}\n \tfmt.Println(evenVals)\t// print an unmodified version of the range\n \n \t// solution: use the index to modify the elements of the slice\n"
+                },
+                {
+                    "date": 1684488348181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,11 +38,11 @@\n \n \t// The for-range value is a copy\n \tfor _, v := range evenVals {\n \t\tv *= 2\n-\t\tfmt.Println(v)\t\t// print the modified value but it is not assigned to the \n+\t\tfmt.Println(v)\t\t// print the modified value but it is not assigned to the slice\n \t}\n-\tfmt.Println(evenVals)\t// print an unmodified version of the range\n+\tfmt.Println(evenVals)\t// print the unmodified version of the range\n \n \t// solution: use the index to modify the elements of the slice\n \n \tfor i, v := range evenVals {\n"
+                },
+                {
+                    "date": 1684488357239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n \tfor _, v := range evenVals {\n \t\tv *= 2\n \t\tfmt.Println(v)\t\t// print the modified value but it is not assigned to the slice\n \t}\n-\tfmt.Println(evenVals)\t// print the unmodified version of the range\n+\tfmt.Println(evenVals)\t// print the original range unmodified version of the range\n \n \t// solution: use the index to modify the elements of the slice\n \n \tfor i, v := range evenVals {\n"
+                },
+                {
+                    "date": 1684488363377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,14 +40,14 @@\n \tfor _, v := range evenVals {\n \t\tv *= 2\n \t\tfmt.Println(v)\t\t// print the modified value but it is not assigned to the slice\n \t}\n-\tfmt.Println(evenVals)\t// print the original range unmodified version of the range\n+\tfmt.Println(evenVals)\t// print the original range unmodified\n \n \t// solution: use the index to modify the elements of the slice\n \n \tfor i, v := range evenVals {\n \t\tevenVals[i] = v * 2\n \t}\n-\tfmt.Println(evenVals) // print an unmodified version of the range \n+\tfmt.Println(evenVals) // print the modified version of the range \n \n }\n"
+                },
+                {
+                    "date": 1684488368707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,7 +47,7 @@\n \n \tfor i, v := range evenVals {\n \t\tevenVals[i] = v * 2\n \t}\n-\tfmt.Println(evenVals) // print the modified version of the range \n+\tfmt.Println(evenVals) // print the range modified version of the range \n \n }\n"
+                },
+                {
+                    "date": 1684488378937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \tfor _, v := range evenVals {\n \t\tfmt.Println(\"only range values:\", v)\n \t}\n \n-\tfor i := range evenVals {\t// Go allows a short version without commas and underscores if the value is omitted\n+\tfor i := range evenVals { // Go allows a short version without commas and underscores if the value is omitted\n \t\tfmt.Println(\"only range indexes:\", i)\n \t}\n \n \t// The most common reason for iterating over the key is when a map is being used as a set.\n@@ -40,14 +40,14 @@\n \tfor _, v := range evenVals {\n \t\tv *= 2\n \t\tfmt.Println(v)\t\t// print the modified value but it is not assigned to the slice\n \t}\n-\tfmt.Println(evenVals)\t// print the original range unmodified\n+\tfmt.Println(evenVals) // print the original range unmodified\n \n \t// solution: use the index to modify the elements of the slice\n \n \tfor i, v := range evenVals {\n \t\tevenVals[i] = v * 2\n \t}\n-\tfmt.Println(evenVals) // print the range modified version of the range \n+\tfmt.Println(evenVals) // print the range modified\n \n }\n"
+                },
+                {
+                    "date": 1684488384095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,16 +38,16 @@\n \n \t// The for-range value is a copy\n \tfor _, v := range evenVals {\n \t\tv *= 2\n-\t\tfmt.Println(v)\t\t// print the modified value but it is not assigned to the slice\n+\t\tfmt.Println(v) // print the modified value but it is not assigned to the slice\n \t}\n-\tfmt.Println(evenVals)\t// print the original range unmodified\n+\tfmt.Println(evenVals) // print the original range unmodified\n \n \t// solution: use the index to modify the elements of the slice\n \n \tfor i, v := range evenVals {\n \t\tevenVals[i] = v * 2\n \t}\n-\tfmt.Println(evenVals)\t// print the range modified\n+\tfmt.Println(evenVals) // print the range modified\n \n }\n"
+                }
+            ],
+            "date": 1684446212059,
+            "name": "Commit-0",
+            "content": "package explRange\n\nimport \"fmt\"\n\nfunc main() {\n\tevenVals := []int{2, 4, 6, 8, 10, 12}\n\t\n\n}"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "structAndMap2/structEx.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1689783973541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1689783980255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n var prt = fmt.Println // just for fun\n \n // ancillary functions:\n-func (userExist(usID int) (u user.User, exists bool) {\n+func (u user) userExist(usID int) (u user.User, exists bool) {\n \t// I tried to convert the function as method of user.User but golang doesn't allow it\n \t// I like a lot named return values in functions\n \tu, exists = user.UserHM[usID]\n \treturn u, exists\n"
+                },
+                {
+                    "date": 1689783993990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n var prt = fmt.Println // just for fun\n \n // ancillary functions:\n-func (u user) userExist(usID int) (u user.User, exists bool) {\n+func userExist(usID int) (u user.User, exists bool) {\n \t// I tried to convert the function as method of user.User but golang doesn't allow it\n \t// I like a lot named return values in functions\n \tu, exists = user.UserHM[usID]\n \treturn u, exists\n"
+                }
+            ],
+            "date": 1689783973541,
+            "name": "Commit-0",
+            "content": "package main\n\nimport (\n\tuser \"BASICS/exercises/structAndMap2/models\"\n\t\"errors\"\n\t\"fmt\"\n\t\"strconv\"\n)\n\nvar prt = fmt.Println // just for fun\n\n// ancillary functions:\nfunc (userExist(usID int) (u user.User, exists bool) {\n\t// I tried to convert the function as method of user.User but golang doesn't allow it\n\t// I like a lot named return values in functions\n\tu, exists = user.UserHM[usID]\n\treturn u, exists\n}\n\n/*\n3a. An add function that takes in as an argument a user object and adds it to the hashmap\n[bonus return true if the user did not exist before and false if the user was already present]\n*/\nfunc addUserToHM(u user.User) (exists bool) {\n\t// _, exists := userExist(u)\n\t// if !exists {\n\t// I don't like the syntax below, I prefer the other version above.\n\tif _, exists := userExist(u.Id); exists {\n\t\tprt(\"user \", u.Id, \"correctly added\")\n\t\treturn !exists // the ok, comma idiom in Map return true if the key exists,\n\t} // and I want true if the key doesn't exist because this prove the record will be registered\n\tuser.UserHM[u.Id] = u\n\tprt(\"user id\", u.Id, \"correctly added\")\n\treturn !exists\n}\n\n/*\n3b. A get function that takes in a user id and returns the user from the hashmap IF exists - if not return an error\n*/\nfunc returnUserFromHM(usID int) (u user.User, notFound error) {\n\tu, exists := user.UserHM[usID]\n\tif exists {\n\t\treturn u, nil\n\t}\n\treturn user.User{}, errors.New(\"User with id \" + strconv.Itoa(usID) + \" is not present in DB\")\n}\n\n/*\n3c. A delete function that takes in a user id and deletes that user from the hashmap\n*/\nfunc deleteUserFromHM(usID int) (result bool) {\n\t_, exists := user.UserHM[usID]\n\tif !exists {\n\t\tprt(\"user \", usID, \" not present in DB or already deleted, unable to delete it\")\n\t\treturn !exists\n\t} else {\n\t\tdelete(user.UserHM, usID)\n\t\tprt(\"user id \", usID, \" correctly deleted\")\n\t\treturn exists\n\t}\n}\n\n/*\n3d. An export function that returns all the users saved in the hashmap as a slice/array\n*/\nvar UserSL []user.User\n\n// var userSL []user.User\nfunc exportAsSlice() []user.User {\n\tfor i := range user.UserHM {\n\t\tUserSL = append(UserSL, user.UserHM[i])\n\t}\n\treturn UserSL\n}\n\nfunc main() {\n\tus1 := user.User{Id: 1,\n\t\tName:  \"Phil Cazzaniga\",\n\t\tEmail: \"cazzaniga@gmail.com\",\n\t}\n\tus2 := user.User{Id: 2, Name: \"Jenny Connelly\", Email: \"connelly@gmail.com\"}\n\tus3 := user.User{Id: 3, Name: \"Carl Soft\", Email: \"soft@yahoo.it\"}\n\n\t_ = addUserToHM(us1)\n\n\t_ = addUserToHM(us1)\n\n\tu, err := returnUserFromHM(us1.Id)\n\tif err != nil {\n\t\tprt(err)\n\t} else {\n\t\tprt(\"The searched user is:\", u)\n\t\tprt(user.UserHM[us1.Id])\n\t}\n\n\tu, err = returnUserFromHM(us2.Id) // us2 exist as user but not in Map\n\tif err != nil {\n\t\tprt(err)\n\t} else {\n\t\tprt(\"The searched user is:\", u)\n\t\tprt(user.UserHM[us2.Id])\n\t}\n\t_ = addUserToHM(us2)\n\n\t_ = deleteUserFromHM(us2.Id)\n\t_ = deleteUserFromHM(us2.Id)\n\t_ = addUserToHM(us2)\n\t_ = addUserToHM(us3)\n\n\tmySlice := exportAsSlice()\n\tprt(\"This is the exported slice: \", mySlice)\n\n\tfor i := range user.UserHM {\n\t\tprt(\"This is the Map user: \", user.UserHM[i])\n\t}\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,402 @@
+{
+    "sourceFile": "BASICS/loops/do-while/do-while/main.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 96,
+            "patches": [
+                {
+                    "date": 1684922305750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1684922311392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,11 @@\n }\n \n 2)\n To ensure that it executes at least once, the <condition> must be true for the first iteration and be dependent on the loop stop condition in subsequent iterations:\n+for next := true; next; next=<condition> {\n+    <loopBody>\n+}\n \n 3)\n for {\n \twork()\n"
+                },
+                {
+                    "date": 1684922317178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n for ok = condition {\n \twork()\n }\n \n-2)\n-To ensure that it executes at least once, the <condition> must be true for the first iteration and be dependent on the loop stop condition in subsequent iterations:\n+2) To ensure that it executes at least once, the <condition> must be true for the first iteration and be dependent on the loop stop condition in subsequent iterations:\n+\n for next := true; next; next=<condition> {\n     <loopBody>\n }\n \n"
+                },
+                {
+                    "date": 1684922328691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,9 @@\n } while (condition);\n \n you may use a for loop in one of these ways:\n \n-1)\n-skip the init and post statemens\n+1) skip the init and post statemens\n ok := true\n for ok = condition {\n \twork()\n }\n@@ -20,9 +19,9 @@\n for next := true; next; next=<condition> {\n     <loopBody>\n }\n \n-3)\n+3) \n for {\n \twork()\n \tif !condition {\n \t\tbreak\n"
+                },
+                {
+                    "date": 1684922334194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,10 @@\n for next := true; next; next=<condition> {\n     <loopBody>\n }\n \n-3) \n+3) There is also a simpler form of the do-while loop in Go, in which the <condition> of the for loop is checked after the <loopBody> and if it is not true the loop is exited:\n+\n for {\n \twork()\n \tif !condition {\n \t\tbreak\n"
+                },
+                {
+                    "date": 1684922344072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,12 +22,12 @@\n \n 3) There is also a simpler form of the do-while loop in Go, in which the <condition> of the for loop is checked after the <loopBody> and if it is not true the loop is exited:\n \n for {\n-\twork()\n-\tif !condition {\n-\t\tbreak\n-\t}\n+    <loopBody>\n+    if !<condition> {\n+        break\n+    }\n }\n \n */\n \n"
+                },
+                {
+                    "date": 1684922359625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n 2) To ensure that it executes at least once, the <condition> must be true for the first iteration and be dependent on the loop stop condition in subsequent iterations:\n \n for next := true; next; next=<condition> {\n-    <loopBody>\n+\t<loopBody>\n }\n \n 3) There is also a simpler form of the do-while loop in Go, in which the <condition> of the for loop is checked after the <loopBody> and if it is not true the loop is exited:\n \n"
+                },
+                {
+                    "date": 1684922368535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,11 +22,11 @@\n \n 3) There is also a simpler form of the do-while loop in Go, in which the <condition> of the for loop is checked after the <loopBody> and if it is not true the loop is exited:\n \n for {\n-    <loopBody>\n-    if !<condition> {\n-        break\n+\t<loopBody>\n+\tif !<condition> {\n+\t\tbreak\n     }\n }\n \n */\n"
+                },
+                {
+                    "date": 1684922396466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,12 +25,15 @@\n for {\n \t<loopBody>\n \tif !<condition> {\n \t\tbreak\n-    }\n+\t}\n }\n \n */\n \n func main() {\n \n+\n+\n+\t\n }\n"
+                },
+                {
+                    "date": 1684922401928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,11 @@\n \n */\n \n func main() {\n+/*\n \n+*/\n \n \n-\t\n+\n }\n"
+                },
+                {
+                    "date": 1684922408850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,12 @@\n */\n \n func main() {\n /*\n-\n+The first version of the do-while loop:\n+Print the i variable if the value is less than 5:\n */\n \n \n \n+\n }\n"
+                },
+                {
+                    "date": 1684922414605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n package main\n \n+import \"fmt\"\n+\n /*\n There is no do-while loop in Go. To emulate the C/Java code\n do {\n \twork();\n"
+                },
+                {
+                    "date": 1684922422417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,13 +33,15 @@\n \n */\n \n func main() {\n-/*\n-The first version of the do-while loop:\n-Print the i variable if the value is less than 5:\n-*/\n+\t/*\n+\tThe first version of the do-while loop:\n+\t   Print the i variable if the value is less than 5:\n+\t*/\n+\ti := 0\n+\tfor next := true; next; next = i < 5 {\n+\t\tfmt.Println(i)\n+\t\ti++\n+\t}\n \n-\n-\n-\n }\n"
+                },
+                {
+                    "date": 1684922431164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,9 @@\n */\n \n func main() {\n \t/*\n-\tThe first version of the do-while loop:\n-\t   Print the i variable if the value is less than 5:\n+\tPrint the i variable if the value is less than 5:\n \t*/\n \ti := 0\n \tfor next := true; next; next = i < 5 {\n \t\tfmt.Println(i)\n"
+                },
+                {
+                    "date": 1684922490726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n for ok = condition {\n \twork()\n }\n \n-2) To ensure that it executes at least once, the <condition> must be true for the first iteration and be dependent on the loop stop condition in subsequent iterations:\n+2) To ensure that it executes at least once, the <condition> must be true for the first iteration and be dependent on the loop stop condition in subsequent iterations. For this we use a BOOL variable:\n \n for next := true; next; next=<condition> {\n \t<loopBody>\n }\n@@ -34,8 +34,9 @@\n */\n \n func main() {\n \t/*\n+\tThe first version of the do-while loop:\n \tPrint the i variable if the value is less than 5:\n \t*/\n \ti := 0\n \tfor next := true; next; next = i < 5 {\n"
+                },
+                {
+                    "date": 1684922575794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n \tThe first version of the do-while loop:\n \tPrint the i variable if the value is less than 5:\n \t*/\n \ti := 0\n-\tfor next := true; next; next = i < 5 {\n+\tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n \n"
+                },
+                {
+                    "date": 1684922594463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,5 +43,9 @@\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n \n+\n+\n+\n+\t\n }\n"
+                },
+                {
+                    "date": 1684922600041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n */\n \n func main() {\n \t/*\n-\tThe first version of the do-while loop:\n+\t1) The first version of the do-while loop:\n \tPrint the i variable if the value is less than 5:\n \t*/\n \ti := 0\n \tfor next := true; next; next = i <= 5 {\n@@ -46,6 +46,6 @@\n \n \n \n \n-\t\n+\n }\n"
+                },
+                {
+                    "date": 1684922613656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n \n func main() {\n \t/*\n \t1) The first version of the do-while loop:\n-\tPrint the i variable if the value is less than 5:\n+\tPrint the i variable if the value is less or equal  5:\n \t*/\n \ti := 0\n \tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n"
+                },
+                {
+                    "date": 1684922640300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,17 +35,17 @@\n \n func main() {\n \t/*\n \t1) The first version of the do-while loop:\n-\tPrint the i variable if the value is less or equal  5:\n+\tPrint the i variable if the value is less than or equal to 5:\n \t*/\n \ti := 0\n \tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n \n+/**/\n \n \n \n-\n }\n"
+                },
+                {
+                    "date": 1684922648907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,11 @@\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n \n-/**/\n+/*\n+Check that the loop is executed at least once:\n+*/\n \n \n \n }\n"
+                },
+                {
+                    "date": 1684922654477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n \t\ti++\n \t}\n \n /*\n-Check that the loop is executed at least once:\n+\t2) Check that the loop is executed at least once:\n */\n \n \n \n"
+                },
+                {
+                    "date": 1684922662656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,8 +46,12 @@\n \n /*\n \t2) Check that the loop is executed at least once:\n */\n+i := 10\n+for next := true; next; next = i < 5 {\n+    fmt.Println(i)\n+    i++\n+}\n \n \n-\n }\n"
+                },
+                {
+                    "date": 1684922669798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,24 +34,23 @@\n */\n \n func main() {\n \t/*\n-\t1) The first version of the do-while loop:\n-\tPrint the i variable if the value is less than or equal to 5:\n+\t\t1) The first version of the do-while loop:\n+\t\tPrint the i variable if the value is less than or equal to 5:\n \t*/\n \ti := 0\n \tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n \n-/*\n-\t2) Check that the loop is executed at least once:\n-*/\n-i := 10\n-for next := true; next; next = i < 5 {\n-    fmt.Println(i)\n-    i++\n-}\n+\t/*\n+\t\t2) Check that the loop is executed at least once:\n+\t*/\n+\ti := 10\n+\tfor next := true; next; next = i <= 5 {\n+\t\tfmt.Println(i)\n+\t\ti++\n+\t}\n \n-\n }\n"
+                },
+                {
+                    "date": 1684922680526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n \n \t/*\n \t\t2) Check that the loop is executed at least once:\n \t*/\n-\ti := 10\n+\ti = 10\n \tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n"
+                },
+                {
+                    "date": 1684922732398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n \t\ti++\n \t}\n \n \t/*\n-\t\t2) Check that the loop is executed at least once:\n+\t\t1.1) Check that the loop is executed at least once:\n \t*/\n \ti = 10\n \tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n"
+                },
+                {
+                    "date": 1684922738330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n */\n \n func main() {\n \t/*\n-\t\t1) The first version of the do-while loop:\n+\t\t1.0) The first version of the do-while loop:\n \t\tPrint the i variable if the value is less than or equal to 5:\n \t*/\n \ti := 0\n \tfor next := true; next; next = i <= 5 {\n"
+                },
+                {
+                    "date": 1684922759518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,13 +37,13 @@\n \t/*\n \t\t1.0) The first version of the do-while loop:\n \t\tPrint the i variable if the value is less than or equal to 5:\n \t*/\n-\ti := 0\n-\tfor next := true; next; next = i <= 5 {\n-\t\tfmt.Println(i)\n-\t\ti++\n-\t}\n+\t// i := 0\n+\t// for next := true; next; next = i <= 5 {\n+\t// \tfmt.Println(i)\n+\t// \ti++\n+\t// }\n \n \t/*\n \t\t1.1) Check that the loop is executed at least once:\n \t*/\n"
+                },
+                {
+                    "date": 1684922764634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n \n \t/*\n \t\t1.1) Check that the loop is executed at least once:\n \t*/\n-\ti = 10\n+\ti := 10\n \tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n"
+                },
+                {
+                    "date": 1684922791336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,18 +37,18 @@\n \t/*\n \t\t1.0) The first version of the do-while loop:\n \t\tPrint the i variable if the value is less than or equal to 5:\n \t*/\n-\t// i := 0\n-\t// for next := true; next; next = i <= 5 {\n-\t// \tfmt.Println(i)\n-\t// \ti++\n-\t// }\n+\ti := 0\n+\tfor next := true; next; next = i <= 5 {\n+\t\tfmt.Println(i)\n+\t\ti++\n+\t}\n \n \t/*\n \t\t1.1) Check that the loop is executed at least once:\n \t*/\n-\ti := 10\n+\ti = 10\n \tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n"
+                },
+                {
+                    "date": 1684922798667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,5 +52,7 @@\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n \n+\n+\t\n }\n"
+                },
+                {
+                    "date": 1684922816997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,7 +52,7 @@\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n \n+/**?\n \n-\t\n }\n"
+                },
+                {
+                    "date": 1684922822779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,7 +52,10 @@\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n \n-/**?\n+/*\n+The second version of the do-while loop:\n+Print the i variable if the value is less than 5:\n+*/\n \n }\n"
+                },
+                {
+                    "date": 1684922834461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n \t\ti++\n \t}\n \n /*\n-The second version of the do-while loop:\n-Print the i variable if the value is less than 5:\n+\t\tThe second version of the do-while loop:\n+\t\t2.0) Print the i variable if the value is less than 5:\n */\n \n }\n"
+                },
+                {
+                    "date": 1684922844340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n */\n \n func main() {\n \t/*\n-\t\t1.0) The first version of the do-while loop:\n+\t\tThe first version of the do-while loop:\n \t\tPrint the i variable if the value is less than or equal to 5:\n \t*/\n \ti := 0\n \tfor next := true; next; next = i <= 5 {\n"
+                },
+                {
+                    "date": 1684922850910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n \t\ti++\n \t}\n \n \t/*\n-\t\t1.1) Check that the loop is executed at least once:\n+\t\tCheck that the loop is executed at least once:\n \t*/\n \ti = 10\n \tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n@@ -54,8 +54,8 @@\n \t}\n \n /*\n \t\tThe second version of the do-while loop:\n-\t\t2.0) Print the i variable if the value is less than 5:\n+\t\tPrint the i variable if the value is less than 5:\n */\n \n }\n"
+                },
+                {
+                    "date": 1684922858759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,6 +56,16 @@\n /*\n \t\tThe second version of the do-while loop:\n \t\tPrint the i variable if the value is less than 5:\n */\n+i := 0\n+for {\n+    fmt.Println(i)\n+    i++\n+    if i >= 5 {\n+        break\n+    }\n+}\n \n+\n+\n }\n"
+                },
+                {
+                    "date": 1684922887305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,17 +54,17 @@\n \t}\n \n /*\n \t\tThe second version of the do-while loop:\n-\t\tPrint the i variable if the value is less than 5:\n+\t\tPrint the i variable if the value is less than or equal to 5:\n */\n i := 0\n for {\n-    fmt.Println(i)\n-    i++\n-    if i >= 5 {\n-        break\n-    }\n+\tfmt.Println(i)\n+\ti++\n+\tif i >= 5 {\n+\t    break\n+\t}\n }\n \n \n \n"
+                },
+                {
+                    "date": 1684922896241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,20 +52,18 @@\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n \n-/*\n+\t/*\n \t\tThe second version of the do-while loop:\n \t\tPrint the i variable if the value is less than or equal to 5:\n-*/\n-i := 0\n-for {\n-\tfmt.Println(i)\n-\ti++\n-\tif i >= 5 {\n-\t    break\n+\t*/\n+\tn := 0\n+\tfor {\n+\t\tfmt.Println(i)\n+\t\ti++\n+\t\tif i >= 5 {\n+\t\t\tbreak\n+\t\t}\n \t}\n-}\n \n-\n-\n }\n"
+                },
+                {
+                    "date": 1684922902058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,11 +58,11 @@\n \t\tPrint the i variable if the value is less than or equal to 5:\n \t*/\n \tn := 0\n \tfor {\n-\t\tfmt.Println(i)\n-\t\ti++\n-\t\tif i >= 5 {\n+\t\tfmt.Println(n)\n+\t\tn++\n+\t\tif ni >= 5 {\n \t\t\tbreak\n \t\t}\n \t}\n \n"
+                },
+                {
+                    "date": 1684922909296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,15 +54,15 @@\n \t}\n \n \t/*\n \t\tThe second version of the do-while loop:\n-\t\tPrint the i variable if the value is less than or equal to 5:\n+\t\tPrint the n variable if the value is less than or equal to 5:\n \t*/\n \tn := 0\n \tfor {\n \t\tfmt.Println(n)\n \t\tn++\n-\t\tif ni >= 5 {\n+\t\tif n >= 5 {\n \t\t\tbreak\n \t\t}\n \t}\n \n"
+                },
+                {
+                    "date": 1684922920031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,5 +65,8 @@\n \t\t\tbreak\n \t\t}\n \t}\n \n+//\n+\n+\n }\n"
+                },
+                {
+                    "date": 1684922927047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,8 +65,8 @@\n \t\t\tbreak\n \t\t}\n \t}\n \n-//\n+//This version of the loop is also executed at least once 😉:\n \n \n }\n"
+                },
+                {
+                    "date": 1684922933321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,8 +65,8 @@\n \t\t\tbreak\n \t\t}\n \t}\n \n-//This version of the loop is also executed at least once 😉:\n+\t//This version of the loop is also executed at least once 😉:\t\t\n \n \n }\n"
+                },
+                {
+                    "date": 1684922942366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,8 +65,16 @@\n \t\t\tbreak\n \t\t}\n \t}\n \n-\t//This version of the loop is also executed at least once 😉:\t\t\n+\t//This version of the loop is also executed at least once 😉:\n+\ti := 10\n+for {\n+    fmt.Println(i)\n+    i++\n+    if i >= 5 {\n+        break\n+    }\n+}\n \n \n }\n"
+                },
+                {
+                    "date": 1684922949945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,13 +68,13 @@\n \n \t//This version of the loop is also executed at least once 😉:\n \ti := 10\n for {\n-    fmt.Println(i)\n-    i++\n-    if i >= 5 {\n-        break\n-    }\n+\tfmt.Println(i)\n+\ti++\n+\tif i >= 5 {\n+\t    break\n+\t}\n }\n \n \n }\n"
+                },
+                {
+                    "date": 1684922965813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n for {\n \tfmt.Println(i)\n \ti++\n \tif i >= 5 {\n-\t    break\n+\t\tbreak\n \t}\n }\n \n \n"
+                },
+                {
+                    "date": 1684922979632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,15 +66,14 @@\n \t\t}\n \t}\n \n \t//This version of the loop is also executed at least once 😉:\n-\ti := 10\n-for {\n-\tfmt.Println(i)\n-\ti++\n-\tif i >= 5 {\n-\t\tbreak\n+\tn := 10\n+\tfor {\n+\t\tfmt.Println(i)\n+\t\ti++\n+\t\tif i >= 5 {\n+\t\t\tbreak\n+\t\t}\n \t}\n-}\n \n-\n }\n"
+                },
+                {
+                    "date": 1684922989445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,11 +66,11 @@\n \t\t}\n \t}\n \n \t//This version of the loop is also executed at least once 😉:\n-\tn := 10\n+\tn = 10\n \tfor {\n-\t\tfmt.Println(i)\n+\t\tfmt.Println(n)\n \t\ti++\n \t\tif i >= 5 {\n \t\t\tbreak\n \t\t}\n"
+                },
+                {
+                    "date": 1684922994535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,10 +69,10 @@\n \t//This version of the loop is also executed at least once 😉:\n \tn = 10\n \tfor {\n \t\tfmt.Println(n)\n-\t\ti++\n-\t\tif i >= 5 {\n+\t\tn++\n+\t\tif n >= 5 {\n \t\t\tbreak\n \t\t}\n \t}\n \n"
+                },
+                {
+                    "date": 1684923054747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n \tn := 0\n \tfor {\n \t\tfmt.Println(n)\n \t\tn++\n-\t\tif n >= 5 {\n+\t\tif n > 5 {\n \t\t\tbreak\n \t\t}\n \t}\n \n"
+                },
+                {
+                    "date": 1684966648338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n }\n \n 2) To ensure that it executes at least once, the <condition> must be true for the first iteration and be dependent on the loop stop condition in subsequent iterations. For this we use a BOOL variable:\n \n+for <initialization>; <condition>; <post-condition> \n for next := true; next; next=<condition> {\n \t<loopBody>\n }\n \n@@ -70,9 +71,9 @@\n \tn = 10\n \tfor {\n \t\tfmt.Println(n)\n \t\tn++\n-\t\tif n >= 5 {\n+\t\tif n > 5 {\n \t\t\tbreak\n \t\t}\n \t}\n \n"
+                },
+                {
+                    "date": 1684966656181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n }\n \n 2) To ensure that it executes at least once, the <condition> must be true for the first iteration and be dependent on the loop stop condition in subsequent iterations. For this we use a BOOL variable:\n \n-for <initialization>; <condition>; <post-condition> \n+classic for <initialization>; <condition>; <post-condition> \n for next := true; next; next=<condition> {\n \t<loopBody>\n }\n \n"
+                },
+                {
+                    "date": 1684966665106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,10 @@\n }\n \n 2) To ensure that it executes at least once, the <condition> must be true for the first iteration and be dependent on the loop stop condition in subsequent iterations. For this we use a BOOL variable:\n \n-classic for <initialization>; <condition>; <post-condition> \n+classic for loop:\n+for <initialization>; <condition>; <post-condition> \n for next := true; next; next=<condition> {\n \t<loopBody>\n }\n \n"
+                },
+                {
+                    "date": 1684966688101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,13 @@\n \n 2) To ensure that it executes at least once, the <condition> must be true for the first iteration and be dependent on the loop stop condition in subsequent iterations. For this we use a BOOL variable:\n \n classic for loop:\n-for <initialization>; <condition>; <post-condition> \n+for <initialization>; <condition>; <post-condition>\n+do-while loop\n+do-while loop\n+do-while loop\n+do-while loop\n for next := true; next; next=<condition> {\n \t<loopBody>\n }\n \n"
+                },
+                {
+                    "date": 1684966699760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,11 +20,8 @@\n \n classic for loop:\n for <initialization>; <condition>; <post-condition>\n do-while loop\n-do-while loop\n-do-while loop\n-do-while loop\n for next := true; next; next=<condition> {\n \t<loopBody>\n }\n \n"
+                },
+                {
+                    "date": 1684966736239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n 3) There is also a simpler form of the do-while loop in Go, in which the <condition> of the for loop is checked after the <loopBody> and if it is not true the loop is exited:\n \n for {\n \t<loopBody>\n-\tif !<condition> {\n+\tif !<condition> { // if con\n \t\tbreak\n \t}\n }\n \n"
+                },
+                {
+                    "date": 1684966751733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,13 +28,12 @@\n 3) There is also a simpler form of the do-while loop in Go, in which the <condition> of the for loop is checked after the <loopBody> and if it is not true the loop is exited:\n \n for {\n \t<loopBody>\n-\tif !<condition> { // if con\n+\tif !<condition> { // if condition is not true\n \t\tbreak\n \t}\n }\n-\n */\n \n func main() {\n \t/*\n"
+                },
+                {
+                    "date": 1684966809785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n \n \t/*\n \t\tCheck that the loop is executed at least once:\n \t*/\n-\ti = 10\n+\ti = 10\t//\n \tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n"
+                },
+                {
+                    "date": 1684966823776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n \n \t/*\n \t\tCheck that the loop is executed at least once:\n \t*/\n-\ti = 10\t//\n+\ti = 10\t// i is greater than \n \tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n"
+                },
+                {
+                    "date": 1684966834479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n \n \t/*\n \t\tCheck that the loop is executed at least once:\n \t*/\n-\ti = 10\t// i is greater than \n+\ti = 10\t// i is greater than 5, so the loop must finish. But \n \tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n"
+                },
+                {
+                    "date": 1684966848088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n \n \t/*\n \t\tCheck that the loop is executed at least once:\n \t*/\n-\ti = 10\t// i is greater than 5, so the loop must finish. But \n+\ti = 10\t// i is greater than 5, so the loop must finish. But the first time \n \tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n"
+                },
+                {
+                    "date": 1684966857233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n \n \t/*\n \t\tCheck that the loop is executed at least once:\n \t*/\n-\ti = 10\t// i is greater than 5, so the loop must finish. But the first time \n+\ti = 10\t// i is greater than 5, so the loop must finish. But the first time the bool var next \n \tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n"
+                },
+                {
+                    "date": 1684966862860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n \n \t/*\n \t\tCheck that the loop is executed at least once:\n \t*/\n-\ti = 10\t// i is greater than 5, so the loop must finish. But the first time the bool var next \n+\ti = 10\t// i is greater than 5, so the loop must finish. But the first time the bool var next is true.\n \tfor next := true; next; next = i <= 5 {\n \t\tfmt.Println(i)\n \t\ti++\n \t}\n"
+                },
+                {
+                    "date": 1684966901586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \n you may use a for loop in one of these ways:\n \n 1) skip the init and post statemens\n-ok := true\n+next := true\n for ok = condition {\n \twork()\n }\n \n"
+                },
+                {
+                    "date": 1684966964366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n you may use a for loop in one of these ways:\n \n 1) skip the init and post statemens\n next := true\n-for ok = condition {\n+for next = condition {\n \twork()\n }\n \n 2) To ensure that it executes at least once, the <condition> must be true for the first iteration and be dependent on the loop stop condition in subsequent iterations. For this we use a BOOL variable:\n@@ -62,9 +62,9 @@\n \tn := 0\n \tfor {\n \t\tfmt.Println(n)\n \t\tn++\n-\t\tif n > 5 {\n+\t\tif n , 5 {\n \t\t\tbreak\n \t\t}\n \t}\n \n"
+                },
+                {
+                    "date": 1684966969737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n \tn := 0\n \tfor {\n \t\tfmt.Println(n)\n \t\tn++\n-\t\tif n , 5 {\n+\t\tif (n <= 5 {\n \t\t\tbreak\n \t\t}\n \t}\n \n"
+                },
+                {
+                    "date": 1684966974965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n \tn := 0\n \tfor {\n \t\tfmt.Println(n)\n \t\tn++\n-\t\tif (n <= 5 {\n+\t\tif !(n <= 5) {\n \t\t\tbreak\n \t\t}\n \t}\n \n"
+                },
+                {
+                    "date": 1684966985085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n \tn = 10\n \tfor {\n \t\tfmt.Println(n)\n \t\tn++\n-\t\tif n > 5 {\n+\t\tif !(n <= 5 {\n \t\t\tbreak\n \t\t}\n \t}\n \n"
+                },
+                {
+                    "date": 1684967073238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,10 +72,13 @@\n \tn = 10\n \tfor {\n \t\tfmt.Println(n)\n \t\tn++\n-\t\tif !(n <= 5 {\n+\t\tif !(n <= 5) {\n \t\t\tbreak\n \t\t}\n \t}\n \n+\n+\n+\t\n }\n"
+                },
+                {
+                    "date": 1684967080126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,13 @@\n \t\tif !(n <= 5) {\n \t\t\tbreak\n \t\t}\n \t}\n+//next := true\n+for next = condition {\n+\twork()\n+}\n \n \n \n-\t\n+\n }\n"
+                },
+                {
+                    "date": 1684967087221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,13 +76,14 @@\n \t\tif !(n <= 5) {\n \t\t\tbreak\n \t\t}\n \t}\n-//next := true\n+//\n+next := true\n for next = condition {\n \twork()\n }\n+*/\n \n \n \n-\n }\n"
+                },
+                {
+                    "date": 1684967092774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,10 @@\n \t\tif !(n <= 5) {\n \t\t\tbreak\n \t\t}\n \t}\n-//\n+\n+\t/*\n next := true\n for next = condition {\n \twork()\n }\n"
+                },
+                {
+                    "date": 1684967228387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,9 +77,10 @@\n \t\t\tbreak\n \t\t}\n \t}\n \n-\t/*\n+/*\n+\n next := true\n for next = condition {\n \twork()\n }\n"
+                },
+                {
+                    "date": 1684967306709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,14 +78,14 @@\n \t\t}\n \t}\n \n /*\n-\n next := true\n+for <initialization>; <condition>; <post-condition>\n for next = condition {\n \twork()\n }\n */\n+m := true\n \n \n-\n }\n"
+                },
+                {
+                    "date": 1684967312755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,7 +85,8 @@\n \twork()\n }\n */\n m := true\n+for m = \n \n \n }\n"
+                },
+                {
+                    "date": 1684967331865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,9 +84,9 @@\n for next = condition {\n \twork()\n }\n */\n-m := true\n+m := true, n = 0\n for m = \n \n \n }\n"
+                },
+                {
+                    "date": 1684967340831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,9 +84,10 @@\n for next = condition {\n \twork()\n }\n */\n-m := true, n = 0\n+m := true\n+n = 0\n for m = \n \n \n }\n"
+                },
+                {
+                    "date": 1684967367812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,8 +86,8 @@\n }\n */\n m := true\n n = 0\n-for m = \n+for m = {}\n \n \n }\n"
+                },
+                {
+                    "date": 1684967375978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,8 +86,10 @@\n }\n */\n m := true\n n = 0\n-for m = {}\n+for m = n <{\n \n+}\n \n+\n }\n"
+                },
+                {
+                    "date": 1684967394038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,10 +86,10 @@\n }\n */\n m := true\n n = 0\n-for m = n <{\n-\n+for m = n <= 5{\n+\t\n }\n \n \n }\n"
+                },
+                {
+                    "date": 1684967399096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,9 +87,9 @@\n */\n m := true\n n = 0\n for m = n <= 5{\n-\t\n+\tfmt.Println()\n }\n \n \n }\n"
+                },
+                {
+                    "date": 1684967410915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,10 +86,10 @@\n }\n */\n m := true\n n = 0\n-for m = n <= 5{\n-\tfmt.Println()\n+for ;m = n <= 5{\n+\tfmt.Println(n)\n }\n \n \n }\n"
+                },
+                {
+                    "date": 1684967438722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n }\n */\n m := true\n n = 0\n-for ;m = n <= 5{\n+for ;m = n <= 5 {\n \tfmt.Println(n)\n }\n \n \n"
+                },
+                {
+                    "date": 1684967445840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n }\n */\n m := true\n n = 0\n-for ;m = n <= 5 {\n+for (m = n <= 5) {\n \tfmt.Println(n)\n }\n \n \n"
+                },
+                {
+                    "date": 1684967472658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n }\n */\n m := true\n n = 0\n-for (m = n <= 5) {\n+for m = n <= 5) {\n \tfmt.Println(n)\n }\n \n \n"
+                },
+                {
+                    "date": 1684967490053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n }\n */\n m := true\n n = 0\n-for m = n <= 5) {\n+for _m = n <= 5 {\n \tfmt.Println(n)\n }\n \n \n"
+                },
+                {
+                    "date": 1684967497757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n }\n */\n m := true\n n = 0\n-for _m = n <= 5 {\n+for _; m = n <= 5 :{\n \tfmt.Println(n)\n }\n \n \n"
+                },
+                {
+                    "date": 1684967663971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,11 +84,10 @@\n for next = condition {\n \twork()\n }\n */\n-m := true\n n = 0\n-for _; m = n <= 5 :{\n+for _; m = n <= 5 : _{\n \tfmt.Println(n)\n }\n \n \n"
+                },
+                {
+                    "date": 1684967682021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,9 +85,9 @@\n \twork()\n }\n */\n n = 0\n-for _; m = n <= 5 : _{\n+for n <= 5 : _{\n \tfmt.Println(n)\n }\n \n \n"
+                },
+                {
+                    "date": 1684967687342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,9 +85,9 @@\n \twork()\n }\n */\n n = 0\n-for n <= 5 : _{\n+for n <= 5 {\n \tfmt.Println(n)\n }\n \n \n"
+                },
+                {
+                    "date": 1684969463208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n }\n */\n n = 0\n for n <= 5 {\n-\tfmt.Println(n)\n+\t\n }\n \n \n }\n"
+                },
+                {
+                    "date": 1684969470768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n }\n */\n n = 0\n for n <= 5 {\n-\t\n+\tn++\n }\n+fmt.Println(n)\n \n-\n }\n"
+                },
+                {
+                    "date": 1684969550669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,8 +87,9 @@\n */\n n = 0\n for n <= 5 {\n \tn++\n+\t\n }\n fmt.Println(n)\n \n }\n"
+                },
+                {
+                    "date": 1684969557027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,9 +87,9 @@\n */\n n = 0\n for n <= 5 {\n \tn++\n-\t\n+\tfmt.Println(n)\n }\n-fmt.Println(n)\n+fmt.Println('n)\n \n }\n"
+                },
+                {
+                    "date": 1684969565666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,7 +89,7 @@\n for n <= 5 {\n \tn++\n \tfmt.Println(n)\n }\n-fmt.Println('n)\n+fmt.Println(\"The sum is \", n)\n \n }\n"
+                },
+                {
+                    "date": 1684969647921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,9 +85,9 @@\n \twork()\n }\n */\n n = 0\n-for n <= 5 {\n+for n < 5 {\n \tn++\n \tfmt.Println(n)\n }\n fmt.Println(\"The sum is \", n)\n"
+                }
+            ],
+            "date": 1684922305750,
+            "name": "Commit-0",
+            "content": "package main\n\n/*\nThere is no do-while loop in Go. To emulate the C/Java code\ndo {\n\twork();\n} while (condition);\n\nyou may use a for loop in one of these ways:\n\n1)\nskip the init and post statemens\nok := true\nfor ok = condition {\n\twork()\n}\n\n2)\nTo ensure that it executes at least once, the <condition> must be true for the first iteration and be dependent on the loop stop condition in subsequent iterations:\n\n3)\nfor {\n\twork()\n\tif !condition {\n\t\tbreak\n\t}\n}\n\n*/\n\nfunc main() {\n\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,182 @@
+{
+    "sourceFile": "BASICS/built-in_types/initialization/main.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 41,
+            "patches": [
+                {
+                    "date": 1686348502279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686348534044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n package main\n \n import (\n \t\"fmt\"\n-\t\n+\t golang.org/pkg/math/#pkg-constants\n+)\n \n func main() {\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1686348541658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n package main\n \n import (\n \t\"fmt\"\n-\t golang.org/pkg/math/#pkg-constants\n+\t\"golang.org/pkg/math/#pkg-constants\"\n )\n \n func main() {\n \tfmt.Println(\"vim-go\")\n"
+                },
+                {
+                    "date": 1686348563133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n package main\n \n import (\n \t\"fmt\"\n-\t\"golang.org/pkg/math/#pkg-constants\"\n+\t\"math\"\n )\n \n func main() {\n \tfmt.Println(\"vim-go\")\n"
+                },
+                {
+                    "date": 1686348571423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,18 @@\n \t\"math\"\n )\n \n func main() {\n-\tfmt.Println(\"vim-go\")\n+    // integer max\n+    fmt.Printf(\"max int64   = %+v\\n\", math.MaxInt64)\n+    fmt.Printf(\"max int32   = %+v\\n\", math.MaxInt32)\n+    fmt.Printf(\"max int16   = %+v\\n\", math.MaxInt16)\n+\n+    // integer min\n+    fmt.Printf(\"min int64   = %+v\\n\", math.MinInt64)\n+    fmt.Printf(\"min int32   = %+v\\n\", math.MinInt32)\n+\n+    fmt.Printf(\"max float64 = %+v\\n\", math.MaxFloat64)\n+    fmt.Printf(\"max float32 = %+v\\n\", math.MaxFloat32)\n+\n+    // etc you can see more int the `math`package\n }\n"
+                },
+                {
+                    "date": 1686348617844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,18 +5,18 @@\n \t\"math\"\n )\n \n func main() {\n-    // integer max\n-    fmt.Printf(\"max int64   = %+v\\n\", math.MaxInt64)\n-    fmt.Printf(\"max int32   = %+v\\n\", math.MaxInt32)\n-    fmt.Printf(\"max int16   = %+v\\n\", math.MaxInt16)\n+\t// integer max\n+\tfmt.Printf(\"max byte   = %+v\\n\", math.MaxInt64)\n+\tfmt.Printf(\"max int32   = %+v\\n\", math.MaxInt32)\n+\tfmt.Printf(\"max int16   = %+v\\n\", math.MaxInt16)\n \n-    // integer min\n-    fmt.Printf(\"min int64   = %+v\\n\", math.MinInt64)\n-    fmt.Printf(\"min int32   = %+v\\n\", math.MinInt32)\n+\t// integer min\n+\tfmt.Printf(\"min int64   = %+v\\n\", math.MinInt64)\n+\tfmt.Printf(\"min int32   = %+v\\n\", math.MinInt32)\n \n-    fmt.Printf(\"max float64 = %+v\\n\", math.MaxFloat64)\n-    fmt.Printf(\"max float32 = %+v\\n\", math.MaxFloat32)\n+\tfmt.Printf(\"max float64 = %+v\\n\", math.MaxFloat64)\n+\tfmt.Printf(\"max float32 = %+v\\n\", math.MaxFloat32)\n \n-    // etc you can see more int the `math`package\n+\t// etc you can see more int the `math`package\n }\n"
+                },
+                {
+                    "date": 1686348644228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n )\n \n func main() {\n \t// integer max\n-\tfmt.Printf(\"max byte   = %+v\\n\", math.MaxInt64)\n+\tfmt.Printf(\"max byte   = %+v\\n\", math.MaxByte)\n \tfmt.Printf(\"max int32   = %+v\\n\", math.MaxInt32)\n \tfmt.Printf(\"max int16   = %+v\\n\", math.MaxInt16)\n \n \t// integer min\n"
+                },
+                {
+                    "date": 1686348650334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n )\n \n func main() {\n \t// integer max\n-\tfmt.Printf(\"max byte   = %+v\\n\", math.MaxByte)\n+\tfmt.Printf(\"max byte   = %+v\\n\", math.Max)\n \tfmt.Printf(\"max int32   = %+v\\n\", math.MaxInt32)\n \tfmt.Printf(\"max int16   = %+v\\n\", math.MaxInt16)\n \n \t// integer min\n"
+                },
+                {
+                    "date": 1686348658912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n )\n \n func main() {\n \t// integer max\n-\tfmt.Printf(\"max byte   = %+v\\n\", math.Max)\n+\tfmt.Printf(\"max byte   = %+v\\n\", math.MaxUint8)\n \tfmt.Printf(\"max int32   = %+v\\n\", math.MaxInt32)\n \tfmt.Printf(\"max int16   = %+v\\n\", math.MaxInt16)\n \n \t// integer min\n"
+                },
+                {
+                    "date": 1686348666363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n )\n \n func main() {\n \t// integer max\n-\tfmt.Printf(\"max byte   = %+v\\n\", math.MaxUint8)\n+\tfmt.Printf(\"max Uint8   = %+v\\n\", math.MaxUint8)\n \tfmt.Printf(\"max int32   = %+v\\n\", math.MaxInt32)\n \tfmt.Printf(\"max int16   = %+v\\n\", math.MaxInt16)\n \n \t// integer min\n"
+                },
+                {
+                    "date": 1687101637781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,8 @@\n package main\n \n-import (\n-\t\"fmt\"\n-\t\"math\"\n-)\n+import \"fmt\"\n \n func main() {\n-\t// integer max\n-\tfmt.Printf(\"max Uint8   = %+v\\n\", math.MaxUint8)\n-\tfmt.Printf(\"max int32   = %+v\\n\", math.MaxInt32)\n-\tfmt.Printf(\"max int16   = %+v\\n\", math.MaxInt16)\n-\n-\t// integer min\n-\tfmt.Printf(\"min int64   = %+v\\n\", math.MinInt64)\n-\tfmt.Printf(\"min int32   = %+v\\n\", math.MinInt32)\n-\n-\tfmt.Printf(\"max float64 = %+v\\n\", math.MaxFloat64)\n-\tfmt.Printf(\"max float32 = %+v\\n\", math.MaxFloat32)\n-\n-\t// etc you can see more int the `math`package\n+\tfmt.Println(\"vim-go\")\n+\t\n }\n"
+                },
+                {
+                    "date": 1687102242315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,4 +5,5 @@\n func main() {\n \tfmt.Println(\"vim-go\")\n \t\n }\n+\n"
+                },
+                {
+                    "date": 1687102248272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,4 +6,5 @@\n \tfmt.Println(\"vim-go\")\n \t\n }\n \n+func fillArray()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102255268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n \tfmt.Println(\"vim-go\")\n \t\n }\n \n-func fillArray()\n\\ No newline at end of file\n+func fillArray(arr [])\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102261738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n \tfmt.Println(\"vim-go\")\n \t\n }\n \n-func fillArray(arr [])\n\\ No newline at end of file\n+func fillArray(arr [10]int) \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102267943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,7 @@\n \tfmt.Println(\"vim-go\")\n \t\n }\n \n-func fillArray(arr [10]int) \n\\ No newline at end of file\n+func fillArray(arr [10]int) [10]int {\n+\t\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102272975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n \t\n }\n \n func fillArray(arr [10]int) [10]int {\n-\t\n+\tfor i := 0\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102278629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n \t\n }\n \n func fillArray(arr [10]int) [10]int {\n-\tfor i := 0\n+\tfor i := 0; i <\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102285789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n \t\n }\n \n func fillArray(arr [10]int) [10]int {\n-\tfor i := 0; i <\n+\tfor i := 0; i < len(arr)\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102292880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,8 @@\n \t\n }\n \n func fillArray(arr [10]int) [10]int {\n-\tfor i := 0; i < len(arr)\n+\tfor i := 0; i < len(arr); i++ {\n+\t\t\n+\t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102301023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n }\n \n func fillArray(arr [10]int) [10]int {\n \tfor i := 0; i < len(arr); i++ {\n-\t\t\n+\t\tarr[i = i ]\n \t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102308358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,8 @@\n }\n \n func fillArray(arr [10]int) [10]int {\n \tfor i := 0; i < len(arr); i++ {\n-\t\tarr[i = i ]\n+\t\tarr[i = i + 1]\n \t}\n+\treturn arr\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102319712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,7 @@\n \tfor i := 0; i < len(arr); i++ {\n \t\tarr[i = i + 1]\n \t}\n \treturn arr\n-}\n\\ No newline at end of file\n+}\n+\n+func opArray\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102325038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n \t}\n \treturn arr\n }\n \n-func opArray\n\\ No newline at end of file\n+func opArray(arr [10])\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102331915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n \t}\n \treturn arr\n }\n \n-func opArray(arr [10])\n\\ No newline at end of file\n+func opArray(arr [10]int) []\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102337742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,7 @@\n \t}\n \treturn arr\n }\n \n-func opArray(arr [10]int) []\n\\ No newline at end of file\n+func opArray(arr [10]int) [10] int {\n+\t\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102345342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n \treturn arr\n }\n \n func opArray(arr [10]int) [10] int {\n-\t\n+\tfor i := 0; i \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102350914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n \treturn arr\n }\n \n func opArray(arr [10]int) [10] int {\n-\tfor i := 0; i \n+\tfor i := 0; i < len(arr); \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102358066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,8 @@\n \treturn arr\n }\n \n func opArray(arr [10]int) [10] int {\n-\tfor i := 0; i < len(arr); \n+\tfor i := 0; i < len(arr); i++ {\n+\t\tarr\n+\t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102364770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n }\n \n func opArray(arr [10]int) [10] int {\n \tfor i := 0; i < len(arr); i++ {\n-\t\tarr\n+\t\tarr[i] = arr\n \t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102370240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n }\n \n func opArray(arr [10]int) [10] int {\n \tfor i := 0; i < len(arr); i++ {\n-\t\tarr[i] = arr\n+\t\tarr[i] = arr[] * arr[]\n \t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102377616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n }\n \n func opArray(arr [10]int) [10] int {\n \tfor i := 0; i < len(arr); i++ {\n-\t\tarr[i] = arr[] * arr[]\n+\t\tarr[i] = arr[i] * arr[i]\n \t}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102386141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,6 @@\n func opArray(arr [10]int) [10] int {\n \tfor i := 0; i < len(arr); i++ {\n \t\tarr[i] = arr[i] * arr[i]\n \t}\n+\treturn arr\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687102394558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n import \"fmt\"\n \n func main() {\n+\t\n \tfmt.Println(\"vim-go\")\n \t\n }\n \n"
+                },
+                {
+                    "date": 1687102400650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n import \"fmt\"\n \n func main() {\n-\t\n+\tvar arr[10]\n \tfmt.Println(\"vim-go\")\n \t\n }\n \n"
+                },
+                {
+                    "date": 1687102406028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n \n import \"fmt\"\n \n func main() {\n-\tvar arr[10]\n+\tvar arr[10]int\n+\tarr\n \tfmt.Println(\"vim-go\")\n \t\n }\n \n"
+                },
+                {
+                    "date": 1687102413026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n import \"fmt\"\n \n func main() {\n \tvar arr[10]int\n-\tarr\n+\tarr = fillArray(arr)\n+\t\n \tfmt.Println(\"vim-go\")\n \t\n }\n \n"
+                },
+                {
+                    "date": 1687102419372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n func main() {\n \tvar arr[10]int\n \tarr = fillArray(arr)\n-\t\n+\tarr = opArray(arr)\n \tfmt.Println(\"vim-go\")\n \t\n }\n \n"
+                },
+                {
+                    "date": 1687102425244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n func main() {\n \tvar arr[10]int\n \tarr = fillArray(arr)\n \tarr = opArray(arr)\n-\tfmt.Println(\"vim-go\")\n+\tfmt.Println(arr)\n \t\n }\n \n func fillArray(arr [10]int) [10]int {\n"
+                },
+                {
+                    "date": 1687102447946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n }\n \n func fillArray(arr [10]int) [10]int {\n \tfor i := 0; i < len(arr); i++ {\n-\t\tarr[i = i + 1]\n+\t\tarr[i] = i + 1]\n \t}\n \treturn arr\n }\n \n"
+                },
+                {
+                    "date": 1687102469037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,16 +4,17 @@\n \n func main() {\n \tvar arr[10]int\n \tarr = fillArray(arr)\n+\t\n \tarr = opArray(arr)\n \tfmt.Println(arr)\n \t\n }\n \n func fillArray(arr [10]int) [10]int {\n \tfor i := 0; i < len(arr); i++ {\n-\t\tarr[i] = i + 1]\n+\t\tarr[i] = i + 1\n \t}\n \treturn arr\n }\n \n"
+                },
+                {
+                    "date": 1687102504052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n func main() {\n \tvar arr[10]int\n \tarr = fillArray(arr)\n-\t\n+\tfmt.Println(arr)\n \tarr = opArray(arr)\n \tfmt.Println(arr)\n \t\n }\n@@ -19,8 +19,8 @@\n }\n \n func opArray(arr [10]int) [10] int {\n \tfor i := 0; i < len(arr); i++ {\n-\t\tarr[i] = arr[i] * arr[i]\n+\t\tarr[i] *= arr[i] * arr[i]\n \t}\n \treturn arr\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1686348502279,
+            "name": "Commit-0",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\n\nfunc main() {\n\tfmt.Println(\"vim-go\")\n}\n"
+        }
+    ]
+}

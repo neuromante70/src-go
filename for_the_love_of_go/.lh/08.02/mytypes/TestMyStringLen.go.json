@@ -1,0 +1,38 @@
+{
+    "sourceFile": "08.02/mytypes/TestMyStringLen.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1681595727627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1681595742481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n package myStringLen_test\n \n import (\n-\t\"for_the_love_of_go/08.02/mytypes\"\n+\t//\"for_the_love_of_go/08.02/mytypes\"\n \t\"testing\"\n )\n \n func TestMyStringLen(t *testing.T) {\n"
+                },
+                {
+                    "date": 1681595750638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,17 @@\n package myStringLen_test\n \n import (\n \t//\"for_the_love_of_go/08.02/mytypes\"\n+\t\"for_the_love_of_go/08.02/mytypes\"\n \t\"testing\"\n )\n \n func TestMyStringLen(t *testing.T) {\n \tt.Parallel()\n \tinput := mytypes.MyString(\"Hello culo\")\n \twant := 10\n \tgot := input.Len()\n-\tif wang != got {\n+\tif want != got {\n \t\tt.Errorf(\"%q: want len %d, got %d\", input, want, got)\n \t}\n }\n"
+                },
+                {
+                    "date": 1681595756589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n package myStringLen_test\n \n import (\n \t//\"for_the_love_of_go/08.02/mytypes\"\n-\t\"for_the_love_of_go/08.02/mytypes\"\n \t\"testing\"\n )\n \n func TestMyStringLen(t *testing.T) {\n"
+                },
+                {
+                    "date": 1681595820994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n package myStringLen_test\n \n import (\n-\t//\"for_the_love_of_go/08.02/mytypes\"\n+\t//\"for_the_love_of_go/08.0/mytypes\"\n \t\"testing\"\n )\n \n func TestMyStringLen(t *testing.T) {\n"
+                },
+                {
+                    "date": 1681595826199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n package myStringLen_test\n \n import (\n-\t//\"for_the_love_of_go/08.0/mytypes\"\n+\t\"mytypes\"\n \t\"testing\"\n )\n \n func TestMyStringLen(t *testing.T) {\n"
+                }
+            ],
+            "date": 1681595727627,
+            "name": "Commit-0",
+            "content": "package myStringLen_test\n\nimport (\n\t\"for_the_love_of_go/08.02/mytypes\"\n\t\"testing\"\n)\n\nfunc TestMyStringLen(t *testing.T) {\n\tt.Parallel()\n\tinput := mytypes.MyString(\"Hello culo\")\n\twant := 10\n\tgot := input.Len()\n\tif wang != got {\n\t\tt.Errorf(\"%q: want len %d, got %d\", input, want, got)\n\t}\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,166 @@
+{
+    "sourceFile": "BASICS/strings/main.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 37,
+            "patches": [
+                {
+                    "date": 1685834510062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685834520452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,7 @@\n }\n */\n \n func main() {\n+\t\n \tfmt.Println(\"Hello world\")\n }\n"
+                },
+                {
+                    "date": 1685834526633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n }\n */\n \n func main() {\n-\t\n+\ts := \"\"\n \tfmt.Println(\"Hello world\")\n }\n"
+                },
+                {
+                    "date": 1685834532822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n }\n */\n \n func main() {\n-\ts := \"\"\n+\ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Hello world\")\n }\n"
+                },
+                {
+                    "date": 1685834538668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,6 +10,7 @@\n */\n \n func main() {\n \ts := \"Te lo metto nel culo!\"\n-\tfmt.Println(\"Hello world\")\n+\tfmt.Println(s)\n+\t\n }\n"
+                },
+                {
+                    "date": 1685834544858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n */\n \n func main() {\n \ts := \"Te lo metto nel culo!\"\n-\tfmt.Println(s)\n-\t\n+\tfmt.Println(\"\", s)\n+\n }\n"
+                },
+                {
+                    "date": 1685834554205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n */\n \n func main() {\n \ts := \"Te lo metto nel culo!\"\n-\tfmt.Println(\"\", s)\n+\tfmt.Println(\"Before the modification\", s)\n \n }\n"
+                },
+                {
+                    "date": 1685834560573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,8 @@\n */\n \n func main() {\n \ts := \"Te lo metto nel culo!\"\n-\tfmt.Println(\"Before the modification\", s)\n+\tfmt.Println(\"Before the modification: \", s)\n+\ts = \n \n }\n"
+                },
+                {
+                    "date": 1685834573103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n \n func main() {\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n-\ts = \n+\ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \n }\n"
+                },
+                {
+                    "date": 1685834578439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,7 @@\n func main() {\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n+\tfmt.Println(\"Before the modification: \", s)\n \n }\n"
+                },
+                {
+                    "date": 1685834621112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,8 @@\n func main() {\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n-\tfmt.Println(\"Before the modification: \", s)\n+\tfmt.Println(\"After the modification: \", s)\n+\t\n \n }\n"
+                },
+                {
+                    "date": 1685834627299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,8 @@\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n+\ts[0] = 'H'\n \t\n \n }\n"
+                },
+                {
+                    "date": 1685834637412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n-\ts[0] = 'H'\n-\t\n+\ts[0] = \"H'\n \n+\n }\n"
+                },
+                {
+                    "date": 1685834674180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n-\ts[0] = \"H'\n+\ts[0] = by\"H\"\n \n \n }\n"
+                },
+                {
+                    "date": 1685834686250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n-\ts[0] = by\"H\"\n+\ts[0] = byte(H)\n \n \n }\n"
+                },
+                {
+                    "date": 1685834692972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n-\ts[0] = byte(H)\n+\ts[0] = byte(\"H)\n \n \n }\n"
+                },
+                {
+                    "date": 1685834698534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n-\ts[0] = byte(\"H)\n+\ts[0] = rune(\"H\")\n \n \n }\n"
+                },
+                {
+                    "date": 1685834829401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n-\ts[0] = rune(\"H\")\n+\ts[0] = s[0]\n \n \n }\n"
+                },
+                {
+                    "date": 1685834846030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,8 @@\n func main() {\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n-\tfmt.Println(\"After the modification: \", s)\n-\ts[0] = s[0]\n+\tfmt.Println(\"After the modification: \", s)\ts[0] = s[1]\n \n \n }\n"
+                },
+                {
+                    "date": 1685834856237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,10 @@\n func main() {\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n-\tfmt.Println(\"After the modification: \", s)\ts[0] = s[1]\n+\tfmt.Println(\"After the modification: \", s)\n+\tfor i, v\n+\ts[0] = s[1]\n \n \n }\n"
+                },
+                {
+                    "date": 1685834861470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n-\tfor i, v\n+\tfor i, v = range \n \ts[0] = s[1]\n \n \n }\n"
+                },
+                {
+                    "date": 1685834866783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n-\tfor i, v = range \n+\tfor i, v = range s {}\n \ts[0] = s[1]\n \n \n }\n"
+                },
+                {
+                    "date": 1685834881047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,11 @@\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n-\tfor i, v = range s {}\n+\tfor i, v = range s {\n+\t\tfmt.Println\n+\t}\n \ts[0] = s[1]\n \n \n }\n"
+                },
+                {
+                    "date": 1685834886894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n \tfor i, v = range s {\n-\t\tfmt.Println\n+\t\tfmt.Println(s)\n \t}\n \ts[0] = s[1]\n \n \n"
+                },
+                {
+                    "date": 1685835053994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n-\tfor i, v = range s {\n-\t\tfmt.Println(s)\n+\tfor i, v = range lens {\n+\t\tfmt.Println(s[i])\n \t}\n \ts[0] = s[1]\n \n \n"
+                },
+                {
+                    "date": 1685835088367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n-\tfor i, v = range lens {\n+\tfor i, v = range s {\n \t\tfmt.Println(s[i])\n \t}\n \ts[0] = s[1]\n \n"
+                },
+                {
+                    "date": 1685835230271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n \tfor i, v = range s {\n-\t\tfmt.Println(s[i])\n+\t\tfmt.Println(i)\n \t}\n \ts[0] = s[1]\n \n \n"
+                },
+                {
+                    "date": 1685835240214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n \tfor i, v = range s {\n-\t\tfmt.Println(i)\n+\t\tfmt.Println(i, v)\n \t}\n \ts[0] = s[1]\n \n \n"
+                },
+                {
+                    "date": 1685835245285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,8 @@\n \tfmt.Println(\"After the modification: \", s)\n \tfor i, v = range s {\n \t\tfmt.Println(i, v)\n \t}\n-\ts[0] = s[1]\n+\t//s[0] = s[1]\n \n \n }\n"
+                },
+                {
+                    "date": 1685835310879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n-\tfor i, v = range s {\n+\tfor i, v := range s {\n \t\tfmt.Println(i, v)\n \t}\n \t//s[0] = s[1]\n \n"
+                },
+                {
+                    "date": 1685835368330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n \tfmt.Println(\"After the modification: \", s)\n \tfor i, v := range s {\n \t\tfmt.Println(i, v)\n \t}\n+\t\n \t//s[0] = s[1]\n \n \n }\n"
+                },
+                {
+                    "date": 1685835374847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \tfmt.Println(\"After the modification: \", s)\n \tfor i, v := range s {\n \t\tfmt.Println(i, v)\n \t}\n-\t\n+\tfmt.Println(len)\n \t//s[0] = s[1]\n \n \n }\n"
+                },
+                {
+                    "date": 1685835395379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,11 @@\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n \tfor i, v := range s {\n-\t\tfmt.Println(i, v)\n+\t\tfmt.Println(i, runev)\n \t}\n-\tfmt.Println(len)\n+\tfmt.Println(len(s))\n \t//s[0] = s[1]\n \n \n }\n"
+                },
+                {
+                    "date": 1685835405565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n \tfor i, v := range s {\n-\t\tfmt.Println(i, runev)\n+\t\tfmt.Println(i, string(v))\n \t}\n \tfmt.Println(len(s))\n \t//s[0] = s[1]\n \n"
+                },
+                {
+                    "date": 1685836854377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,12 +13,9 @@\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n-\tfor i, v := range s {\n-\t\tfmt.Println(i, string(v))\n-\t}\n-\tfmt.Println(len(s))\n+\n \t//s[0] = s[1]\n \n \n }\n"
+                },
+                {
+                    "date": 1685836860911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n \n-\t//s[0] = s[1]\n \n \n+\n+\n }\n"
+                },
+                {
+                    "date": 1685836878822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \tfmt.Println(\"Before the modification: \", s)\n \ts = \"No, sono io a mettertelo nel culo caro mio...\"\n \tfmt.Println(\"After the modification: \", s)\n \n-\ts\n+\ts \n \n \n \n }\n"
+                },
+                {
+                    "date": 1685867012438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,5 @@\n func main() {\n \ts := \"Te lo metto nel culo!\"\n \tfmt.Println(\"s Before the modification: \", s)\n \n-\n }\n"
+                }
+            ],
+            "date": 1685834510062,
+            "name": "Commit-0",
+            "content": "package main\n\nimport \"fmt\"\n\n/*\nThe classic for has the form of:\nfor <initialization>; <condition>; <post-condition> {\n\t<loopBody>\n}\n*/\n\nfunc main() {\n\tfmt.Println(\"Hello world\")\n}\n"
+        }
+    ]
+}

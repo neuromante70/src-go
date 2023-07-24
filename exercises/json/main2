@@ -1,0 +1,144 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	// "strings"
+	// "io/ioutil"
+)
+
+var prt = fmt.Println
+
+/*
+1. Create a MathRequest struct - this will have two integers and an operation string - this is how we will model all the add/mult/sub/divide requests that come into the calculator.
+So an add function call will create a math request where the two ints are the two inputs and the operation is "add"
+*/
+
+type MathRequest struct {
+	num1     int
+	num2     int
+	operator string
+}
+
+/*
+2. In the CalculatorA struct create a slice of math requests named history - this is where we will append all math requests that are created in the different functions - so this will be our list of history
+*/
+
+type Calculator struct {
+	History []MathRequest
+}
+
+var MyCalc Calculator
+
+func (c Calculator) Add(num1 int, num2 int) int {
+	op := MathRequest{num1, num2, "add"}
+	MyCalc.History = append(MyCalc.History, op)
+	return num1 + num2
+}
+
+func (c Calculator) Sub(num1 int, num2 int) int {
+	op := MathRequest{num1, num2, "sub"}
+	MyCalc.History = append(MyCalc.History, op)
+	return num1 - num2
+}
+
+func (c Calculator) Molt(num1 int, num2 int) int {
+	op := MathRequest{num1, num2, "molt"}
+	MyCalc.History = append(MyCalc.History, op)
+	return num1 * num2
+}
+
+func (c Calculator) Divide(num1 int, num2 int) int {
+	if num2 == 0 {
+		prt("impossible to divide by zero")
+		return 0
+	} else {
+		op := MathRequest{num1, num2, "div"}
+		MyCalc.History = append(MyCalc.History, op)
+		return num1 / num2
+	}
+}
+
+func (c Calculator) PrintHistory() (history []string) {
+	// for i := 0; i < len(MyCalc.History); i++ {
+	//  history[i] = fmt.Sprintf("%+v", MyCalc.History[i])
+	//  prt(MyCalc.History[i])
+	//  prt(history[i])
+	// }
+	for _, v := range MyCalc.History {
+		history = append(history, fmt.Sprintf("%+v", v))
+	}
+	// history = fmt.Sprintf("%+v", MyCalc.History)
+	// (history []string)
+	// calc.MathRequest
+	return history
+	// prt(len(MyCalc.History))
+	// prt(MyCalc.History)
+	// fmt.Printf("%#v %T", MyCalc.History, MyCalc.History)
+}
+
+// func (c Calculator) PrinToFile() {
+// 	ph := MyCalc.PrintHistory()
+// 	dec := json.NewDecoder(ph)
+// 	dec.decode(&MyCalc.History)
+// 	_ = ioutil.WriteFile("calcHistory.json", file, 0644)
+// }
+
+func main() {
+	// 	opCalc := calc.Calculator{}
+
+	prt("calculation with Calculator")
+	prt(MyCalc.Add(5, 3))     // 8
+	prt(MyCalc.Sub(5, 9))     // -4
+	prt(MyCalc.Molt(22, 33))  // 726
+	prt(MyCalc.Divide(4, 0))  // impossible to divide by zero
+	prt(MyCalc.Divide(12, 6)) // 2
+	prt()
+	// opCalc.PrintToFile()
+	//  _ = opCalc.EncodeHistory()()
+	calcHistory := MyCalc.PrintHistory()
+	prt(calcHistory)
+
+	// jsonHistory := make(map[string]interface{})
+	// enc := json.Unmarshal([]byte(calcHistory), &jsonHistory)
+	// enc := json.NewEncoder(jsonHistory)
+	// enc.Encode(calcHistory)
+
+	/* IT WORKS!!!
+	jsonArray := make([]json.RawMessage, len(calcHistory))
+
+	for i := range calcHistory {
+		jsonArray[i] = json.RawMessage(calcHistory[i])
+	}
+	*/
+
+	// if err := json.NewEncoder(os.Stdout).Encode(jsonArray); err != nil {
+	// 	panic(err)
+	// }
+
+	// jsonDataReader := strings.NewReader(calcHistory)
+	// decoder := json.NewDecoder(jsonDataReader)
+	// var profile map[string]interface{}
+	// err := decoder.Decode(&profile)
+
+	// var data []string
+	// dec := json.NewDecoder(fp)
+	// dec.Decode(&calcHistory)
+
+	j, err := json.Marshal(calcHistory)
+	if err != nil {
+		fmt.Printf("Error: %s", err.Error())
+	} else {
+		prt(string(j))
+	}
+	// prt()
+	// prt(dec)
+
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// for key, value := range jsonHistory {
+	// 	fmt.Println("index : ", key, " value : ", value)
+	// }
+
+}

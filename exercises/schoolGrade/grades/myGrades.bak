@@ -1,0 +1,26 @@
+package grades
+
+import "fmt"
+
+var prt = fmt.Println
+
+func gradesList() func(int) string {
+	innerGrades := map[int]string{
+		0: "Failure",
+		1: "Low Failure",
+		2: "Low Pass, but certifying",
+		3: "Satisfactory",
+		4: "Good",
+		5: "Superior (Honor)",
+		6: "Outstanding (High Honor)",
+	}
+	return func(key int) string {
+		return innerGrades[key]
+	}
+}
+
+var useGradeList = gradesList()
+
+func main() {
+	prt(useGradeList)
+}

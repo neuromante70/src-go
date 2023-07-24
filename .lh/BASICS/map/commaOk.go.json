@@ -1,0 +1,126 @@
+{
+    "sourceFile": "BASICS/map/commaOk.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 27,
+            "patches": [
+                {
+                    "date": 1687459988130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1687460001384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n package main\n \n-import\n\\ No newline at end of file\n+import \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687460008423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,6 @@\n package main\n \n-import \n\\ No newline at end of file\n+import (\n+\t\"fmt\"\n+)\n+\n"
+                },
+                {
+                    "date": 1687460016606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,4 +3,5 @@\n import (\n \t\"fmt\"\n )\n \n+m := map\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687460023168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,5 @@\n import (\n \t\"fmt\"\n )\n \n-m := map\n\\ No newline at end of file\n+m := map[string]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687460028343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,7 @@\n import (\n \t\"fmt\"\n )\n \n-m := map[string]\n\\ No newline at end of file\n+m := map[string]int{\n+\t\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687460034326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n \t\"fmt\"\n )\n \n m := map[string]int{\n-\t\n+\t\"hello\":\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687460041883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,7 @@\n \t\"fmt\"\n )\n \n m := map[string]int{\n-\t\"hello\":\n+\t\"hello\": 5,\n+\t\"world\"\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687460049808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,8 @@\n )\n \n m := map[string]int{\n \t\"hello\": 5,\n-\t\"world\"\n-}\n\\ No newline at end of file\n+\t\"world\": 0,\n+}\n+\n+v, ok\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687460057459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,5 @@\n \t\"hello\": 5,\n \t\"world\": 0,\n }\n \n-v, ok\n\\ No newline at end of file\n+v, ok := m[\"hello\"]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687460062950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,6 @@\n \t\"hello\": 5,\n \t\"world\": 0,\n }\n \n-v, ok := m[\"hello\"]\n\\ No newline at end of file\n+v, ok := m[\"hello\"]\n+fmt.Println()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687460068034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,6 @@\n \t\"world\": 0,\n }\n \n v, ok := m[\"hello\"]\n-fmt.Println()\n\\ No newline at end of file\n+fmt.Println(v, ok)\n+\n"
+                },
+                {
+                    "date": 1687460074010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,4 +11,5 @@\n \n v, ok := m[\"hello\"]\n fmt.Println(v, ok)\n \n+v, ok = m\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687460079279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,5 @@\n \n v, ok := m[\"hello\"]\n fmt.Println(v, ok)\n \n-v, ok = m\n\\ No newline at end of file\n+v, ok = m[\"world\"]\n"
+                },
+                {
+                    "date": 1687460084593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,4 +12,6 @@\n v, ok := m[\"hello\"]\n fmt.Println(v, ok)\n \n v, ok = m[\"world\"]\n+fmt.Println(v, ok)\n+\n"
+                },
+                {
+                    "date": 1687460091035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,4 +14,6 @@\n \n v, ok = m[\"world\"]\n fmt.Println(v, ok)\n \n+v, ok = m[\"world\"]\n+fmt.Println(v, ok)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687460136724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n import (\n \t\"fmt\"\n )\n-\n+func main()\n m := map[string]int{\n \t\"hello\": 5,\n \t\"world\": 0,\n }\n@@ -14,6 +14,6 @@\n \n v, ok = m[\"world\"]\n fmt.Println(v, ok)\n \n-v, ok = m[\"world\"]\n+v, ok = m[\"goodbye\"]\n fmt.Println(v, ok)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687460143425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n import (\n \t\"fmt\"\n )\n-func main()\n+func main() {\n m := map[string]int{\n \t\"hello\": 5,\n \t\"world\": 0,\n }\n"
+                },
+                {
+                    "date": 1687460185477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import (\n \t\"fmt\"\n )\n func main() {\n+\t\n m := map[string]int{\n \t\"hello\": 5,\n \t\"world\": 0,\n }\n@@ -15,5 +16,6 @@\n v, ok = m[\"world\"]\n fmt.Println(v, ok)\n \n v, ok = m[\"goodbye\"]\n-fmt.Println(v, ok)\n\\ No newline at end of file\n+fmt.Println(v, ok)\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687460257015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import (\n \t\"fmt\"\n )\n func main() {\n-\t\n+\n m := map[string]int{\n \t\"hello\": 5,\n \t\"world\": 0,\n }\n"
+                },
+                {
+                    "date": 1687460263203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,8 @@\n \t\"fmt\"\n )\n func main() {\n \n-m := map[string]int{\n-\t\"hello\": 5,\n-\t\"world\": 0,\n-}\n \n v, ok := m[\"hello\"]\n fmt.Println(v, ok)\n \n"
+                },
+                {
+                    "date": 1687460293810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,12 @@\n \t\"fmt\"\n )\n func main() {\n \n+/* m := map[string]int{\n+\t\"hello\": 5,\n+\t\"world\": 0,\n+} */\n \n v, ok := m[\"hello\"]\n fmt.Println(v, ok)\n \n"
+                },
+                {
+                    "date": 1687460742284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n \t\"hello\": 5,\n \t\"world\": 0,\n } */\n \n+\n v, ok := m[\"hello\"]\n fmt.Println(v, ok)\n \n v, ok = m[\"world\"]\n"
+                },
+                {
+                    "date": 1687460969926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n \t\"hello\": 5,\n \t\"world\": 0,\n } */\n \n+m ;\n \n v, ok := m[\"hello\"]\n fmt.Println(v, ok)\n \n"
+                },
+                {
+                    "date": 1687460976618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \t\"hello\": 5,\n \t\"world\": 0,\n } */\n \n-m ;\n+m := map[string]\n \n v, ok := m[\"hello\"]\n fmt.Println(v, ok)\n \n"
+                },
+                {
+                    "date": 1687460985381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \t\"hello\": 5,\n \t\"world\": 0,\n } */\n \n-m := map[string]\n+m := map[string]int{hello}\n \n v, ok := m[\"hello\"]\n fmt.Println(v, ok)\n \n"
+                },
+                {
+                    "date": 1687460992443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \t\"hello\": 5,\n \t\"world\": 0,\n } */\n \n-m := map[string]int{hello}\n+m := map[string]int{\"hello\":}\n \n v, ok := m[\"hello\"]\n fmt.Println(v, ok)\n \n"
+                },
+                {
+                    "date": 1687460999950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \t\"hello\": 5,\n \t\"world\": 0,\n } */\n \n-m := map[string]int{\"hello\":}\n+m := map[string]int{\"hello\": 5, \"world\"}\n \n v, ok := m[\"hello\"]\n fmt.Println(v, ok)\n \n"
+                }
+            ],
+            "date": 1687459988130,
+            "name": "Commit-0",
+            "content": "package main\n\nimport"
+        }
+    ]
+}

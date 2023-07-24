@@ -1,0 +1,166 @@
+{
+    "sourceFile": "08.02/main.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 37,
+            "patches": [
+                {
+                    "date": 1680904633443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1680904663910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,10 @@\n \tAuthor string\n \tCopies int\n }\n \n+\n+\n func foo() {\n \tfmt.Println(\"test with \")\n }\n \n"
+                },
+                {
+                    "date": 1680904692242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,19 @@\n \tAuthor string\n \tCopies int\n }\n \n+func GetBook(catalog map[int]Book, ID int) Book {\n+\treturn catalog[ID]\n+\t}\n \n-\n func foo() {\n \tfmt.Println(\"test with \")\n }\n \n func main() {\n-\tfoo()\n+\tcatalog := map[int]bookstore.Book{\n+\t\t1: {ID: 1, Title: \"For the Love of Go\"},\n+\t\t2: {ID: 2, Title: \"The Power of Go: Tools\"},\n+\t\t}\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1680904720616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,14 +11,11 @@\n func GetBook(catalog map[int]Book, ID int) Book {\n \treturn catalog[ID]\n \t}\n \n-func foo() {\n-\tfmt.Println(\"test with \")\n-}\n \n func main() {\n-\tcatalog := map[int]bookstore.Book{\n+\tcatalog := map[int]Book{\n \t\t1: {ID: 1, Title: \"For the Love of Go\"},\n \t\t2: {ID: 2, Title: \"The Power of Go: Tools\"},\n \t\t}\n \tfmt.Println(\"vim-go\")\n"
+                },
+                {
+                    "date": 1680904744594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n import \"fmt\"\n \n type Book struct {\n+\tID     int\n \tTitle  string\n \tAuthor string\n \tCopies int\n }\n"
+                },
+                {
+                    "date": 1680904768628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,14 +10,13 @@\n }\n \n func GetBook(catalog map[int]Book, ID int) Book {\n \treturn catalog[ID]\n-\t}\n+}\n \n-\n func main() {\n \tcatalog := map[int]Book{\n \t\t1: {ID: 1, Title: \"For the Love of Go\"},\n \t\t2: {ID: 2, Title: \"The Power of Go: Tools\"},\n-\t\t}\n+\t}\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1680904790079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,6 +17,7 @@\n \tcatalog := map[int]Book{\n \t\t1: {ID: 1, Title: \"For the Love of Go\"},\n \t\t2: {ID: 2, Title: \"The Power of Go: Tools\"},\n \t}\n+\t\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1680904795179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n \tcatalog := map[int]Book{\n \t\t1: {ID: 1, Title: \"For the Love of Go\"},\n \t\t2: {ID: 2, Title: \"The Power of Go: Tools\"},\n \t}\n-\t\n+\tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1680904802765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,6 +18,7 @@\n \t\t1: {ID: 1, Title: \"For the Love of Go\"},\n \t\t2: {ID: 2, Title: \"The Power of Go: Tools\"},\n \t}\n \tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n-\tfmt.Println(\"vim-go\")\n+\n+\tfmt.Println(catalog)\n }\n"
+                },
+                {
+                    "date": 1680904834087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,6 @@\n \t\t2: {ID: 2, Title: \"The Power of Go: Tools\"},\n \t}\n \tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n \n-\tfmt.Println(catalog)\n+\tfmt.Println(catalog[])\n }\n"
+                },
+                {
+                    "date": 1680904841293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,6 @@\n \t\t2: {ID: 2, Title: \"The Power of Go: Tools\"},\n \t}\n \tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n \n-\tfmt.Println(catalog[])\n+\tfmt.Println(catalog[0].Title)\n }\n"
+                },
+                {
+                    "date": 1680904847804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,6 @@\n \t\t2: {ID: 2, Title: \"The Power of Go: Tools\"},\n \t}\n \tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n \n-\tfmt.Println(catalog[0].Title)\n+\tfmt.Println(catalog[1].Title)\n }\n"
+                },
+                {
+                    "date": 1680904853956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,6 @@\n \t\t2: {ID: 2, Title: \"The Power of Go: Tools\"},\n \t}\n \tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n \n-\tfmt.Println(catalog[1].Title)\n+\tfmt.Println(catalog[2].Title)\n }\n"
+                },
+                {
+                    "date": 1680904859079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,6 @@\n \t\t2: {ID: 2, Title: \"The Power of Go: Tools\"},\n \t}\n \tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n \n-\tfmt.Println(catalog[2].Title)\n+\tfmt.Println(catalog[3].Title)\n }\n"
+                },
+                {
+                    "date": 1680904929505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,5 +20,6 @@\n \t}\n \tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n \n \tfmt.Println(catalog[3].Title)\n+\t\n }\n"
+                },
+                {
+                    "date": 1680904935623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,6 @@\n \t}\n \tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n \n \tfmt.Println(catalog[3].Title)\n-\t\n+\tb := catalog\n }\n"
+                },
+                {
+                    "date": 1680904941133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,7 @@\n \t}\n \tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n \n \tfmt.Println(catalog[3].Title)\n-\tb := catalog\n+\tb := catalog[1]\n+\tb.Title\n }\n"
+                },
+                {
+                    "date": 1680904947772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,6 @@\n \tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n \n \tfmt.Println(catalog[3].Title)\n \tb := catalog[1]\n-\tb.Title\n+\tb.Title = \"For the \"\n }\n"
+                },
+                {
+                    "date": 1680904953226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,6 @@\n \tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n \n \tfmt.Println(catalog[3].Title)\n \tb := catalog[1]\n-\tb.Title = \"For the \"\n+\tb.Title = \"For the Love of Go\"\n }\n"
+                },
+                {
+                    "date": 1680904963193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,6 @@\n \tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n \n \tfmt.Println(catalog[3].Title)\n \tb := catalog[1]\n-\tb.Title = \"For the Love of Go\"\n+\tb.Title = \"For the Love of Go esticazzi!\"\n }\n"
+                },
+                {
+                    "date": 1680904972266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,6 @@\n \n \tfmt.Println(catalog[3].Title)\n \tb := catalog[1]\n \tb.Title = \"For the Love of Go esticazzi!\"\n+\tcatalog[1] = b\n }\n"
+                },
+                {
+                    "date": 1680904981018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,6 @@\n \tfmt.Println(catalog[3].Title)\n \tb := catalog[1]\n \tb.Title = \"For the Love of Go esticazzi!\"\n \tcatalog[1] = b\n+\tfmt.Println(\n }\n"
+                },
+                {
+                    "date": 1680905000422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,10 @@\n \t}\n \tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n \n \tfmt.Println(catalog[3].Title)\n+\t\n \tb := catalog[1]\n \tb.Title = \"For the Love of Go esticazzi!\"\n \tcatalog[1] = b\n-\tfmt.Println(\n+\tfmt.Println(b)\n }\n"
+                },
+                {
+                    "date": 1680905017600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,13 +17,14 @@\n \tcatalog := map[int]Book{\n \t\t1: {ID: 1, Title: \"For the Love of Go\"},\n \t\t2: {ID: 2, Title: \"The Power of Go: Tools\"},\n \t}\n+\n \tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n+\tfmt.Println(catalog[3].Title)\n \n-\tfmt.Println(catalog[3].Title)\n-\t\n \tb := catalog[1]\n \tb.Title = \"For the Love of Go esticazzi!\"\n \tcatalog[1] = b\n+\t\n \tfmt.Println(b)\n }\n"
+                },
+                {
+                    "date": 1681328378141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,5 +26,7 @@\n \tb.Title = \"For the Love of Go esticazzi!\"\n \tcatalog[1] = b\n \t\n \tfmt.Println(b)\n+\n+\t\n }\n"
+                },
+                {
+                    "date": 1681328385900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,6 +27,6 @@\n \tcatalog[1] = b\n \t\n \tfmt.Println(b)\n \n-\t\n+\tc, ok := catalog\n }\n"
+                },
+                {
+                    "date": 1681328393551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,6 +27,7 @@\n \tcatalog[1] = b\n \t\n \tfmt.Println(b)\n \n-\tc, ok := catalog\n+\tc, ok := catalog[3]\n+\tif o\n }\n"
+                },
+                {
+                    "date": 1681328400811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,6 +28,6 @@\n \t\n \tfmt.Println(b)\n \n \tc, ok := catalog[3]\n-\tif o\n+\tif !ok\n }\n"
+                },
+                {
+                    "date": 1681328410888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,6 +28,8 @@\n \t\n \tfmt.Println(b)\n \n \tc, ok := catalog[3]\n-\tif !ok\n+\tif !ok {\n+\t\tfmt.Println\n+\t}\n }\n"
+                },
+                {
+                    "date": 1681328418863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,7 +29,7 @@\n \tfmt.Println(b)\n \n \tc, ok := catalog[3]\n \tif !ok {\n-\t\tfmt.Println\n-\t}\n+\t\tfmt.Println(ok)}\n+\t\t\n }\n"
+                },
+                {
+                    "date": 1681328424917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,7 @@\n \n \tc, ok := catalog[3]\n \tif !ok {\n \t\tfmt.Println(ok)}\n-\t\t\n+} else {\n+\t\n }\n"
+                },
+                {
+                    "date": 1681328431177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,6 +31,6 @@\n \tc, ok := catalog[3]\n \tif !ok {\n \t\tfmt.Println(ok)}\n } else {\n-\t\n+\tfmt.Println\n }\n"
+                },
+                {
+                    "date": 1681328436868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,6 +31,6 @@\n \tc, ok := catalog[3]\n \tif !ok {\n \t\tfmt.Println(ok)}\n } else {\n-\tfmt.Println\n+\tfmt.Println(catalog)\n }\n"
+                },
+                {
+                    "date": 1681328448830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,36 @@\n+package main\n+\n+import \"fmt\"\n+\n+type Book struct {\n+\tID     int\n+\tTitle  string\n+\tAuthor string\n+\tCopies int\n+}\n+\n+func GetBook(catalog map[int]Book, ID int) Book {\n+\treturn catalog[ID]\n+}\n+\n+func main() {\n+\tcatalog := map[int]Book{\n+\t\t1: {ID: 1, Title: \"For the Love of Go\"},\n+\t\t2: {ID: 2, Title: \"The Power of Go: Tools\"},\n+\t}\n+\n+\tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n+\tfmt.Println(catalog[3].Title)\n+\n+\tb := catalog[1]\n+\tb.Title = \"For the Love of Go esticazzi!\"\n+\tcatalog[1] = b\n+\t\n+\tfmt.Println(b)\n+\n+\tc, ok := catalog[3]\n+\tif !ok {\n+\t\tfmt.Println(ok)}\n+} else {\n+\tfmt.Println(catalog[3])\n+}\n"
+                },
+                {
+                    "date": 1681328471198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,44 +29,8 @@\n \tfmt.Println(b)\n \n \tc, ok := catalog[3]\n \tif !ok {\n-\t\tfmt.Println(ok)}\n+\t\tfmt.Println(ok)\n } else {\n \tfmt.Println(catalog[3])\n }\n-package main\n-\n-import \"fmt\"\n-\n-type Book struct {\n-\tID     int\n-\tTitle  string\n-\tAuthor string\n-\tCopies int\n-}\n-\n-func GetBook(catalog map[int]Book, ID int) Book {\n-\treturn catalog[ID]\n-}\n-\n-func main() {\n-\tcatalog := map[int]Book{\n-\t\t1: {ID: 1, Title: \"For the Love of Go\"},\n-\t\t2: {ID: 2, Title: \"The Power of Go: Tools\"},\n-\t}\n-\n-\tcatalog[3] = Book{ID: 3, Title: \"Spark Joy\"}\n-\tfmt.Println(catalog[3].Title)\n-\n-\tb := catalog[1]\n-\tb.Title = \"For the Love of Go esticazzi!\"\n-\tcatalog[1] = b\n-\t\n-\tfmt.Println(b)\n-\n-\tc, ok := catalog[3]\n-\tif !ok {\n-\t\tfmt.Println(ok)}\n-} else {\n-\tfmt.Println(catalog)\n-}\n"
+                },
+                {
+                    "date": 1681328495034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,7 +30,8 @@\n \n \tc, ok := catalog[3]\n \tif !ok {\n \t\tfmt.Println(ok)\n-} else {\n+\t\t\t} else {\n \tfmt.Println(catalog[3])\n }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1681328510086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,7 +31,7 @@\n \tc, ok := catalog[3]\n \tif !ok {\n \t\tfmt.Println(ok)\n \t\t\t} else {\n-\tfmt.Println(catalog[3])\n+\tfmt.Println(c)\n }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1681328531037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n \tcatalog[1] = b\n \t\n \tfmt.Println(b)\n \n-\tc, ok := catalog[3]\n+\tc, ok := catalog[4]\n \tif !ok {\n \t\tfmt.Println(ok)\n \t\t\t} else {\n \tfmt.Println(c)\n"
+                }
+            ],
+            "date": 1680904633443,
+            "name": "Commit-0",
+            "content": "package main\n\nimport \"fmt\"\n\ntype Book struct {\n\tTitle  string\n\tAuthor string\n\tCopies int\n}\n\nfunc foo() {\n\tfmt.Println(\"test with \")\n}\n\nfunc main() {\n\tfoo()\n\tfmt.Println(\"vim-go\")\n}\n"
+        }
+    ]
+}

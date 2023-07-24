@@ -1,0 +1,106 @@
+{
+    "sourceFile": "08.02/mytypes/my-types_test.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 22,
+            "patches": [
+                {
+                    "date": 1681595065842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1681595072980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n package mytypes_test\n+func\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1681595083592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,8 @@\n package mytypes_test\n-func\n\\ No newline at end of file\n+\n+import (\n+\t\"mytypes\"\n+\t\"testing\"\n+)\n+\n+func TestTwice\n"
+                },
+                {
+                    "date": 1681595088792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,7 @@\n \t\"mytypes\"\n \t\"testing\"\n )\n \n-func TestTwice\n+func TestTwice() {\n+\t\n+}\n"
+                },
+                {
+                    "date": 1681595094351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n \t\"mytypes\"\n \t\"testing\"\n )\n \n-func TestTwice() {\n-\t\n+func TestTwice(t *) {\n+\n }\n"
+                },
+                {
+                    "date": 1681595100718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n \t\"mytypes\"\n \t\"testing\"\n )\n \n-func TestTwice(t *) {\n+func TestTwice(t *testing.T) {\n \n }\n"
+                },
+                {
+                    "date": 1681595106358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,7 @@\n \t\"testing\"\n )\n \n func TestTwice(t *testing.T) {\n-\n+\tt.Parallel()\n+\t\n }\n"
+                },
+                {
+                    "date": 1681595112312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,6 @@\n )\n \n func TestTwice(t *testing.T) {\n \tt.Parallel()\n-\t\n+\tinput :=\n }\n"
+                },
+                {
+                    "date": 1681595118125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,11 @@\n \n import (\n \t\"mytypes\"\n \t\"testing\"\n+\t\"the_go_workshop/Go_books/For_the_Love_of_Go/for_the_love_of_go-code/08.02/mytypes\"\n )\n \n func TestTwice(t *testing.T) {\n \tt.Parallel()\n-\tinput :=\n+\tinput := mytypes.MyInt\n }\n"
+                },
+                {
+                    "date": 1681595127892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,7 @@\n )\n \n func TestTwice(t *testing.T) {\n \tt.Parallel()\n-\tinput := mytypes.MyInt\n+\tinput := mytypes.MyInt(9)\n+\twant\n }\n"
+                },
+                {
+                    "date": 1681595133671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n \n func TestTwice(t *testing.T) {\n \tt.Parallel()\n \tinput := mytypes.MyInt(9)\n-\twant\n+\twant := mytypes.MyInt\n }\n"
+                },
+                {
+                    "date": 1681595138813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n \n func TestTwice(t *testing.T) {\n \tt.Parallel()\n \tinput := mytypes.MyInt(9)\n-\twant := mytypes.MyInt\n+\twant := mytypes.MyInt(18)\n }\n"
+                },
+                {
+                    "date": 1681595145488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,7 @@\n \n func TestTwice(t *testing.T) {\n \tt.Parallel()\n \tinput := mytypes.MyInt(9)\n-\twant := mytypes.MyInt(18)\n+\twant := mytypes.MyInt(18\n+\tgot := \n }\n"
+                },
+                {
+                    "date": 1681595151980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n func TestTwice(t *testing.T) {\n \tt.Parallel()\n \tinput := mytypes.MyInt(9)\n \twant := mytypes.MyInt(18\n-\tgot := \n+\tgot := input.Twice\n }\n"
+                },
+                {
+                    "date": 1681595159567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,7 @@\n func TestTwice(t *testing.T) {\n \tt.Parallel()\n \tinput := mytypes.MyInt(9)\n \twant := mytypes.MyInt(18\n-\tgot := input.Twice\n+\tgot := input.Twice()\n+\tif want !\n }\n"
+                },
+                {
+                    "date": 1681595188325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,6 +10,8 @@\n \tt.Parallel()\n \tinput := mytypes.MyInt(9)\n \twant := mytypes.MyInt(18\n \tgot := input.Twice()\n-\tif want !\n+\tif want != got {\n+\t\tt.Errorf()\n+\t}\n }\n"
+                },
+                {
+                    "date": 1681595200206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n \tinput := mytypes.MyInt(9)\n \twant := mytypes.MyInt(18\n \tgot := input.Twice()\n \tif want != got {\n-\t\tt.Errorf()\n+\t\tt.Errorf(\"want %d, got %d\", want, got)\n \t}\n }\n"
+                },
+                {
+                    "date": 1681595206456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n \tinput := mytypes.MyInt(9)\n \twant := mytypes.MyInt(18\n \tgot := input.Twice()\n \tif want != got {\n-\t\tt.Errorf(\"want %d, got %d\", want, got)\n+\t\tt.Errorf(\"wwant %d, got %d\", want, got)\n \t}\n }\n"
+                },
+                {
+                    "date": 1681595213887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n \tinput := mytypes.MyInt(9)\n \twant := mytypes.MyInt(18\n \tgot := input.Twice()\n \tif want != got {\n-\t\tt.Errorf(\"wwant %d, got %d\", want, got)\n+\t\tt.Errorf(\"twice %d: want %d, got %d\", want, got)\n \t}\n }\n"
+                },
+                {
+                    "date": 1681595224346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n \tinput := mytypes.MyInt(9)\n \twant := mytypes.MyInt(18\n \tgot := input.Twice()\n \tif want != got {\n-\t\tt.Errorf(\"twice %d: want %d, got %d\", want, got)\n+\t\tt.Errorf(\"twice %d: want %d, got %d\", input, want, got)\n \t}\n }\n"
+                },
+                {
+                    "date": 1681595245147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n import (\n \t\"mytypes\"\n \t\"testing\"\n-\t\"the_go_workshop/Go_books/For_the_Love_of_Go/for_the_love_of_go-code/08.02/mytypes\"\n+\t??\"the_go_workshop/Go_books/For_the_Love_of_Go/for_the_love_of_go-code/08.02/mytypes\"\n )\n \n func TestTwice(t *testing.T) {\n \tt.Parallel()\n"
+                },
+                {
+                    "date": 1681595260216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,15 @@\n \n import (\n \t\"mytypes\"\n \t\"testing\"\n-\t??\"the_go_workshop/Go_books/For_the_Love_of_Go/for_the_love_of_go-code/08.02/mytypes\"\n+\t//\"the_go_workshop/Go_books/For_the_Love_of_Go/for_the_love_of_go-code/08.02/mytypes\"\n )\n \n func TestTwice(t *testing.T) {\n \tt.Parallel()\n \tinput := mytypes.MyInt(9)\n-\twant := mytypes.MyInt(18\n+\twant := mytypes.MyInt(18)\n \tgot := input.Twice()\n \tif want != got {\n \t\tt.Errorf(\"twice %d: want %d, got %d\", input, want, got)\n \t}\n"
+                },
+                {
+                    "date": 1681595284059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,8 @@\n \n import (\n \t\"mytypes\"\n \t\"testing\"\n-\t//\"the_go_workshop/Go_books/For_the_Love_of_Go/for_the_love_of_go-code/08.02/mytypes\"\n )\n \n func TestTwice(t *testing.T) {\n \tt.Parallel()\n"
+                }
+            ],
+            "date": 1681595065842,
+            "name": "Commit-0",
+            "content": "package mytypes_test\n"
+        }
+    ]
+}

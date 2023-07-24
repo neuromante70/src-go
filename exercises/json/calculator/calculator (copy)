@@ -1,0 +1,129 @@
+package calc
+
+import (
+	"encoding/json"
+	"fmt"
+	"os"
+)
+
+var prt = fmt.Println
+
+/*
+1. Create a MathRequest struct - this will have two integers and an operation string - this is how we will model all the add/mult/sub/divide requests that come into the calculator.
+So an add function call will create a math request where the two ints are the two inputs and the operation is "add"
+*/
+
+type MathRequest struct {
+	Num1     int
+	Num2     int
+	Operator string
+}
+
+/*
+2. In the CalculatorA struct create a slice of math requests named history - this is where we will append all math requests that are created in the different functions - so this will be our list of history
+*/
+
+type Calculator struct {
+	History []MathRequest
+}
+
+var MyCalc Calculator
+
+func (c Calculator) Add(Num1 int, Num2 int) int {
+	op := MathRequest{Num1, Num2, "add"}
+	MyCalc.History = append(MyCalc.History, op)
+	return Num1 + Num2
+}
+
+func (c Calculator) Sub(Num1 int, Num2 int) int {
+	op := MathRequest{Num1, Num2, "sub"}
+	MyCalc.History = append(MyCalc.History, op)
+	return Num1 - Num2
+}
+
+func (c Calculator) Molt(Num1 int, Num2 int) int {
+	op := MathRequest{Num1, Num2, "molt"}
+	MyCalc.History = append(MyCalc.History, op)
+	return Num1 * Num2
+}
+
+func (c Calculator) Divide(Num1 int, Num2 int) int {
+	if Num2 == 0 {
+		prt("impossible to divide by zero")
+		return 0
+	} else {
+		op := MathRequest{Num1, Num2, "div"}
+		MyCalc.History = append(MyCalc.History, op)
+		return Num1 / Num2
+	}
+}
+
+func (c Calculator) PrintHistory() (history []string) {
+	for _, v := range MyCalc.History {
+		history = append(history, fmt.Sprintf("%+v", v))
+	}
+	return history
+}
+
+/*
+3. create an encodeHistory function this will loop over all the mathRequests in the history slice inside the calculatorA struct and convert all of them into json strings and return a list of strings. You can access the history inside the struct if the function is a receiver using the dot syntax. So something like this:
+func (c calculator) encodeHistory() []string {
+    for _, mr := range c.history {
+    }
+}
+*/
+
+func (c Calculator) EncodeHistory() []byte {
+	j, err := json.Marshal(c.PrintHistory())
+	if err != nil {
+		fmt.Printf("Error: %s", err.Error())
+		return nil
+	}
+	// prt("this is returned from json converter:", string(j))
+	return j
+}
+
+func (c Calculator) SaveToFile() {
+	historyFile := c.EncodeHistory()
+	// prt("this is historyFile:", historyFile)
+	f, err := os.Create("test.json")
+	if err != nil {
+		prt(err)
+		return
+	}
+	n2, err := f.Write(historyFile) // I should check if the file already exists but...
+	if err != nil {
+		prt(err)
+		f.Close()
+		return
+	}
+	prt(n2, "bytes written successfully")
+	err = f.Close()
+	if err != nil {
+		prt(err)
+	}
+}
+
+/*
+4. create a decodeHistory function that will take in a list of json strings as input and convert them into mathRequests and save them as the history inside the calculator slice . At the start of this function clear out whatever was in the slice previously
+
+json.Unmarshal is how you convert a []byte json into a struct passed in as a pointer
+*/
+
+func (c Calculator) DecodeHistory() {
+
+	h, err := os.ReadFile("test2.json") // just pass the file name - b is the slice of bytes of the files content
+	if err != nil {
+		prt("this is file read error:", err)
+	}
+
+	prt("this is Unmarshal text:", string(h))
+
+	// History2 := []byte(`["{Num1:5 Num2:3 Operator:add}","{Num1:5 Num2:9 Operator:sub}","{Num1:22 Num2:33 Operator:molt}","{Num1:12 Num2:6 Operator:div}"]`)
+	// prt(string(History2))
+	// var data []interface{}
+	// err := json.Unmarshal(History2, &data)
+	// prt("this is Unmarshal text:", data)
+	// prt(err)
+
+}

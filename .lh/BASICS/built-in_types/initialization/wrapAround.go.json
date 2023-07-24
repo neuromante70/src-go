@@ -1,0 +1,238 @@
+{
+    "sourceFile": "BASICS/built-in_types/initialization/wrapAround.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 55,
+            "patches": [
+                {
+                    "date": 1686349896598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686349903018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n package main\n \n-import \"fmt\"\n import (\n \t\"fmt\"\n \t\"math\"\n )\n+\n func main() {\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1686349943166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,8 @@\n import (\n \t\"fmt\"\n \t\"math\"\n )\n-\n+  \n func main() {\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1686349952598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,8 @@\n import (\n \t\"fmt\"\n \t\"math\"\n )\n-  \n+\n func main() {\n-\tfmt.Println(\"vim-go\")\n+\tvar \n }\n"
+                },
+                {
+                    "date": 1686349957780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,6 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar \n+\tvar max\n }\n"
+                },
+                {
+                    "date": 1686349964757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,6 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar max\n+\tvar MaxUint8 uint\n }\n"
+                },
+                {
+                    "date": 1686349973838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,6 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar MaxUint8 uint\n+\tvar MaxUint8 uint8 = math.\n }\n"
+                },
+                {
+                    "date": 1686349983917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,6 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar MaxUint8 uint8 = math.\n+\tvar MaxUint8 uint8 = math.MaxUi\n }\n"
+                },
+                {
+                    "date": 1686349996383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,7 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar MaxUint8 uint8 = math.MaxUi\n+\tvar MaxUint8 uint8 = math.MaxUint8\t\n+\tfmt.Println()\n }\n"
+                },
+                {
+                    "date": 1686350001482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,6 @@\n )\n \n func main() {\n \tvar MaxUint8 uint8 = math.MaxUint8\t\n-\tfmt.Println()\n+\tfmt.Println(\"\", )\n }\n"
+                },
+                {
+                    "date": 1686350009261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar MaxUint8 uint8 = math.MaxUint8\t\n-\tfmt.Println(\"\", )\n+\tvar axUint8 uint8 = math.MaxUint8\t\n+\tfmt.Println(\"\", m)\n }\n"
+                },
+                {
+                    "date": 1686350016645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar axUint8 uint8 = math.MaxUint8\t\n-\tfmt.Println(\"\", m)\n+\tvar maxUint8 uint8 = math.MaxUint8\t\n+\tfmt.Println(\"\", maxUint8\n }\n"
+                },
+                {
+                    "date": 1686350049832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar maxUint8 uint8 = math.MaxUint8\t\n-\tfmt.Println(\"\", maxUint8\n+\tvar maxUint8 uint8 = math.MaxUint8\t//ui\n+\tfmt.Println(\"\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350055789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar maxUint8 uint8 = math.MaxUint8\t//ui\n+\tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte\n \tfmt.Println(\"\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350062159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte\n+\tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte has \n \tfmt.Println(\"\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350071997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte has \n+\tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255\n \tfmt.Println(\"\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350081567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255\n+\tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 ()\n \tfmt.Println(\"\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350112516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 ()\n-\tfmt.Println(\"\", maxUint8)\n+\tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8)\n+\tfmt.Println(\"value\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350127288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8)\n+\tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8 constant from math)\n \tfmt.Println(\"value\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350152806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,8 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8 constant from math)\n+\tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n \tfmt.Println(\"value\", maxUint8)\n+\t\n }\n"
+                },
+                {
+                    "date": 1686350167109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n \n func main() {\n \tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n \tfmt.Println(\"value\", maxUint8)\n-\t\n+\tvar maxOtherUint8 uint8\n }\n"
+                },
+                {
+                    "date": 1686350175477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,7 @@\n \n func main() {\n \tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n \tfmt.Println(\"value\", maxUint8)\n-\tvar maxOtherUint8 uint8\n+\tvar maxOtherUint8 uint8 = 256\n+\tfmt.Println(\"value\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350202682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n \n func main() {\n \tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n \tfmt.Println(\"value\", maxUint8)\n-\tvar maxOtherUint8 uint8 = 256\n-\tfmt.Println(\"value\", maxUint8)\n+\t// var maxOtherUint8 uint8 = 256\n+\t// fmt.Println(\"value\", maxOtherUint8)\n }\n"
+                },
+                {
+                    "date": 1686350214266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n \n func main() {\n \tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n \tfmt.Println(\"value\", maxUint8)\n-\t// var maxOtherUint8 uint8 = 256\n+\t// var maxOtherUint8 uint8 = 256\t//i can't do this\n \t// fmt.Println(\"value\", maxOtherUint8)\n }\n"
+                },
+                {
+                    "date": 1686350232929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n \n func main() {\n \tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n \tfmt.Println(\"value\", maxUint8)\n-\t// var maxOtherUint8 uint8 = 256\t//i can't do this\n+\t// var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t// fmt.Println(\"value\", maxOtherUint8)\n }\n"
+                },
+                {
+                    "date": 1686350238301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n \n func main() {\n \tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n \tfmt.Println(\"value\", maxUint8)\n-\t// var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n-\t// fmt.Println(\"value\", maxOtherUint8)\n+\t var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n+\t fmt.Println(\"value\", maxOtherUint8)\n }\n"
+                },
+                {
+                    "date": 1686350341784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n \n func main() {\n \tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n \tfmt.Println(\"value\", maxUint8)\n-\t var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n-\t fmt.Println(\"value\", maxOtherUint8)\n+\t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n+\t//  fmt.Println(\"value\", maxOtherUint8)\n }\n"
+                },
+                {
+                    "date": 1686350369571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,6 @@\n \tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n \tfmt.Println(\"value\", maxUint8)\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n-}\n+\n+}maxUint8\n"
+                },
+                {
+                    "date": 1686350375455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n \tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n \tfmt.Println(\"value\", maxUint8)\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n-\n-}maxUint8\n+\tmaxUint8 \n+}\n"
+                },
+                {
+                    "date": 1686350384513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,7 @@\n \tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n \tfmt.Println(\"value\", maxUint8)\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n-\tmaxUint8 \n+\tmaxUint8 += 5\n+\tfmt.Println(\"value\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350448460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,12 @@\n \t\"math\"\n )\n \n func main() {\n-\tvar maxUint8 uint8 = math.MaxUint8\t//uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n+\tvar maxUint8 uint8 = math.MaxUint8 //uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n \tfmt.Println(\"value\", maxUint8)\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value\", maxUint8)\n+\t\n }\n"
+                },
+                {
+                    "date": 1686350460552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value\", maxUint8)\n-\t\n+\tfor i := \n }\n"
+                },
+                {
+                    "date": 1686350467760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value\", maxUint8)\n-\tfor i := \n+\tfor i := 0; i \n }\n"
+                },
+                {
+                    "date": 1686350474200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value\", maxUint8)\n-\tfor i := 0; i \n+\tfor i := 0; i  25\n }\n"
+                },
+                {
+                    "date": 1686350480689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value\", maxUint8)\n-\tfor i := 0; i  25\n+\tfor i := 0; i <= 25\n }\n"
+                },
+                {
+                    "date": 1686350487153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value\", maxUint8)\n-\tfor i := 0; i <= 25\n+\tfor i := 0; i <= 256; i\n }\n"
+                },
+                {
+                    "date": 1686350493532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,8 @@\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value\", maxUint8)\n-\tfor i := 0; i <= 256; i\n+\tfor i := 0; i <= 256; i++ {\n+\t\t\n+\t}\n }\n"
+                },
+                {
+                    "date": 1686350500744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value\", maxUint8)\n+\t\n \tfor i := 0; i <= 256; i++ {\n-\t\t\n+\n \t}\n }\n"
+                },
+                {
+                    "date": 1686350507369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value\", maxUint8)\n-\t\n+\tmaxUint8 = 0\n \tfor i := 0; i <= 256; i++ {\n-\n+\t\t\n \t}\n }\n"
+                },
+                {
+                    "date": 1686350518719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n \tmaxUint8 += 5\n \tfmt.Println(\"value\", maxUint8)\n \tmaxUint8 = 0\n \tfor i := 0; i <= 256; i++ {\n-\t\t\n+\t\tmaxUint8 \n \t}\n }\n"
+                },
+                {
+                    "date": 1686350525579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,8 @@\n \tmaxUint8 += 5\n \tfmt.Println(\"value\", maxUint8)\n \tmaxUint8 = 0\n \tfor i := 0; i <= 256; i++ {\n-\t\tmaxUint8 \n+\t\tmaxUint8 += i\n \t}\n+\t\n }\n"
+                },
+                {
+                    "date": 1686350535230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,11 @@\n \tfmt.Println(\"value\", maxUint8)\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n-\tfmt.Println(\"value\", maxUint8)\n+\tfmt.Println(\"value after add\", maxUint8)\n \tmaxUint8 = 0\n \tfor i := 0; i <= 256; i++ {\n \t\tmaxUint8 += i\n \t}\n-\t\n+\tfmt.Println(\"value\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350566841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \tfmt.Println(\"value\", maxUint8)\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n-\tfmt.Println(\"value after add\", maxUint8)\n+\tfmt.Println(\"\", maxUint8)\n \tmaxUint8 = 0\n \tfor i := 0; i <= 256; i++ {\n \t\tmaxUint8 += i\n \t}\n"
+                },
+                {
+                    "date": 1686350584863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,11 @@\n \tfmt.Println(\"value\", maxUint8)\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n-\tfmt.Println(\"\", maxUint8)\n+\tfmt.Println(\"value after incrementing by 5\", maxUint8)\n \tmaxUint8 = 0\n \tfor i := 0; i <= 256; i++ {\n-\t\tmaxUint8 += i\n+\t\tmaxUint8 += uinti\n \t}\n \tfmt.Println(\"value\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350595295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n \tmaxUint8 += 5\n \tfmt.Println(\"value after incrementing by 5\", maxUint8)\n \tmaxUint8 = 0\n \tfor i := 0; i <= 256; i++ {\n-\t\tmaxUint8 += uinti\n+\t\tmaxUint8 += uint8(i)\n \t}\n-\tfmt.Println(\"value\", maxUint8)\n+\tfmt.Println(\"value after \", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350619698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value after incrementing by 5\", maxUint8)\n \tmaxUint8 = 0\n-\tfor i := 0; i <= 256; i++ {\n+\tfor i := 0; i <= 257; i++ {\n \t\tmaxUint8 += uint8(i)\n \t}\n-\tfmt.Println(\"value after \", maxUint8)\n+\tfmt.Println(\"value after for loop\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350637579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value after incrementing by 5\", maxUint8)\n \tmaxUint8 = 0\n-\tfor i := 0; i <= 257; i++ {\n+\tfor i := 0; i <= 127; i++ {\n \t\tmaxUint8 += uint8(i)\n \t}\n \tfmt.Println(\"value after for loop\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350667599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,8 @@\n \tfmt.Println(\"value after incrementing by 5\", maxUint8)\n \tmaxUint8 = 0\n \tfor i := 0; i <= 127; i++ {\n \t\tmaxUint8 += uint8(i)\n+\t\t\n \t}\n \tfmt.Println(\"value after for loop\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350675296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n \tfmt.Println(\"value after incrementing by 5\", maxUint8)\n \tmaxUint8 = 0\n \tfor i := 0; i <= 127; i++ {\n \t\tmaxUint8 += uint8(i)\n-\t\t\n+\t\tfmt.Println(maxUint8)\n \t}\n \tfmt.Println(\"value after for loop\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350702776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n \tfmt.Println(\"value after incrementing by 5\", maxUint8)\n \tmaxUint8 = 0\n \tfor i := 0; i <= 127; i++ {\n \t\tmaxUint8 += uint8(i)\n-\t\tfmt.Println(maxUint8)\n+\t\tfmt.Println(i, maxUint8)\n \t}\n \tfmt.Println(\"value after for loop\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350751967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \tmaxUint8 += 5\n \tfmt.Println(\"value after incrementing by 5\", maxUint8)\n \tmaxUint8 = 0\n \tfor i := 0; i <= 127; i++ {\n-\t\tmaxUint8 += uint8(i)\n+\t\tmaxUint8 += 1\n \t\tfmt.Println(i, maxUint8)\n \t}\n \tfmt.Println(\"value after for loop\", maxUint8)\n }\n"
+                },
+                {
+                    "date": 1686350765532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value after incrementing by 5\", maxUint8)\n \tmaxUint8 = 0\n-\tfor i := 0; i <= 127; i++ {\n+\tfor i := 0; i <= 23; i++ {\n \t\tmaxUint8 += 1\n \t\tfmt.Println(i, maxUint8)\n \t}\n \tfmt.Println(\"value after for loop\", maxUint8)\n"
+                },
+                {
+                    "date": 1686350771350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value after incrementing by 5\", maxUint8)\n \tmaxUint8 = 0\n-\tfor i := 0; i <= 23; i++ {\n+\tfor i := 0; i <= 256; i++ {\n \t\tmaxUint8 += 1\n \t\tfmt.Println(i, maxUint8)\n \t}\n \tfmt.Println(\"value after for loop\", maxUint8)\n"
+                },
+                {
+                    "date": 1686350780604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value after incrementing by 5\", maxUint8)\n \tmaxUint8 = 0\n-\tfor i := 0; i <= 256; i++ {\n+\tfor i := 0; i <= 255; i++ {\n \t\tmaxUint8 += 1\n \t\tfmt.Println(i, maxUint8)\n \t}\n \tfmt.Println(\"value after for loop\", maxUint8)\n"
+                },
+                {
+                    "date": 1686350824484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value after incrementing by 5\", maxUint8)\n-\tmaxUint8 = 0\n+\tmaxUint8 = 1\n \tfor i := 0; i <= 255; i++ {\n \t\tmaxUint8 += 1\n \t\tfmt.Println(i, maxUint8)\n \t}\n"
+                },
+                {
+                    "date": 1686350832729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n \t//  fmt.Println(\"value\", maxOtherUint8)\n \tmaxUint8 += 5\n \tfmt.Println(\"value after incrementing by 5\", maxUint8)\n-\tmaxUint8 = 1\n+\tmaxUint8 = 0\n \tfor i := 0; i <= 255; i++ {\n \t\tmaxUint8 += 1\n \t\tfmt.Println(i, maxUint8)\n \t}\n"
+                }
+            ],
+            "date": 1686349896598,
+            "name": "Commit-0",
+            "content": "package main\n\nimport \"fmt\"\nimport (\n\t\"fmt\"\n\t\"math\"\n)\nfunc main() {\n\tfmt.Println(\"vim-go\")\n}\n"
+        }
+    ]
+}

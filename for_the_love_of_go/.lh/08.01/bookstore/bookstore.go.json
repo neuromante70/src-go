@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 83,
+            "activePatchIndex": 172,
             "patches": [
                 {
                     "date": 1679780664705,
@@ -340,6 +340,362 @@
                 {
                     "date": 1680297741596,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(b []Book) Book {\n+func GetAllBooks(catalog []Book) [Book {\n \t// catalog := []Book{\n \t// \t{Title: \"For the Love of Go\"},\n \t// \t{Title: \"The Power of Go: Tools\"},\n \t// }\t\n"
+                },
+                {
+                    "date": 1680731022349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,12 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(catalog []Book) [Book {\n-\t// catalog := []Book{\n-\t// \t{Title: \"For the Love of Go\"},\n-\t// \t{Title: \"The Power of Go: Tools\"},\n-\t// }\t\n+func GetAllBooks(catalog []Book) []Book {\n+\tcatalog := []Book{\n+\t\t{Title: \"For the Love of Go\"},\n+\t\t{Title: \"The Power of Go: Tools\"},\n+\t}\n \n \treturn catalog\n }\n"
+                },
+                {
+                    "date": 1680731034280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \treturn b, nil\n }\n \n func GetAllBooks(catalog []Book) []Book {\n-\tcatalog := []Book{\n+\tcatalog = []Book{\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\n \n"
+                },
+                {
+                    "date": 1680731313662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,9 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(catalog []Book) []Book {\n-\tcatalog = []Book{\n+func GetAllB:= []Book{\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\n \n"
+                },
+                {
+                    "date": 1680731320154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,10 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllB:= []Book{\n+func GetAllBooks(catalog []Book) []Book {\n+\tcatalog := []Book{\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\n \n"
+                },
+                {
+                    "date": 1680731328098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \treturn b, nil\n }\n \n func GetAllBooks(catalog []Book) []Book {\n-\tcatalog := []Book{\n+\tcatalog = []Book{\n \t\t{Title: \"For the Love of Go\"},\n \t\t{Title: \"The Power of Go: Tools\"},\n \t}\n \n"
+                },
+                {
+                    "date": 1680731505164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,11 @@\n \treturn b, nil\n }\n \n func GetAllBooks(catalog []Book) []Book {\n-\tcatalog = []Book{\n-\t\t{Title: \"For the Love of Go\"},\n-\t\t{Title: \"The Power of Go: Tools\"},\n-\t}\n+\t// catalog = []Book{\n+\t// \t{Title: \"For the Love of Go\"},\n+\t// \t{Title: \"The Power of Go: Tools\"},\n+\t// }\n \n-\treturn catalog\n+\t// return catalog\n }\n"
+                },
+                {
+                    "date": 1680731528394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n \t// \t{Title: \"For the Love of Go\"},\n \t// \t{Title: \"The Power of Go: Tools\"},\n \t// }\n \n-\t// return catalog\n+\treturn catalog\n }\n"
+                },
+                {
+                    "date": 1680731557823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,6 @@\n \treturn b, nil\n }\n \n func GetAllBooks(catalog []Book) []Book {\n-\t// catalog = []Book{\n-\t// \t{Title: \"For the Love of Go\"},\n-\t// \t{Title: \"The Power of Go: Tools\"},\n-\t// }\n-\n \treturn catalog\n }\n"
+                },
+                {
+                    "date": 1680733768736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,4 +21,6 @@\n \n func GetAllBooks(catalog []Book) []Book {\n \treturn catalog\n }\n+\n+\n"
+                },
+                {
+                    "date": 1680733775554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,4 +23,7 @@\n \treturn catalog\n }\n \n \n+func GetBooks(catalog []Book) []Book {\n+\treturn catalog\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680733975561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n )\n \n // Book represents information about a book.\n type Book struct {\n+\t\n \tTitle  string\n \tAuthor string\n \tCopies int\n }\n@@ -22,8 +23,7 @@\n func GetAllBooks(catalog []Book) []Book {\n \treturn catalog\n }\n \n-\n-func GetBooks(catalog []Book) []Book {\n+func GetBook(catalog []Book) []Book {\n \treturn catalog\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680733982438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n )\n \n // Book represents information about a book.\n type Book struct {\n-\t\n+\tID     int\n \tTitle  string\n \tAuthor string\n \tCopies int\n }\n"
+                },
+                {
+                    "date": 1680734098710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,7 +23,7 @@\n func GetAllBooks(catalog []Book) []Book {\n \treturn catalog\n }\n \n-func GetBook(catalog []Book) []Book {\n+func GetBook(catalog []Book, ) []Book {\n \treturn catalog\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1680734106126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,7 +23,7 @@\n func GetAllBooks(catalog []Book) []Book {\n \treturn catalog\n }\n \n-func GetBook(catalog []Book, ) []Book {\n+func GetBook(catalog []Book, ID int) []Book {\n \treturn catalog\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1680734220840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,7 @@\n \treturn catalog\n }\n \n func GetBook(catalog []Book, ID int) []Book {\n+\t\n \treturn catalog\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1680734233297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,9 @@\n \treturn catalog\n }\n \n func GetBook(catalog []Book, ID int) []Book {\n-\t\n+\tfor _, b := range catalog {\n+\t\t\n\\ No newline at end of file\n+\t}\n \treturn catalog\n-}\n+}\n"
+                },
+                {
+                    "date": 1680734245214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,8 @@\n }\n \n func GetBook(catalog []Book, ID int) []Book {\n \tfor _, b := range catalog {\n-\t\t\n+\t\tif b.ID == ID\n \t}\n \treturn catalog\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1680734252404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,10 @@\n }\n \n func GetBook(catalog []Book, ID int) []Book {\n \tfor _, b := range catalog {\n-\t\tif b.ID == ID\n+\t\tif b.ID == ID {\n+\t\t\treturn b\n+\t\t}\n\\ No newline at end of file\n \t}\n \treturn catalog\n-}\n+}\n"
+                },
+                {
+                    "date": 1680734283779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,7 +28,8 @@\n \tfor _, b := range catalog {\n \t\tif b.ID == ID {\n \t\t\treturn b\n \t\t}\n+\t\t\n \t}\n \treturn catalog\n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1680734290781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,8 @@\n \tfor _, b := range catalog {\n \t\tif b.ID == ID {\n \t\t\treturn b\n \t\t}\n-\t\t\n+\n \t}\n-\treturn catalog\n\\ No newline at end of file\n-}\n+\treturn Book\n+}\n"
+                },
+                {
+                    "date": 1680734335531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,13 +23,12 @@\n func GetAllBooks(catalog []Book) []Book {\n \treturn catalog\n }\n \n-func GetBook(catalog []Book, ID int) []Book {\n+func GetBook(catalog []Book, ID int) Book {\n \tfor _, b := range catalog {\n \t\tif b.ID == ID {\n \t\t\treturn b\n \t\t}\n-\n \t}\n-\treturn Book\n+\treturn Book{}\n }\n"
+                },
+                {
+                    "date": 1680734792190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,11 +24,11 @@\n \treturn catalog\n }\n \n func GetBook(catalog []Book, ID int) Book {\n-\tfor _, b := range catalog {\n-\t\tif b.ID == ID {\n-\t\t\treturn b\n-\t\t}\n-\t}\n-\treturn Book{}\n+\t// for _, b := range catalog {\n+\t// \tif b.ID == ID {\n+\t// \t\treturn b\n+\t// \t}\n+\t// }\n+\t// return Book{}\n }\n"
+                },
+                {
+                    "date": 1680734799536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,5 +30,6 @@\n \t// \t\treturn b\n \t// \t}\n \t// }\n \t// return Book{}\n+\treturn catalog[]\n }\n"
+                },
+                {
+                    "date": 1680734928616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,6 @@\n \t// \t\treturn b\n \t// \t}\n \t// }\n \t// return Book{}\n-\treturn catalog[]\n+\t// return catalog[0]\n }\n"
+                },
+                {
+                    "date": 1680735024040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,12 +24,12 @@\n \treturn catalog\n }\n \n func GetBook(catalog []Book, ID int) Book {\n-\t// for _, b := range catalog {\n-\t// \tif b.ID == ID {\n-\t// \t\treturn b\n-\t// \t}\n-\t// }\n-\t// return Book{}\n+\tfor _, b := range catalog {\n+\t\tif b.ID == ID {\n+\t\t\treturn b\n+\t\t}\n+\t}\n+\treturn Book{}\n \t// return catalog[0]\n }\n"
+                },
+                {
+                    "date": 1680903809909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,7 +29,12 @@\n \t\tif b.ID == ID {\n \t\t\treturn b\n \t\t}\n \t}\n-\treturn Book{}\n+\treturn Book{\n+\t\tID:     ID,\n+\t\tTitle:  \"\",\n+\t\tAuthor: \"\",\n+\t\tCopies: 0,\n+\t}\n \t// return catalog[0]\n }\n"
+                },
+                {
+                    "date": 1680903819192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,12 +29,7 @@\n \t\tif b.ID == ID {\n \t\t\treturn b\n \t\t}\n \t}\n-\treturn Book{\n-\t\tID:     ID,\n-\t\tTitle:  \"\",\n-\t\tAuthor: \"\",\n-\t\tCopies: 0,\n-\t}\n+\treturn Book{}\n \t// return catalog[0]\n }\n"
+                },
+                {
+                    "date": 1680904245313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,12 +24,12 @@\n \treturn catalog\n }\n \n func GetBook(catalog []Book, ID int) Book {\n-\tfor _, b := range catalog {\n-\t\tif b.ID == ID {\n-\t\t\treturn b\n-\t\t}\n-\t}\n+\t// for _, b := range catalog {\n+\t// \tif b.ID == ID {\n+\t// \t\treturn b\n+\t// \t}\n+\t// }\n \treturn Book{}\n \t// return catalog[0]\n }\n"
+                },
+                {
+                    "date": 1680904255632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n \treturn catalog\n }\n \n func GetBook(catalog []Book, ID int) Book {\n+\t// version with slice\n \t// for _, b := range catalog {\n \t// \tif b.ID == ID {\n \t// \t\treturn b\n \t// \t}\n"
+                },
+                {
+                    "date": 1680904265670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,14 +23,16 @@\n func GetAllBooks(catalog []Book) []Book {\n \treturn catalog\n }\n \n-func GetBook(catalog []Book, ID int) Book {\n+// func GetBook(catalog []Book, ID int) Book {\n \t// version with slice\n \t// for _, b := range catalog {\n \t// \tif b.ID == ID {\n \t// \t\treturn b\n \t// \t}\n \t// }\n+\n+\n \treturn Book{}\n \t// return catalog[0]\n }\n"
+                },
+                {
+                    "date": 1680904277782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,11 @@\n func GetAllBooks(catalog []Book) []Book {\n \treturn catalog\n }\n \n+// version with slice\n // func GetBook(catalog []Book, ID int) Book {\n-\t// version with slice\n+\t\n \t// for _, b := range catalog {\n \t// \tif b.ID == ID {\n \t// \t\treturn b\n \t// \t}\n"
+                },
+                {
+                    "date": 1680904289510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,15 +25,12 @@\n }\n \n // version with slice\n // func GetBook(catalog []Book, ID int) Book {\n-\t\n \t// for _, b := range catalog {\n \t// \tif b.ID == ID {\n \t// \t\treturn b\n \t// \t}\n \t// }\n-\n-\n \treturn Book{}\n \t// return catalog[0]\n }\n"
+                },
+                {
+                    "date": 1680904298873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,7 +30,6 @@\n \t// \tif b.ID == ID {\n \t// \t\treturn b\n \t// \t}\n \t// }\n-\treturn Book{}\n-\t// return catalog[0]\n-}\n+// \treturn Book{}\n+// }\n"
+                },
+                {
+                    "date": 1680904306165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,4 +32,6 @@\n \t// \t}\n \t// }\n // \treturn Book{}\n // }\n+\n+// version with map\n"
+                },
+                {
+                    "date": 1680904316814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,4 +34,5 @@\n // \treturn Book{}\n // }\n \n // version with map\n+func GetBook(catalog map[int])\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680904322323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,5 +34,5 @@\n // \treturn Book{}\n // }\n \n // version with map\n-func GetBook(catalog map[int])\n\\ No newline at end of file\n+func GetBook(catalog map[int]Book, ID int)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680904327664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,5 +34,7 @@\n // \treturn Book{}\n // }\n \n // version with map\n-func GetBook(catalog map[int]Book, ID int)\n\\ No newline at end of file\n+func GetBook(catalog map[int]Book, ID int) Book {\n+\t\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680904334100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,6 +35,6 @@\n // }\n \n // version with map\n func GetBook(catalog map[int]Book, ID int) Book {\n-\t\n+\treturn catalog[ID]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680904345401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,40 @@\n+package bookstore\n+\n+import (\n+\t\"errors\"\n+)\n+\n+// Book represents information about a book.\n+type Book struct {\n+\tID     int\n+\tTitle  string\n+\tAuthor string\n+\tCopies int\n+}\n+\n+func Buy(b Book) (Book, error) {\n+\tif b.Copies == 0 {\n+\t\treturn Book{}, errors.New(\"no copies left\")\n+\t}\n+\tb.Copies--\n+\treturn b, nil\n+}\n+\n+func GetAllBooks(catalog []Book) []Book {\n+\treturn catalog\n+}\n+\n+// version with slice\n+// func GetBook(catalog []Book, ID int) Book {\n+// for _, b := range catalog {\n+// \tif b.ID == ID {\n+// \t\treturn b\n+// \t}\n+// }\n+// \treturn Book{}\n+// }\n+\n+// version with map\n+func GetBook(catalog map[int]Book, ID int) Book {\n+\treturn catalog[ID]\n+}\n"
+                },
+                {
+                    "date": 1681328661746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,47 +34,7 @@\n // \treturn Book{}\n // }\n \n // version with map\n-func GetBook(catalog map[int]Book, ID int) Book {\n+func GetBook(catalog map[int]Book, ID int) (Book {\n \treturn catalog[ID]\n }\n-package bookstore\n-\n-import (\n-\t\"errors\"\n-)\n-\n-// Book represents information about a book.\n-type Book struct {\n-\tID     int\n-\tTitle  string\n-\tAuthor string\n-\tCopies int\n-}\n-\n-func Buy(b Book) (Book, error) {\n-\tif b.Copies == 0 {\n-\t\treturn Book{}, errors.New(\"no copies left\")\n-\t}\n-\tb.Copies--\n-\treturn b, nil\n-}\n-\n-func GetAllBooks(catalog []Book) []Book {\n-\treturn catalog\n-}\n-\n-// version with slice\n-// func GetBook(catalog []Book, ID int) Book {\n-\t// for _, b := range catalog {\n-\t// \tif b.ID == ID {\n-\t// \t\treturn b\n-\t// \t}\n-\t// }\n-// \treturn Book{}\n-// }\n-\n-// version with map\n-func GetBook(catalog map[int]Book, ID int) Book {\n-\treturn catalog[ID]\n\\ No newline at end of file\n-}\n"
+                },
+                {
+                    "date": 1681328671078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,7 +34,7 @@\n // \treturn Book{}\n // }\n \n // version with map\n-func GetBook(catalog map[int]Book, ID int) (Book {\n+func GetBook(catalog map[int]Book, ID int) (Book, error ){\n \treturn catalog[ID]\n }\n"
+                },
+                {
+                    "date": 1681328676432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,6 +35,6 @@\n // }\n \n // version with map\n func GetBook(catalog map[int]Book, ID int) (Book, error ){\n-\treturn catalog[ID]\n+\treturn catalog[ID], nil\n }\n"
+                },
+                {
+                    "date": 1681329131866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,6 +35,7 @@\n // }\n \n // version with map\n func GetBook(catalog map[int]Book, ID int) (Book, error ){\n+\t\n \treturn catalog[ID], nil\n }\n"
+                },
+                {
+                    "date": 1681329141004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,7 +35,7 @@\n // }\n \n // version with map\n func GetBook(catalog map[int]Book, ID int) (Book, error ){\n-\t\n+\tb, ok :=\n \treturn catalog[ID], nil\n }\n"
+                },
+                {
+                    "date": 1681329147961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,7 +35,8 @@\n // }\n \n // version with map\n func GetBook(catalog map[int]Book, ID int) (Book, error ){\n-\tb, ok :=\n+\tb, ok := catalog[ID]\n+\t\n \treturn catalog[ID], nil\n }\n"
+                },
+                {
+                    "date": 1681329153436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,7 +36,7 @@\n \n // version with map\n func GetBook(catalog map[int]Book, ID int) (Book, error ){\n \tb, ok := catalog[ID]\n-\t\n+\tif !ok {}\n \treturn catalog[ID], nil\n }\n"
+                },
+                {
+                    "date": 1681329159816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,7 +36,8 @@\n \n // version with map\n func GetBook(catalog map[int]Book, ID int) (Book, error ){\n \tb, ok := catalog[ID]\n-\tif !ok {}\n+\tif !ok {\n+\t\t\n \treturn catalog[ID], nil\n }\n"
+                },
+                {
+                    "date": 1681329165749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,7 +37,7 @@\n // version with map\n func GetBook(catalog map[int]Book, ID int) (Book, error ){\n \tb, ok := catalog[ID]\n \tif !ok {\n-\t\t\n+\t\treturn Book\n \treturn catalog[ID], nil\n }\n"
+                },
+                {
+                    "date": 1681329172515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,7 +37,7 @@\n // version with map\n func GetBook(catalog map[int]Book, ID int) (Book, error ){\n \tb, ok := catalog[ID]\n \tif !ok {\n-\t\treturn Book\n+\t\treturn Book{}, fmt.Errorf\n \treturn catalog[ID], nil\n }\n"
+                },
+                {
+                    "date": 1681329182754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,7 +37,7 @@\n // version with map\n func GetBook(catalog map[int]Book, ID int) (Book, error ){\n \tb, ok := catalog[ID]\n \tif !ok {\n-\t\treturn Book{}, fmt.Errorf\n+\t\treturn Book{}, fmt.Errorf(\"ID %d doesn\")\n \treturn catalog[ID], nil\n }\n"
+                },
+                {
+                    "date": 1681329188772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,7 +37,7 @@\n // version with map\n func GetBook(catalog map[int]Book, ID int) (Book, error ){\n \tb, ok := catalog[ID]\n \tif !ok {\n-\t\treturn Book{}, fmt.Errorf(\"ID %d doesn\")\n+\t\treturn Book{}, fmt.Errorf(\"ID %d doesn't exist\", ID)\n \treturn catalog[ID], nil\n }\n"
+                },
+                {
+                    "date": 1681329201276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,6 +38,7 @@\n func GetBook(catalog map[int]Book, ID int) (Book, error ){\n \tb, ok := catalog[ID]\n \tif !ok {\n \t\treturn Book{}, fmt.Errorf(\"ID %d doesn't exist\", ID)\n-\treturn catalog[ID], nil\n+\t}\n+\treturn v, nil\n }\n"
+                },
+                {
+                    "date": 1681329207540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,6 +39,6 @@\n \tb, ok := catalog[ID]\n \tif !ok {\n \t\treturn Book{}, fmt.Errorf(\"ID %d doesn't exist\", ID)\n \t}\n-\treturn v, nil\n+\treturn b, nil\n }\n"
+                },
+                {
+                    "date": 1681329214357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n package bookstore\n \n import (\n+\t\"fmt\"\n \t\"errors\"\n )\n \n // Book represents information about a book.\n"
+                },
+                {
+                    "date": 1681329551960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n package bookstore\n \n import (\n+\t\"errors\"\n \t\"fmt\"\n-\t\"errors\"\n )\n \n // Book represents information about a book.\n type Book struct {\n@@ -20,9 +20,9 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(catalog []Book) []Book {\n+func GetAllBooks(catalog map[]Book) []Book {\n \treturn catalog\n }\n \n // version with slice\n@@ -35,9 +35,9 @@\n // \treturn Book{}\n // }\n \n // version with map\n-func GetBook(catalog map[int]Book, ID int) (Book, error ){\n+func GetBook(catalog map[int]Book, ID int) (Book, error) {\n \tb, ok := catalog[ID]\n \tif !ok {\n \t\treturn Book{}, fmt.Errorf(\"ID %d doesn't exist\", ID)\n \t}\n"
+                },
+                {
+                    "date": 1681329561161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(catalog map[]Book) []Book {\n-\treturn catalog\n+func GetAllBooks(catalog map[int]Book) []Book {\n+\tresult\n }\n \n // version with slice\n // func GetBook(catalog []Book, ID int) Book {\n"
+                },
+                {
+                    "date": 1681329568962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \treturn b, nil\n }\n \n func GetAllBooks(catalog map[int]Book) []Book {\n-\tresult\n+\tresult := []Book{}\n }\n \n // version with slice\n // func GetBook(catalog []Book, ID int) Book {\n"
+                },
+                {
+                    "date": 1681329579724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n }\n \n func GetAllBooks(catalog map[int]Book) []Book {\n \tresult := []Book{}\n+\tfor _, b := range catalog\n }\n \n // version with slice\n // func GetBook(catalog []Book, ID int) Book {\n"
+                },
+                {
+                    "date": 1681329589975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,11 @@\n }\n \n func GetAllBooks(catalog map[int]Book) []Book {\n \tresult := []Book{}\n-\tfor _, b := range catalog\n+\tfor _, b := range catalog {\n+\t\tresult = append(result, b)\n+\t}\n }\n \n // version with slice\n // func GetBook(catalog []Book, ID int) Book {\n"
+                },
+                {
+                    "date": 1681329597602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n \tresult := []Book{}\n \tfor _, b := range catalog {\n \t\tresult = append(result, b)\n \t}\n+\t\n }\n \n // version with slice\n // func GetBook(catalog []Book, ID int) Book {\n"
+                },
+                {
+                    "date": 1681594144773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n \tID     int\n \tTitle  string\n \tAuthor string\n \tCopies int\n+\t\n }\n \n func Buy(b Book) (Book, error) {\n \tif b.Copies == 0 {\n@@ -25,9 +26,9 @@\n \tresult := []Book{}\n \tfor _, b := range catalog {\n \t\tresult = append(result, b)\n \t}\n-\t\n+\treturn result\n }\n \n // version with slice\n // func GetBook(catalog []Book, ID int) Book {\n"
+                },
+                {
+                    "date": 1681594149918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \tID     int\n \tTitle  string\n \tAuthor string\n \tCopies int\n-\t\n+\tTestNetPriceCents\n }\n \n func Buy(b Book) (Book, error) {\n \tif b.Copies == 0 {\n"
+                },
+                {
+                    "date": 1681594157882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,10 @@\n \tID     int\n \tTitle  string\n \tAuthor string\n \tCopies int\n-\tTestNetPriceCents\n+\tPriceCents\tint\n+\t\n }\n \n func Buy(b Book) (Book, error) {\n \tif b.Copies == 0 {\n"
+                },
+                {
+                    "date": 1681594165922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \tTitle  string\n \tAuthor string\n \tCopies int\n \tPriceCents\tint\n-\t\n+\tDiscountPercente\tint\n }\n \n func Buy(b Book) (Book, error) {\n \tif b.Copies == 0 {\n"
+                },
+                {
+                    "date": 1681594372473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,14 @@\n )\n \n // Book represents information about a book.\n type Book struct {\n-\tID     int\n-\tTitle  string\n-\tAuthor string\n-\tCopies int\n-\tPriceCents\tint\n-\tDiscountPercente\tint\n+\tID              int\n+\tTitle           string\n+\tAuthor          string\n+\tCopies          int\n+\tPriceCents      int\n+\tDiscountPercent int\n }\n \n func Buy(b Book) (Book, error) {\n \tif b.Copies == 0 {\n@@ -48,4 +48,6 @@\n \t\treturn Book{}, fmt.Errorf(\"ID %d doesn't exist\", ID)\n \t}\n \treturn b, nil\n }\n+\n+func TestNetPriceCents\n"
+                },
+                {
+                    "date": 1681594378489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,5 +49,5 @@\n \t}\n \treturn b, nil\n }\n \n-func TestNetPriceCents\n+func NetPriceCents)\n"
+                },
+                {
+                    "date": 1681594385015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,5 +49,7 @@\n \t}\n \treturn b, nil\n }\n \n-func NetPriceCents)\n+func NetPriceCents(\n+\treturn nil\n+)\n"
+                },
+                {
+                    "date": 1681594394331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,7 +49,7 @@\n \t}\n \treturn b, nil\n }\n \n-func NetPriceCents(\n+func NetPriceCents()\n \treturn nil\n )\n"
+                },
+                {
+                    "date": 1681594400022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,7 +49,7 @@\n \t}\n \treturn b, nil\n }\n \n-func NetPriceCents()\n+func NetPriceCents(){\n \treturn nil\n-)\n+}\n"
+                },
+                {
+                    "date": 1681594407841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,7 +49,7 @@\n \t}\n \treturn b, nil\n }\n \n-func NetPriceCents(){\n-\treturn nil\n+func NetPriceCents() {\n+\treturn\n }\n"
+                },
+                {
+                    "date": 1681594418941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,6 +50,6 @@\n \treturn b, nil\n }\n \n func NetPriceCents() {\n-\treturn\n+\treturn 3000\n }\n"
+                },
+                {
+                    "date": 1681594473811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,7 +49,7 @@\n \t}\n \treturn b, nil\n }\n \n-func NetPriceCents() {\n+func NetPriceCents() int {\n \treturn 3000\n }\n"
+                },
+                {
+                    "date": 1681594510161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,7 +49,8 @@\n \t}\n \treturn b, nil\n }\n \n-func NetPriceCents() int {\n+func NetPriceCents(b Book) int {\n+\tsaving := b.PriceCents\n \treturn 3000\n }\n"
+                },
+                {
+                    "date": 1681594516801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,7 +50,7 @@\n \treturn b, nil\n }\n \n func NetPriceCents(b Book) int {\n-\tsaving := b.PriceCents\n+\tsaving := b.PriceCents * \n \treturn 3000\n }\n"
+                },
+                {
+                    "date": 1681594523772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,7 +50,7 @@\n \treturn b, nil\n }\n \n func NetPriceCents(b Book) int {\n-\tsaving := b.PriceCents * \n+\tsaving := b.PriceCents * b.DiscountPercent / 100\n \treturn 3000\n }\n"
+                },
+                {
+                    "date": 1681594529083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,6 +51,6 @@\n }\n \n func NetPriceCents(b Book) int {\n \tsaving := b.PriceCents * b.DiscountPercent / 100\n-\treturn 3000\n+\treturn b.\n }\n"
+                },
+                {
+                    "date": 1681594538760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,6 +51,6 @@\n }\n \n func NetPriceCents(b Book) int {\n \tsaving := b.PriceCents * b.DiscountPercent / 100\n-\treturn b.\n+\treturn b.PriceCents - saving\n }\n"
+                },
+                {
+                    "date": 1681594631462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,8 @@\n \t}\n \treturn b, nil\n }\n \n-func NetPriceCents(b Book) int {\n+func (NetPriceCents(b Book) int {\n \tsaving := b.PriceCents * b.DiscountPercent / 100\n \treturn b.PriceCents - saving\n }\n"
+                },
+                {
+                    "date": 1681594637477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,8 @@\n \t}\n \treturn b, nil\n }\n \n-func (NetPriceCents(b Book) int {\n+func (b Book) NetPriceCents(b Book) int {\n \tsaving := b.PriceCents * b.DiscountPercent / 100\n \treturn b.PriceCents - saving\n }\n"
+                },
+                {
+                    "date": 1681594652094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,8 @@\n \t}\n \treturn b, nil\n }\n \n-func (b Book) NetPriceCents(b Book) int {\n+func (b Book) NetPriceCents() int {\n \tsaving := b.PriceCents * b.DiscountPercent / 100\n \treturn b.PriceCents - saving\n }\n"
+                },
+                {
+                    "date": 1681596593101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,10 @@\n \t\"errors\"\n \t\"fmt\"\n )\n \n+\n+\n // Book represents information about a book.\n type Book struct {\n \tID              int\n \tTitle           string\n"
+                },
+                {
+                    "date": 1681596599376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n \t\"errors\"\n \t\"fmt\"\n )\n \n+type catalog\n \n-\n // Book represents information about a book.\n type Book struct {\n \tID              int\n \tTitle           string\n"
+                },
+                {
+                    "date": 1681596605231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \t\"errors\"\n \t\"fmt\"\n )\n \n-type catalog\n+type Catalog map[int]\n \n // Book represents information about a book.\n type Book struct {\n \tID              int\n"
+                },
+                {
+                    "date": 1681596621573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \t\"errors\"\n \t\"fmt\"\n )\n \n-type Catalog map[int]\n+type Catalog map[int]Book\n \n // Book represents information about a book.\n type Book struct {\n \tID              int\n@@ -24,9 +24,9 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks(catalog map[int]Book) []Book {\n+func GetAllBooks() []Book {\n \tresult := []Book{}\n \tfor _, b := range catalog {\n \t\tresult = append(result, b)\n \t}\n"
+                },
+                {
+                    "date": 1681596630700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \tb.Copies--\n \treturn b, nil\n }\n \n-func GetAllBooks() []Book {\n+func (c Catalog) GetAllBooks() []Book {\n \tresult := []Book{}\n \tfor _, b := range catalog {\n \t\tresult = append(result, b)\n \t}\n"
+                },
+                {
+                    "date": 1681596637248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n }\n \n func (c Catalog) GetAllBooks() []Book {\n \tresult := []Book{}\n-\tfor _, b := range catalog {\n+\tfor _, b := range c {\n \t\tresult = append(result, b)\n \t}\n \treturn result\n }\n"
+                },
+                {
+                    "date": 1681597023336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \tPriceCents      int\n \tDiscountPercent int\n }\n \n-func Buy(b Book) (Book, error) {\n+func (c Catalog) Buy(b Book) (Book, error) {\n \tif b.Copies == 0 {\n \t\treturn Book{}, errors.New(\"no copies left\")\n \t}\n \tb.Copies--\n"
+                },
+                {
+                    "date": 1681597037501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \tPriceCents      int\n \tDiscountPercent int\n }\n \n-func (c Catalog) Buy(b Book) (Book, error) {\n+func (c Catalog) Buy() (Book, error) {\n \tif b.Copies == 0 {\n \t\treturn Book{}, errors.New(\"no copies left\")\n \t}\n \tb.Copies--\n"
+                },
+                {
+                    "date": 1681597079519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n // \treturn Book{}\n // }\n \n // version with map\n-func GetBook(catalog map[int]Book, ID int) (Book, error) {\n+func (c Catalog) GetBook(catalog map[int]Book, ID int) (Book, error) {\n \tb, ok := catalog[ID]\n \tif !ok {\n \t\treturn Book{}, fmt.Errorf(\"ID %d doesn't exist\", ID)\n \t}\n"
                 }
             ],
             "date": 1679780664705,

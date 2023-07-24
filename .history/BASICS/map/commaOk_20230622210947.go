@@ -1,0 +1,23 @@
+package main
+
+import (
+	"fmt"
+)
+func main() {
+
+/* m := map[string]int{
+	"hello": 5,
+	"world": 0,
+} */
+
+m := map[string]int{}
+
+v, ok := m["hello"]
+fmt.Println(v, ok)
+
+v, ok = m["world"]
+fmt.Println(v, ok)
+
+v, ok = m["goodbye"]
+fmt.Println(v, ok)
+}

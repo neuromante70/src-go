@@ -1,0 +1,30 @@
+{
+    "sourceFile": "BASICS/built-in_types/initialization/wrapAround2.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1686848577082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686848585687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,17 +4,7 @@\n \t\"fmt\"\n )\n \n func main() {\n-\tvar maxUint8 uint8 = math.MaxUint8 //uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n-\tfmt.Println(\"value\", maxUint8)\n-\t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n-\t//  fmt.Println(\"value\", maxOtherUint8)\n-\tmaxUint8 += 5\n-\tfmt.Println(\"value after incrementing by 5\", maxUint8)\n-\tmaxUint8 = 0\n-\tfor i := 0; i <= 255; i++ {\n-\t\tmaxUint8 += 1\n-\t\tfmt.Println(i, maxUint8)\n-\t}\n-\tfmt.Println(\"value after for loop\", maxUint8)\n+\n+\n }\n"
+                },
+                {
+                    "date": 1686849179366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,9 @@\n )\n \n func main() {\n \n-\n+var b byte\n+for b = 250; b <= 255; b++ {\n+\tfmt.Printf(\"%d %c\\n\", b, b)\n }\n+}\n"
+                },
+                {
+                    "date": 1686849251217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n )\n \n func main() {\n \n-var b byte\n-for b = 250; b <= 255; b++ {\n-\tfmt.Printf(\"%d %c\\n\", b, b)\n+\tvar b byte\n+\tfor b = 250; b  255; b++ {\n+\t\tfmt.Printf(\"%d %c\\n\", b, b)\n+\t}\n }\n-}\n"
+                }
+            ],
+            "date": 1686848577082,
+            "name": "Commit-0",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar maxUint8 uint8 = math.MaxUint8 //uint8 or byte: range 0 to 255 (MaxUint8 constant from math package)\n\tfmt.Println(\"value\", maxUint8)\n\t//  var maxOtherUint8 uint8 = 256\t//i can't do this: this is an overflow compiler error\n\t//  fmt.Println(\"value\", maxOtherUint8)\n\tmaxUint8 += 5\n\tfmt.Println(\"value after incrementing by 5\", maxUint8)\n\tmaxUint8 = 0\n\tfor i := 0; i <= 255; i++ {\n\t\tmaxUint8 += 1\n\t\tfmt.Println(i, maxUint8)\n\t}\n\tfmt.Println(\"value after for loop\", maxUint8)\n}\n"
+        }
+    ]
+}

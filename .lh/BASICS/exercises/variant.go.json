@@ -1,0 +1,66 @@
+{
+    "sourceFile": "BASICS/exercises/variant.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1688551021067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688551027829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+package main\n+\n+import (\n+\t\"fmt\"\n+\t// \"errors\"\n+\t// \"sort\"\n+\t// \"strconv\"\n+)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688551035791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,20 @@\n \t\"fmt\"\n \t// \"errors\"\n \t// \"sort\"\n \t// \"strconv\"\n-)\n\\ No newline at end of file\n+)\n+\n+func main() {\n+\tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n+\tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n+\tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n+\tuserHM[us1.id] = us1\n+\tuserHM[us2.id] = us2\n+\tuserHM[us3.id] = us3\n+\n+\tfor _, user := range userHM {\n+\t\tuserSL = append(userSL, user)\n+\t}\n+\tfprt(userHM)\n+\tfprt(userSL)\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688551046967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,23 +1,10 @@\n package main\n \n import (\n \t\"fmt\"\n-\t// \"errors\"\n-\t// \"sort\"\n-\t// \"strconv\"\n )\n \n func main() {\n-\tus1 := user{id: 1, name: \"Phil Cazzaniga\", email: \"cazzaniga@gmail.com\"}\n-\tus2 := user{id: 2, name: \"Jenny Connelly\", email: \"connelly@gmail.com\"}\n-\tus3 := user{id: 3, name: \"Carl Soft\", email: \"soft@yahoo.it\"}\n-\tuserHM[us1.id] = us1\n-\tuserHM[us2.id] = us2\n-\tuserHM[us3.id] = us3\n \n-\tfor _, user := range userHM {\n-\t\tuserSL = append(userSL, user)\n-\t}\n-\tfprt(userHM)\n-\tfprt(userSL)\n+\t\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688551052012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,6 @@\n )\n \n func main() {\n \n-\t\n+\tvar culo interface\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688551059299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,7 @@\n )\n \n func main() {\n \n-\tvar culo interface\n+\tvar culo interface{}\n+\tculo = \"string\"\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688551067324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,8 @@\n )\n \n func main() {\n \n-\tvar culo interface{}\n+\tvar variant interface{}\n \tculo = \"string\"\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688551074407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,8 @@\n \n func main() {\n \n \tvar variant interface{}\n-\tculo = \"string\"\n+\tvariant = \"string\"\n+\tfmt.Print\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688551080464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,13 @@\n import (\n \t\"fmt\"\n )\n \n+var \n+\n func main() {\n \n \tvar variant interface{}\n \tvariant = \"string\"\n-\tfmt.Print\n+\tfmt.Println()\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688551086341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import (\n \t\"fmt\"\n )\n \n-var \n+var prt = \n \n func main() {\n \n \tvar variant interface{}\n"
+                },
+                {
+                    "date": 1688551095608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,13 @@\n import (\n \t\"fmt\"\n )\n \n-var prt = \n+var prt = fmt.Println\n \n func main() {\n \n \tvar variant interface{}\n \tvariant = \"string\"\n-\tfmt.Println()\n+\tprt()\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688551102723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,8 @@\n func main() {\n \n \tvar variant interface{}\n \tvariant = \"string\"\n-\tprt()\n+\tprt(variant)\n+\tvariant = \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688551109295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,8 @@\n \n \tvar variant interface{}\n \tvariant = \"string\"\n \tprt(variant)\n-\tvariant = \n+\tvariant = 123\n+\tprt(variant)\n \n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1688551021067,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

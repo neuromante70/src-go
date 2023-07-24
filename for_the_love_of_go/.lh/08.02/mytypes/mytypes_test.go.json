@@ -1,0 +1,22 @@
+{
+    "sourceFile": "08.02/mytypes/mytypes_test.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1681596353476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1681596361620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n func TestTwice(t *testing.T) {\n \tt.Parallel()\n \tinput := mytypes.MyInt(9)\n-\twant := mytypes.MyInt(20)\n+\twant := mytypes.MyInt(18)\n \tgot := input.Twice()\n \tif want != got {\n \t\tt.Errorf(\"twice %d: want %d, got %d\", input, want, got)\n \t}\n"
+                }
+            ],
+            "date": 1681596353476,
+            "name": "Commit-0",
+            "content": "package mytypes_test\n\nimport (\n\t\"mytypes\"\n\t\"testing\"\n)\n\nfunc TestTwice(t *testing.T) {\n\tt.Parallel()\n\tinput := mytypes.MyInt(9)\n\twant := mytypes.MyInt(20)\n\tgot := input.Twice()\n\tif want != got {\n\t\tt.Errorf(\"twice %d: want %d, got %d\", input, want, got)\n\t}\n}\n"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 57,
+            "activePatchIndex": 58,
             "patches": [
                 {
                     "date": 1679780741126,
@@ -236,6 +236,10 @@
                 {
                     "date": 1680118751716,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,25 +7,25 @@\n \n func TestBook(t *testing.T) {\n \tt.Parallel()\n \t_ = bookstore.Book{\n-\t\tTitle: \"Spark Joy\",\n+\t\tTitle:  \"Spark Joy\",\n \t\tAuthor: \"Marie Kondo\",\n \t\tCopies: 2,\n \t}\n }\n \n func TestBuy(t *testing.T) {\n \tt.Parallel()\n \tb := bookstore.Book{\n-\t\tTitle: \"Spark Joy\",\n+\t\tTitle:  \"Spark Joy\",\n \t\tAuthor: \"Marie Kondo\",\n \t\tCopies: 2,\n \t}\n-\twant :=1\n+\twant := 1\n \tresult := bookstore.Buy(b)\n \tgot := result.Copies\n \tif want != got {\n \t\tt.Errorf(\"want %d, got %d\", want, got)\n\\ No newline at end of file\n \t}\n \n-}\n+}\n"
+                },
+                {
+                    "date": 1680903994218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,10 +66,10 @@\n \n func TestGetBook(t *testing.T) {\n \tt.Parallel()\n \tcatalog := []bookstore.Book{\n-\t\t{ID: 1,\tTitle: \"For the Love of Go\",},\n-\t\t{ID:    2,\tTitle: \"The Power of Go: Tools\",},\n+\t\t{ID: 1, Title: \"For the Love of Go\"},\n+\t\t{ID: 2, Title: \"The Power of Go: Tools\"},\n \t}\n \twant := bookstore.Book{\n \t\t// ID:    1,\n \t\t// Title: \"For the Love of Go\",\n"
                 }
             ],
             "date": 1679780741126,

@@ -1,0 +1,2 @@
+package mytypes_test
+func

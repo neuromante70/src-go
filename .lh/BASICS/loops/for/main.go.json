@@ -1,0 +1,54 @@
+{
+    "sourceFile": "BASICS/loops/for/main.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1684922144914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1684922150621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-packa\n\\ No newline at end of file\n+package main\n+\n+func main()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1684922158639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,7 @@\n package main\n \n-func main()\n\\ No newline at end of file\n+import \"fmt\"\n+\n+func main() {\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1684922165721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n import \"fmt\"\n \n func main() {\n-\n+\tfmt.Println()\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1684922171322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n import \"fmt\"\n \n func main() {\n-\tfmt.Println()\n+\tfmt.Println(\"Hello world\")\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1684922179631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n package main\n \n import \"fmt\"\n \n+/**/\n+\n+\n func main() {\n \tfmt.Println(\"Hello world\")\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1684922189774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,15 @@\n package main\n \n import \"fmt\"\n \n-/**/\n+/*\n+The classic for has the form of:\n \n \n+\n+*/\n+\n+\n func main() {\n \tfmt.Println(\"Hello world\")\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1684922196575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,11 @@\n import \"fmt\"\n \n /*\n The classic for has the form of:\n-\n-\n-\n+for <initialization>; <condition>; <post-condition> {\n+    <loopBody>\n+}\n */\n \n \n func main() {\n"
+                },
+                {
+                    "date": 1684922207876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n /*\n The classic for has the form of:\n for <initialization>; <condition>; <post-condition> {\n-    <loopBody>\n+\t<loopBody>\n }\n */\n \n \n"
+                },
+                {
+                    "date": 1684966633010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,7 @@\n \t<loopBody>\n }\n */\n \n-\n func main() {\n \tfmt.Println(\"Hello world\")\n-}\n\\ No newline at end of file\n+}\n"
+                }
+            ],
+            "date": 1684922144914,
+            "name": "Commit-0",
+            "content": "packa"
+        }
+    ]
+}

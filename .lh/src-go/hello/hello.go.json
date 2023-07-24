@@ -1,0 +1,338 @@
+{
+    "sourceFile": "src-go/hello/hello.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 80,
+            "patches": [
+                {
+                    "date": 1682719040721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682719052866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,6 @@\n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tresult := function(1)\n \tfmt.Println(\"\\nYour function result is:\\n\", result)\n+\t\n }\n"
+                },
+                {
+                    "date": 1682719059398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tresult := function(1)\n \tfmt.Println(\"\\nYour function result is:\\n\", result)\n-\t\n+\ts :=\"\"\n }\n"
+                },
+                {
+                    "date": 1682719066844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tresult := function(1)\n \tfmt.Println(\"\\nYour function result is:\\n\", result)\n-\ts :=\"\"\n+\ts := \"Hello Wo\"\n }\n"
+                },
+                {
+                    "date": 1682719076152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,11 @@\n epackage main\n \n import \"fmt\"\n \n-func function(int) int {\n-\treturn 0\n-}\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tresult := function(1)\n \tfmt.Println(\"\\nYour function result is:\\n\", result)\n-\ts := \"Hello Wo\"\n+\ts := \"Hello, World!\"\n }\n"
+                },
+                {
+                    "date": 1682719083105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n-epackage main\n+package main\n \n import \"fmt\"\n \n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n-\tresult := function(1)\n-\tfmt.Println(\"\\nYour function result is:\\n\", result)\n+\t\tfmt.Println(\"\\nYour function result is:\\n\", result)\n \ts := \"Hello, World!\"\n+\t\n }\n"
+                },
+                {
+                    "date": 1682719090017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,6 @@\n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \t\tfmt.Println(\"\\nYour function result is:\\n\", result)\n \ts := \"Hello, World!\"\n-\t\n+\tfmt.Printf()\n }\n"
+                },
+                {
+                    "date": 1682719096029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,6 @@\n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \t\tfmt.Println(\"\\nYour function result is:\\n\", result)\n \ts := \"Hello, World!\"\n-\tfmt.Printf()\n+\tfmt.Printf(\"\")\n }\n"
+                },
+                {
+                    "date": 1682719102680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,6 @@\n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \t\tfmt.Println(\"\\nYour function result is:\\n\", result)\n \ts := \"Hello, World!\"\n-\tfmt.Printf(\"\")\n+\tfmt.Printf(\"\", s\")\n }\n"
+                },
+                {
+                    "date": 1682719109135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,6 @@\n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \t\tfmt.Println(\"\\nYour function result is:\\n\", result)\n \ts := \"Hello, World!\"\n-\tfmt.Printf(\"\", s\")\n+\tfmt.Printf(\"%s\", s)\n }\n"
+                },
+                {
+                    "date": 1682719116595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,7 @@\n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \t\tfmt.Println(\"\\nYour function result is:\\n\", result)\n \ts := \"Hello, World!\"\n-\tfmt.Printf(\"%s\", s)\n+\tfmt.Printf(\"%s\\n\", s)\n+\tfmt.Printf(\"%s\\n\", s)\n }\n"
+                },
+                {
+                    "date": 1682719122182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \t\tfmt.Println(\"\\nYour function result is:\\n\", result)\n \ts := \"Hello, World!\"\n \tfmt.Printf(\"%s\\n\", s)\n-\tfmt.Printf(\"%s\\n\", s)\n+\tfmt.Printf(\"%q\\n\", s)\n }\n"
+                },
+                {
+                    "date": 1682719180761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n \n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n-\t\tfmt.Println(\"\\nYour function result is:\\n\", result)\n-\ts := \"Hello, World!\"\n+\t\ts := \"Hello, World!\"\n \tfmt.Printf(\"%s\\n\", s)\n \tfmt.Printf(\"%q\\n\", s)\n }\n"
+                },
+                {
+                    "date": 1683491560113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,10 @@\n package main\n \n import \"fmt\"\n \n-\n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n-\t\ts := \"Hello, World!\"\n+e\ts := \"Hello, World!\"\n \tfmt.Printf(\"%s\\n\", s)\n \tfmt.Printf(\"%q\\n\", s)\n }\n"
+                },
+                {
+                    "date": 1683491883158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import \"fmt\"\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n-e\ts := \"Hello, World!\"\n+\ts := \"Hello, World!\"\n \tfmt.Printf(\"%s\\n\", s)\n \tfmt.Printf(\"%q\\n\", s)\n+\t\n }\n"
+                },
+                {
+                    "date": 1683491891066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,7 @@\n import \"fmt\"\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n-\ts := \"Hello, World!\"\n-\tfmt.Printf(\"%s\\n\", s)\n-\tfmt.Printf(\"%q\\n\", s)\n \t\n+\n }\n"
+                },
+                {
+                    "date": 1683491897936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n import \"fmt\"\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n-\t\n+\tvar sl\n \n }\n"
+                },
+                {
+                    "date": 1683491904635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n import \"fmt\"\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n-\tvar sl\n+\tvar sl []int\n \n }\n"
+                },
+                {
+                    "date": 1683491910524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,7 @@\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tvar sl []int\n+\that \n \n }\n"
+                },
+                {
+                    "date": 1683491915557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tvar sl []int\n-\that \n+\that := cap\n \n }\n"
+                },
+                {
+                    "date": 1683491926029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,8 @@\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tvar sl []int\n-\that := cap\n+\that := cap(sl)\n+\t\n \n }\n"
+                },
+                {
+                    "date": 1683491932225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tvar sl []int\n \that := cap(sl)\n-\t\n+\tfor i := 0\n \n }\n"
+                },
+                {
+                    "date": 1683491940846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tvar sl []int\n \that := cap(sl)\n-\tfor i := 0\n+\tfor i := 0; i < 1\n \n }\n"
+                },
+                {
+                    "date": 1683491949160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tvar sl []int\n \that := cap(sl)\n-\tfor i := 0; i < 1\n+\tfor i := 0; i < 1_000_000; i\n \n }\n"
+                },
+                {
+                    "date": 1683491955718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,9 @@\n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tvar sl []int\n \that := cap(sl)\n-\tfor i := 0; i < 1_000_000; i\n+\tfor i := 0; i < 1_000_000; i++ {\n+\t\tsl \n+\t}\n \n }\n"
+                },
+                {
+                    "date": 1683491961993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tvar sl []int\n \that := cap(sl)\n \tfor i := 0; i < 1_000_000; i++ {\n-\t\tsl \n+\t\tsl = append(sl, i)\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1683491970331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,9 @@\n \tvar sl []int\n \that := cap(sl)\n \tfor i := 0; i < 1_000_000; i++ {\n \t\tsl = append(sl, i)\n+\t\tc := cap(sl)\n+\t\t\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1683491976193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n \that := cap(sl)\n \tfor i := 0; i < 1_000_000; i++ {\n \t\tsl = append(sl, i)\n \t\tc := cap(sl)\n+\t\tif c \n \t\t\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1683491982966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n \that := cap(sl)\n \tfor i := 0; i < 1_000_000; i++ {\n \t\tsl = append(sl, i)\n \t\tc := cap(sl)\n-\t\tif c \n-\t\t\n+\t\tif c !=\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1683491990578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,10 @@\n \that := cap(sl)\n \tfor i := 0; i < 1_000_000; i++ {\n \t\tsl = append(sl, i)\n \t\tc := cap(sl)\n-\t\tif c !=\n+\t\tif c != hat {\n+\t\t\tfmt.Prin\n+\t\t}\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1683492001030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \tfor i := 0; i < 1_000_000; i++ {\n \t\tsl = append(sl, i)\n \t\tc := cap(sl)\n \t\tif c != hat {\n-\t\t\tfmt.Prin\n+\t\t\tfmt.Println(hat, c)\n \t\t}\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1683492007480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,8 @@\n \t\tc := cap(sl)\n \t\tif c != hat {\n \t\t\tfmt.Println(hat, c)\n \t\t}\n+\t\that\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1683492013083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n package main\n \n-import \"fmt\"\n+import (\n+\t\"crypto/cipher\"\n+\t\"fmt\"\n+)\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tvar sl []int\n@@ -11,8 +14,8 @@\n \t\tc := cap(sl)\n \t\tif c != hat {\n \t\t\tfmt.Println(hat, c)\n \t\t}\n-\t\that\n+\t\that = c\n \t}\n \n }\n"
+                },
+                {
+                    "date": 1683492028450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,6 +16,5 @@\n \t\t\tfmt.Println(hat, c)\n \t\t}\n \t\that = c\n \t}\n-\n }\n"
+                },
+                {
+                    "date": 1683492042887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n package main\n \n import (\n-\t\"crypto/cipher\"\n \t\"fmt\"\n )\n \n func main() {\n"
+                },
+                {
+                    "date": 1683492165869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,6 @@\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tvar sl []int\n-\that := cap(sl)\n-\tfor i := 0; i < 1_000_000; i++ {\n-\t\tsl = append(sl, i)\n-\t\tc := cap(sl)\n-\t\tif c != hat {\n-\t\t\tfmt.Println(hat, c)\n-\t\t}\n-\t\that = c\n-\t}\n+\n }\n"
+                },
+                {
+                    "date": 1683492174326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,14 @@\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n \tvar sl []int\n-\n+\that := cap(sl)\n+\tfor i := 0; i < 1_000_000; i++ {\n+\t\tsl = append(sl, i)\n+\t\tc := cap(sl)\n+\t\tif c != hat {\n+\t\t\tfmt.Println(hat, c)\n+\t\t}\n+\t\that = c\n+\t}\n }\n"
+                },
+                {
+                    "date": 1683492181596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,15 +5,14 @@\n )\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n-\tvar sl []int\n-\that := cap(sl)\n-\tfor i := 0; i < 1_000_000; i++ {\n-\t\tsl = append(sl, i)\n-\t\tc := cap(sl)\n-\t\tif c != hat {\n-\t\t\tfmt.Println(hat, c)\n-\t\t}\n-\t\that = c\n-\t}\n+\t// hat := cap(sl)\n+\t// for i := 0; i < 1_000_000; i++ {\n+\t// \tsl = append(sl, i)\n+\t// \tc := cap(sl)\n+\t// \tif c != hat {\n+\t// \t\tfmt.Println(hat, c)\n+\t// \t}\n+\t// \that = c\n+\t// }\n }\n"
+                },
+                {
+                    "date": 1683492187623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,7 @@\n \t// \t\tfmt.Println(hat, c)\n \t// \t}\n \t// \that = c\n \t// }\n+\tvar sl []int\n+\t\n }\n"
+                },
+                {
+                    "date": 1683493416422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,7 @@\n \t// \t\tfmt.Println(hat, c)\n \t// \t}\n \t// \that = c\n \t// }\n-\tvar sl []int\n-\t\n+\tvar slA []int\n+\n }\n"
+                },
+                {
+                    "date": 1683493422446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,7 @@\n \t// \t\tfmt.Println(hat, c)\n \t// \t}\n \t// \that = c\n \t// }\n-\tvar slA []int\n+\tvar slA, slB []int\n \n }\n"
+                },
+                {
+                    "date": 1683749043433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n package main\n \n import (\n \t\"fmt\"\n+\t\"\"\n )\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n@@ -15,6 +16,7 @@\n \t// \t}\n \t// \that = c\n \t// }\n \tvar slA, slB []int\n+\t\n \n }\n"
+                },
+                {
+                    "date": 1683749051393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n package main\n \n import (\n \t\"fmt\"\n-\t\"\"\n+\t\"math\"\n )\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n@@ -15,8 +15,8 @@\n \t// \t\tfmt.Println(hat, c)\n \t// \t}\n \t// \that = c\n \t// }\n-\tvar slA, slB []int\n+\t//var slA, slB []int\n \t\n \n }\n"
+                },
+                {
+                    "date": 1683749056986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,7 +16,9 @@\n \t// \t}\n \t// \that = c\n \t// }\n \t//var slA, slB []int\n+\tn := int(math.pi * 2)\n+\tfmt.Println(n)\n \t\n \n }\n"
+                },
+                {
+                    "date": 1683749074694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \t// \t}\n \t// \that = c\n \t// }\n \t//var slA, slB []int\n-\tn := int(math.pi * 2)\n+\tn := int(math.Pi * 2)\n \tfmt.Println(n)\n \t\n \n }\n"
+                },
+                {
+                    "date": 1683749090032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \t// \t}\n \t// \that = c\n \t// }\n \t//var slA, slB []int\n-\tn := int(math.Pi * 2)\n+\tn := math.Pi * 2\n \tfmt.Println(n)\n \t\n \n }\n"
+                },
+                {
+                    "date": 1683749180059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,7 @@\n \t// \t}\n \t// \that = c\n \t// }\n \t//var slA, slB []int\n-\tn := math.Pi * 2\n-\tfmt.Println(n)\n \t\n \n }\n"
+                },
+                {
+                    "date": 1683749220058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n \t// \t\tfmt.Println(hat, c)\n \t// \t}\n \t// \that = c\n \t// }\n-\t//var slA, slB []int\n+\tvar slA, slB []int\n+\tvar slice = make([]int, 1, 3)\n \t\n \n }\n"
+                },
+                {
+                    "date": 1683749228627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,8 @@\n \t// \t}\n \t// \that = c\n \t// }\n \tvar slA, slB []int\n-\tvar slice = make([]int, 1, 3)\n+\tvar slA = make([]int, 1, 3)\n \t\n \n }\n"
+                },
+                {
+                    "date": 1683749234307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \t// \t\tfmt.Println(hat, c)\n \t// \t}\n \t// \that = c\n \t// }\n-\tvar slA, slB []int\n+\t//\n \tvar slA = make([]int, 1, 3)\n \t\n \n }\n"
+                },
+                {
+                    "date": 1683749244749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n package main\n \n import (\n \t\"fmt\"\n-\t\"math\"\n )\n \n func main() {\n \t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n@@ -15,9 +14,9 @@\n \t// \t\tfmt.Println(hat, c)\n \t// \t}\n \t// \that = c\n \t// }\n-\t//\n+\t//var slA, slB []int\n \tvar slA = make([]int, 1, 3)\n \t\n \n }\n"
+                },
+                {
+                    "date": 1683749596432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,6 +17,7 @@\n \t// }\n \t//var slA, slB []int\n \tvar slA = make([]int, 1, 3)\n \t\n+\t\n \n }\n"
+                },
+                {
+                    "date": 1683749617388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \t// \t}\n \t// \that = c\n \t// }\n \t//var slA, slB []int\n-\tvar slA = make([]int, 1, 3)\n+\tvar slA = make([]int, 3, 3)\n+\n \t\n-\t\n \n }\n"
+                },
+                {
+                    "date": 1683749624421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n \t// \that = c\n \t// }\n \t//var slA, slB []int\n \tvar slA = make([]int, 3, 3)\n+\t\n \n \t\n \n }\n"
+                },
+                {
+                    "date": 1683749931253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \t// \that = c\n \t// }\n \t//var slA, slB []int\n \tvar slA = make([]int, 3, 3)\n-\t\n+\tslA = []\n \n \t\n \n }\n"
+                },
+                {
+                    "date": 1683749936655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \t// \that = c\n \t// }\n \t//var slA, slB []int\n \tvar slA = make([]int, 3, 3)\n-\tslA = []\n+\tslA = []int{1,}\n \n \t\n \n }\n"
+                },
+                {
+                    "date": 1683749943806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,10 @@\n \t// \that = c\n \t// }\n \t//var slA, slB []int\n \tvar slA = make([]int, 3, 3)\n-\tslA = []int{1,}\n+\tslA = []int{1,3,5}\n+\tfmt.Println()\n \n \t\n \n }\n"
+                },
+                {
+                    "date": 1683750028273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \t// }\n \t//var slA, slB []int\n \tvar slA = make([]int, 3, 3)\n \tslA = []int{1,3,5}\n-\tfmt.Println()\n-\n+\tfmt.Println(slA)\n+\t\t\n \t\n \n }\n"
+                },
+                {
+                    "date": 1683750034787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n \t//var slA, slB []int\n \tvar slA = make([]int, 3, 3)\n \tslA = []int{1,3,5}\n \tfmt.Println(slA)\n-\t\t\n \t\n+\t\n \n }\n"
+                },
+                {
+                    "date": 1683750057753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n \t//var slA, slB []int\n \tvar slA = make([]int, 3, 3)\n \tslA = []int{1,3,5}\n \tfmt.Println(slA)\n+\tslA\n \t\n-\t\n \n }\n"
+                },
+                {
+                    "date": 1683750069674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n \t//var slA, slB []int\n \tvar slA = make([]int, 3, 3)\n \tslA = []int{1,3,5}\n \tfmt.Println(slA)\n-\tslA\n+\tslA = append(slA, 7, 9)\n \t\n \n }\n"
+                },
+                {
+                    "date": 1683750096910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n \t//var slA, slB []int\n \tvar slA = make([]int, 3, 3)\n \tslA = []int{1,3,5}\n \tfmt.Println(slA)\n+\t\n \tslA = append(slA, 7, 9)\n-\t\n+\tfmt.Println(slA)\n \n }\n"
+                },
+                {
+                    "date": 1683750106040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \t//var slA, slB []int\n \tvar slA = make([]int, 3, 3)\n \tslA = []int{1,3,5}\n \tfmt.Println(slA)\n-\t\n+\tslB := slA\n \tslA = append(slA, 7, 9)\n \tfmt.Println(slA)\n \n }\n"
+                },
+                {
+                    "date": 1683750118851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n \tvar slA = make([]int, 3, 3)\n \tslA = []int{1,3,5}\n \tfmt.Println(slA)\n \tslB := slA\n+\t\n \tslA = append(slA, 7, 9)\n \tfmt.Println(slA)\n \n }\n"
+                },
+                {
+                    "date": 1683750124804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \tvar slA = make([]int, 3, 3)\n \tslA = []int{1,3,5}\n \tfmt.Println(slA)\n \tslB := slA\n-\t\n+\tfmt.Println(slB)\n \tslA = append(slA, 7, 9)\n \tfmt.Println(slA)\n \n }\n"
+                },
+                {
+                    "date": 1683750133344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n \tfmt.Println(slA)\n \tslB := slA\n \tfmt.Println(slB)\n \tslA = append(slA, 7, 9)\n-\tfmt.Println(slA)\n+\tfmt.Println(slA, slB)\n \n }\n"
+                },
+                {
+                    "date": 1683750147690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n \tfmt.Println(slA)\n \tslB := slA\n \tfmt.Println(slB)\n \tslA = append(slA, 7, 9)\n-\tfmt.Println(slA, slB)\n+\tfmt.Println(\"slA, slB)\n \n }\n"
+                },
+                {
+                    "date": 1683750157115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n \tfmt.Println(slA)\n \tslB := slA\n \tfmt.Println(slB)\n \tslA = append(slA, 7, 9)\n-\tfmt.Println(\"slA, slB)\n+\tfmt.Println(\"\" slA, \"\" slB)\n \n }\n"
+                },
+                {
+                    "date": 1683750163296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n \tfmt.Println(slA)\n \tslB := slA\n \tfmt.Println(slB)\n \tslA = append(slA, 7, 9)\n-\tfmt.Println(\"\" slA, \"\" slB)\n+\tfmt.Println(\"slA now is\" slA, \"\" slB)\n \n }\n"
+                },
+                {
+                    "date": 1683750168807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n \tfmt.Println(slA)\n \tslB := slA\n \tfmt.Println(slB)\n \tslA = append(slA, 7, 9)\n-\tfmt.Println(\"slA now is\" slA, \"\" slB)\n+\tfmt.Println(\"slA now is\" slA, \"and slB now is\" slB)\n \n }\n"
+                },
+                {
+                    "date": 1683750183841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n \tfmt.Println(slA)\n \tslB := slA\n \tfmt.Println(slB)\n \tslA = append(slA, 7, 9)\n-\tfmt.Println(\"slA now is\" slA, \"and slB now is\" slB)\n+\tfmt.Println(\"slA now is:\"slA, \"and slB now is:\" slB)\n \n }\n"
+                },
+                {
+                    "date": 1683750189074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n \tfmt.Println(slA)\n \tslB := slA\n \tfmt.Println(slB)\n \tslA = append(slA, 7, 9)\n-\tfmt.Println(\"slA now is:\"slA, \"and slB now is:\" slB)\n+\tfmt.Println(\"slA now is:\", slA, \"and slB now is:\" slB)\n \n }\n"
+                },
+                {
+                    "date": 1683750196008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n \tfmt.Println(slA)\n \tslB := slA\n \tfmt.Println(slB)\n \tslA = append(slA, 7, 9)\n-\tfmt.Println(\"slA now is:\", slA, \"and slB now is:\" slB)\n+\tfmt.Println(\"slA now is:\", slA, \"and slB now is:\", slB)\n \n }\n"
+                },
+                {
+                    "date": 1683750219656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,7 @@\n \tslB := slA\n \tfmt.Println(slB)\n \tslA = append(slA, 7, 9)\n \tfmt.Println(\"slA now is:\", slA, \"and slB now is:\", slB)\n+\t\n \n }\n"
+                },
+                {
+                    "date": 1683750232405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,7 @@\n \tslB := slA\n \tfmt.Println(slB)\n \tslA = append(slA, 7, 9)\n \tfmt.Println(\"slA now is:\", slA, \"and slB now is:\", slB)\n-\t\n+\tslA = \n \n }\n"
+                },
+                {
+                    "date": 1683750237465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,7 @@\n \tslB := slA\n \tfmt.Println(slB)\n \tslA = append(slA, 7, 9)\n \tfmt.Println(\"slA now is:\", slA, \"and slB now is:\", slB)\n-\tslA = \n+\tslA[0]\n \n }\n"
+                },
+                {
+                    "date": 1683750242873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,8 @@\n \tslB := slA\n \tfmt.Println(slB)\n \tslA = append(slA, 7, 9)\n \tfmt.Println(\"slA now is:\", slA, \"and slB now is:\", slB)\n-\tslA[0]\n+\tslA[0] = 11\n+\t\n \n }\n"
+                },
+                {
+                    "date": 1683750251626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,7 +23,7 @@\n \tfmt.Println(slB)\n \tslA = append(slA, 7, 9)\n \tfmt.Println(\"slA now is:\", slA, \"and slB now is:\", slB)\n \tslA[0] = 11\n-\t\n+\tfmt.Println(slA)\n \n }\n"
+                },
+                {
+                    "date": 1683750257839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,7 @@\n \tslA = append(slA, 7, 9)\n \tfmt.Println(\"slA now is:\", slA, \"and slB now is:\", slB)\n \tslA[0] = 11\n \tfmt.Println(slA)\n+\tslB[0]\n \n }\n"
+                },
+                {
+                    "date": 1683750265069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,7 @@\n \tslA = append(slA, 7, 9)\n \tfmt.Println(\"slA now is:\", slA, \"and slB now is:\", slB)\n \tslA[0] = 11\n \tfmt.Println(slA)\n-\tslB[0]\n-\n+\tslB[0] = 22\n+\tfmt.Println(slA)\n }\n"
+                },
+                {
+                    "date": 1683750278829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,6 +25,6 @@\n \tfmt.Println(\"slA now is:\", slA, \"and slB now is:\", slB)\n \tslA[0] = 11\n \tfmt.Println(slA)\n \tslB[0] = 22\n-\tfmt.Println(slA)\n+\tfmt.Println(slB)\n }\n"
+                }
+            ],
+            "date": 1682719040721,
+            "name": "Commit-0",
+            "content": "epackage main\n\nimport \"fmt\"\n\nfunc function(int) int {\n\treturn 0\n}\n\nfunc main() {\n\t// fmt.Print(\"\\033[2J\") //clear the screen befor printing the output in the terminal\n\tresult := function(1)\n\tfmt.Println(\"\\nYour function result is:\\n\", result)\n}\n"
+        }
+    ]
+}

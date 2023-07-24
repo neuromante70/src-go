@@ -1,0 +1,38 @@
+{
+    "sourceFile": "BASICS/built-in_types/initialization/zeroValues.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1686349022315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686349037065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,7 @@\n \n import \"fmt\"\n \n func main() {\n+\t\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1686349042513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,7 @@\n \n import \"fmt\"\n \n func main() {\n-\t\n+\tvar s string\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1686349048344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,7 @@\n \n import \"fmt\"\n \n func main() {\n-\tvar s string\n+\tvar s string// default to \"\"\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1686349053993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n import \"fmt\"\n \n func main() {\n \tvar s string// default to \"\"\n-\tvar r rune\n+\tvar r rune\t\n \tfmt.Println(\"vim-go\")\n }\n"
+                },
+                {
+                    "date": 1686349226364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,27 @@\n+package main\n+\n+import \"fmt\"\n+\n+func main() {\n+\tvar s string\t// default to \"\"\n+\tvar r rune\t\t// default to 0\n+\tvar bt byte\t\t// default to 0\n+\tvar i int\t\t// default to 0\n+\tvar ui uint\t\t// default to 0\n+\tvar f float32\t\t// default to 0\n+\tvar c complex64\t\t// default to 0\n+\tvar b bool\n+\tvar arr [2]int\n+\tvar obj struct {\n+\t\tb bool\n+\t\tarr[2]int\n+\t}\n+\tvar si []int\n+\tvar ch chan string\n+\tvar mp map[int]string\n+\tvar fn func()\n+\tvar ptr *string\n+\tvar all any\n+\n+\tfmt.Println(\"vim-go\")\n+}\n"
+                }
+            ],
+            "date": 1686349022315,
+            "name": "Commit-0",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"vim-go\")\n}\n"
+        }
+    ]
+}
